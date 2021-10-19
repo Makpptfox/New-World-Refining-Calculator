@@ -33,9 +33,7 @@ autoUpdater.on('update-downloaded', () => {
 });
 autoUpdater.on('update-not-available', ()=>{
 
-    createWindow();
-    updaterWindows.destroy();
-
+    checkDataFile();
 })
 
 async function checkDataFile(){
@@ -108,14 +106,11 @@ async function checkDataFile(){
                     langUI = data["lang"];
                     resolve();
                 })
+            }).then(()=>{
+                createWindow();
+                updaterWindows.destroy();
             })
         )
-        Promise.all(promises).then(()=>{
-
-            createWindow();
-            updaterWindows.destroy();
-
-        })
     })
 
 
@@ -138,10 +133,6 @@ function createWindow(){
     })
 
     mainWindows.loadFile('pages/index.html');
-
-    mainWindows.once("ready-to-show", ()=>{
-        autoUpdater.checkForUpdatesAndNotify();
-    })
 
 }
 function createLoader(){
@@ -170,7 +161,6 @@ function createLoader(){
     updaterWindows.once("ready-to-show", ()=>{
         autoUpdater.checkForUpdatesAndNotify();
 
-        checkDataFile();
     })
 
 }
@@ -279,5 +269,15 @@ ipcMain.on("getLang", async (ipc, type, elem)=>{
 ipcMain.on('getUID', (ipc)=>{
 
     mainWindows.webContents.send("returnUID", uuidv4());
+
+})
+
+ipcMain.on('installUpdate', (ipc)=>{
+    autoUpdater.quitAndInstall();
+})
+
+ipcMain.on('openApp', (ipc)=>{
+
+    checkDataFile();
 
 })

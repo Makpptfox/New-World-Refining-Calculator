@@ -1,6 +1,6 @@
 {
   "name": "new-world-refining-calculator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "deploy": "electron-builder build --win --publish always"
   },
   "build": {
-    "appId": "com.ward.new-world-refining-calculator",
+    "appId": "fr.new-world-refining-calculator.ward",
     "directories": {
       "buildResources": "resources"
     },
@@ -19,7 +19,7 @@
       "data",
       "lang"
     ],
-    "publish": null
+    "publish": "github"
   },
   "keywords": [],
   "author": "Ward727",

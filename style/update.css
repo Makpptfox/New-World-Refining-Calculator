@@ -6,6 +6,10 @@
   background-color: #36324b;
 }
 
+#menuDownload {
+  display: none;
+}
+
 header {
   text-align: center;
   border-radius: 5px;

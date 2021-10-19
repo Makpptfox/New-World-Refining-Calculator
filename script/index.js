@@ -103,7 +103,7 @@ function loadItemJobs(jobId){
 
                                 });
 
-                                img.src = "../data/image/materials/" + RElem.image
+                                img.src = window.api.cwd+"/data/image/materials/" + RElem.image
                                 title.innerText = RElem.name;
 
                                 mainMenuBar.appendChild(clone);
@@ -153,7 +153,7 @@ async function addItem(elem) {
     let originID = cloneOrigin.querySelector('div.FirstItem');
 
     originNumber.value = 1;
-    originImage.src = "../data/image/materials/" + personnal.image;
+    originImage.src = window.api.cwd+"/data/image/materials/" + personnal.image;
 
     originNumber.addEventListener("input", (e) => {
 
@@ -210,7 +210,7 @@ async function addItem(elem) {
 
 
                         numberRelated.value = number;
-                        imageRelated.src = "../data/image/materials/" + child.image;
+                        imageRelated.src = window.api.cwd+"/data/image/materials/" + child.image;
 
                         window.api.sendAsync('getUID');
 

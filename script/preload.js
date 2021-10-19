@@ -6,7 +6,7 @@ const {
 // Expose protected methods that allow the renderer process to use
 // the ipcRenderer without exposing the entire object
 
-let validChannelsSend = ['getAllJobs', 'getDataFrom', 'getLang', 'getAllItems', "getUID"];
+let validChannelsSend = ['getAllJobs', 'getDataFrom', 'getLang', 'getAllItems', "getUID", "installUpdate", "openApp"];
 let validChannelsReceive = ["update_error", "update_available", "update_downloaded", "no_update",
     'getAllJobsResponse', 'getDataFromResponse', "getLangResponse", "getAllItemsResponse", "returnUID"];
 
