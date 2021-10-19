@@ -1,0 +1,150 @@
+body{
+  display: grid;
+  grid-template-columns: [first]28vw [second] 70vw;
+  background-color: #434348;
+}
+.sortable-drag{
+
+  display: none;
+
+}
+nav{
+
+  grid-column: first;
+  width: 100%;
+  height: 100vh;
+  background-color: goldenrod;
+  display: grid;
+  grid-template-columns: [first]40% [bar] 0 [elem2]60%;
+  transition: all .3s;
+  overflow-x: hidden;
+  position: sticky;
+  top: 0;
+  #mainMenuBar{
+    grid-column: first;
+    width: 96%;
+    padding-right: 5px;
+    height: 100%;
+    background-color: darken(#434348, 5%);
+
+    .menuBarItem{
+      margin: 5px 0;
+      background-color: mix(#434348, black, 60%);
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      &:hover{
+        cursor: pointer;
+      }
+      color: white;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    border-right: solid 40px darken(#434348, 10%);
+
+  }
+  #closeMenuBarJob{
+
+    grid-column: bar;
+    height: 100%;
+    width: 100%;
+    background-color: darken(#434348, 8%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+      cursor: pointer;
+    }
+    transition: all .3s;
+
+    img{
+      transition: all .2s;
+      width: 100%;
+    }
+
+  }
+  #itemListBar{
+
+    grid-column: elem2;
+    width: 96%;
+    height: 100%;
+    overflow-y: auto;
+
+    background-color: darken(#434348, 5%);
+    overflow-x: hidden;
+    padding: 0 2%;
+
+    .containerMenuJobItem{
+
+      width: 100%;
+      color: white;
+
+      height: 80px;
+
+      display: flex;
+      align-items: center;
+      margin: 5px 0;
+      background-color: mix(#434348, black, 60%);
+      p{
+        flex: 1;
+      }
+      .buttonAddItem{
+
+        margin-right: 8px;
+        text-align: right;
+        padding: 3% 5%;
+        border-radius: 5px;
+        color: darkseagreen;
+        border: solid 2px darkseagreen;
+
+        &:hover{
+          cursor: pointer;
+        }
+
+      }
+      
+    }
+
+  }
+}
+#containerCalc{
+  grid-column: second;
+  padding: 8px;
+
+  #removeAll{
+
+    color: indianred;
+    border: solid 1px indianred;
+    border-radius: 5px;
+    background: darken(#434348, 2%);
+    padding: 5px;
+    &:hover{
+      cursor: pointer;
+    }
+
+  }
+  .containerItemCount{
+    .dragZone{
+
+      cursor: move;
+    }
+    .deleteRelated{
+
+      display: none;
+      cursor: pointer;
+
+    }
+
+    display: flex;
+
+    align-items: center;
+
+    .relatedItem{
+      display: flex;
+
+      align-items: center;
+    }
+
+  }
+}

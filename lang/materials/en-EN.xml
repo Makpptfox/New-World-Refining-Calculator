@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<lang>
+
+    <materials>
+
+        <iron_ore>Iron ore</iron_ore>           <!-- les balises doivent avoir le même nom que le nom de l'item -->
+        <iron_ingot>Iron ingot</iron_ingot>
+
+    </materials>
+
+</lang>

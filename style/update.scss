@@ -1,0 +1,22 @@
+
+
+#container{
+  display: grid;
+  height: 100vh;
+  grid-template-rows: [first]25% [line2]15% [line3]35% [end]25%;
+  justify-items: center;
+  background-color: #36324b;
+}
+
+header{
+  text-align: center;
+  border-radius: 5px;
+  margin: 5px 0;
+  grid-row: line2;
+  color: white;
+}
+
+#desc{
+  text-align: center;
+  grid-row: line3;
+}

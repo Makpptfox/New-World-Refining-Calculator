@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+
+    <dataType>Jobs</dataType>
+    <title>Extern</title>
+
+    <jobs>
+        <testJob>
+
+            <name>Ward</name>
+            <id>727</id>
+
+        </testJob>
+    </jobs>
+</data>

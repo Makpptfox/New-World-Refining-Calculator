@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New World Refining Calculator</title>
+
+    <link rel="stylesheet" type="text/css" href="../style/base.css">
+    <link rel="stylesheet" type="text/css"  href="../style/loader.css">
+    <link rel="stylesheet" type="text/css" href="../style/index.css">
+</head>
+<body>
+
+<nav>
+    <div id="mainMenuBar">
+
+    
+
+    </div>
+    <div id="itemListBar">
+
+    </div>
+    <!-- #TODO >> close menu bar
+    <div id="closeMenuBarJob">
+        <img onclick="closeMenu()" id="closeMenuIcon" src="../resources/arrow.png" alt="left arrow">
+    </div>
+    -->
+</nav>
+
+<div id="containerCalc">
+
+    <div id="topBar">
+
+        <!--<button id="removeAll" onclick="removeAll()">
+            test
+        </button>-->
+
+    </div>
+
+    <div id="itemListContainer">
+
+    </div>
+
+</div>
+
+<script src="../node_modules/sortablejs/Sortable.js"></script>
+<script src="../script/index.js"></script>
+<script src="../script/index/dragSystem.js"></script>
+</body>
+</html>
+
+<template id="templateMenuBarItem">
+
+    <div class="menuBarItem">
+
+        <p class="titleItem">[nameJob]</p>
+
+    </div>
+
+</template>
+
+<template id="templateMenuJobItem">
+    
+    <div class="containerMenuJobItem">
+        
+        <img class="resourceIcon" width="80px" height="80" alt="resourceIcon">
+
+        <p class="titleItem">[itemName]</p>
+
+        <div class="buttonAddItem">
+
+            +
+
+        </div>
+        
+    </div>
+    
+</template>
+
+<template id="templateItemCount">
+
+    <div class="containerItemCount">
+
+        <img src="../data/image/ui/drag.png" width="24" alt="drag" class="dragZone">
+
+        <div class="FirstItem">
+
+            <img class="imgFirstItem" width="100" height="100" alt="imgFirstItem"/>
+
+            <p class="numberItem"></p>
+
+            <input class="inputNumberItem" type="number" min="0" onkeydown="if(event.key==='.'){event.preventDefault();}">
+
+        </div>
+
+    </div>
+
+</template>
+
+<template id="templateRelatedItemCount">
+    <div class="relatedItem">
+
+        <img src="../data/image/ui/arrow.png" alt=">>>" style="transform: rotate(180deg)">
+        <div class="relatedItemContainer">
+            <img class="imgRelatedItem" width="100" height="100" alt="imgRelatedItem"/>
+            <p class="numberItem"></p>
+
+            <input class="inputRelatedItem" type="number" min="0"  onkeydown="if(event.key==='.'){event.preventDefault();}">
+        </div>
+
+    </div>
+</template>

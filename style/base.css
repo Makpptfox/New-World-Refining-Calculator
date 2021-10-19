@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+p[class*=gray] {
+  color: #aeaeae;
+}
+
+/*# sourceMappingURL=base.css.map */

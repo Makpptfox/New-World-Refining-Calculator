@@ -1,0 +1,44 @@
+{
+  "name": "new-world-refining-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
+  },
+  "build": {
+    "appId": "com.ward.new-world-refining-calculator",
+    "directories": {
+      "buildResources": "resources"
+    },
+    "extraFiles": [
+      "data",
+      "lang"
+    ],
+    "publish": null
+  },
+  "keywords": [],
+  "author": "Ward727",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^15.2.0",
+    "electron-builder": "^22.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Makpptfox/New-World-Refining-Calculator.git"
+  },
+  "dependencies": {
+    "ajv": "^6.12.6",
+    "electron-store": "^8.0.1",
+    "electron-updater": "^4.3.9",
+    "nedb-promises": "^5.0.1",
+    "sortablejs": "^1.14.0",
+    "uuid": "^8.3.2",
+    "xml2js": "^0.4.23"
+  }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+
+    <dataType>Jobs</dataType>       <!-- Ne pas toucher -->
+    <title>New World</title>        <!-- Ne pas toucher -->
+
+    <jobs>
+        <smithing>
+
+            <name>Smithing</name>
+            <id>0</id>
+
+        </smithing>
+        <stoneCutter>
+
+            <name>StoneCutter</name>
+            <id>1</id>
+
+        </stoneCutter>
+    </jobs>
+</data>

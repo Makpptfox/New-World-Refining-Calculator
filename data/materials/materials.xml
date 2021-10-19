@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+
+    <dataType>materials</dataType>          <!-- Ne pas toucher -->
+    <title>New World</title>                <!-- Ne pas toucher -->
+
+    <materials>
+
+        <iron_ingot>
+
+            <name>iron_ingot</name>         <!-- Nom de l'item -->
+            <id>0</id>                      <!-- Id de l'item -->
+            <jobId>0</jobId>                <!-- ID du job au quel est relié l'item -->
+            <image>iron_ingot.png</image>   <!-- Image de l'item (l'image est à mettre dans : "data/image/materials" -->
+            <related>                       <!-- Les items qui sont nécessaires -->
+                <rel0>                      <!-- Mettre rel0, rel1, rel2, .... -->
+                    <id>1</id>              <!-- ID de l'item qui doit être utilisé -->
+                    <number>2</number>      <!-- Nombre minimum nécessaire -->
+                </rel0>
+                <rel1>
+                    <id>1</id>
+                    <number>4</number>
+                </rel1>
+            </related>
+
+        </iron_ingot>
+        <iron_ore>
+
+            <name>iron_ore</name>
+            <id>1</id>
+            <jobId>0</jobId>
+            <image>iron_ore.png</image>
+
+        </iron_ore>
+
+    </materials>
+
+</data>
