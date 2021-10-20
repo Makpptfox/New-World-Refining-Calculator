@@ -1,7 +1,10 @@
+@use "base";
+
 body{
   display: grid;
-  grid-template-columns: [first]28vw [second] 70vw;
-  background-color: #434348;
+  grid-template-columns: [first]30vw [second] 70vw;
+  background-color: base.$background;
+  overflow-x: hidden;
 }
 .sortable-drag{
 
@@ -9,7 +12,6 @@ body{
 
 }
 nav{
-
   grid-column: first;
   width: 100%;
   height: 100vh;
@@ -20,28 +22,39 @@ nav{
   overflow-x: hidden;
   position: sticky;
   top: 0;
-  #mainMenuBar{
-    grid-column: first;
-    width: 96%;
-    padding-right: 5px;
-    height: 100%;
-    background-color: darken(#434348, 5%);
+  #mainMenuBarContainer{
+    #mainMenuBar{
 
-    .menuBarItem{
-      margin: 5px 0;
-      background-color: mix(#434348, black, 60%);
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
-      &:hover{
-        cursor: pointer;
+      padding: 0 10px;
+
+      .menuBarItem{
+        margin: 5px 0;
+        background-color: base.$backgroundJobListBlock;
+        &:first-child{
+          border-top-right-radius: 5px;
+          border-top-left-radius: 5px;
+        }
+        &:last-child{
+          border-bottom-right-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+
+        &:hover{
+          cursor: pointer;
+        }
+        color: white;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
-      color: white;
-      height: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
-    border-right: solid 40px darken(#434348, 10%);
+    grid-column: first;
+    z-index: 6;
+    width: 100%;
+    height: 100%;
+    background-color: base.$backgroundJob;
+
 
   }
   #closeMenuBarJob{
@@ -71,38 +84,60 @@ nav{
     height: 100%;
     overflow-y: auto;
 
-    background-color: darken(#434348, 5%);
+    background-color: base.$backgroundItemsList;
     overflow-x: hidden;
     padding: 0 2%;
 
+    .menuJobTitleContainer{
+      text-align: center;
+      color: white;
+      font-size: 18px;
+      padding: 15px;
+      border-bottom: solid base.$background;
+    }
+
     .containerMenuJobItem{
 
-      width: 100%;
-      color: white;
+      .menuJobItem {
 
-      height: 80px;
+        width: 100%;
+        color: white;
 
-      display: flex;
-      align-items: center;
-      margin: 5px 0;
-      background-color: mix(#434348, black, 60%);
-      p{
-        flex: 1;
+        height: 80px;
+
+        display: flex;
+        align-items: center;
+        background-color: base.$backgroundItemsListBlock;
+
+        p {
+          flex: 1;
+        }
+
+        .buttonAddItem {
+
+          margin-right: 8px;
+          text-align: right;
+          padding: 3% 5%;
+          border-radius: 5px;
+          color: darkseagreen;
+          border: solid 2px darkseagreen;
+
+
+        }
+        border-radius: 5px 5px 0 0;
       }
       .buttonAddItem{
 
-        margin-right: 8px;
-        text-align: right;
-        padding: 3% 5%;
-        border-radius: 5px;
-        color: darkseagreen;
-        border: solid 2px darkseagreen;
-
-        &:hover{
+        padding: 3px;
+        text-align: center;
+        background-color: base.$addButton;
+        &:hover {
           cursor: pointer;
         }
+        border-radius: 0 0 5px 5px;
 
       }
+      margin: 15px 0;
       
     }
 
@@ -110,8 +145,13 @@ nav{
 }
 #containerCalc{
   grid-column: second;
-  padding: 8px;
+  padding: 8px 20px 8px 8px;
 
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
   #removeAll{
 
     color: indianred;
@@ -125,25 +165,66 @@ nav{
 
   }
   .containerItemCount{
-    .dragZone{
+    display: flex;
 
+    align-items: stretch;
+    margin-bottom: 15px;
+    .dragZone{
+      background-color: base.$dragColorBack;
+      padding: 50px 10px;
+      margin-right: 10px;
+      border-radius: 5px 0 0 5px;
       cursor: move;
     }
     .deleteRelated{
-
-      display: none;
+      background-color: base.$deleteColorBack;
+      padding: 0 10px;
+      border: none;
+      outline: none;
+      border-radius: 0 5px 5px 0;
       cursor: pointer;
 
     }
 
-    display: flex;
-
-    align-items: center;
-
-    .relatedItem{
+    .itemCount {
+      width: 100%;
       display: flex;
 
       align-items: center;
+      background-color: base.$backgroundItemBlock;
+      overflow-y: hidden;
+      .FirstItem{
+        input{
+
+          width: 120px;
+          border: none;
+          outline: none;
+          margin: 0;
+          padding-left: 5px;
+          background-color: base.$inputColor;
+
+        }
+        text-align: center;
+
+      }
+      .relatedItem {
+
+        text-align: center;
+        input{
+
+          width: 120px;
+          border: none;
+          outline: none;
+          margin: 0;
+          padding-left: 5px;
+          background-color: base.$inputColor;
+
+        }
+
+        display: flex;
+
+        align-items: center;
+      }
     }
 
   }

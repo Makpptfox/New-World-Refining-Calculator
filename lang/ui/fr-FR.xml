@@ -5,6 +5,8 @@
     <default>
 
         <removeall>Tout supprimer</removeall>
+        <titleItemBar>Items pour</titleItemBar>
+        <addItem>Ajouter</addItem>
 
     </default>
 

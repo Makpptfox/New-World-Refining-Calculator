@@ -23,9 +23,7 @@ function loadJobs(){
 
     })
 
-    window.api.receive('getDataFromResponse', (data)=>{
-
-        console.log(data);
+    window.api.receiveOnce('getDataFromResponse', (data)=>{
 
         data["jobs"].forEach(elem=>{
 
@@ -37,18 +35,42 @@ function loadJobs(){
 
                     let mainMenuBar = document.getElementById("mainMenuBar");
 
-                    console.log(RElem);
-
                     let clone = template.content.cloneNode(true);
 
                     let title = clone.querySelector("p.titleItem");
                     let button = clone.querySelector("div.menuBarItem");
 
                     button.addEventListener('click', ()=>{
+                        let mainMenuBar = document.getElementById("itemListBar");
 
-                        loadItemJobs(RElem.id);
+                        mainMenuBar.innerText = "";
 
-                        console.count("clickedButton");
+                        const titleBarTemplate = document.getElementById("templateMenuJobTitle");
+
+                        const titleBar = titleBarTemplate.content.cloneNode(true);
+
+                        const text = titleBar.querySelector("p.jobTitle");
+
+                        window.api.sendAsync('getLang', "ui");
+
+                        new Promise((resolve, reject) => {window.api.receiveOnce('getLangResponse', (type, data)=>{
+
+                            if(type === "ui") {
+
+                                text.innerText = data["titleItemBar"][0] + " " + RElem.name
+
+                                resolve();
+
+                            }
+
+                        })}).then(()=>{
+
+                            mainMenuBar.appendChild(titleBar);
+
+                            loadItemJobs(RElem.id);
+
+                        })
+
 
                     })
 
@@ -66,16 +88,12 @@ function loadJobs(){
 function loadItemJobs(jobId){
     let mainMenuBar = document.getElementById("itemListBar");
 
-    mainMenuBar.innerText = "";
-
     window.api.sendAsync('getAllItems');
 
     window.api.receiveOnce('getAllItemsResponse', async (data)=>{
-        console.count("receiveGetAllItems");
 
         let materials = data['materials']
 
-        console.log(materials);
         availableItem = [];
 
         for await (let material of materials){
@@ -97,24 +115,40 @@ function loadItemJobs(jobId){
 
                                 let button = clone.querySelector("div.buttonAddItem");
 
-                                button.addEventListener("click", () => {
 
-                                    addItem(RElem);
+                                window.api.sendAsync('getLang', "ui");
 
-                                });
+                                new Promise((resolve1, reject) => {window.api.receiveOnce('getLangResponse', (type, data)=>{
 
-                                img.src = window.api.cwd+"/data/image/materials/" + RElem.image
-                                title.innerText = RElem.name;
+                                    if(type === "ui") {
 
-                                mainMenuBar.appendChild(clone);
+                                        button.innerText = data["addItem"][0]
 
-                                let itemDataList = {};
+                                        resolve1();
 
-                                itemDataList[RElem.id] = RElem;
+                                    }
 
-                                availableItem.push(itemDataList);
+                                })}).then(()=> {
 
-                                resolve();
+                                    button.addEventListener("click", () => {
+
+                                        addItem(RElem);
+
+                                    });
+
+                                    img.src = window.api.cwd + "/data/image/materials/" + RElem.image
+                                    title.innerText = RElem.name;
+
+                                    mainMenuBar.appendChild(clone);
+
+                                    let itemDataList = {};
+
+                                    itemDataList[RElem.id] = RElem;
+
+                                    availableItem.push(itemDataList);
+
+                                    resolve();
+                                })
 
                             }
                         })
@@ -148,9 +182,13 @@ async function addItem(elem) {
     let cloneOrigin = templateOrigin.content.cloneNode(true);
 
     let originImage = cloneOrigin.querySelector("img.imgFirstItem");
-    let originCounter = cloneOrigin.querySelector("div.containerItemCount");
+    let originCounter = cloneOrigin.querySelector("div.itemCount");
     let originNumber = cloneOrigin.querySelector("input.inputNumberItem");
     let originID = cloneOrigin.querySelector('div.FirstItem');
+
+    let dragZone = cloneOrigin.querySelector('img.dragZone');
+
+    dragZone.src = window.api.cwd+"/data/image/ui/drag.png";
 
     originNumber.value = 1;
     originImage.src = window.api.cwd+"/data/image/materials/" + personnal.image;
@@ -166,8 +204,6 @@ async function addItem(elem) {
 
                 let childElem = document.getElementById(child['uid']);
                 let childInput = childElem.querySelector("input.inputRelatedItem");
-
-                console.log(child);
 
                 childInput.value = child['number'] * value
 
@@ -190,14 +226,14 @@ async function addItem(elem) {
 
             if (Object.size(related) !== 0) {
 
+                let index = 0;
+
                 for (let rel in related) {
 
                     let child = related[rel][0];
 
                     let number = child['number'][0];
                     let id = child['id'][0];
-
-                    console.log(availableItem);
 
                     if (availableItem[id] !== undefined) {
 
@@ -207,6 +243,10 @@ async function addItem(elem) {
 
                         let imageRelated = cloneRelated.querySelector("img.imgRelatedItem");
                         let numberRelated = cloneRelated.querySelector("input.inputRelatedItem");
+
+                        let arrow = cloneRelated.querySelector("img.arrow");
+
+                        arrow.src = window.api.cwd+"/data/image/ui/arrow.png";
 
 
                         numberRelated.value = number;
@@ -248,6 +288,14 @@ async function addItem(elem) {
 
                                 })
 
+                                if(index === 0){
+
+                                    cloneRelated.querySelector('img.arrow').style.width= "65px";
+                                    cloneRelated.querySelector('img.arrow').style.height= "65px";
+                                    index++;
+
+                                }
+
                                 originCounter.appendChild(cloneRelated);
 
                                 let childData = {
@@ -284,7 +332,7 @@ async function addItem(elem) {
 
             deleteButton.appendChild(deleteIcon);
 
-            originCounter.appendChild(deleteButton);
+            originCounter.parentElement.appendChild(deleteButton);
 
             deleteButton.addEventListener("click", (e)=>{
 
@@ -292,7 +340,7 @@ async function addItem(elem) {
 
                 let uid = button.dataset['origin'];
 
-                document.getElementById(uid).parentElement.remove();
+                document.getElementById(uid).parentElement.parentElement.remove();
                 addedItem[uid] = null;
 
             })
@@ -312,55 +360,13 @@ async function addItem(elem) {
 
 }
 
-function toggleDeleteItem(bool){
-
-    let buttons = document.getElementsByClassName('deleteRelated');
-    if(bool){
-
-        for (const button of buttons) {
-
-            button.style.display = "inherit";
-
-        }
-
-    } else {
-
-        for (const button of buttons) {
-
-            button.style.display = "none";
-
-        }
-    }
-
-}
-
 function closeMenu(){
 
 
 
 }
 
-document.addEventListener('keydown', (e)=>{
-
-    if(e.code === "ShiftLeft"){
-
-        toggleDeleteItem(true);
-
-    }
-
-})
-
-document.addEventListener('keyup', (e)=>{
-
-    if(e.code === "ShiftLeft"){
-
-        toggleDeleteItem(false);
-
-    }
-
-})
-
-function loadLang(){
+/*function loadLang(){
 
     let removeAll = document.getElementById("removeAll");
 
@@ -374,11 +380,8 @@ function loadLang(){
 
     })
 
-}
+}*/
 
 
 loadJobs();
-
-
-loadLang();
 

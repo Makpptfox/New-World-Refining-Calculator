@@ -163,6 +163,8 @@ function createLoader(){
 
     })
 
+    //checkDataFile(); //TODO: REMOVE BEFORE PUBLISH
+
 }
 
 app.whenReady().then(() => {

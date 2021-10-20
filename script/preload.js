@@ -22,7 +22,7 @@ contextBridge.exposeInMainWorld(
             // whitelist channels
             if(validChannelsSend.includes(channel)){
                 ipcRenderer.send(channel,...args);
-                console.log("Send Async request: "+channel+" args: "+args);
+                //console.log("Send Async request: "+channel+" args: "+args);
             }
         },
         receive: (channel, func) => {
@@ -38,15 +38,7 @@ contextBridge.exposeInMainWorld(
                 ipcRenderer.once(channel, (event, ...args) => func(...args));
             }
         },
-        cwd: process.cwd(),
-
-        importSortable: (callback)=>{
-
-            let Sortable = require('sortablejs');
-
-            callback(Sortable);
-
-        }
+        cwd: process.cwd()
     }
 
 );
