@@ -1,11 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<lang>
+<lang> <!-- les balises doivent avoir le même nom que le nom de l'item -->
 
     <materials>
-
-        <iron_ore>Iron ore</iron_ore>           <!-- les balises doivent avoir le même nom que le nom de l'item -->
-        <iron_ingot>Iron ingot</iron_ingot>
+	<!-- Refining Materials -->
+		<!-- Seulement si le compo est spécifiquement demandé, sinon le ratio est toujours libre et 1:1 donc inutile de l'ajouter -->
+		<obsidian_sandpaper>Obsidian_sandpaper</obsidian_sandpaper>
+	
+	<!-- Smelting -->
+		<!-- Charcoal -->
+		<charcoal>Charcoal</charcoal>
+		
+		<!-- Metals -->
+        <iron_ore>Iron Ore</iron_ore>           
+        <iron_ingot>Iron Ingot</iron_ingot>
+		<steel_ingot>Steel Ingot</steel_ingot>
+		<starmetal_ore>Starmetal Ore</starmetal_ore>
+		<starmetal_ingot>Starmetal Ingot</starmetal_ingot>
+		<orichalcum_ore>Orichalcum Ore</orichalcum_ore>
+		<orichalcum_ingot>Orichalcum Ingot</orichalcum_ingot>
+		<!-- <voidbent_ingot>Voidbent_Ingot</voidbent_ingot> 
+		^réfléchir à un moyen de l'intégrer différemment vu les compos requis -->
+		
+		<!-- Precious Metals -->
+		<silver_ore>Silver Ore</silver_ore>
+		<silver_ingot>Silver Ingot</silver_ingot>
+		<gold_ore>Gold Ore</gold_ore>
+		<gold_ingot>Gold Ingot</gold_ingot>
+		<platinum_ore>Platinum Ore</platinum_ore>
+		<platinum_ingot>Platinum Ingot</platinum_ingot>
+		<asmodeum>Asmodeum</asmodeum>
+		
+	<!-- Woodworking -->
+		<!-- Wood -->
+		<green_wood>Green Wood</green_wood>
+		<aged_wood>Aged Wood</aged_wood>
+		<wyrdwood>Wyrdwood</wyrdwood>
+		<ironwood>Ironwood</ironwood>
+		<wildwood>Wildwood</wildwood>
+		<barbvine>Barbvine</barbvine>
+		
+		<!-- Planks -->
+		<timber>Timber</timber>
+		<lumber>Lumber</lumber>
+		<wyrdwood_planks>Wyrdwood Planks</wyrdwood_planks>
+		<ironwood_planks>Ironwood PLanks</ironwood_planks>
+		<glittering_ebony>Glittering Ebony</glittering_ebony>
 
     </materials>
 
