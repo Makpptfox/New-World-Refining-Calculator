@@ -109,6 +109,7 @@ nav #itemListBar .containerMenuJobItem .menuJobItem {
 }
 nav #itemListBar .containerMenuJobItem .menuJobItem p {
   flex: 1;
+  margin-left: 5px;
 }
 nav #itemListBar .containerMenuJobItem .menuJobItem .buttonAddItem {
   margin-right: 8px;
@@ -151,6 +152,10 @@ nav #itemListBar .containerMenuJobItem .buttonAddItem:hover {
   display: flex;
   align-items: stretch;
   margin-bottom: 15px;
+  flex-direction: column;
+}
+#containerCalc .containerItemCount .horizontalItemCount {
+  display: flex;
 }
 #containerCalc .containerItemCount .dragZone {
   background-color: #FEC555;
@@ -191,6 +196,40 @@ nav #itemListBar .containerMenuJobItem .buttonAddItem:hover {
   align-items: center;
 }
 #containerCalc .containerItemCount .itemCount .relatedItem input {
+  width: 120px;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding-left: 5px;
+  background-color: #C8D1D2;
+}
+#containerCalc .containerItemCount .detailsRelatedItemContainer {
+  display: flex;
+  align-items: stretch;
+  margin-top: 15px;
+  margin-left: 18.5%;
+  text-align: center;
+}
+#containerCalc .containerItemCount .detailsRelatedItemContainer .detailsRelatedItem {
+  display: flex;
+  align-items: center;
+  background-color: #919D9F;
+  width: 100%;
+  border-radius: 8px;
+}
+#containerCalc .containerItemCount .detailsRelatedItemContainer .detailsRelatedItem .firstRelated {
+  text-align: center;
+}
+#containerCalc .containerItemCount .detailsRelatedItemContainer .detailsRelatedItem .firstRelated input {
+  width: 120px;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding-left: 5px;
+  background-color: #C8D1D2;
+  border-bottom-left-radius: 8px;
+}
+#containerCalc .containerItemCount .detailsRelatedItemContainer .detailsRelatedItem .relatedItemChild input {
   width: 120px;
   border: none;
   outline: none;

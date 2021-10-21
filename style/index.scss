@@ -111,6 +111,7 @@ nav{
 
         p {
           flex: 1;
+          margin-left: 5px;
         }
 
         .buttonAddItem {
@@ -169,6 +170,11 @@ nav{
 
     align-items: stretch;
     margin-bottom: 15px;
+    flex-direction: column;
+
+    .horizontalItemCount{
+      display: flex;
+    }
     .dragZone{
       background-color: base.$dragColorBack;
       padding: 50px 10px;
@@ -185,7 +191,6 @@ nav{
       cursor: pointer;
 
     }
-
     .itemCount {
       width: 100%;
       display: flex;
@@ -225,6 +230,52 @@ nav{
 
         align-items: center;
       }
+    }
+
+    .detailsRelatedItemContainer{
+
+      display: flex;
+      align-items: stretch;
+      margin-top: 15px;
+      margin-left: 18.5%;
+      text-align: center;
+
+      .detailsRelatedItem{
+        display: flex;
+        align-items: center;
+        background-color: base.$backgroundItemBlock;
+        width: 100%;
+        border-radius: 8px;
+        .firstRelated{
+
+          text-align: center;
+          input{
+
+            width: 120px;
+            border: none;
+            outline: none;
+            margin: 0;
+            padding-left: 5px;
+            background-color: base.$inputColor;
+            border-bottom-left-radius: 8px;
+
+          }
+
+        }
+        .relatedItemChild{
+          input{
+
+            width: 120px;
+            border: none;
+            outline: none;
+            margin: 0;
+            padding-left: 5px;
+            background-color: base.$inputColor;
+
+          }
+        }
+      }
+
     }
 
   }

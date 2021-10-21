@@ -2,6 +2,9 @@ let addedItem = {};
 
 let abortEvent = new AbortController();
 
+let alreadyAvailable;
+
+const inputEventCustom = new InputEvent('editData');
 let availableItem = [];
 
 Object.size = function(obj) {
@@ -85,6 +88,40 @@ function loadJobs(){
 
     })
 }
+
+function loadAvailableItems(){
+
+    alreadyAvailable = true;
+
+    window.api.sendAsync('getAllItems');
+
+    window.api.receiveOnce('getAllItemsResponse', async (data)=> {
+
+        let materials = data['materials'];
+
+        for await (let material of materials) {
+
+            console.count('forMaterial');
+
+            await window.api.sendAsync('getLang', "item", material, 99);
+
+            window.api.receive("getLangResponse", (type, RElem, key) => {
+                if (type === "item" && material.id === RElem.id && key === 99) {
+                    let itemDataList = {};
+
+                    itemDataList[RElem.id] = RElem;
+
+                    availableItem[RElem.id] = itemDataList;
+
+                    console.count("availableItem");
+                }
+            })
+        }
+
+    })
+
+}
+
 function loadItemJobs(jobId){
     let mainMenuBar = document.getElementById("itemListBar");
 
@@ -93,8 +130,6 @@ function loadItemJobs(jobId){
     window.api.receiveOnce('getAllItemsResponse', async (data)=>{
 
         let materials = data['materials']
-
-        availableItem = [];
 
         for await (let material of materials){
 
@@ -141,11 +176,6 @@ function loadItemJobs(jobId){
 
                                     mainMenuBar.appendChild(clone);
 
-                                    let itemDataList = {};
-
-                                    itemDataList[RElem.id] = RElem;
-
-                                    availableItem[RElem.id] = itemDataList;
 
                                     resolve();
                                 })
@@ -170,9 +200,9 @@ function loadItemJobs(jobId){
 
 async function addItem(elem) {
 
-    let personnal = elem;
+    let personal = elem;
 
-    let related = personnal.related;
+    let related = personal.related;
 
     let containerParent = document.getElementById("itemListContainer");
 
@@ -191,7 +221,7 @@ async function addItem(elem) {
     dragZone.src = window.api.cwd+"/data/image/ui/drag.png";
 
     originNumber.value = 1;
-    originImage.src = window.api.cwd+"/data/image/materials/" + personnal.image;
+    originImage.src = window.api.cwd+"/data/image/materials/" + personal.image;
 
     originNumber.addEventListener("input", (e) => {
 
@@ -206,6 +236,7 @@ async function addItem(elem) {
                 let childInput = childElem.querySelector("input.inputRelatedItem");
 
                 childInput.value = child['number'] * value
+                childInput.dispatchEvent(inputEventCustom);
 
             }
 
@@ -234,6 +265,8 @@ async function addItem(elem) {
 
                     let number = child['number'][0];
                     let id = child['id'][0];
+                    let complex = false;
+                    if(child['details'] !== undefined) complex = child['details'][0];
 
                     if (availableItem[id] !== undefined) {
 
@@ -246,7 +279,7 @@ async function addItem(elem) {
 
                         let arrow = cloneRelated.querySelector("img.arrow");
 
-                        arrow.src = window.api.cwd+"/data/image/ui/arrow.png";
+                        arrow.src = window.api.cwd+"/data/image/ui/plus_white.png";
 
 
                         numberRelated.value = number;
@@ -259,7 +292,10 @@ async function addItem(elem) {
 
                                 cloneRelated.querySelector('div.relatedItem').id = uid;
 
-                                cloneRelated.querySelector('input.inputRelatedItem').addEventListener('input', (e) => {
+                                let inputRelated = cloneRelated.querySelector('input.inputRelatedItem')
+
+                                //When relatedInput changed
+                                inputRelated.addEventListener('input', (e) => {
 
                                     let value = e.target.value;
 
@@ -269,6 +305,7 @@ async function addItem(elem) {
 
                                     let itemNumber = Math.trunc(value / number)
 
+
                                     for(let item of addedItem[parentNode.id]['children']){
 
                                         if(item['uid'] !== selfId){
@@ -276,8 +313,8 @@ async function addItem(elem) {
                                             let itemElem = document.getElementById(item['uid']);
 
                                             let inputElem = itemElem.querySelector('input.inputRelatedItem');
-
                                             inputElem.value = item['number']* itemNumber;
+                                            inputElem.dispatchEvent(inputEventCustom);
 
                                         }
 
@@ -289,14 +326,21 @@ async function addItem(elem) {
                                 })
 
                                 if(index === 0){
+                                    arrow.src = window.api.cwd+"/data/image/ui/equals_white.png";
 
-                                    cloneRelated.querySelector('img.arrow').style.width= "65px";
-                                    cloneRelated.querySelector('img.arrow').style.height= "65px";
+                                    cloneRelated.querySelector('img.arrow').style.width= "32px";
+                                    cloneRelated.querySelector('img.arrow').style.height= "32px";
                                     index++;
 
                                 }
 
                                 originCounter.appendChild(cloneRelated);
+
+                                if(complex){
+
+                                    addSubItem(originCounter.parentElement, child, number, inputRelated, inputRelated);
+
+                                }
 
                                 let childData = {
 
@@ -340,7 +384,7 @@ async function addItem(elem) {
 
                 let uid = button.dataset['origin'];
 
-                document.getElementById(uid).parentElement.parentElement.remove();
+                document.getElementById(uid).parentElement.parentElement.parentElement.remove();
                 addedItem[uid] = null;
 
             })
@@ -360,11 +404,108 @@ async function addItem(elem) {
 
 }
 
+async function addSubItem(div, elem, number, inputEvent, self, event = null){
+
+    let templateDetailsRelatedItem = document.getElementById('templateDetailsRelatedItem');
+
+    let clone = templateDetailsRelatedItem.content.cloneNode(true);
+
+    let icon = clone.querySelector('img.iconItemDetail');
+    let input = clone.querySelector('input.inputItemDetail');
+
+    icon.src = window.api.cwd+'/data/image/materials/'+elem.image;
+
+    input.value = number;
+
+
+    let index = 0;
+    let inputRel = [];
+
+    for (const relatedElement in elem.related) {
+
+        let rel = elem.related[relatedElement]
+
+        let id = rel[0]['id'][0];
+
+        let child = availableItem[id][id];
+
+        let templateRelated = document.getElementById('templateDetailsRelatedItemChild');
+
+        let related = templateRelated.content.cloneNode(true);
+
+        let arrow = related.querySelector('img.arrow');
+        let icon = related.querySelector('img.imgRelatedItemChild');
+        let input = related.querySelector('input.inputRelatedItemChild');
+
+        input.value = number*rel[0]['number'][0];
+
+        let data = {
+
+            input: input,
+            number: rel[0]['number'][0],
+            id: rel[0]['id'][0]
+
+        }
+
+
+        icon.src = window.api.cwd+'/data/image/materials/'+child['image'];
+
+        arrow.src = window.api.cwd+'/data/image/ui/plus_white.png';
+        if(index === 0) arrow.src = window.api.cwd+'/data/image/ui/equals_white.png';
+
+        inputRel.push(data);
+
+        clone.querySelector('div.detailsRelatedItem').appendChild(related);
+
+        console.log(rel[0]['details']);
+
+        index++;
+
+    }
+
+    inputEvent.addEventListener('input', (e)=>{
+
+        input.value = e.target.value;
+
+        inputRel.forEach(elem=>{
+
+            elem.input.value = elem.number*input.value;
+
+            if(elem.event !== undefined) {
+
+                input.dispatchEvent(elem.event);
+            }
+
+        })
+
+    })
+
+    inputEvent.addEventListener('editData', (e)=>{
+
+        input.value = self.value;
+
+        inputRel.forEach(elem=>{
+
+            elem.input.value = elem.number*input.value;
+
+            if(elem.event !== undefined) {
+                elem.input.dispatchEvent(elem.event);
+            }
+
+        })
+    }, false)
+
+    div.parentElement.appendChild(clone);
+
+}
+
 function closeMenu(){
 
 
 
 }
+
+
 
 /*function loadLang(){
 
@@ -381,7 +522,6 @@ function closeMenu(){
     })
 
 }*/
-
-
+if(!alreadyAvailable) loadAvailableItems();
 loadJobs();
 

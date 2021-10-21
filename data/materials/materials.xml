@@ -3,330 +3,333 @@
 
     <dataType>materials</dataType>          <!-- Ne pas toucher -->
     <title>New World</title>                <!-- Ne pas toucher -->
-	
-	<!-- mats list & id
-	Refining Materials
-			obsidian_flux		= obdfx
-			obsidian_sandpaper	= obdsp
-			aged_tanning		= agdtn
-			wireweave			= wrwve
 
-	
-	Smelting
-		Charcoal
-			charcoal 			= chrcl
-			
-		Ores	
-			iron_ore			= irnor
-			silver_ore			= silor
-			starmetal_ore		= stmor
-			orichalcum_ore		= orcor
-			gold_ore			= godor
-			platinum_ore		= pltor
-			tolvium				= tlvim
-			cinnabar			= cnabr
-			
-		Ingots	
-			iron_ingot			= irnin
-			steel_ingot			= stlin
-			starmetal_ingot		= stmin
-			orichalcum_ingot	= orcin
-			silver_ingot		= silin
-			gold_ingot			= godin
-			platinum_ingot		= pltin
-			asmodeum			= asmod
-			voidbent_ingot		= NYI
-			
-			
-	Woodworking	
-		Woods	
-			green_wood			= grnwd
-			aged_wood			= agdwd
-			wyrdwood			= wrdwd
-			ironwood			= irnwd
-			wildwood			= wldwd
-			barbvine			= brbvn
-			
-		Planks	
-			timber				= tmber
-			lumber				= lmber
-			wyrdwood_planks		= wrdpk
-			ironwood_planks		= irnpk
-			glittering_ebony	= glteb
-			
-			
-	Leatherworking	
-		Hides	
-			rawhide				= rawhd
-			thick_hide			= thchd
-			iron_hide			= irnhd
-			smolderhide			= smlhd
-			scarhide			= scrhd
-		
-		Leathers	
-			coarse_leather		= crslt
-			rugged_leather		= rgdlt
-			layered_leather		= laylt
-			infused_leather		= inflt
-			runic_leather		= runlt
-			
-			
-	Weaving	
-		Fibers	
-			fibers				= basfb
-			silk_threads		= slkfb
-			wirefiber			= wrefb
-			
-		Cloths	
-			linen				= lincl
-			sateen				= satcl
-			silk				= silcl
-			infused_silk		= infcl
-			phoenixweave		= phxcl
-			scalecloth			= scacl
-			blisterweave		= blicl
-	
-	-->
+    <!-- mats list & id
+    Refining Materials
+            obsidian_flux		= obdfx
+            obsidian_sandpaper	= obdsp
+            aged_tanning		= agdtn
+            wireweave			= wrwve
+
+
+    Smelting
+        Charcoal
+            charcoal 			= chrcl
+
+        Ores
+            iron_ore			= irnor
+            silver_ore			= silor
+            starmetal_ore		= stmor
+            orichalcum_ore		= orcor
+            gold_ore			= godor
+            platinum_ore		= pltor
+            tolvium				= tlvim
+            cinnabar			= cnabr
+
+        Ingots
+            iron_ingot			= irnin
+            steel_ingot			= stlin
+            starmetal_ingot		= stmin
+            orichalcum_ingot	= orcin
+            silver_ingot		= silin
+            gold_ingot			= godin
+            platinum_ingot		= pltin
+            asmodeum			= asmod
+            voidbent_ingot		= NYI
+
+
+    Woodworking
+        Woods
+            green_wood			= grnwd
+            aged_wood			= agdwd
+            wyrdwood			= wrdwd
+            ironwood			= irnwd
+            wildwood			= wldwd
+            barbvine			= brbvn
+
+        Planks
+            timber				= tmber
+            lumber				= lmber
+            wyrdwood_planks		= wrdpk
+            ironwood_planks		= irnpk
+            glittering_ebony	= glteb
+
+
+    Leatherworking
+        Hides
+            rawhide				= rawhd
+            thick_hide			= thchd
+            iron_hide			= irnhd
+            smolderhide			= smlhd
+            scarhide			= scrhd
+
+        Leathers
+            coarse_leather		= crslt
+            rugged_leather		= rgdlt
+            layered_leather		= laylt
+            infused_leather		= inflt
+            runic_leather		= runlt
+
+
+    Weaving
+        Fibers
+            fibers				= basfb
+            silk_threads		= slkfb
+            wirefiber			= wrefb
+
+        Cloths
+            linen				= lincl
+            sateen				= satcl
+            silk				= silcl
+            infused_silk		= infcl
+            phoenixweave		= phxcl
+            scalecloth			= scacl
+            blisterweave		= blicl
+
+    -->
 
     <materials>
-	<!-- Smelting -->
-		<!-- Charcoal -->
-			<charcoal>		
-				<name>charcoal</name>        	<!-- Nom de l'item -->
-				<id>chrcl</id>                  <!-- Id de l'item -->
-				<jobId>0</jobId>                <!-- ID du job au quel est relié l'item -->
-				<image>charcoal.png</image>   	<!-- Image de l'item (l'image est à mettre dans : "data/image/materials" -->
-				<related>                       <!-- Les items qui sont nécessaires -->
-					<rel0>                      <!-- Mettre rel0, rel1, rel2, .... -->
-						<id>grnwd</id>          <!-- ID de l'item qui doit être utilisé -->
-						<number>2</number>      <!-- Nombre minimum nécessaire -->
-					</rel0>
-				</related>			
-			</charcoal>
-			
-			
-		<!-- Ores -->
-			<iron_ore>
-				<name>iron_ore</name>
-				<id>irnor</id>
-				<image>iron_ore.png</image>
-				<related>
-				
-				</related>			
-			</iron_ore>
-			
-			<silver_ore>
-				<name>silver_ore</name>
-				<id>silor</id>
-				<image>silver_ore.png</image>
-				<related>                       
+        <!-- Smelting -->
+        <!-- Charcoal -->
+        <charcoal>
+            <name>charcoal</name>        	<!-- Nom de l'item -->
+            <id>chrcl</id>                  <!-- Id de l'item -->
+            <jobId>0</jobId>                <!-- ID du job au quel est relié l'item -->
+            <image>charcoal.png</image>   	<!-- Image de l'item (l'image est à mettre dans : "data/image/materials" -->
+            <related>                       <!-- Les items qui sont nécessaires -->
+                <rel0>                      <!-- Mettre rel0, rel1, rel2, .... -->
+                    <id>grnwd</id>          <!-- ID de l'item qui doit être utilisé -->
+                    <number>2</number>      <!-- Nombre minimum nécessaire -->
+                </rel0>
+            </related>
+        </charcoal>
 
-				</related>			
-			</silver_ore>
-			
-			<starmetal_ore>
-				<name>starmetal_ore</name>
-				<id>stmor</id>
-				<image>starmetal_ore.png</image>
-				<related>                       
 
-				</related>			
-			</starmetal_ore>
-			
-			<orichalcum_ore>
-				<name>orichalcum_ore</name>
-				<id>orcor</id>
-				<image>orichalcum_ore.png</image>
-				<related>                       
+        <!-- Ores -->
+        <iron_ore>
+            <name>iron_ore</name>
+            <id>irnor</id>
+            <image>iron_ore.png</image>
+            <related>
 
-				</related>			
-			</orichalcum_ore>
-			
-			<gold_ore>
-				<name>gold_ore</name>
-				<id>godor</id>
-				<image>gold_ore.png</image>
-				<related>                       
+            </related>
+        </iron_ore>
 
-				</related>			
-			</gold_ore>
-			
-			<platinum_ore>
-				<name>platinum_ore</name>
-				<id>pltor</id>
-				<image>platinum_ore.png</image>
-				<related>                       
+        <silver_ore>
+            <name>silver_ore</name>
+            <id>silor</id>
+            <image>silver_ore.png</image>
+            <related>
 
-				</related>			
-			</platinum_ore>
-		
-		
-		<!-- Ingots -->
-			<iron_ingot>		
-				<name>iron_ingot</name>      
-				<id>irnin</id>             
-				<jobId>0</jobId>           
-				<image>iron_ingot.png</image>
-				<related>                  
-					<rel0>                 
-						<id>irnor</id>     
-						<number>4</number> 
-					</rel0>
-				</related>			
-			</iron_ingot>
-			
-			<steel_ingot>		
-				<name>steel_ingot</name>      
-				<id>stlin</id>             
-				<jobId>0</jobId>           
-				<image>steel_ingot.png</image>
-				<related>                  
-					<rel0>                 
-						<id>irnin</id>     
-						<number>3</number> 
-					</rel0>
-					<rel1>                 
-						<id>chrcl</id>     
-						<number>2</number> 
-					</rel1>
-				</related>			
-			</steel_ingot>
-			
-			<starmetal_ingot>		
-				<name>starmetal_ingot</name>      
-				<id>stmin</id>             
-				<jobId>0</jobId>           
-				<image>starmetal_ingot.png</image>
-				<related>                  
-					<rel0>                 
-						<id>stmor</id>     
-						<number>6</number> 
-					</rel0>
-					<rel1>                 
-						<id>stlin</id>     
-						<number>2</number> 
-					</rel1>
-					<rel2>                 
-						<id>chrcl</id>     
-						<number>2</number> 
-					</rel2>
-				</related>			
-			</starmetal_ingot>
-			
-			<orichalcum_ingot>		
-				<name>orichalcum_ingot</name>      
-				<id>orcin</id>             
-				<jobId>0</jobId>           
-				<image>orichalcum_ingot.png</image>
-				<related>                  
-					<rel0>                 
-						<id>orcor</id>     
-						<number>8</number> 
-					</rel0>
-					<rel1>                 
-						<id>stmin</id>     
-						<number>2</number> 
-					</rel1>
-					<rel2>                 
-						<id>chrcl</id>     
-						<number>2</number> 
-					</rel2>
-				</related>			
-			</orichalcum_ingot>
-			
-			<silver_ingot>		
-				<name>silver_ingot</name>      
-				<id>silin</id>             
-				<jobId>0</jobId>           
-				<image>silver_ingot.png</image>
-				<related>                  
-					<rel0>                 
-						<id>silor</id>     
-						<number>4</number> 
-					</rel0>
-				</related>			
-			</silver_ingot>
-			
-			<gold_ingot>		
-				<name>gold_ingot</name>      
-				<id>godin</id>             
-				<jobId>0</jobId>           
-				<image>gold_ingot.png</image>
-				<related>                  
-					<rel0>                 
-						<id>godor</id>     
-						<number>5</number> 
-					</rel0>
-					<rel1>                 
-						<id>silin</id>     
-						<number>2</number> 
-					</rel1>
-				</related>			
-			</gold_ingot>
-			
-			<platinum_ingot>		
-				<name>platinum_ingot</name>      
-				<id>pltin</id>             
-				<jobId>0</jobId>           
-				<image>platinum_ingot.png</image>
-				<related>                  
-					<rel0>                 
-						<id>pltor</id>     
-						<number>6</number> 
-					</rel0>
-					<rel1>                 
-						<id>godin</id>     
-						<number>2</number> 
-					</rel1>
-				</related>			
-			</platinum_ingot>
-			
-			<asmodeum>		
-				<name>asmodeum</name>      
-				<id>asmod</id>             
-				<jobId>0</jobId>           
-				<image>asmodeum.png</image>
-				<related>                  
-					<rel0>                 
-						<id>orcin</id>     
-						<number>5</number> 
-					</rel0>
-					<rel0>                 
-						<id>tlvim</id>     
-						<number>1</number> 
-					</rel0>
-					<rel0>                 
-						<id>cnabr</id>     
-						<number>1</number> 
-					</rel0>
-					<rel0>                 
-						<id>obdfx</id>     
-						<number>1</number> 
-					</rel0>
-					<rel0>                 
-						<id>chrcl</id>     
-						<number>2</number> 
-					</rel0>
-				</related>			
-			</asmodeum>
+            </related>
+        </silver_ore>
+
+        <starmetal_ore>
+            <name>starmetal_ore</name>
+            <id>stmor</id>
+            <image>starmetal_ore.png</image>
+            <related>
+
+            </related>
+        </starmetal_ore>
+
+        <orichalcum_ore>
+            <name>orichalcum_ore</name>
+            <id>orcor</id>
+            <image>orichalcum_ore.png</image>
+            <related>
+
+            </related>
+        </orichalcum_ore>
+
+        <gold_ore>
+            <name>gold_ore</name>
+            <id>godor</id>
+            <image>gold_ore.png</image>
+            <related>
+
+            </related>
+        </gold_ore>
+
+        <platinum_ore>
+            <name>platinum_ore</name>
+            <id>pltor</id>
+            <image>platinum_ore.png</image>
+            <related>
+
+            </related>
+        </platinum_ore>
+
+
+        <!-- Ingots -->
+        <iron_ingot>
+            <name>iron_ingot</name>
+            <id>irnin</id>
+            <jobId>0</jobId>
+            <image>iron_ingot.png</image>
+            <related>
+                <rel0>
+                    <id>irnor</id>
+                    <number>4</number>
+                </rel0>
+            </related>
+        </iron_ingot>
+
+        <steel_ingot>
+            <name>steel_ingot</name>
+            <id>stlin</id>
+            <jobId>0</jobId>
+            <image>steel_ingot.png</image>
+            <related>
+                <rel0>
+                    <id>irnin</id>
+                    <number>3</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>chrcl</id>
+                    <number>2</number>
+                </rel1>
+            </related>
+        </steel_ingot>
+
+        <starmetal_ingot>
+            <name>starmetal_ingot</name>
+            <id>stmin</id>
+            <jobId>0</jobId>
+            <image>starmetal_ingot.png</image>
+            <related>
+                <rel0>
+                    <id>stmor</id>
+                    <number>6</number>
+                </rel0>
+                <rel1>
+                    <id>stlin</id>
+                    <number>2</number>
+                    <details>true</details>
+                </rel1>
+                <rel2>
+                    <id>chrcl</id>
+                    <number>2</number>
+                </rel2>
+            </related>
+        </starmetal_ingot>
+
+        <orichalcum_ingot>
+            <name>orichalcum_ingot</name>
+            <id>orcin</id>
+            <jobId>0</jobId>
+            <image>orichalcum_ingot.png</image>
+            <related>
+                <rel0>
+                    <id>orcor</id>
+                    <number>8</number>
+                </rel0>
+                <rel1>
+                    <id>stmin</id>
+                    <number>2</number>
+                    <details>true</details>
+                </rel1>
+                <rel2>
+                    <id>chrcl</id>
+                    <number>2</number>
+                </rel2>
+            </related>
+        </orichalcum_ingot>
+
+        <silver_ingot>
+            <name>silver_ingot</name>
+            <id>silin</id>
+            <jobId>0</jobId>
+            <image>silver_ingot.png</image>
+            <related>
+                <rel0>
+                    <id>silor</id>
+                    <number>4</number>
+                </rel0>
+            </related>
+        </silver_ingot>
+
+        <gold_ingot>
+            <name>gold_ingot</name>
+            <id>godin</id>
+            <jobId>0</jobId>
+            <image>gold_ingot.png</image>
+            <related>
+                <rel0>
+                    <id>godor</id>
+                    <number>5</number>
+                </rel0>
+                <rel1>
+                    <id>silin</id>
+                    <number>2</number>
+                </rel1>
+            </related>
+        </gold_ingot>
+
+        <platinum_ingot>
+            <name>platinum_ingot</name>
+            <id>pltin</id>
+            <jobId>0</jobId>
+            <image>platinum_ingot.png</image>
+            <related>
+                <rel0>
+                    <id>pltor</id>
+                    <number>6</number>
+                </rel0>
+                <rel1>
+                    <id>godin</id>
+                    <number>2</number>
+                </rel1>
+            </related>
+        </platinum_ingot>
+
+        <asmodeum>
+            <name>asmodeum</name>
+            <id>asmod</id>
+            <jobId>0</jobId>
+            <image>asmodeum.png</image>
+            <related>
+                <rel0>
+                    <id>orcin</id>
+                    <number>5</number>
+                </rel0>
+                <rel0>
+                    <id>tlvim</id>
+                    <number>1</number>
+                </rel0>
+                <rel0>
+                    <id>cnabr</id>
+                    <number>1</number>
+                </rel0>
+                <rel0>
+                    <id>obdfx</id>
+                    <number>1</number>
+                </rel0>
+                <rel0>
+                    <id>chrcl</id>
+                    <number>2</number>
+                </rel0>
+            </related>
+        </asmodeum>
 
     </materials>
 
 </data>
 
-<!-- TEMP, modèle c/c
-	
-			<iron_ingot>		
-				<name></name>      
-				<id></id>             
-				<jobId>0</jobId>           
-				<image>.png</image>
-				<related>                  
-					<rel0>                 
-						<id></id>     
-						<number></number> 
-					</rel0>
-				</related>			
-			</iron_ingot>
-			
--->
+        <!-- TEMP, modèle c/c
+
+                    <iron_ingot>
+                        <name></name>
+                        <id></id>
+                        <jobId>0</jobId>
+                        <image>.png</image>
+                        <related>
+                            <rel0>
+                                <id></id>
+                                <number></number>
+                            </rel0>
+                        </related>
+                    </iron_ingot>
+
+        -->

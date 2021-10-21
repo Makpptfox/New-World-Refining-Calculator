@@ -212,7 +212,7 @@ ipcMain.on('getAllItems', async (ipc)=>{
 
 })
 
-ipcMain.on("getLang", async (ipc, type, elem)=>{
+ipcMain.on("getLang", async (ipc, type, elem, key = -1)=>{
 
     console.log('execute getLang function');
 
@@ -246,13 +246,15 @@ ipcMain.on("getLang", async (ipc, type, elem)=>{
                 related: elem.related
             };
 
+            console.log(langMaterials);
+
             material.name = langMaterials["materials"][0][elem.name.toLowerCase()][0];
 
             if(material.name === undefined){
                 material.name = `lang: ${lang} ${elem.name.toLowerCase()}`;
             }
 
-            mainWindows.webContents.send('getLangResponse', type, material);
+            mainWindows.webContents.send('getLangResponse', type, material, key);
 
             console.log(material);
 
