@@ -145,7 +145,7 @@ function loadItemJobs(jobId){
 
                                     itemDataList[RElem.id] = RElem;
 
-                                    availableItem.push(itemDataList);
+                                    availableItem[RElem.id] = itemDataList;
 
                                     resolve();
                                 })
