@@ -7,7 +7,7 @@
     <!-- mats list & id
     Refining Materials
             obsidian_flux		= obdfx
-            obsidian_sandpaper	= obdsp
+            obsidian_sandpaper		= obdsp
             aged_tanning		= agdtn
             wireweave			= wrwve
 
@@ -23,14 +23,14 @@
             orichalcum_ore		= orcor
             gold_ore			= godor
             platinum_ore		= pltor
-            tolvium				= tlvim
+            tolvium			= tlvim
             cinnabar			= cnabr
 
         Ingots
             iron_ingot			= irnin
             steel_ingot			= stlin
             starmetal_ingot		= stmin
-            orichalcum_ingot	= orcin
+            orichalcum_ingot		= orcin
             silver_ingot		= silin
             gold_ingot			= godin
             platinum_ingot		= pltin
@@ -48,16 +48,16 @@
             barbvine			= brbvn
 
         Planks
-            timber				= tmber
-            lumber				= lmber
+            timber			= tmber
+            lumber			= lmber
             wyrdwood_planks		= wrdpk
             ironwood_planks		= irnpk
-            glittering_ebony	= glteb
+            glittering_ebony		= glteb
 
 
     Leatherworking
         Hides
-            rawhide				= rawhd
+            rawhide			= rawhd
             thick_hide			= thchd
             iron_hide			= irnhd
             smolderhide			= smlhd
@@ -73,14 +73,14 @@
 
     Weaving
         Fibers
-            fibers				= basfb
+            fibers			= basfb
             silk_threads		= slkfb
             wirefiber			= wrefb
 
         Cloths
-            linen				= lincl
-            sateen				= satcl
-            silk				= slkcl
+            linen			= lincl
+            sateen			= satcl
+            silk			= slkcl
             infused_silk		= infcl
             phoenixweave		= phxcl
             scalecloth			= scacl
