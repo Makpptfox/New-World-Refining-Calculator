@@ -14,25 +14,27 @@
 		<!-- Charcoal -->
 		<charcoal>Charcoal</charcoal>
 		
-		<!-- Metals -->
+		<!-- Ores -->
         <iron_ore>Iron Ore</iron_ore>           
-        <iron_ingot>Iron Ingot</iron_ingot>
-		<steel_ingot>Steel Ingot</steel_ingot>
+        <silver_ore>Silver Ore</silver_ore>
 		<starmetal_ore>Starmetal Ore</starmetal_ore>
-		<starmetal_ingot>Starmetal Ingot</starmetal_ingot>
 		<orichalcum_ore>Orichalcum Ore</orichalcum_ore>
-		<orichalcum_ingot>Orichalcum Ingot</orichalcum_ingot>
-		<!-- <voidbent_ingot>Voidbent_Ingot</voidbent_ingot> 
-		^réfléchir à un moyen de l'intégrer différemment vu les compos requis -->
-		
-		<!-- Precious Metals -->
-		<silver_ore>Silver Ore</silver_ore>
-		<silver_ingot>Silver Ingot</silver_ingot>
 		<gold_ore>Gold Ore</gold_ore>
-		<gold_ingot>Gold Ingot</gold_ingot>
 		<platinum_ore>Platinum Ore</platinum_ore>
+		<tolvium>Tolvium</tolvium>
+		<cinnabar>Cinnabar</cinnabar>
+		
+		<!-- Ingots -->
+		<iron_ingot>Iron Ingot</iron_ingot>
+		<steel_ingot>Steel Ingot</steel_ingot>
+		<starmetal_ingot>Starmetal Ingot</starmetal_ingot>
+		<orichalcum_ingot>Orichalcum Ingot</orichalcum_ingot>
+		<silver_ingot>Silver Ingot</silver_ingot>
+		<gold_ingot>Gold Ingot</gold_ingot>
 		<platinum_ingot>Platinum Ingot</platinum_ingot>
 		<asmodeum>Asmodeum</asmodeum>
+		<!-- <voidbent_ingot>Voidbent Ingot</voidbent_ingot> 
+		^réfléchir à un moyen de l'intégrer différemment vu les compos requis -->
 		
 	<!-- Woodworking -->
 		<!-- Woods -->

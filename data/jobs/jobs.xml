@@ -5,17 +5,32 @@
     <title>New World</title>        <!-- Ne pas toucher -->
 
     <jobs>
-        <smithing>
-
-            <name>Smithing</name>
+	
+        <smelting>
+            <name>Smelting</name>
             <id>0</id>
-
-        </smithing>
-        <stoneCutter>
-
-            <name>StoneCutter</name>
+        </smelting>
+		
+		<woodworking>
+            <name>Woodworking</name>
             <id>1</id>
-
-        </stoneCutter>
+        </woodworking>
+		
+		<leatherworking>
+            <name>Leatherworking</name>
+            <id>2</id>
+        </leatherworking>
+		
+		<weaving>
+            <name>Weaving</name>
+            <id>3</id>
+        </weaving>
+		
+        <stonecutting>
+            <name>Stonecutting</name>
+            <id>4</id>
+        </stonecutting>
+		
     </jobs>
+	
 </data>
