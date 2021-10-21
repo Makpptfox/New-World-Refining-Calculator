@@ -5,7 +5,10 @@
     <materials>
 	<!-- Refining Materials -->
 		<!-- Seulement si le compo est spécifiquement demandé, sinon le ratio est toujours libre et 1:1 donc inutile de l'ajouter -->
-		<obsidian_sandpaper>Obsidian_sandpaper</obsidian_sandpaper>
+		<obsidian_flux>Obsidian Flux</obsidian_flux>
+		<obsidian_sandpaper>Obsidian Sandpaper</obsidian_sandpaper>
+		<aged_tanning>Aged Tannin</aged_tannin>
+		<wireweave>Wireweave</wireweave>
 	
 	<!-- Smelting -->
 		<!-- Charcoal -->
@@ -32,7 +35,7 @@
 		<asmodeum>Asmodeum</asmodeum>
 		
 	<!-- Woodworking -->
-		<!-- Wood -->
+		<!-- Woods -->
 		<green_wood>Green Wood</green_wood>
 		<aged_wood>Aged Wood</aged_wood>
 		<wyrdwood>Wyrdwood</wyrdwood>
@@ -46,7 +49,37 @@
 		<wyrdwood_planks>Wyrdwood Planks</wyrdwood_planks>
 		<ironwood_planks>Ironwood PLanks</ironwood_planks>
 		<glittering_ebony>Glittering Ebony</glittering_ebony>
-
+		
+	<!-- Leatherworking -->
+		<!-- Hides -->
+		<rawhide>Rawhide</rawhide>
+		<thick_hide>Thick Hide</thick_hide>
+		<iron_hide>Iron Hide</iron_hide>
+		<smolderhide>Smolderhide</smolderhide>
+		<scarhide>Scarhide</scarhide>
+		
+		<!-- Leathers -->
+		<coarse_leather>Coarse Leather</coarse_leather>
+		<rugged_leather>Rugged Leather</rugged_leather>
+		<layered_leather>Layered Leather</layered_leather>
+		<infused_leather>Infused Leather</infused_leather>
+		<runic_leather>Runic Leather</runic_leather>
+		
+	<!-- Weaving -->
+		<!-- Fibers -->
+		<fibers>Fibers</fibers>
+		<silk_threads>Silk Threads</silk_threads>
+		<wirefiber>Wirefiber</wirefiber>
+		
+		<!-- Cloths -->
+		<linen>Linen</linen>
+		<sateen>Sateen</sateen>
+		<silk>Silk</silk>
+		<infused_silk>Infused Silk</infused_silk>
+		<phoenixweave>Phoenixweave</phoenixweave>
+		<scalecloth>Scalecloth</scalecloth>
+		<blisterweave>Blisterwweave</blisterweave>
+		
     </materials>
 
 </lang>
