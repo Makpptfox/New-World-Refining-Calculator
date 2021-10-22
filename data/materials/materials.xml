@@ -95,7 +95,7 @@
         <obsidian_flux>
             <name>obsidian_flux</name>
             <id>obdfx</id>
-            <jobId>0</jobId>
+            
             <image>obsidian_flux.png</image>
             <related>
 
@@ -105,27 +105,27 @@
         <obsidian_sandpaper>
             <name>obsidian_sandpaper</name>
             <id>obdsp</id>
-            <jobId>1</jobId>
+            
             <image>obsidian_sandpaper.png</image>
             <related>
 
             </related>
         </obsidian_sandpaper>
 
-        <aged_tanning>
-            <name>aged_tanning</name>
+        <aged_tannin>
+            <name>aged_tannin</name>
             <id>agdtn</id>
-            <jobId>2</jobId>
-            <image>aged_tanning.png</image>
+            
+            <image>aged_tannin.png</image>
             <related>
 
             </related>
-        </aged_tanning>
+        </aged_tannin>
 
         <wireweave>
             <name>wireweave</name>
             <id>wrwve</id>
-            <jobId>3</jobId>
+            
             <image>wireweave.png</image>
             <related>
 
@@ -371,20 +371,20 @@
 
     <!-- Woodworking -->
         <!-- Woods -->
-        <greenwood>
-            <name>greenwood</name>
+        <green_wood>
+            <name>green_wood</name>
             <id>grnwd</id>
-            <jobId>1</jobId>
-            <image>greenwood.png</image>
+            
+            <image>green_wood.png</image>
             <related>
 
             </related>
-        </greenwood>
+        </green_wood>
 
         <aged_wood>
             <name>aged_wood</name>
             <id>agdwd</id>
-            <jobId>1</jobId>
+            
             <image>aged_wood.png</image>
             <related>
 
@@ -394,7 +394,7 @@
         <wyrdwood>
             <name>wyrdwood</name>
             <id>wrdwd</id>
-            <jobId>1</jobId>
+            
             <image>wyrdwood.png</image>
             <related>
 
@@ -404,7 +404,7 @@
         <ironwood>
             <name>ironwood</name>
             <id>irnwd</id>
-            <jobId>1</jobId>
+            
             <image>ironwood.png</image>
             <related>
 
@@ -414,7 +414,7 @@
         <wildwood>
             <name>wildwood</name>
             <id>wldwd</id>
-            <jobId>1</jobId>
+            
             <image>wildwood.png</image>
             <related>
 
@@ -424,7 +424,7 @@
         <barbvine>
             <name>barbvine</name>
             <id>brbvn</id>
-            <jobId>1</jobId>
+           
             <image>barbvine.png</image>
             <related>
 
@@ -536,7 +536,7 @@
         <rawhide>
             <name>rawhide</name>
             <id>rawhd</id>
-            <jobId>2</jobId>
+            
             <image>rawhide.png</image>
             <related>
 
@@ -546,7 +546,7 @@
         <thick_hide>
             <name>thick_hide</name>
             <id>thchd</id>
-            <jobId>2</jobId>
+           
             <image>thick_hide.png</image>
             <related>
 
@@ -556,7 +556,7 @@
         <iron_hide>
             <name>iron_hide</name>
             <id>irnhd</id>
-            <jobId>2</jobId>
+            
             <image>iron_hide.png</image>
             <related>
 
@@ -566,7 +566,7 @@
         <smolderhide>
             <name>smolderhide</name>
             <id>smlhd</id>
-            <jobId>2</jobId>
+            
             <image>smolderhide.png</image>
             <related>
 
@@ -576,7 +576,7 @@
         <scarhide>
             <name>scarhide</name>
             <id>scrhd</id>
-            <jobId>2</jobId>
+           
             <image>scarhide.png</image>
             <related>
 
@@ -684,7 +684,7 @@
         <fibers>
             <name>fibers</name>
             <id>basfb</id>
-            <jobId>3</jobId>
+            
             <image>fibers.png</image>
             <related>
 
@@ -694,7 +694,7 @@
         <silk_threads>
             <name>silk_threads</name>
             <id>slkfb</id>
-            <jobId>3</jobId>
+            
             <image>silk_threads.png</image>
             <related>
 
@@ -704,7 +704,7 @@
         <wirefiber>
             <name>wirefiber</name>
             <id>wrefb</id>
-            <jobId>3</jobId>
+            
             <image>wirefiber.png</image>
             <related>
 
@@ -714,7 +714,7 @@
         <scalecloth>
             <name>scalecloth</name>
             <id>scacl</id>
-            <jobId>3</jobId>
+            
             <image>scalecloth.png</image>
             <related>
 
@@ -724,7 +724,7 @@
         <blisterweave>
             <name>blisterweave</name>
             <id>blicl</id>
-            <jobId>3</jobId>
+            
             <image>blisterweave.png</image>
             <related>
 
