@@ -153,9 +153,11 @@ nav #itemListBar .containerMenuJobItem .buttonAddItem:hover {
   align-items: stretch;
   margin-bottom: 15px;
   flex-direction: column;
+  overflow-y: hidden;
 }
 #containerCalc .containerItemCount .horizontalItemCount {
   display: flex;
+  z-index: 2;
 }
 #containerCalc .containerItemCount .dragZone {
   background-color: #FEC555;
@@ -195,6 +197,16 @@ nav #itemListBar .containerMenuJobItem .buttonAddItem:hover {
   display: flex;
   align-items: center;
 }
+#containerCalc .containerItemCount .itemCount .relatedItem .img {
+  text-align: center;
+  position: relative;
+}
+#containerCalc .containerItemCount .itemCount .relatedItem .showBar {
+  position: absolute;
+  top: 70%;
+  left: 80%;
+  display: none;
+}
 #containerCalc .containerItemCount .itemCount .relatedItem input {
   width: 120px;
   border: none;
@@ -209,8 +221,10 @@ nav #itemListBar .containerMenuJobItem .buttonAddItem:hover {
   margin-top: 15px;
   margin-left: 18.5%;
   text-align: center;
+  transition: all 2s;
 }
 #containerCalc .containerItemCount .detailsRelatedItemContainer .detailsRelatedItem {
+  position: relative;
   display: flex;
   align-items: center;
   background-color: #919D9F;
@@ -236,6 +250,12 @@ nav #itemListBar .containerMenuJobItem .buttonAddItem:hover {
   margin: 0;
   padding-left: 5px;
   background-color: #C8D1D2;
+}
+
+@keyframes closeRelatedItemChild {
+  100% {
+    position: relative;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

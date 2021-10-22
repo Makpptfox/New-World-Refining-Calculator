@@ -3,6 +3,8 @@ const { autoUpdater } = require('electron-updater');
 
 const { v4: uuidv4 } = require('uuid');
 
+const build = true
+
 const path = require('path');
 
 const {checkLang} = require("./script/lang/getLanguage");
@@ -163,7 +165,7 @@ function createLoader(){
 
     })
 
-    //checkDataFile(); //TODO: REMOVE BEFORE PUBLISH
+    if(!build) checkDataFile();
 
 }
 

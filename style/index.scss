@@ -171,9 +171,11 @@ nav{
     align-items: stretch;
     margin-bottom: 15px;
     flex-direction: column;
+    overflow-y: hidden;
 
     .horizontalItemCount{
       display: flex;
+      z-index: 2;
     }
     .dragZone{
       background-color: base.$dragColorBack;
@@ -194,7 +196,6 @@ nav{
     .itemCount {
       width: 100%;
       display: flex;
-
       align-items: center;
       background-color: base.$backgroundItemBlock;
       overflow-y: hidden;
@@ -213,7 +214,18 @@ nav{
 
       }
       .relatedItem {
+        .img{
+          text-align: center;
+          position: relative;
+        }
+        .showBar{
 
+          position: absolute;
+          top: 70%;
+          left: 80%;
+          display: none;
+
+        }
         text-align: center;
         input{
 
@@ -239,8 +251,10 @@ nav{
       margin-top: 15px;
       margin-left: 18.5%;
       text-align: center;
+      transition: all 2s;
 
       .detailsRelatedItem{
+        position: relative;
         display: flex;
         align-items: center;
         background-color: base.$backgroundItemBlock;
@@ -279,4 +293,14 @@ nav{
     }
 
   }
+}
+
+
+@keyframes closeRelatedItemChild {
+
+  100%{
+    position: relative;
+
+  }
+
 }

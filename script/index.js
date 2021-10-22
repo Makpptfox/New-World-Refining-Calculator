@@ -5,6 +5,8 @@ let abortEvent = new AbortController();
 let alreadyAvailable;
 
 const inputEventCustom = new InputEvent('editData');
+
+
 let availableItem = [];
 
 Object.size = function(obj) {
@@ -112,8 +114,6 @@ function loadAvailableItems(){
                     itemDataList[RElem.id] = RElem;
 
                     availableItem[RElem.id] = itemDataList;
-
-                    console.count("availableItem");
                 }
             })
         }
@@ -198,11 +198,19 @@ function loadItemJobs(jobId){
 
 }
 
-async function addItem(elem) {
+function addItem(elem) {
 
     let personal = elem;
 
-    let related = personal.related;
+    let related;
+
+    if(personal.related['rel0'] !== undefined){
+
+        related = personal.related;
+
+    } else {
+        related = {};
+    }
 
     let containerParent = document.getElementById("itemListContainer");
 
@@ -250,7 +258,7 @@ async function addItem(elem) {
 
     window.api.sendAsync('getUID');
 
-    await new Promise((resolve, reject) => {
+    new Promise((resolve, reject) => {
         window.api.receiveOnce('returnUID', async (uid) => {
 
             originID.id = uid;
@@ -291,6 +299,7 @@ async function addItem(elem) {
                             window.api.receiveOnce('returnUID', (uid) => {
 
                                 cloneRelated.querySelector('div.relatedItem').id = uid;
+
 
                                 let inputRelated = cloneRelated.querySelector('input.inputRelatedItem')
 
@@ -334,13 +343,20 @@ async function addItem(elem) {
 
                                 }
 
-                                originCounter.appendChild(cloneRelated);
 
                                 if(complex){
+
+                                    cloneRelated.querySelector('img.showBar').style.display = "inherit";
+                                    cloneRelated.querySelector('div.relatedItem').style.cursor = "pointer";
+
+                                    cloneRelated.querySelector('div.relatedItem').addEventListener('click', (e)=>{
+
+                                    })
 
                                     addSubItem(originCounter.parentElement, child, number, inputRelated, inputRelated);
 
                                 }
+                                originCounter.appendChild(cloneRelated);
 
                                 let childData = {
 
@@ -400,6 +416,16 @@ async function addItem(elem) {
 
             resolve();
         })
+    }).then(()=>{
+
+        let data ={
+            children: childs
+        }
+
+        const onItemAdded = new CustomEvent('onItemAdded', {'detail': data});
+
+        document.dispatchEvent(onItemAdded);
+
     })
 
 }
@@ -420,47 +446,11 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null){
 
     let index = 0;
     let inputRel = [];
+    let needToBeAdded = []
 
     for (const relatedElement in elem.related) {
-
-        let rel = elem.related[relatedElement]
-
-        let id = rel[0]['id'][0];
-
-        let child = availableItem[id][id];
-
-        let templateRelated = document.getElementById('templateDetailsRelatedItemChild');
-
-        let related = templateRelated.content.cloneNode(true);
-
-        let arrow = related.querySelector('img.arrow');
-        let icon = related.querySelector('img.imgRelatedItemChild');
-        let input = related.querySelector('input.inputRelatedItemChild');
-
-        input.value = number*rel[0]['number'][0];
-
-        let data = {
-
-            input: input,
-            number: rel[0]['number'][0],
-            id: rel[0]['id'][0]
-
-        }
-
-
-        icon.src = window.api.cwd+'/data/image/materials/'+child['image'];
-
-        arrow.src = window.api.cwd+'/data/image/ui/plus_white.png';
-        if(index === 0) arrow.src = window.api.cwd+'/data/image/ui/equals_white.png';
-
-        inputRel.push(data);
-
-        clone.querySelector('div.detailsRelatedItem').appendChild(related);
-
-        console.log(rel[0]['details']);
-
+        addRelatedToChild(elem, relatedElement, number, index, div, clone, needToBeAdded, inputRel);
         index++;
-
     }
 
     inputEvent.addEventListener('input', (e)=>{
@@ -471,8 +461,7 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null){
 
             elem.input.value = elem.number*input.value;
 
-            if(elem.event !== undefined) {
-
+            if(elem.event !== null) {
                 input.dispatchEvent(elem.event);
             }
 
@@ -488,16 +477,91 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null){
 
             elem.input.value = elem.number*input.value;
 
-            if(elem.event !== undefined) {
-                elem.input.dispatchEvent(elem.event);
+            if(elem.event !== null) {
+                input.dispatchEvent(elem.event);
             }
 
         })
     }, false)
 
+    if(event !== null){
+        inputEvent.addEventListener(event.type, (e)=>{
+
+            input.value = self.value;
+
+            inputRel.forEach(elem=>{
+
+                elem.input.value = elem.number*input.value;
+
+                if(elem.event !== null) {
+                    input.dispatchEvent(elem.event);
+                }
+
+            })
+        });
+
+    }
+
+
+    let uid = window.api.generateNewUid();
+
+    clone.querySelector('div.detailsRelatedItemContainer').id = uid;
     div.parentElement.appendChild(clone);
 
+
+    needToBeAdded.forEach(need=>{
+
+        if(event !== null){
+            console.table(need)
+            addSubItem(need.div, need.child, need.number, need.inputEvent, self, need.event);
+        } else {
+            addSubItem(need.div, need.child, need.number, need.inputEvent, need.self, need.event);
+        }
+
+
+    })
+
+
+    document.addEventListener('onItemAdded', (e)=>{
+
+        document.getElementById(uid).style.display = "none";
+
+        if(event === null) {
+            inputEvent.parentElement.querySelector('img.imgRelatedItem').addEventListener('click', () => {
+
+                if(document.getElementById(uid).style.display === "none") {
+                    document.getElementById(uid).style.display = "flex";
+                    inputEvent.parentElement.querySelector('img.showBar').style.transform = 'rotate(180deg)';
+                } else {
+                    document.getElementById(uid).style.display = "none";
+                    inputEvent.parentElement.querySelector('img.showBar').style.transform = 'rotate(0)';
+                }
+
+                document.getElementById(uid).dispatchEvent(new CustomEvent('showCat'));
+
+            })
+        } else {
+
+            let directParent = inputEvent.parentElement.parentElement.parentElement;
+
+            directParent.addEventListener('showCat', ()=>{
+                if(document.getElementById(uid).style.display === "none") {
+                    document.getElementById(uid).style.display = "flex";
+                } else {
+                    document.getElementById(uid).style.display = "none";
+                }
+
+                document.getElementById(uid).dispatchEvent(new CustomEvent('showCat'));
+
+            })
+
+        }
+
+    }, { once: true })
+
+
 }
+
 
 function closeMenu(){
 
@@ -505,6 +569,62 @@ function closeMenu(){
 
 }
 
+function addRelatedToChild(elem, relatedElement, number, index, div, clone, needToBeAdded, inputRel){
+
+    let rel = elem.related[relatedElement]
+
+    let id = rel[0]['id'][0];
+
+    let child = availableItem[id][id];
+
+    let templateRelated = document.getElementById('templateDetailsRelatedItemChild');
+
+    let related = templateRelated.content.cloneNode(true);
+
+    let arrow = related.querySelector('img.arrow');
+    let icon = related.querySelector('img.imgRelatedItemChild');
+    let input = related.querySelector('input.inputRelatedItemChild');
+
+    input.value = number*rel[0]['number'][0];
+
+    let data = {
+
+        input: input,
+        number: rel[0]['number'][0],
+        id: rel[0]['id'][0],
+        event: null
+
+    }
+
+    icon.src = window.api.cwd+'/data/image/materials/'+child['image'];
+
+    arrow.src = window.api.cwd+'/data/image/ui/plus_white.png';
+    if(index === 0) arrow.src = window.api.cwd+'/data/image/ui/equals_white.png';
+
+    if(rel[0]['details'] !== undefined) {
+        if (rel[0]['details'][0] === "true") {
+            data.event = new InputEvent(rel[0]['id'][0]);
+
+            let need = {
+                div: div,
+                child: child,
+                number: rel[0]['number'][0]*number,
+                inputEvent: clone.querySelector('input.inputItemDetail'),
+                self: related.querySelector('input.inputRelatedItemChild'),
+                event: data.event
+            }
+
+            needToBeAdded.push(need);
+
+        }
+    }
+
+    clone.querySelector('div.detailsRelatedItem').appendChild(related);
+
+    inputRel.push(data);
+
+    index++;
+}
 
 
 /*function loadLang(){

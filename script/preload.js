@@ -3,12 +3,17 @@ const {
     ipcRenderer
 } = require("electron");
 
+
+const { v4: uuidv4 } = require('uuid');
+
 // Expose protected methods that allow the renderer process to use
 // the ipcRenderer without exposing the entire object
 
 let validChannelsSend = ['getAllJobs', 'getDataFrom', 'getLang', 'getAllItems', "getUID", "installUpdate", "openApp"];
 let validChannelsReceive = ["update_error", "update_available", "update_downloaded", "no_update",
     'getAllJobsResponse', 'getDataFromResponse', "getLangResponse", "getAllItemsResponse", "returnUID"];
+
+let uuid = uuidv4();
 
 contextBridge.exposeInMainWorld(
     "api", {
@@ -38,7 +43,16 @@ contextBridge.exposeInMainWorld(
                 ipcRenderer.once(channel, (event, ...args) => func(...args));
             }
         },
-        cwd: process.cwd()
+        cwd: process.cwd(),
+        generateNewUid: ()=>{
+            return genNewUID();
+        },
+        uid: uuid
     }
 
 );
+
+function genNewUID(){
+    uuid = uuidv4();
+    return uuid;
+}
