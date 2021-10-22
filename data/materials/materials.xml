@@ -1,150 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
 
-    <dataType>materials</dataType>          <!-- Ne pas toucher -->
-    <title>New World</title>                <!-- Ne pas toucher -->
+    <dataType>materials</dataType>
+    <!-- Ne pas toucher -->
+    <title>New World</title>
+    <!-- Ne pas toucher -->
 
     <!-- mats list & id
     Refining Materials
-            obsidian_flux		= obdfx
-            obsidian_sandpaper		= obdsp
-            aged_tanning		= agdtn
-            wireweave			= wrwve
+            obsidian_flux       = obdfx
+            obsidian_sandpaper  = obdsp
+            aged_tanning        = agdtn
+            wireweave           = wrwve
 
 
     Smelting
         Charcoal
-            charcoal 			= chrcl
+            charcoal            = chrcl
 
         Ores
-            iron_ore			= irnor
-            silver_ore			= silor
-            starmetal_ore		= stmor
-            orichalcum_ore		= orcor
-            gold_ore			= godor
-            platinum_ore		= pltor
-            tolvium			= tlvim
-            cinnabar			= cnabr
+            iron_ore            = irnor
+            silver_ore          = silor
+            starmetal_ore       = stmor
+            orichalcum_ore      = orcor
+            gold_ore            = godor
+            platinum_ore        = pltor
+            tolvium             = tlvim
+            cinnabar            = cnabr
 
         Ingots
-            iron_ingot			= irnin
-            steel_ingot			= stlin
-            starmetal_ingot		= stmin
-            orichalcum_ingot		= orcin
-            silver_ingot		= silin
-            gold_ingot			= godin
-            platinum_ingot		= pltin
-            asmodeum			= asmod
-            voidbent_ingot		= NYI
+            iron_ingot          = irnin
+            steel_ingot         = stlin
+            starmetal_ingot     = stmin
+            orichalcum_ingot    = orcin
+            silver_ingot        = silin
+            gold_ingot          = godin
+            platinum_ingot      = pltin
+            asmodeum            = asmod
+            voidbent_ingot      = NYI
 
 
     Woodworking
         Woods
-            green_wood			= grnwd
-            aged_wood			= agdwd
-            wyrdwood			= wrdwd
-            ironwood			= irnwd
-            wildwood			= wldwd
-            barbvine			= brbvn
+            green_wood          = grnwd
+            aged_wood           = agdwd
+            wyrdwood            = wrdwd
+            ironwood            = irnwd
+            wildwood            = wldwd
+            barbvine            = brbvn
 
         Planks
-            timber			= tmber
-            lumber			= lmber
-            wyrdwood_planks		= wrdpk
-            ironwood_planks		= irnpk
-            glittering_ebony		= glteb
+            timber              = tmber
+            lumber              = lmber
+            wyrdwood_planks     = wrdpk
+            ironwood_planks     = irnpk
+            glittering_ebony    = glteb
 
 
     Leatherworking
         Hides
-            rawhide			= rawhd
-            thick_hide			= thchd
-            iron_hide			= irnhd
-            smolderhide			= smlhd
-            scarhide			= scrhd
+            rawhide             = rawhd
+            thick_hide          = thchd
+            iron_hide           = irnhd
+            smolderhide         = smlhd
+            scarhide            = scrhd
 
         Leathers
-            coarse_leather		= crslt
-            rugged_leather		= rgdlt
-            layered_leather		= laylt
-            infused_leather		= inflt
-            runic_leather		= runlt
+            coarse_leather      = crslt
+            rugged_leather      = rgdlt
+            layered_leather     = laylt
+            infused_leather     = inflt
+            runic_leather       = runlt
 
 
     Weaving
         Fibers
-            fibers			= basfb
-            silk_threads		= slkfb
-            wirefiber			= wrefb
+            fibers              = basfb
+            silk_threads        = slkfb
+            wirefiber           = wrefb
 
         Cloths
-            linen			= lincl
-            sateen			= satcl
-            silk			= slkcl
-            infused_silk		= infcl
-            phoenixweave		= phxcl
-            scalecloth			= scacl
-            blisterweave		= blicl
+            linen               = lincl
+            sateen              = satcl
+            silk                = slkcl
+            infused_silk        = infcl
+            phoenixweave        = phxcl
+            scalecloth          = scacl
+            blisterweave        = blicl
 
     -->
 
     <materials>
-	<!-- Refining materials -->
+        <!-- Refining materials -->
         <obsidian_flux>
-            <name>obsidian_flux</name>        	
-            <id>obdfx</id>                  
-            <jobId>0</jobId>                
-            <image>obsidian_flux.png</image>   	
-            <related>                       
+            <name>obsidian_flux</name>
+            <id>obdfx</id>
+            <jobId>0</jobId>
+            <image>obsidian_flux.png</image>
+            <related>
 
             </related>
         </obsidian_flux>
-		
-		<obsidian_sandpaper>
-            <name>obsidian_sandpaper</name>        	
-            <id>obdsp</id>                  
-            <jobId>1</jobId>                
-            <image>obsidian_sandpaper.png</image>   	
-            <related>                       
+
+        <obsidian_sandpaper>
+            <name>obsidian_sandpaper</name>
+            <id>obdsp</id>
+            <jobId>1</jobId>
+            <image>obsidian_sandpaper.png</image>
+            <related>
 
             </related>
         </obsidian_sandpaper>
-		
-		<aged_tanning>
-            <name>aged_tanning</name>        	
-            <id>agdtn</id>                  
-            <jobId>2</jobId>                
-            <image>aged_tanning.png</image>   	
-            <related>                       
+
+        <aged_tanning>
+            <name>aged_tanning</name>
+            <id>agdtn</id>
+            <jobId>2</jobId>
+            <image>aged_tanning.png</image>
+            <related>
 
             </related>
         </aged_tanning>
-		
-		<wireweave>
-            <name>wireweave</name>        	
-            <id>wrwve</id>                  
-            <jobId>3</jobId>                
-            <image>wireweave.png</image>   	
-            <related>                       
+
+        <wireweave>
+            <name>wireweave</name>
+            <id>wrwve</id>
+            <jobId>3</jobId>
+            <image>wireweave.png</image>
+            <related>
 
             </related>
         </wireweave>
-	
-	
-	
-	
-	
+
+
+
+
+
     <!-- Smelting -->
         <!-- Charcoal -->
         <charcoal>
-            <name>charcoal</name>        	<!-- Nom de l'item -->
-            <id>chrcl</id>                  <!-- Id de l'item -->
-            <jobId>0</jobId>                <!-- ID du job au quel est relié l'item -->
-            <image>charcoal.png</image>   	<!-- Image de l'item (l'image est à mettre dans : "data/image/materials" -->
-            <related>                       <!-- Les items qui sont nécessaires -->
-                <rel0>                      <!-- Mettre rel0, rel1, rel2, .... -->
-                    <id>grnwd</id>          <!-- ID de l'item qui doit être utilisé -->
-                    <number>2</number>      <!-- Nombre minimum nécessaire -->
+            <name>charcoal</name>
+            <id>chrcl</id>
+            <jobId>0</jobId>
+            <image>charcoal.png</image>
+            <related>
+                <rel0>
+                    <id>grnwd</id>
+                    <number>2</number>
                 </rel0>
             </related>
         </charcoal>
@@ -207,7 +209,7 @@
         </platinum_ore>
 
 
-		
+
         <!-- Ingots -->
         <iron_ingot>
             <name>iron_ingot</name>
@@ -310,7 +312,7 @@
                 <rel1>
                     <id>silin</id>
                     <number>2</number>
-					<details>true</details>
+                    <details>true</details>
                 </rel1>
             </related>
         </gold_ingot>
@@ -328,7 +330,7 @@
                 <rel1>
                     <id>godin</id>
                     <number>2</number>
-					<details>true</details>
+                    <details>true</details>
                 </rel1>
             </related>
         </platinum_ingot>
@@ -342,7 +344,7 @@
                 <rel0>
                     <id>orcin</id>
                     <number>5</number>
-					<details>true</details>
+                    <details>true</details>
                 </rel0>
                 <rel1>
                     <id>tlvim</id>
@@ -362,465 +364,465 @@
                 </rel4>
             </related>
         </asmodeum>
-		
-		
-		
-		
-		
-	<!-- Woodworking -->
+
+
+
+
+
+    <!-- Woodworking -->
         <!-- Woods -->
         <greenwood>
-            <name>greenwood</name>        	
-            <id>grnwd</id>                  
-            <jobId>1</jobId>                
-            <image>greenwood.png</image>   	
-            <related>                       
+            <name>greenwood</name>
+            <id>grnwd</id>
+            <jobId>1</jobId>
+            <image>greenwood.png</image>
+            <related>
 
             </related>
         </greenwood>
-		
-		<aged_wood>
+
+        <aged_wood>
             <name>aged_wood</name>
             <id>agdwd</id>
             <jobId>1</jobId>
             <image>aged_wood.png</image>
             <related>
-            
+
             </related>
         </aged_wood>
-		
-		<wyrdwood>
+
+        <wyrdwood>
             <name>wyrdwood</name>
             <id>wrdwd</id>
             <jobId>1</jobId>
             <image>wyrdwood.png</image>
             <related>
-            
+
             </related>
         </wyrdwood>
-		
-		<ironwood>
+
+        <ironwood>
             <name>ironwood</name>
             <id>irnwd</id>
             <jobId>1</jobId>
             <image>ironwood.png</image>
             <related>
-            
+
             </related>
         </ironwood>
-		
-		<wildwood>
+
+        <wildwood>
             <name>wildwood</name>
             <id>wldwd</id>
             <jobId>1</jobId>
             <image>wildwood.png</image>
             <related>
-            
+
             </related>
         </wildwood>
-		
-		<barbvine>
+
+        <barbvine>
             <name>barbvine</name>
             <id>brbvn</id>
             <jobId>1</jobId>
             <image>barbvine.png</image>
             <related>
-            
+
             </related>
         </barbvine>
-		
-		
-		
-		<!-- Planks -->
+
+
+
+        <!-- Planks -->
         <timber>
-            <name>timber</name>        	
-            <id>tmber</id>                  
-            <jobId>1</jobId>                
-            <image>timber.png</image>   	
-            <related>                       
-				<rel0>
+            <name>timber</name>
+            <id>tmber</id>
+            <jobId>1</jobId>
+            <image>timber.png</image>
+            <related>
+                <rel0>
                     <id>grnwd</id>
                     <number>4</number>
                 </rel0>
             </related>
         </timber>
-		
-		<lumber>
-            <name>lumber</name>        	
-            <id>lmber</id>                  
-            <jobId>1</jobId>                
-            <image>lumber.png</image>   	
-            <related>                       
-				<rel0>
+
+        <lumber>
+            <name>lumber</name>
+            <id>lmber</id>
+            <jobId>1</jobId>
+            <image>lumber.png</image>
+            <related>
+                <rel0>
                     <id>agdwd</id>
                     <number>4</number>
                 </rel0>
-				<rel1>
+                <rel1>
                     <id>tmber</id>
                     <number>2</number>
-					<details>true</details>
+                    <details>true</details>
                 </rel1>
             </related>
         </lumber>
-		
-		<wyrdwood_planks>
-            <name>wyrdwood_planks</name>        	
-            <id>wrdpk</id>                  
-            <jobId>1</jobId>                
-            <image>wyrdwood_planks.png</image>   	
-            <related>                       
-				<rel0>
+
+        <wyrdwood_planks>
+            <name>wyrdwood_planks</name>
+            <id>wrdpk</id>
+            <jobId>1</jobId>
+            <image>wyrdwood_planks.png</image>
+            <related>
+                <rel0>
                     <id>wrdwd</id>
                     <number>6</number>
                 </rel0>
-				<rel1>
+                <rel1>
                     <id>lmber</id>
                     <number>2</number>
-					<details>true</details>
+                    <details>true</details>
                 </rel1>
             </related>
         </wyrdwood_planks>
-		
-		<ironwood_planks>
-            <name>ironwood_planks</name>        	
-            <id>irnpk</id>                  
-            <jobId>1</jobId>                
-            <image>ironwood_planks.png</image>   	
-            <related>                       
-				<rel0>
+
+        <ironwood_planks>
+            <name>ironwood_planks</name>
+            <id>irnpk</id>
+            <jobId>1</jobId>
+            <image>ironwood_planks.png</image>
+            <related>
+                <rel0>
                     <id>irnwd</id>
                     <number>8</number>
                 </rel0>
-				<rel1>
+                <rel1>
                     <id>wrdpk</id>
                     <number>2</number>
-					<details>true</details>
+                    <details>true</details>
                 </rel1>
             </related>
         </ironwood_planks>
-		
-		<glittering_ebony>
-            <name>glittering_ebony</name>        	
-            <id>glteb</id>                  
-            <jobId>1</jobId>                
-            <image>glittering_ebony.png</image>   	
-            <related>                       
-				<rel0>
+
+        <glittering_ebony>
+            <name>glittering_ebony</name>
+            <id>glteb</id>
+            <jobId>1</jobId>
+            <image>glittering_ebony.png</image>
+            <related>
+                <rel0>
                     <id>irnpk</id>
                     <number>5</number>
-					<details>true</details>
+                    <details>true</details>
                 </rel0>
-				<rel1>
+                <rel1>
                     <id>wldwd</id>
                     <number>2</number>
                 </rel1>
-				<rel2>
+                <rel2>
                     <id>brbvn</id>
                     <number>1</number>
                 </rel2>
-				<rel3>
+                <rel3>
                     <id>obdsp</id>
                     <number>1</number>
                 </rel3>
             </related>
         </glittering_ebony>
-		
-		
-		
-		
-		
-		<!-- Leatherworking -->
+
+
+
+
+
+    <!-- Leatherworking -->
         <!-- Hides -->
-			<rawhide>
-                <name>rawhide</name>
-                <id>rawhd</id>
-                <jobId>2</jobId>
-                <image>rawhide.png</image>
-                <related>
+        <rawhide>
+            <name>rawhide</name>
+            <id>rawhd</id>
+            <jobId>2</jobId>
+            <image>rawhide.png</image>
+            <related>
 
-                </related>
-            </rawhide>
-			
-			<thick_hide>
-                <name>thick_hide</name>
-                <id>thchd</id>
-                <jobId>2</jobId>
-                <image>thick_hide.png</image>
-                <related>
+            </related>
+        </rawhide>
 
-                </related>
-            </thick_hide>
-			
-			<iron_hide>
-                <name>iron_hide</name>
-                <id>irnhd</id>
-                <jobId>2</jobId>
-                <image>iron_hide.png</image>
-                <related>
+        <thick_hide>
+            <name>thick_hide</name>
+            <id>thchd</id>
+            <jobId>2</jobId>
+            <image>thick_hide.png</image>
+            <related>
 
-                </related>
-            </iron_hide>
-			
-			<smolderhide>
-                <name>smolderhide</name>
-                <id>smlhd</id>
-                <jobId>2</jobId>
-                <image>smolderhide.png</image>
-                <related>
+            </related>
+        </thick_hide>
 
-                </related>
-            </smolderhide>
-			
-			<scarhide>
-                <name>scarhide</name>
-                <id>scrhd</id>
-                <jobId>2</jobId>
-                <image>scarhide.png</image>
-                <related>
+        <iron_hide>
+            <name>iron_hide</name>
+            <id>irnhd</id>
+            <jobId>2</jobId>
+            <image>iron_hide.png</image>
+            <related>
 
-                </related>
-            </scarhide>
-			
-			
-			
+            </related>
+        </iron_hide>
+
+        <smolderhide>
+            <name>smolderhide</name>
+            <id>smlhd</id>
+            <jobId>2</jobId>
+            <image>smolderhide.png</image>
+            <related>
+
+            </related>
+        </smolderhide>
+
+        <scarhide>
+            <name>scarhide</name>
+            <id>scrhd</id>
+            <jobId>2</jobId>
+            <image>scarhide.png</image>
+            <related>
+
+            </related>
+        </scarhide>
+
+
+
         <!-- Leathers -->
-			<coarse_leather>
-                <name>coarse_leather</name>
-                <id>crslt</id>
-                <jobId>2</jobId>
-                <image>coarse_leather.png</image>
-                <related>
-					<rel0>
-                        <id>rawhd</id>
-                        <number>4</number>
-                    </rel0>
-                </related>
-            </coarse_leather>
-			
-			<rugged_leather>
-                <name>rugged_leather</name>
-                <id>rgdlt</id>
-                <jobId>2</jobId>
-                <image>rugged_leather.png</image>
-                <related>
-					<rel0>
-                        <id>crslt</id>
-                        <number>4</number>
-						<details>true</details>
-                    </rel0>
-                </related>
-            </rugged_leather>
-			
-			<layered_leather>
-                <name>layered_leather</name>
-                <id>laylt</id>
-                <jobId>2</jobId>
-                <image>layered_leather.png</image>
-                <related>
-					<rel0>
-                        <id>thchd</id>
-                        <number>6</number>
-                    </rel0>
-					<rel1>
-                        <id>rgdlt</id>
-                        <number>2</number>
-						<details>true</details>
-                    </rel1>
-                </related>
-            </layered_leather>
-			
-			<infused_leather>
-                <name>infused_leather</name>
-                <id>inflt</id>
-                <jobId>2</jobId>
-                <image>infused_leather.png</image>
-                <related>
-					<rel0>
-                        <id>irnhd</id>
-                        <number>8</number>
-                    </rel0>
-					<rel1>
-                        <id>laylt</id>
-                        <number>2</number>
-						<details>true</details>
-                    </rel1>
-                </related>
-            </infused_leather>
-			
-			<runic_leather>
-                <name>runic_leather</name>
-                <id>runlt</id>
-                <jobId>2</jobId>
-                <image>runic_leather.png</image>
-                <related>
-					<rel0>
-                        <id>inflt</id>
-                        <number>5</number>
-						<details>true</details>
-                    </rel0>
-					<rel1>
-                        <id>smlhd</id>
-                        <number>1</number>
-                    </rel1>
-					<rel2>
-                        <id>scrhd</id>
-                        <number>1</number>
-                    </rel2>
-					<rel3>
-                        <id>agdtn</id>
-                        <number>1</number>
-                    </rel3>
-                </related>
-            </runic_leather>
-		
-		
-		
-		
-		
-	<!-- Weaving -->
-		<!-- Fibers -->
-			<fibers>
-				<name>fibers</name>        	
-				<id>basfb</id>                  
-				<jobId>3</jobId>                
-				<image>fibers.png</image>   	
-				<related>                       
-	
-				</related>
-			</fibers>
-			
-			<silk_threads>
-				<name>silk_threads</name>        	
-				<id>slkfb</id>                  
-				<jobId>3</jobId>                
-				<image>silk_threads.png</image>   	
-				<related>                       
-	
-				</related>
-			</silk_threads>
-			
-			<wirefiber>
-				<name>wirefiber</name>        	
-				<id>wrefb</id>                  
-				<jobId>3</jobId>                
-				<image>wirefiber.png</image>   	
-				<related>                       
-	
-				</related>
-			</wirefiber>
-			
-			<scalecloth>
-				<name>scalecloth</name>        	
-				<id>scacl</id>                  
-				<jobId>3</jobId>                
-				<image>scalecloth.png</image>   	
-				<related>                       
+        <coarse_leather>
+            <name>coarse_leather</name>
+            <id>crslt</id>
+            <jobId>2</jobId>
+            <image>coarse_leather.png</image>
+            <related>
+                <rel0>
+                    <id>rawhd</id>
+                    <number>4</number>
+                </rel0>
+            </related>
+        </coarse_leather>
 
-				</related>
-			</scalecloth>
-			
-			<blisterweave>
-				<name>blisterweave</name>        	
-				<id>blicl</id>                  
-				<jobId>3</jobId>                
-				<image>blisterweave.png</image>   	
-				<related>                       
+        <rugged_leather>
+            <name>rugged_leather</name>
+            <id>rgdlt</id>
+            <jobId>2</jobId>
+            <image>rugged_leather.png</image>
+            <related>
+                <rel0>
+                    <id>crslt</id>
+                    <number>4</number>
+                    <details>true</details>
+                </rel0>
+            </related>
+        </rugged_leather>
 
-				</related>
-			</blisterweave>
-			
-			
-			
-		<!-- Cloths -->
-			<linen>
-				<name>linen</name>        	
-				<id>lincl</id>                  
-				<jobId>3</jobId>                
-				<image>linen.png</image>   	
-				<related>                       
-					<rel0>
-                        <id>basfb</id>
-                        <number>4</number>
-                    </rel0>
-				</related>
-			</linen>
-			
-			<sateen>
-				<name>sateen</name>        	
-				<id>satcl</id>                  
-				<jobId>3</jobId>                
-				<image>sateen.png</image>   	
-				<related>                       
-					<rel0>
-                        <id>lincl</id>
-                        <number>4</number>
-						<details>true</details>
-                    </rel0>
-				</related>
-			</sateen>
-			
-			<silk>
-				<name>silk</name>        	
-				<id>slkcl</id>                  
-				<jobId>3</jobId>                
-				<image>silk.png</image>   	
-				<related>                       
-					<rel0>
-                        <id>slkfb</id>
-                        <number>6</number>
-                    </rel0>
-					<rel1>
-                        <id>satcl</id>
-                        <number>2</number>
-						<details>true</details>
-                    </rel1>
-				</related>
-			</silk>
-			
-			<infused_silk>
-				<name>infused_silk</name>        	
-				<id>infcl</id>                  
-				<jobId>3</jobId>                
-				<image>infused_silk.png</image>   	
-				<related>                       
-					<rel0>
-                        <id>wrefb</id>
-                        <number>8</number>
-                    </rel0>
-					<rel1>
-                        <id>slkcl</id>
-                        <number>2</number>
-						<details>true</details>
-                    </rel1>
-				</related>
-			</infused_silk>
-			
-			<phoenixweave>
-				<name>phoenixweave</name>        	
-				<id>phxcl</id>                  
-				<jobId>3</jobId>                
-				<image>phoenixweave.png</image>   	
-				<related>                       
-					<rel0>
-                        <id>infcl</id>
-                        <number>5</number>
-						<details>true</details>
-                    </rel0>
-					<rel0>
-                        <id>scacl</id>
-                        <number>1</number>
-                    </rel0>
-					<rel0>
-                        <id>blicl</id>
-                        <number>1</number>
-                    </rel0>
-					<rel0>
-                        <id>wrwve</id>
-                        <number>1</number>
-                    </rel0>
-				</related>
-			</phoenixweave>
-			
+        <layered_leather>
+            <name>layered_leather</name>
+            <id>laylt</id>
+            <jobId>2</jobId>
+            <image>layered_leather.png</image>
+            <related>
+                <rel0>
+                    <id>thchd</id>
+                    <number>6</number>
+                </rel0>
+                <rel1>
+                    <id>rgdlt</id>
+                    <number>2</number>
+                    <details>true</details>
+                </rel1>
+            </related>
+        </layered_leather>
+
+        <infused_leather>
+            <name>infused_leather</name>
+            <id>inflt</id>
+            <jobId>2</jobId>
+            <image>infused_leather.png</image>
+            <related>
+                <rel0>
+                    <id>irnhd</id>
+                    <number>8</number>
+                </rel0>
+                <rel1>
+                    <id>laylt</id>
+                    <number>2</number>
+                    <details>true</details>
+                </rel1>
+            </related>
+        </infused_leather>
+
+        <runic_leather>
+            <name>runic_leather</name>
+            <id>runlt</id>
+            <jobId>2</jobId>
+            <image>runic_leather.png</image>
+            <related>
+                <rel0>
+                    <id>inflt</id>
+                    <number>5</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>smlhd</id>
+                    <number>1</number>
+                </rel1>
+                <rel2>
+                    <id>scrhd</id>
+                    <number>1</number>
+                </rel2>
+                <rel3>
+                    <id>agdtn</id>
+                    <number>1</number>
+                </rel3>
+            </related>
+        </runic_leather>
+
+
+
+
+
+    <!-- Weaving -->
+        <!-- Fibers -->
+        <fibers>
+            <name>fibers</name>
+            <id>basfb</id>
+            <jobId>3</jobId>
+            <image>fibers.png</image>
+            <related>
+
+            </related>
+        </fibers>
+
+        <silk_threads>
+            <name>silk_threads</name>
+            <id>slkfb</id>
+            <jobId>3</jobId>
+            <image>silk_threads.png</image>
+            <related>
+
+            </related>
+        </silk_threads>
+
+        <wirefiber>
+            <name>wirefiber</name>
+            <id>wrefb</id>
+            <jobId>3</jobId>
+            <image>wirefiber.png</image>
+            <related>
+
+            </related>
+        </wirefiber>
+
+        <scalecloth>
+            <name>scalecloth</name>
+            <id>scacl</id>
+            <jobId>3</jobId>
+            <image>scalecloth.png</image>
+            <related>
+
+            </related>
+        </scalecloth>
+
+        <blisterweave>
+            <name>blisterweave</name>
+            <id>blicl</id>
+            <jobId>3</jobId>
+            <image>blisterweave.png</image>
+            <related>
+
+            </related>
+        </blisterweave>
+
+
+
+        <!-- Cloths -->
+        <linen>
+            <name>linen</name>
+            <id>lincl</id>
+            <jobId>3</jobId>
+            <image>linen.png</image>
+            <related>
+                <rel0>
+                    <id>basfb</id>
+                    <number>4</number>
+                </rel0>
+            </related>
+        </linen>
+
+        <sateen>
+            <name>sateen</name>
+            <id>satcl</id>
+            <jobId>3</jobId>
+            <image>sateen.png</image>
+            <related>
+                <rel0>
+                    <id>lincl</id>
+                    <number>4</number>
+                    <details>true</details>
+                </rel0>
+            </related>
+        </sateen>
+
+        <silk>
+            <name>silk</name>
+            <id>slkcl</id>
+            <jobId>3</jobId>
+            <image>silk.png</image>
+            <related>
+                <rel0>
+                    <id>slkfb</id>
+                    <number>6</number>
+                </rel0>
+                <rel1>
+                    <id>satcl</id>
+                    <number>2</number>
+                    <details>true</details>
+                </rel1>
+            </related>
+        </silk>
+
+        <infused_silk>
+            <name>infused_silk</name>
+            <id>infcl</id>
+            <jobId>3</jobId>
+            <image>infused_silk.png</image>
+            <related>
+                <rel0>
+                    <id>wrefb</id>
+                    <number>8</number>
+                </rel0>
+                <rel1>
+                    <id>slkcl</id>
+                    <number>2</number>
+                    <details>true</details>
+                </rel1>
+            </related>
+        </infused_silk>
+
+        <phoenixweave>
+            <name>phoenixweave</name>
+            <id>phxcl</id>
+            <jobId>3</jobId>
+            <image>phoenixweave.png</image>
+            <related>
+                <rel0>
+                    <id>infcl</id>
+                    <number>5</number>
+                    <details>true</details>
+                </rel0>
+                <rel0>
+                    <id>scacl</id>
+                    <number>1</number>
+                </rel0>
+                <rel0>
+                    <id>blicl</id>
+                    <number>1</number>
+                </rel0>
+                <rel0>
+                    <id>wrwve</id>
+                    <number>1</number>
+                </rel0>
+            </related>
+        </phoenixweave>
+
     </materials>
 
 </data>
@@ -828,14 +830,15 @@
 <!-- TEMP, modèle c/c
 
             <>
-                <name></name>
-                <id></id>
-                <jobId>2</jobId>
-                <image>.png</image>
-                <related>
-                    <rel0>
-                        <id></id>
-                        <number></number>
+                <name></name>                                Nom de l'item
+                <id></id>                                    Id de l'item 
+                <jobId>2</jobId>                             ID du job au quel est relié l'item 
+                <image>.png</image>                          Image de l'item (l'image est à mettre dans : "data/image/materials" 
+                <related>                                    Les items qui sont nécessaires 
+                    <rel0>                                   Mettre rel0, rel1, rel2, .... 
+                        <id></id>                            ID de l'item qui doit être utilisé 
+                        <number></number>                    Nombre minimum nécessaire
+                        <details>true</details>              Affiche une seconde barre de détails des composants
                     </rel0>
                 </related>
             </>
