@@ -2,86 +2,86 @@
 
 <lang> <!-- les balises doivent avoir le même nom que le nom de l'item -->
 
-	<materials>
-		<!-- Refining Materials -->
-		<!-- Seulement si le compo est spécifiquement demandé, sinon le ratio est toujours libre et 1:1 donc inutile de l'ajouter -->
-		<obsidian_flux>Obsidian Flux</obsidian_flux>
-		<obsidian_sandpaper>Obsidian Sandpaper</obsidian_sandpaper>
-		<aged_tanning>Aged Tannin</aged_tanning>
-		<wireweave>Wireweave</wireweave>
+    <materials>
+        <!-- Refining Materials -->
+        <!-- Seulement si le compo est spécifiquement demandé, sinon le ratio est toujours libre et 1:1 donc inutile de l'ajouter -->
+        <obsidian_flux>Obsidian Flux</obsidian_flux>
+        <obsidian_sandpaper>Obsidian Sandpaper</obsidian_sandpaper>
+        <aged_tanning>Aged Tannin</aged_tanning>
+        <wireweave>Wireweave</wireweave>
 
-		<!-- Smelting -->
-		<!-- Charcoal -->
-		<charcoal>Charcoal</charcoal>
+        <!-- Smelting -->
+        <!-- Charcoal -->
+        <charcoal>Charcoal</charcoal>
 
-		<!-- Ores -->
-		<iron_ore>Iron Ore</iron_ore>
-		<silver_ore>Silver Ore</silver_ore>
-		<starmetal_ore>Starmetal Ore</starmetal_ore>
-		<orichalcum_ore>Orichalcum Ore</orichalcum_ore>
-		<gold_ore>Gold Ore</gold_ore>
-		<platinum_ore>Platinum Ore</platinum_ore>
-		<tolvium>Tolvium</tolvium>
-		<cinnabar>Cinnabar</cinnabar>
+        <!-- Ores -->
+        <iron_ore>Iron Ore</iron_ore>
+        <silver_ore>Silver Ore</silver_ore>
+        <starmetal_ore>Starmetal Ore</starmetal_ore>
+        <orichalcum_ore>Orichalcum Ore</orichalcum_ore>
+        <gold_ore>Gold Ore</gold_ore>
+        <platinum_ore>Platinum Ore</platinum_ore>
+        <tolvium>Tolvium</tolvium>
+        <cinnabar>Cinnabar</cinnabar>
 
-		<!-- Ingots -->
-		<iron_ingot>Iron Ingot</iron_ingot>
-		<steel_ingot>Steel Ingot</steel_ingot>
-		<starmetal_ingot>Starmetal Ingot</starmetal_ingot>
-		<orichalcum_ingot>Orichalcum Ingot</orichalcum_ingot>
-		<silver_ingot>Silver Ingot</silver_ingot>
-		<gold_ingot>Gold Ingot</gold_ingot>
-		<platinum_ingot>Platinum Ingot</platinum_ingot>
-		<asmodeum>Asmodeum</asmodeum>
-		<!-- <voidbent_ingot>Voidbent Ingot</voidbent_ingot>
-		^réfléchir à un moyen de l'intégrer différemment vu les compos requis -->
+        <!-- Ingots -->
+        <iron_ingot>Iron Ingot</iron_ingot>
+        <steel_ingot>Steel Ingot</steel_ingot>
+        <starmetal_ingot>Starmetal Ingot</starmetal_ingot>
+        <orichalcum_ingot>Orichalcum Ingot</orichalcum_ingot>
+        <silver_ingot>Silver Ingot</silver_ingot>
+        <gold_ingot>Gold Ingot</gold_ingot>
+        <platinum_ingot>Platinum Ingot</platinum_ingot>
+        <asmodeum>Asmodeum</asmodeum>
+        <!-- <voidbent_ingot>Voidbent Ingot</voidbent_ingot>
+        ^réfléchir à un moyen de l'intégrer différemment vu les compos requis -->
 
-		<!-- Woodworking -->
-		<!-- Woods -->
-		<green_wood>Green Wood</green_wood>
-		<aged_wood>Aged Wood</aged_wood>
-		<wyrdwood>Wyrdwood</wyrdwood>
-		<ironwood>Ironwood</ironwood>
-		<wildwood>Wildwood</wildwood>
-		<barbvine>Barbvine</barbvine>
+        <!-- Woodworking -->
+        <!-- Woods -->
+        <green_wood>Green Wood</green_wood>
+        <aged_wood>Aged Wood</aged_wood>
+        <wyrdwood>Wyrdwood</wyrdwood>
+        <ironwood>Ironwood</ironwood>
+        <wildwood>Wildwood</wildwood>
+        <barbvine>Barbvine</barbvine>
 
-		<!-- Planks -->
-		<timber>Timber</timber>
-		<lumber>Lumber</lumber>
-		<wyrdwood_planks>Wyrdwood Planks</wyrdwood_planks>
-		<ironwood_planks>Ironwood PLanks</ironwood_planks>
-		<glittering_ebony>Glittering Ebony</glittering_ebony>
+        <!-- Planks -->
+        <timber>Timber</timber>
+        <lumber>Lumber</lumber>
+        <wyrdwood_planks>Wyrdwood Planks</wyrdwood_planks>
+        <ironwood_planks>Ironwood PLanks</ironwood_planks>
+        <glittering_ebony>Glittering Ebony</glittering_ebony>
 
-		<!-- Leatherworking -->
-		<!-- Hides -->
-		<rawhide>Rawhide</rawhide>
-		<thick_hide>Thick Hide</thick_hide>
-		<iron_hide>Iron Hide</iron_hide>
-		<smolderhide>Smolderhide</smolderhide>
-		<scarhide>Scarhide</scarhide>
+        <!-- Leatherworking -->
+        <!-- Hides -->
+        <rawhide>Rawhide</rawhide>
+        <thick_hide>Thick Hide</thick_hide>
+        <iron_hide>Iron Hide</iron_hide>
+        <smolderhide>Smolderhide</smolderhide>
+        <scarhide>Scarhide</scarhide>
 
-		<!-- Leathers -->
-		<coarse_leather>Coarse Leather</coarse_leather>
-		<rugged_leather>Rugged Leather</rugged_leather>
-		<layered_leather>Layered Leather</layered_leather>
-		<infused_leather>Infused Leather</infused_leather>
-		<runic_leather>Runic Leather</runic_leather>
+        <!-- Leathers -->
+        <coarse_leather>Coarse Leather</coarse_leather>
+        <rugged_leather>Rugged Leather</rugged_leather>
+        <layered_leather>Layered Leather</layered_leather>
+        <infused_leather>Infused Leather</infused_leather>
+        <runic_leather>Runic Leather</runic_leather>
 
-		<!-- Weaving -->
-		<!-- Fibers -->
-		<fibers>Fibers</fibers>
-		<silk_threads>Silk Threads</silk_threads>
-		<wirefiber>Wirefiber</wirefiber>
+        <!-- Weaving -->
+        <!-- Fibers -->
+        <fibers>Fibers</fibers>
+        <silk_threads>Silk Threads</silk_threads>
+        <wirefiber>Wirefiber</wirefiber>
 
-		<!-- Cloths -->
-		<linen>Linen</linen>
-		<sateen>Sateen</sateen>
-		<silk>Silk</silk>
-		<infused_silk>Infused Silk</infused_silk>
-		<phoenixweave>Phoenixweave</phoenixweave>
-		<scalecloth>Scalecloth</scalecloth>
-		<blisterweave>Blisterwweave</blisterweave>
+        <!-- Cloths -->
+        <linen>Linen</linen>
+        <sateen>Sateen</sateen>
+        <silk>Silk</silk>
+        <infused_silk>Infused Silk</infused_silk>
+        <phoenixweave>Phoenixweave</phoenixweave>
+        <scalecloth>Scalecloth</scalecloth>
+        <blisterweave>Blisterwweave</blisterweave>
 
-	</materials>
+    </materials>
 
 </lang>

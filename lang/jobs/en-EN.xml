@@ -2,14 +2,14 @@
 
 <lang>
 
-	<jobs>
+    <jobs>
 
-		<smelting>Smelting</smelting>
-		<woodworking>Woodworking</woodworking>
-		<leatherworking>Leatherworking</leatherworking>
-		<weaving>Weaving</weaving>
-		<stonecutting>Stonecutting</stonecutting>
+        <smelting>Smelting</smelting>
+        <woodworking>Woodworking</woodworking>
+        <leatherworking>Leatherworking</leatherworking>
+        <weaving>Weaving</weaving>
+        <stonecutting>Stonecutting</stonecutting>
 
-	</jobs>
+    </jobs>
 
 </lang>
