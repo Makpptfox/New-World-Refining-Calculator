@@ -3,3 +3,4 @@ new-world-refining-calculator.iml
 node_modules
 dist
 .idea
+.vs
