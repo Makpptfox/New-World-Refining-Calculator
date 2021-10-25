@@ -7,8 +7,8 @@ const neededParameters = ["dataType", "title"]
 const directory = [path.join(process.cwd(), "data", "jobs"), path.join(process.cwd(), "data", "materials")]
 
 const dataTag = {
-    jobs: ["name", "id"],
-    materials: ["name", "id", "jobId", "related", "image"]
+    jobs: ["name", "id","cats"],
+    materials: ["name", "id", "jobId", "related", "image", "cat"]
 }
 
 const parser = new xml2js.Parser();
@@ -154,6 +154,7 @@ async function getDataFrom(path, callback){
     let Rdata = {};
 
     await getXMLData(path, (data)=>{
+
 
         let dataType = data['data']['dataType'][0].toLowerCase();
 

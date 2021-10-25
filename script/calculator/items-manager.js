@@ -1,96 +1,5 @@
-let addedItem = {};
 
-let abortEvent = new AbortController();
-
-let alreadyAvailable;
-
-const inputEventCustom = new InputEvent('editData');
-
-
-let availableItem = [];
-
-Object.size = function(obj) {
-    let size = 0,
-        key;
-    for (key in obj) {
-        if (obj.hasOwnProperty(key)) size++;
-    }
-    return size;
-};
-
-function loadJobs(){
-
-    window.api.sendAsync('getAllJobs');
-
-    window.api.receiveOnce('getAllJobsResponse', (data)=>{
-
-        window.api.sendAsync('getDataFrom', data['jobs']);
-
-    })
-
-    window.api.receiveOnce('getDataFromResponse', (data)=>{
-
-        data["jobs"].forEach(elem=>{
-
-            window.api.sendAsync('getLang', "jobs", elem);
-
-            window.api.receive("getLangResponse", (type, RElem)=>{
-                if(type === "jobs" && elem.id === RElem.id){
-                    let template = document.getElementById('templateMenuBarItem');
-
-                    let mainMenuBar = document.getElementById("mainMenuBar");
-
-                    let clone = template.content.cloneNode(true);
-
-                    let title = clone.querySelector("p.titleItem");
-                    let button = clone.querySelector("div.menuBarItem");
-
-                    button.addEventListener('click', ()=>{
-                        let mainMenuBar = document.getElementById("itemListBar");
-
-                        mainMenuBar.innerText = "";
-
-                        const titleBarTemplate = document.getElementById("templateMenuJobTitle");
-
-                        const titleBar = titleBarTemplate.content.cloneNode(true);
-
-                        const text = titleBar.querySelector("p.jobTitle");
-
-                        window.api.sendAsync('getLang', "ui");
-
-                        new Promise((resolve, reject) => {window.api.receiveOnce('getLangResponse', (type, data)=>{
-
-                            if(type === "ui") {
-
-                                text.innerText = data["titleItemBar"][0] + " " + RElem.name
-
-                                resolve();
-
-                            }
-
-                        })}).then(()=>{
-
-                            mainMenuBar.appendChild(titleBar);
-
-                            loadItemJobs(RElem.id);
-
-                        })
-
-
-                    })
-
-                    title.innerText = RElem.name;
-
-                    mainMenuBar.appendChild(clone);
-                }
-            })
-
-
-        })
-
-    })
-}
-
+// Function to get all items of the xml data file
 function loadAvailableItems(){
 
     alreadyAvailable = true;
@@ -102,8 +11,6 @@ function loadAvailableItems(){
         let materials = data['materials'];
 
         for await (let material of materials) {
-
-            console.count('forMaterial');
 
             await window.api.sendAsync('getLang', "item", material, 99);
 
@@ -122,83 +29,8 @@ function loadAvailableItems(){
 
 }
 
-function loadItemJobs(jobId){
-    let mainMenuBar = document.getElementById("itemListBar");
-
-    window.api.sendAsync('getAllItems');
-
-    window.api.receiveOnce('getAllItemsResponse', async (data)=>{
-
-        let materials = data['materials']
-
-        for await (let material of materials){
-
-            if(jobId.toString() === material.jobId){
-                try {
-                    await window.api.sendAsync('getLang', "item", material);
-
-                    await new Promise((resolve, reject) => {
-                        window.api.receiveOnce("getLangResponse", (type, RElem) => {
-                            if (type === "item" && material.id === RElem.id) {
-
-                                let template = document.getElementById('templateMenuJobItem');
-
-                                let clone = template.content.cloneNode(true);
-
-                                let title = clone.querySelector("p.titleItem");
-                                let img = clone.querySelector("img.resourceIcon");
-
-                                let button = clone.querySelector("div.buttonAddItem");
-
-
-                                window.api.sendAsync('getLang', "ui");
-
-                                new Promise((resolve1, reject) => {window.api.receiveOnce('getLangResponse', (type, data)=>{
-
-                                    if(type === "ui") {
-
-                                        button.innerText = data["addItem"][0]
-
-                                        resolve1();
-
-                                    }
-
-                                })}).then(()=> {
-
-                                    button.addEventListener("click", () => {
-
-                                        addItem(RElem);
-
-                                    });
-
-                                    img.src = window.api.cwd + "/data/image/materials/" + RElem.image
-                                    title.innerText = RElem.name;
-
-                                    mainMenuBar.appendChild(clone);
-
-
-                                    resolve();
-                                })
-
-                            }
-                        })
-                    })
-
-                } catch (e){
-                    console.error(e);
-                }
-            }
-
-
-        }
-
-    })
-
-
-
-}
-
-function addItem(elem) {
+// Function to add item to the calculator
+function addItem(elem, baseValue = 1, callback = ()=>{console.log("addItemEnd")}, save = true) {
 
     let personal = elem;
 
@@ -228,12 +60,15 @@ function addItem(elem) {
 
     dragZone.src = window.api.cwd+"/data/image/ui/drag.png";
 
-    originNumber.value = 1;
+    originNumber.value = baseValue;
     originImage.src = window.api.cwd+"/data/image/materials/" + personal.image;
 
     originNumber.addEventListener("input", (e) => {
 
+        saveData();
+
         let related = addedItem[e.target.parentElement.id]['children'];
+        addedItem[e.target.parentElement.id]['value'] = e.target.value;
 
         let value = e.target.value;
         if (Object.size(related) !== 0) {
@@ -290,7 +125,7 @@ function addItem(elem) {
                         arrow.src = window.api.cwd+"/data/image/ui/plus_white.png";
 
 
-                        numberRelated.value = number;
+                        numberRelated.value = baseValue*number;
                         imageRelated.src = window.api.cwd+"/data/image/materials/" + child.image;
 
                         window.api.sendAsync('getUID');
@@ -347,13 +182,14 @@ function addItem(elem) {
                                 if(complex){
 
                                     cloneRelated.querySelector('img.showBar').style.display = "inherit";
+                                    cloneRelated.querySelector('img.showBar').src = window.api.cwd+"/data/image/ui/down-arrow_white.png"
                                     cloneRelated.querySelector('div.relatedItem').style.cursor = "pointer";
 
                                     cloneRelated.querySelector('div.relatedItem').addEventListener('click', (e)=>{
 
                                     })
 
-                                    addSubItem(originCounter.parentElement, child, number, inputRelated, inputRelated);
+                                    addSubItem(originCounter.parentElement, child, inputRelated.value, inputRelated, inputRelated);
 
                                 }
                                 originCounter.appendChild(cloneRelated);
@@ -362,6 +198,7 @@ function addItem(elem) {
 
                                     uid: uid,
                                     number: number,
+                                    elem: child,
                                     id: id,
                                     parent: originID.id
 
@@ -410,6 +247,8 @@ function addItem(elem) {
             addedItem[originID.id] = {
 
                 parent: originID.id,
+                elem: elem,
+                value: baseValue,
                 children: childs
 
             };
@@ -422,14 +261,19 @@ function addItem(elem) {
             children: childs
         }
 
+        callback();
+
         const onItemAdded = new CustomEvent('onItemAdded', {'detail': data});
 
         document.dispatchEvent(onItemAdded);
+
+        if(save) saveData();
 
     })
 
 }
 
+// Function to add sub-bar to item when complex data is detected
 async function addSubItem(div, elem, number, inputEvent, self, event = null){
 
     let templateDetailsRelatedItem = document.getElementById('templateDetailsRelatedItem');
@@ -512,8 +356,7 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null){
     needToBeAdded.forEach(need=>{
 
         if(event !== null){
-            console.table(need)
-            addSubItem(need.div, need.child, need.number, need.inputEvent, self, need.event);
+            addSubItem(need.div, need.child, need.number, need.inputEvent, need.self, need.event);
         } else {
             addSubItem(need.div, need.child, need.number, need.inputEvent, need.self, need.event);
         }
@@ -562,13 +405,7 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null){
 
 }
 
-
-function closeMenu(){
-
-
-
-}
-
+// Function to add related item to the main item
 function addRelatedToChild(elem, relatedElement, number, index, div, clone, needToBeAdded, inputRel){
 
     let rel = elem.related[relatedElement]
@@ -626,22 +463,5 @@ function addRelatedToChild(elem, relatedElement, number, index, div, clone, need
     index++;
 }
 
-
-/*function loadLang(){
-
-    let removeAll = document.getElementById("removeAll");
-
-    window.api.sendAsync('getLang', "ui");
-
-    window.api.receiveOnce('getLangResponse', (type, data)=>{
-
-        console.log(data["removeall"]);
-
-        removeAll.innerText = data["removeall"][0];
-
-    })
-
-}*/
+// Check if the load of availableItems was already done
 if(!alreadyAvailable) loadAvailableItems();
-loadJobs();
-

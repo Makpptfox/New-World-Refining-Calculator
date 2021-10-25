@@ -823,6 +823,35 @@
             </related>
         </phoenixweave>
 
+<!--        TEST ITEM CAN BE DELETED IN PACKAGED SOFTWARE -->
+
+        <testItem>
+            <name>phoenixweave</name>
+            <id>test</id>
+            <jobId>4</jobId>
+            <image>phoenixweave.png</image>
+            <cat>ncutrar</cat>
+            <related>
+                <rel0>
+                    <id>infcl</id>
+                    <number>5</number>
+                    <details>true</details>
+                </rel0>
+                <rel0>
+                    <id>scacl</id>
+                    <number>1</number>
+                </rel0>
+                <rel0>
+                    <id>blicl</id>
+                    <number>1</number>
+                </rel0>
+                <rel0>
+                    <id>wrwve</id>
+                    <number>1</number>
+                </rel0>
+            </related>
+        </testItem>
+
     </materials>
 
 </data>

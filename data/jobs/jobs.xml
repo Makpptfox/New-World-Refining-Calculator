@@ -29,6 +29,34 @@
         <stonecutting>
             <name>Stonecutting</name>
             <id>4</id>
+            <cats>
+
+                <uncut>
+                    <sub0>
+                        <color>#71FF70</color>
+                        <name>common</name>
+                        <id>ncutcom</id>
+                    </sub0>
+                    <sub1>
+                        <color>#60C1FF</color>
+                        <name>rare</name>
+                        <id>ncutrar</id>
+                    </sub1>
+                </uncut>
+                <cut>
+                    <sub0>
+                        <color>#71FF70</color>
+                        <name>common</name>
+                        <id>cutcom</id>
+                    </sub0>
+                    <sub1>
+                        <color>#60C1FF</color>
+                        <name>rare</name>
+                        <id>cutrar</id>
+                    </sub1>
+                </cut>
+
+            </cats>
         </stonecutting>
 
     </jobs>

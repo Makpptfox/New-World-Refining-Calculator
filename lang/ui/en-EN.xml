@@ -7,6 +7,9 @@
         <removeall>Remove All</removeall>
         <titleItemBar>Items for</titleItemBar>
         <addItem>Add</addItem>
+        <defaultTab>Default</defaultTab>
+        <addTab>+ New tab</addTab>
+        <removeTab>Remove tab</removeTab>
 
     </default>
 

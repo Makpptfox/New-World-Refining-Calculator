@@ -9,9 +9,10 @@ const { v4: uuidv4 } = require('uuid');
 // Expose protected methods that allow the renderer process to use
 // the ipcRenderer without exposing the entire object
 
-let validChannelsSend = ['getAllJobs', 'getDataFrom', 'getLang', 'getAllItems', "getUID", "installUpdate", "openApp"];
+let validChannelsSend = ['getAllJobs', 'getDataFrom', 'getLang', 'getAllItems', "getUID", "installUpdate", "openApp", "getSavedTab", "saveTab", "deleteTab"];
 let validChannelsReceive = ["update_error", "update_available", "update_downloaded", "no_update",
-    'getAllJobsResponse', 'getDataFromResponse', "getLangResponse", "getAllItemsResponse", "returnUID"];
+    'getAllJobsResponse', 'getDataFromResponse', "getLangResponse", "getAllItemsResponse", "returnUID",
+    "getSavedTabResponse", "deleteTabResponse"];
 
 let uuid = uuidv4();
 
@@ -47,7 +48,9 @@ contextBridge.exposeInMainWorld(
         generateNewUid: ()=>{
             return genNewUID();
         },
-        uid: uuid
+        uid: uuid,
+
+        getLang: "en-EN"
     }
 
 );

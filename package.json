@@ -36,6 +36,7 @@
     "ajv": "^6.12.6",
     "electron-store": "^8.0.1",
     "electron-updater": "^4.3.9",
+    "mkdirp": "^1.0.4",
     "nedb-promises": "^5.0.1",
     "sortablejs": "^1.14.0",
     "uuid": "^8.3.2",

@@ -1,7 +1,11 @@
+const mkdirp = require('mkdirp');
+
 const { app, BrowserWindow, ipcMain } = require('electron');
 const { autoUpdater } = require('electron-updater');
 
 const { v4: uuidv4 } = require('uuid');
+
+const fs = require('fs');
 
 const build = true
 
@@ -53,7 +57,6 @@ async function checkDataFile(){
                 let jobPromises = []
                 jobPromises.push(new Promise(((resolve, reject) => {
                     getLangFiles("jobs",lang, (data)=>{
-
                         if(!data) {
                             resolve();
                             return;
@@ -190,6 +193,12 @@ ipcMain.on('getAllJobs', async (ipc)=>{
 
 })
 
+ipcMain.on('getUID', (ipc)=>{
+
+    mainWindows.webContents.send("returnUID", uuidv4());
+
+})
+
 /* IPC For all XML Functions */
 
 ipcMain.on('getDataFrom', async (ipc, path)=>{
@@ -214,7 +223,7 @@ ipcMain.on('getAllItems', async (ipc)=>{
 
 })
 
-ipcMain.on("getLang", async (ipc, type, elem, key = -1)=>{
+ipcMain.on("getLang", async (ipc, type, elem = null, key = -1)=>{
 
     console.log('execute getLang function');
 
@@ -235,7 +244,23 @@ ipcMain.on("getLang", async (ipc, type, elem, key = -1)=>{
 
             mainWindows.webContents.send('getLangResponse', type, job);
 
-            console.log(job);
+            console.trace(elem);
+
+            break;
+        }
+        case "rarity":{
+
+            let rarity = langJob["rarity"][0][elem.name[0].toLowerCase()];
+
+            if(rarity === undefined){
+
+                rarity = `lang: ${lang} ${elem.name[0].toLowerCase()}`
+
+            }
+
+            mainWindows.send('getLangResponse', type, rarity, key);
+
+            console.trace(rarity)
 
             break;
         }
@@ -248,7 +273,7 @@ ipcMain.on("getLang", async (ipc, type, elem, key = -1)=>{
                 related: elem.related
             };
 
-            console.log(langMaterials);
+            console.trace(langMaterials);
 
             material.name = langMaterials["materials"][0][elem.name.toLowerCase()][0];
 
@@ -258,26 +283,83 @@ ipcMain.on("getLang", async (ipc, type, elem, key = -1)=>{
 
             mainWindows.webContents.send('getLangResponse', type, material, key);
 
-            console.log(material);
+            console.trace(material);
 
             break;
         }
         case "ui":{
-            console.log(langUI["default"][0]);
+            console.trace(langUI["default"][0]);
 
-            mainWindows.webContents.send('getLangResponse', type, langUI["default"][0]);
+            mainWindows.webContents.send('getLangResponse', type, langUI["default"][0], key);
         }
 
     }
 
 })
 
-ipcMain.on('getUID', (ipc)=>{
+ipcMain.on('getSavedTab', async (ipc)=>{
 
-    mainWindows.webContents.send("returnUID", uuidv4());
+    console.log("getSavedTab");
+
+    fs.access(process.cwd()+"/data/save/tabs.json", async (err) => {
+
+        if(err !== null){
+
+            console.error(err);
+
+            let data = {
+                "default":{
+                    "data": []
+                }
+            }
+
+            await mkdirp(process.cwd()+"/data/save/");
+            fs.writeFile(process.cwd()+"/data/save/tabs.json", JSON.stringify(data), (err1)=>{
+
+                console.log("writeFile");
+                console.error(err1);
+
+                mainWindows.webContents.send('getSavedTabResponse', data, false);
+
+            })
+        } else {
+
+            fs.readFile(process.cwd()+"/data/save/tabs.json", (err1, data) => {
+
+                mainWindows.webContents.send('getSavedTabResponse', JSON.parse(data.toString("utf-8")), true);
+
+            })
+
+        }
+
+
+
+    })
 
 })
 
+ipcMain.on('deleteTab', (ipc, data)=>{
+
+    console.log("deleteTab");
+
+    fs.writeFile(process.cwd()+"/data/save/tabs.json", "", ()=>{
+        mainWindows.webContents.send('deleteTabResponse');
+    })
+
+})
+
+ipcMain.on('saveTab', (ipc, data)=>{
+
+    console.log("saveTab");
+
+    fs.writeFile(process.cwd()+"/data/save/tabs.json", JSON.stringify(data), ()=>{
+        mainWindows.webContents.send('saveTabResponse');
+    })
+
+})
+
+
+// Function for the auto-updater
 ipcMain.on('installUpdate', (ipc)=>{
     autoUpdater.quitAndInstall();
 })

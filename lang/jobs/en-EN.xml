@@ -12,4 +12,9 @@
 
     </jobs>
 
+    <rarity>
+        <common>Common</common>
+        <rare>Rare</rare>
+    </rarity>
+
 </lang>
