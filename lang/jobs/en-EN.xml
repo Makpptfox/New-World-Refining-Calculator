@@ -14,7 +14,10 @@
 
     <rarity>
         <common>Common</common>
+        <uncommon>Uncommon</uncommon>
         <rare>Rare</rare>
+        <epic>Epic</epic>
+        <legendary>Legendary</legendary>
     </rarity>
 
 </lang>

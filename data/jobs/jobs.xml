@@ -40,23 +40,23 @@
                     </sub0>-->
                     <sub1>
                         <color>#26FF5A</color>
-                        <name>Uncommon</name>
+                        <name>uncommon</name>
                         <id>ST_fus_rk1</id>
                     </sub1>
                     <sub2>
                         <color>#1CFFFF</color>
-                        <name>Rare</name>
+                        <name>rare</name>
                         <id>ST_fus_rk2</id>
                     </sub2>
                     <sub3>
                         <color>#FF55FF</color>
-                        <name>Epic</name>
+                        <name>epic</name>
                         <id>ST_fus_rk3</id>
                     </sub3>
                     <!-- Un jour peut être, NYI -->
                     <!--<sub4>
                         <color>#FF9F1C</color>
-                        <name>Legendary</name>
+                        <name>legendary</name>
                         <id>ST_fus_rk4</id>
                     </sub4>-->
                 </uncut>
@@ -64,28 +64,28 @@
                 <cut>
                     <sub0>
                         <color>#D8D8D8</color>
-                        <name>Common</name>
+                        <name>common</name>
                         <id>ST_cut_rk0</id>
                     </sub0>
                     <sub1>
                         <color>#26FF5A</color>
-                        <name>Uncommon</name>
+                        <name>uncommon</name>
                         <id>ST_cut_rk1</id>
                     </sub1>
                     <sub2>
                         <color>#1CFFFF</color>
-                        <name>Rare</name>
+                        <name>rare</name>
                         <id>ST_cut_rk2</id>
                     </sub2>
                     <sub3>
                         <color>#FF55FF</color>
-                        <name>Epic</name>
+                        <name>epic</name>
                         <id>ST_cut_rk3</id>
                     </sub3>
                     <!-- Un jour peut être, NYI -->
                     <!--<sub4>
                         <color>#FF9F1C</color>
-                        <name>Legendary</name>
+                        <name>legendary</name>
                         <id>ST_cut_rk4</id>
                     </sub4>-->
                 </cut>

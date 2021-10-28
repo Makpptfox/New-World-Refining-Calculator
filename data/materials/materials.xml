@@ -1507,7 +1507,7 @@
             <name>jasper</name>
             <id>U_U_jasper</id>
             <jobId>4</jobId>
-            <image>name.png</image>
+            <image>jasper.png</image>
             <cat>ST_fus_rk1</cat>
             <related>
                 <rel0>
@@ -1592,9 +1592,265 @@
                 </rel1>
             </related>
         </emerald>
+
+
+
+        <!-- FUSED RARE GEMS -->
+        <brilliant_onyx>
+            <name>brilliant_onyx</name>
+            <id>U_R_onyx</id>
+            <jobId>4</jobId>
+            <image>brilliant_onyx.png</image>
+            <cat>ST_fus_rk2</cat>
+            <related>
+                <rel0>
+                    <id>U_U_onyx</id>
+                    <number>4</number>
+                </rel0>
+                <rel1>
+                    <id>AR_lifec</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </brilliant_onyx>
+
+        <brilliant_aquamarine>
+            <name>brilliant_aquamarine</name>
+            <id>U_R_aquamarine</id>
+            <jobId>4</jobId>
+            <image>brilliant_aquamarine.png</image>
+            <cat>ST_fus_rk2</cat>
+            <related>
+                <rel0>
+                    <id>U_U_aquamarine</id>
+                    <number>4</number>
+                </rel0>
+                <rel1>
+                    <id>AR_wtrec</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </brilliant_aquamarine>
+
+        <brilliant_sapphire>
+            <name>brilliant_sapphire</name>
+            <id>U_R_sapphire</id>
+            <jobId>4</jobId>
+            <image>brilliant_sapphire.png</image>
+            <cat>ST_fus_rk2</cat>
+            <related>
+                <rel0>
+                    <id>U_U_sapphire</id>
+                    <number>4</number>
+                </rel0>
+                <rel1>
+                    <id>AR_dthec</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </brilliant_sapphire>
+
+        <brilliant_ruby>
+            <name>brilliant_ruby</name>
+            <id>U_R_ruby</id>
+            <jobId>4</jobId>
+            <image>brilliant_ruby.png</image>
+            <cat>ST_fus_rk2</cat>
+            <related>
+                <rel0>
+                    <id>U_U_ruby</id>
+                    <number>4</number>
+                </rel0>
+                <rel1>
+                    <id>AR_firec</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </brilliant_ruby>
+
+        <brilliant_diamond>
+            <name>brilliant_diamond</name>
+            <id>U_R_diamond</id>
+            <jobId>4</jobId>
+            <image>brilliant_diamond.png</image>
+            <cat>ST_fus_rk2</cat>
+            <related>
+                <rel0>
+                    <id>U_U_diamond</id>
+                    <number>4</number>
+                </rel0>
+                <rel1>
+                    <id>AR_lifec</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </brilliant_diamond>
+
+        <brilliant_topaz>
+            <name>brilliant_topaz</name>
+            <id>U_R_topaz</id>
+            <jobId>4</jobId>
+            <image>brilliant_topaz.png</image>
+            <cat>ST_fus_rk2</cat>
+            <related>
+                <rel0>
+                    <id>U_U_topaz</id>
+                    <number>4</number>
+                </rel0>
+                <rel1>
+                    <id>AR_airec</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </brilliant_topaz>
+
+        <brilliant_amethyst>
+            <name>brilliant_amethyst</name>
+            <id>U_R_amethyst</id>
+            <jobId>4</jobId>
+            <image>brilliant_amethyst.png</image>
+            <cat>ST_fus_rk2</cat>
+            <related>
+                <rel0>
+                    <id>U_U_amethyst</id>
+                    <number>4</number>
+                </rel0>
+                <rel1>
+                    <id>AR_solec</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </brilliant_amethyst>
+
+        <brilliant_amber>
+            <name>brilliant_amber</name>
+            <id>U_R_amber</id>
+            <jobId>4</jobId>
+            <image>brilliant_amber.png</image>
+            <cat>ST_fus_rk2</cat>
+            <related>
+                <rel0>
+                    <id>U_U_amber</id>
+                    <number>4</number>
+                </rel0>
+                <rel1>
+                    <id>AR_ertec</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </brilliant_amber>
+
+        <brilliant_malachite>
+            <name>brilliant_malachite</name>
+            <id>U_R_malachite</id>
+            <jobId>4</jobId>
+            <image>brilliant_malachite.png</image>
+            <cat>ST_fus_rk2</cat>
+            <related>
+                <rel0>
+                    <id>U_U_malachite</id>
+                    <number>4</number>
+                </rel0>
+                <rel1>
+                    <id>AR_solec</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </brilliant_malachite>
+
+        <brilliant_jasper>
+            <name>brilliant_jasper</name>
+            <id>U_R_jasper</id>
+            <jobId>4</jobId>
+            <image>brilliant_jasper.png</image>
+            <cat>ST_fus_rk2</cat>
+            <related>
+                <rel0>
+                    <id>U_U_jasper</id>
+                    <number>4</number>
+                </rel0>
+                <rel1>
+                    <id>AR_airec</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </brilliant_jasper>
+
+        <brilliant_carnelian>
+            <name>brilliant_carnelian</name>
+            <id>U_R_carnelian</id>
+            <jobId>4</jobId>
+            <image>brilliant_carnelian.png</image>
+            <cat>ST_fus_rk2</cat>
+            <related>
+                <rel0>
+                    <id>U_U_carnelian</id>
+                    <number>4</number>
+                </rel0>
+                <rel1>
+                    <id>AR_firec</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </brilliant_carnelian>
+
+        <brilliant_opal>
+            <name>brilliant_opal</name>
+            <id>U_R_opal</id>
+            <jobId>4</jobId>
+            <image>brilliant_opal.png</image>
+            <cat>ST_fus_rk2</cat>
+            <related>
+                <rel0>
+                    <id>U_U_opal</id>
+                    <number>4</number>
+                </rel0>
+                <rel1>
+                    <id>AR_solec</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </brilliant_opal>
+
+        <brilliant_moonstone>
+            <name>brilliant_moonstone</name>
+            <id>U_R_moonstone</id>
+            <jobId>4</jobId>
+            <image>brilliant_moonstone.png</image>
+            <cat>ST_fus_rk2</cat>
+            <related>
+                <rel0>
+                    <id>U_U_moonstone</id>
+                    <number>4</number>
+                </rel0>
+                <rel1>
+                    <id>AR_dthec</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </brilliant_moonstone>
+
+        <brilliant_emerald>
+            <name>brilliant_emerald</name>
+            <id>U_R_emerald</id>
+            <jobId>4</jobId>
+            <image>brilliant_emerald.png</image>
+            <cat>ST_fus_rk2</cat>
+            <related>
+                <rel0>
+                    <id>U_U_emerald</id>
+                    <number>4</number>
+                </rel0>
+                <rel1>
+                    <id>AR_ertec</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </brilliant_emerald>
         
 
-    </materials>
+    
+</materials>
 
 </data>
 
