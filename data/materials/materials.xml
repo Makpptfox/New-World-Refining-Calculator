@@ -3081,7 +3081,7 @@
             <id>C_U_onyx</id>
             <jobId>4</jobId>
             <image>cut_onyx.png</image>
-            <cat>st_cut_rk1</cat>
+            <cat>ST_cut_rk1</cat>
             <related>
                 <rel0>
                     <id>U_U_onyx</id>
@@ -3101,7 +3101,7 @@
             <id>C_U_aquamarine</id>
             <jobId>4</jobId>
             <image>cut_aquamarine.png</image>
-            <cat>st_cut_rk1</cat>
+            <cat>ST_cut_rk1</cat>
             <related>
                 <rel0>
                     <id>U_U_aquamarine</id>
@@ -3121,7 +3121,7 @@
             <id>C_U_sapphire</id>
             <jobId>4</jobId>
             <image>cut_sapphire.png</image>
-            <cat>st_cut_rk1</cat>
+            <cat>ST_cut_rk1</cat>
             <related>
                 <rel0>
                     <id>U_U_sapphire</id>
@@ -3141,7 +3141,7 @@
             <id>C_U_ruby</id>
             <jobId>4</jobId>
             <image>cut_ruby.png</image>
-            <cat>st_cut_rk1</cat>
+            <cat>ST_cut_rk1</cat>
             <related>
                 <rel0>
                     <id>U_U_ruby</id>
@@ -3161,7 +3161,7 @@
             <id>C_U_diamond</id>
             <jobId>4</jobId>
             <image>cut_diamond.png</image>
-            <cat>st_cut_rk1</cat>
+            <cat>ST_cut_rk1</cat>
             <related>
                 <rel0>
                     <id>U_U_diamond</id>
@@ -3181,7 +3181,7 @@
             <id>C_U_topaz</id>
             <jobId>4</jobId>
             <image>cut_topaz.png</image>
-            <cat>st_cut_rk1</cat>
+            <cat>ST_cut_rk1</cat>
             <related>
                 <rel0>
                     <id>U_U_topaz</id>
@@ -3201,7 +3201,7 @@
             <id>C_U_amethyst</id>
             <jobId>4</jobId>
             <image>cut_amethyst.png</image>
-            <cat>st_cut_rk1</cat>
+            <cat>ST_cut_rk1</cat>
             <related>
                 <rel0>
                     <id>U_U_amethyst</id>
@@ -3221,7 +3221,7 @@
             <id>C_U_onyx</id>
             <jobId>4</jobId>
             <image>cut_amber.png</image>
-            <cat>st_cut_rk1</cat>
+            <cat>ST_cut_rk1</cat>
             <related>
                 <rel0>
                     <id>U_U_amber</id>
@@ -3241,7 +3241,7 @@
             <id>C_U_malachite</id>
             <jobId>4</jobId>
             <image>cut_malachite.png</image>
-            <cat>st_cut_rk1</cat>
+            <cat>ST_cut_rk1</cat>
             <related>
                 <rel0>
                     <id>U_U_amber</id>
@@ -3261,7 +3261,7 @@
             <id>C_U_jasper</id>
             <jobId>4</jobId>
             <image>cut_jasper.png</image>
-            <cat>st_cut_rk1</cat>
+            <cat>ST_cut_rk1</cat>
             <related>
                 <rel0>
                     <id>U_U_jasper</id>
@@ -3281,7 +3281,7 @@
             <id>C_U_carnelian</id>
             <jobId>4</jobId>
             <image>cut_carnelian.png</image>
-            <cat>st_cut_rk1</cat>
+            <cat>ST_cut_rk1</cat>
             <related>
                 <rel0>
                     <id>U_U_carnelian</id>
@@ -3301,7 +3301,7 @@
             <id>C_U_opal</id>
             <jobId>4</jobId>
             <image>cut_opal.png</image>
-            <cat>st_cut_rk1</cat>
+            <cat>ST_cut_rk1</cat>
             <related>
                 <rel0>
                     <id>U_U_opal</id>
@@ -3321,7 +3321,7 @@
             <id>C_U_moonstone</id>
             <jobId>4</jobId>
             <image>cut_moonstone.png</image>
-            <cat>st_cut_rk1</cat>
+            <cat>ST_cut_rk1</cat>
             <related>
                 <rel0>
                     <id>U_U_moonstone</id>
@@ -3341,7 +3341,7 @@
             <id>C_U_emerald</id>
             <jobId>4</jobId>
             <image>cut_emerald.png</image>
-            <cat>st_cut_rk1</cat>
+            <cat>ST_cut_rk1</cat>
             <related>
                 <rel0>
                     <id>U_U_emerald</id>
@@ -3364,7 +3364,7 @@
             <id>C_R_onyx</id>
             <jobId>4</jobId>
             <image>cut_brilliant_onyx.png</image>
-            <cat>st_cut_rk2</cat>
+            <cat>ST_cut_rk2</cat>
             <related>
                 <rel0>
                     <id>U_R_onyx</id>
@@ -3384,7 +3384,7 @@
             <id>C_R_aquamarine</id>
             <jobId>4</jobId>
             <image>cut_brilliant_aquamarine.png</image>
-            <cat>st_cut_rk2</cat>
+            <cat>ST_cut_rk2</cat>
             <related>
                 <rel0>
                     <id>U_R_aquamarine</id>
@@ -3404,7 +3404,7 @@
             <id>C_R_sapphire</id>
             <jobId>4</jobId>
             <image>cut_brilliant_sapphire.png</image>
-            <cat>st_cut_rk2</cat>
+            <cat>ST_cut_rk2</cat>
             <related>
                 <rel0>
                     <id>U_R_sapphire</id>
@@ -3424,7 +3424,7 @@
             <id>C_R_ruby</id>
             <jobId>4</jobId>
             <image>cut_brilliant_ruby.png</image>
-            <cat>st_cut_rk2</cat>
+            <cat>ST_cut_rk2</cat>
             <related>
                 <rel0>
                     <id>U_R_ruby</id>
@@ -3444,7 +3444,7 @@
             <id>C_R_diamond</id>
             <jobId>4</jobId>
             <image>cut_brilliant_diamond.png</image>
-            <cat>st_cut_rk2</cat>
+            <cat>ST_cut_rk2</cat>
             <related>
                 <rel0>
                     <id>U_R_diamond</id>
@@ -3464,7 +3464,7 @@
             <id>C_R_topaz</id>
             <jobId>4</jobId>
             <image>cut_brilliant_topaz.png</image>
-            <cat>st_cut_rk2</cat>
+            <cat>ST_cut_rk2</cat>
             <related>
                 <rel0>
                     <id>U_R_topaz</id>
@@ -3484,7 +3484,7 @@
             <id>C_R_amethyst</id>
             <jobId>4</jobId>
             <image>cut_brilliant_amethyst.png</image>
-            <cat>st_cut_rk2</cat>
+            <cat>ST_cut_rk2</cat>
             <related>
                 <rel0>
                     <id>U_R_amethyst</id>
@@ -3504,7 +3504,7 @@
             <id>C_R_onyx</id>
             <jobId>4</jobId>
             <image>cut_brilliant_amber.png</image>
-            <cat>st_cut_rk2</cat>
+            <cat>ST_cut_rk2</cat>
             <related>
                 <rel0>
                     <id>U_R_amber</id>
@@ -3524,7 +3524,7 @@
             <id>C_R_malachite</id>
             <jobId>4</jobId>
             <image>cut_brilliant_malachite.png</image>
-            <cat>st_cut_rk2</cat>
+            <cat>ST_cut_rk2</cat>
             <related>
                 <rel0>
                     <id>U_R_amber</id>
@@ -3544,7 +3544,7 @@
             <id>C_R_jasper</id>
             <jobId>4</jobId>
             <image>cut_brilliant_jasper.png</image>
-            <cat>st_cut_rk2</cat>
+            <cat>ST_cut_rk2</cat>
             <related>
                 <rel0>
                     <id>U_R_jasper</id>
@@ -3564,7 +3564,7 @@
             <id>C_R_carnelian</id>
             <jobId>4</jobId>
             <image>cut_brilliant_carnelian.png</image>
-            <cat>st_cut_rk2</cat>
+            <cat>ST_cut_rk2</cat>
             <related>
                 <rel0>
                     <id>U_R_carnelian</id>
@@ -3584,7 +3584,7 @@
             <id>C_R_opal</id>
             <jobId>4</jobId>
             <image>cut_brilliant_opal.png</image>
-            <cat>st_cut_rk2</cat>
+            <cat>ST_cut_rk2</cat>
             <related>
                 <rel0>
                     <id>U_R_opal</id>
@@ -3604,7 +3604,7 @@
             <id>C_R_moonstone</id>
             <jobId>4</jobId>
             <image>cut_brilliant_moonstone.png</image>
-            <cat>st_cut_rk2</cat>
+            <cat>ST_cut_rk2</cat>
             <related>
                 <rel0>
                     <id>U_R_moonstone</id>
@@ -3624,7 +3624,7 @@
             <id>C_R_emerald</id>
             <jobId>4</jobId>
             <image>cut_brilliant_emerald.png</image>
-            <cat>st_cut_rk2</cat>
+            <cat>ST_cut_rk2</cat>
             <related>
                 <rel0>
                     <id>U_R_emerald</id>
@@ -3647,7 +3647,7 @@
             <id>C_E_onyx</id>
             <jobId>4</jobId>
             <image>cut_pristine_onyx.png</image>
-            <cat>st_cut_rk3</cat>
+            <cat>ST_cut_rk3</cat>
             <related>
                 <rel0>
                     <id>U_E_onyx</id>
@@ -3667,7 +3667,7 @@
             <id>C_E_aquamarine</id>
             <jobId>4</jobId>
             <image>cut_pristine_aquamarine.png</image>
-            <cat>st_cut_rk3</cat>
+            <cat>ST_cut_rk3</cat>
             <related>
                 <rel0>
                     <id>U_E_aquamarine</id>
@@ -3687,7 +3687,7 @@
             <id>C_E_sapphire</id>
             <jobId>4</jobId>
             <image>cut_pristine_sapphire.png</image>
-            <cat>st_cut_rk3</cat>
+            <cat>ST_cut_rk3</cat>
             <related>
                 <rel0>
                     <id>U_E_sapphire</id>
@@ -3707,7 +3707,7 @@
             <id>C_E_ruby</id>
             <jobId>4</jobId>
             <image>cut_pristine_ruby.png</image>
-            <cat>st_cut_rk3</cat>
+            <cat>ST_cut_rk3</cat>
             <related>
                 <rel0>
                     <id>U_E_ruby</id>
@@ -3727,7 +3727,7 @@
             <id>C_E_diamond</id>
             <jobId>4</jobId>
             <image>cut_pristine_diamond.png</image>
-            <cat>st_cut_rk3</cat>
+            <cat>ST_cut_rk3</cat>
             <related>
                 <rel0>
                     <id>U_E_diamond</id>
@@ -3747,7 +3747,7 @@
             <id>C_E_topaz</id>
             <jobId>4</jobId>
             <image>cut_pristine_topaz.png</image>
-            <cat>st_cut_rk3</cat>
+            <cat>ST_cut_rk3</cat>
             <related>
                 <rel0>
                     <id>U_E_topaz</id>
@@ -3767,7 +3767,7 @@
             <id>C_E_amethyst</id>
             <jobId>4</jobId>
             <image>cut_pristine_amethyst.png</image>
-            <cat>st_cut_rk3</cat>
+            <cat>ST_cut_rk3</cat>
             <related>
                 <rel0>
                     <id>U_E_amethyst</id>
@@ -3787,7 +3787,7 @@
             <id>C_E_onyx</id>
             <jobId>4</jobId>
             <image>cut_pristine_amber.png</image>
-            <cat>st_cut_rk3</cat>
+            <cat>ST_cut_rk3</cat>
             <related>
                 <rel0>
                     <id>U_E_amber</id>
@@ -3807,7 +3807,7 @@
             <id>C_E_malachite</id>
             <jobId>4</jobId>
             <image>cut_pristine_malachite.png</image>
-            <cat>st_cut_rk3</cat>
+            <cat>ST_cut_rk3</cat>
             <related>
                 <rel0>
                     <id>U_E_amber</id>
@@ -3827,7 +3827,7 @@
             <id>C_E_jasper</id>
             <jobId>4</jobId>
             <image>cut_pristine_jasper.png</image>
-            <cat>st_cut_rk3</cat>
+            <cat>ST_cut_rk3</cat>
             <related>
                 <rel0>
                     <id>U_E_jasper</id>
@@ -3847,7 +3847,7 @@
             <id>C_E_carnelian</id>
             <jobId>4</jobId>
             <image>cut_pristine_carnelian.png</image>
-            <cat>st_cut_rk3</cat>
+            <cat>ST_cut_rk3</cat>
             <related>
                 <rel0>
                     <id>U_E_carnelian</id>
@@ -3867,7 +3867,7 @@
             <id>C_E_opal</id>
             <jobId>4</jobId>
             <image>cut_pristine_opal.png</image>
-            <cat>st_cut_rk3</cat>
+            <cat>ST_cut_rk3</cat>
             <related>
                 <rel0>
                     <id>U_E_opal</id>
@@ -3887,7 +3887,7 @@
             <id>C_E_moonstone</id>
             <jobId>4</jobId>
             <image>cut_pristine_moonstone.png</image>
-            <cat>st_cut_rk3</cat>
+            <cat>ST_cut_rk3</cat>
             <related>
                 <rel0>
                     <id>U_E_moonstone</id>
@@ -3907,7 +3907,7 @@
             <id>C_E_emerald</id>
             <jobId>4</jobId>
             <image>cut_pristine_emerald.png</image>
-            <cat>st_cut_rk3</cat>
+            <cat>ST_cut_rk3</cat>
             <related>
                 <rel0>
                     <id>U_E_emerald</id>
