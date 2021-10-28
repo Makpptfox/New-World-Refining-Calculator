@@ -3,6 +3,8 @@ let list = mainCat.querySelector('div#catsContainer');
 const catTemplate = document.getElementById('templateCat');
 const subTemplate = document.getElementById('templateSubCat');
 
+let oldCat = null;
+
 function showMainCat(){
 
     mainCat.style.display = "flex";
@@ -53,7 +55,23 @@ function _newSubCat(name, color, id){
 
     div.addEventListener('click', ()=>{
 
-        _loadCatItem(id[0]);
+        if(oldCat === null) {
+            let container = div.parentElement.parentElement;
+
+            container.style.background = "#4E727A";
+
+            oldCat = container;
+        } else {
+
+            oldCat.style.background = "#3C585E";
+
+            let container = div.parentElement.parentElement;
+
+            container.style.background = "#4E727A";
+            oldCat = container;
+        }
+
+        _loadCatItem(id[0], color, name);
 
     })
 
@@ -63,38 +81,47 @@ function _newSubCat(name, color, id){
 
 function addCat(catName, elems){
 
-    let cat = _newCat(catName);
+    const keyCat = window.api.generateNewUid();
 
-    let subCatList = cat.querySelector('div.subCatList');
+    window.api.sendAsync('getLang', "ui", keyCat);
 
-    console.log(subCatList);
+    window.api.receiveOnce('getLangResponse', (type, data, key)=>{
+
+        if(type !== "ui" && key !== keyCat) return;
+
+        let cat= _newCat(data[catName][0]);
+
+        let subCatList = cat.querySelector('div.subCatList');
+
+        for (const elem in elems[0]){
+
+            const item = elems[0][elem][0];
+
+            const uid = window.api.generateNewUid();
+
+            window.api.sendAsync('getLang', "rarity", item, uid);
+
+            window.api.receive('getLangResponse', (type, rarity, key)=>{
+
+                if(type === "rarity" && key === uid){
+
+                    const subCat = _newSubCat(rarity, item['color'], item['id']);
+
+                    _addToCat(subCat, subCatList);
+
+                }
+
+            })
 
 
-    for (const elem in elems[0]){
+        }
 
-        const item = elems[0][elem][0];
-        console.log(item);
+        list.appendChild(cat);
 
-        const uid = window.api.generateNewUid();
-
-        window.api.sendAsync('getLang', "rarity", item, uid);
-
-        window.api.receive('getLangResponse', (type, rarity, key)=>{
-
-            if(type === "rarity" && key === uid){
-
-                const subCat = _newSubCat(rarity, item['color'], item['id']);
-
-                _addToCat(subCat, subCatList);
-
-            }
-
-        })
+    })
 
 
-    }
 
 
-    list.appendChild(cat);
 
 }

@@ -6,6 +6,7 @@
 
         <removeall>Remove All</removeall>
         <titleItemBar>Items for</titleItemBar>
+        <titleItemRarity>Rarity: </titleItemRarity>
         <addItem>Add</addItem>
         <defaultTab>Default</defaultTab>
         <addTab>+ New tab</addTab>
@@ -14,7 +15,7 @@
         <cut>Cut gems</cut>
         <parameterTitle>Settings</parameterTitle>
         <parameterLang>Language: </parameterLang>
-        <ParameterAutoUpdate>Auto-update on start-up: </ParameterAutoUpdate>
+        <parameterAutoUpdate>Auto-update on start-up: </parameterAutoUpdate>
         <parameterWarning>Each change will AUTOMATICALLY restart the application!</parameterWarning>
         <aboutTitle>About</aboutTitle>
         

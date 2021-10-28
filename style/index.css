@@ -14,6 +14,128 @@ body {
   grid-template-columns: [first] 30vw [second] 70vw;
   background-color: #0d1b1e;
   overflow-x: hidden;
+  overflow-y: hidden;
+}
+body a {
+  color: #70a3be;
+  text-decoration: none;
+}
+
+#backContainerParameter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  z-index: 999;
+}
+#backContainerParameter #containerParameter {
+  background-color: #3C585E;
+  width: 20vw;
+  border-radius: 5px;
+}
+#backContainerParameter #containerParameter h3 {
+  text-align: center;
+  padding: 0 0 10px;
+  border-bottom: solid 1px;
+}
+#backContainerParameter #containerParameter header {
+  background-color: #2D4C53;
+  padding: 10px 10px 0 10px;
+  border-radius: 5px 5px 0 0;
+}
+#backContainerParameter #containerParameter .listParameters {
+  padding: 10px;
+}
+#backContainerParameter #containerParameter .listParameters .red {
+  color: #FE5F55;
+  font-size: 14px;
+  text-align: center;
+  padding: 4px;
+  margin-bottom: 15px;
+  border: solid 1px #FE5F55;
+}
+
+#backContainerAbout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  z-index: 999;
+}
+#backContainerAbout #containerAbout {
+  background-color: #3C585E;
+  width: 30vw;
+  border-radius: 5px;
+}
+#backContainerAbout #containerAbout h3 {
+  text-align: center;
+  padding: 0 0 10px;
+  border-bottom: solid 1px;
+}
+#backContainerAbout #containerAbout header {
+  background-color: #2D4C53;
+  padding: 10px 10px 0 10px;
+  border-radius: 5px 5px 0 0;
+}
+#backContainerAbout #containerAbout .about {
+  padding: 10px;
+}
+
+#frame {
+  -webkit-app-region: drag;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  background-color: #0E191C;
+  width: 100%;
+  grid-column: 1/second 2;
+  position: fixed;
+  z-index: 99999;
+  border-bottom: solid 2px #33575F;
+  color: WHITE;
+  -webkit-user-select: none;
+}
+#frame #title {
+  padding: 0 8px;
+  flex: 1;
+}
+#frame .frameButton {
+  -webkit-app-region: no-drag;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0.05;
+  width: 100%;
+  height: 25px;
+}
+#frame .frameButton:hover {
+  background-color: #1f373e;
+  cursor: pointer;
+}
+#frame #frameCloseContainer {
+  -webkit-app-region: no-drag;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0.05;
+  width: 100%;
+  height: 25px;
+}
+#frame #frameCloseContainer:hover {
+  background-color: #ec0f01;
+  cursor: pointer;
 }
 
 .sortable-drag {
@@ -21,16 +143,17 @@ body {
 }
 
 nav {
+  -webkit-app-region: no-drag;
   grid-column: first;
+  margin-top: 25px;
   width: 100%;
   height: 100vh;
-  background-color: goldenrod;
   display: grid;
   grid-template-columns: [first] 40% [bar] 0 [elem2] 60%;
   transition: all 0.3s;
   overflow-x: hidden;
   position: sticky;
-  top: 0;
+  top: 25px;
 }
 nav #mainMenuBarContainer {
   grid-column: first;
@@ -131,8 +254,8 @@ nav #itemListBar {
   /* Handle on hover */
   grid-column: elem2;
   width: 96%;
-  height: 100%;
   overflow-y: auto;
+  height: calc(100% - 25px);
   background-color: #3C585E;
   overflow-x: hidden;
   padding: 0 2%;
@@ -190,9 +313,35 @@ nav #itemListBar .containerMenuJobItem .buttonAddItem {
 nav #itemListBar .containerMenuJobItem .buttonAddItem:hover {
   cursor: pointer;
 }
+nav #bottomBar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  margin-bottom: 10px;
+  bottom: 0;
+  width: 12vw;
+}
+nav .roundButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px white;
+  border-radius: 32px;
+  padding: 6px;
+  width: 32px;
+  height: 32px;
+}
+nav .roundButton:hover {
+  cursor: pointer;
+}
 
 #containerCalc {
+  margin-top: calc(25px + 2px);
+  -webkit-app-region: no-drag;
   grid-column: second;
+  height: 100vh;
+  overflow-y: hidden;
 }
 #containerCalc #tabManagerBar {
   background-color: #2D4C53;
@@ -245,7 +394,47 @@ nav #itemListBar .containerMenuJobItem .buttonAddItem:hover {
   background: linear-gradient(0deg, #0d1b1e 0%, #0d1b1e 10%, #152b30 25%) !important;
 }
 #containerCalc #itemListContainer {
-  padding: 8px 20px 8px 8px;
+  padding: 0 20px 8px 8px;
+  margin-top: 8px;
+  overflow-y: auto;
+  height: calc(100% - 72px);
+  box-sizing: content-box;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+#containerCalc #itemListContainer::-webkit-scrollbar {
+  width: 8px;
+}
+#containerCalc #itemListContainer::-webkit-scrollbar-track {
+  background: #44646a;
+}
+#containerCalc #itemListContainer::-webkit-scrollbar-thumb {
+  background: #547b83;
+  border-radius: 5px;
+}
+#containerCalc #itemListContainer::-webkit-scrollbar-thumb:hover {
+  background: #5c8790;
+}
+#containerCalc #itemListContainer .tooltipContainer {
+  position: relative;
+}
+#containerCalc #itemListContainer .tooltipContainer .tooltip {
+  visibility: hidden;
+  width: 120px;
+  bottom: 70%;
+  left: 2.5%;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 99;
+}
+#containerCalc #itemListContainer .tooltipContainer:hover .tooltip {
+  visibility: visible;
 }
 #containerCalc input::-webkit-outer-spin-button,
 #containerCalc input::-webkit-inner-spin-button {
@@ -267,7 +456,6 @@ nav #itemListBar .containerMenuJobItem .buttonAddItem:hover {
   align-items: stretch;
   margin-bottom: 15px;
   flex-direction: column;
-  overflow-y: hidden;
 }
 #containerCalc .containerItemCount .horizontalItemCount {
   display: flex;
@@ -293,7 +481,6 @@ nav #itemListBar .containerMenuJobItem .buttonAddItem:hover {
   display: flex;
   align-items: center;
   background-color: #919D9F;
-  overflow-y: hidden;
 }
 #containerCalc .containerItemCount .itemCount .FirstItem {
   text-align: center;

@@ -2,6 +2,8 @@ const   fs = require('fs'),
     path = require('path'),
     xml2js = require('xml2js');
 
+const langFile = path.join(process.cwd(), "lang");
+
 let file = {
     jobs: "",
     materials: "",
@@ -20,7 +22,7 @@ const langDir = {
 
 function checkLang(callback){
 
-    const langFile = path.join(process.cwd(), "lang");
+    availableLang = [];
 
     fs.readFile(langFile+"\\lang.xml", (err, data)=>{
 
@@ -32,7 +34,7 @@ function checkLang(callback){
 
             }
 
-            callback();
+            callback(availableLang);
 
         })
 

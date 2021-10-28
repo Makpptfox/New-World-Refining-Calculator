@@ -7,8 +7,6 @@ const { v4: uuidv4 } = require('uuid');
 
 const fs = require('fs');
 
-const build = true
-
 const path = require('path');
 
 const {checkLang} = require("./script/lang/getLanguage");
@@ -27,6 +25,8 @@ let langUI;
 
 let updaterWindows;
 let mainWindows;
+
+let autoUpdate = false;
 
 autoUpdater.on('error', (err)=>{
     updaterWindows.webContents.send('update_error', err);
@@ -125,8 +125,8 @@ async function checkDataFile(){
 
 function createWindow(){
     mainWindows = new BrowserWindow({
-        width: 800,
-        height: 400,
+        minWidth: 1600,
+        minHeight: 800,
         autoHideMenuBar: true,
         webPreferences:{
             nodeIntegration: false, // is default value after Electron v5
@@ -134,10 +134,33 @@ function createWindow(){
             enableRemoteModule: false, // turn off remote
             preload: path.join(__dirname, "/script/preload.js"), // use a preload script
             nativeWindowOpen: true
-        }
+        },
+        titleBarStyle: 'hidden'
     })
 
     mainWindows.loadFile('pages/index.html');
+
+    mainWindows.on('unmaximize', (e)=>{
+
+        mainWindows.webContents.send('minSizeResponse');
+
+        e.returnValue = null;
+    })
+    mainWindows.on('maximize', (e)=>{
+
+        mainWindows.webContents.send('maxSizeResponse');
+
+        e.returnValue = null;
+    })
+    let handleRedirect = (e, url) => {
+        if(url !== webContents.getURL()) {
+            e.preventDefault()
+            require('electron').shell.openExternal(url)
+        }
+    }
+
+    mainWindows.webContents.on('will-navigate', handleRedirect)
+    mainWindows.webContents.on('new-window', handleRedirect)
 
 }
 function createLoader(){
@@ -164,21 +187,64 @@ function createLoader(){
     updaterWindows.loadFile('pages/update.html');
 
     updaterWindows.once("ready-to-show", ()=>{
-        autoUpdater.checkForUpdatesAndNotify();
+
+        fs.access(app.getPath('userData')+"/data/settings.json", async (err) => {
+
+            if (err !== null) {
+
+                console.error(err);
+
+                let data = {
+                    "settings":
+                        {
+                            "lang": "en-EN",
+                            "autoupdate": false
+                        }
+                }
+
+                await mkdirp(app.getPath('userData') + "/data/");
+                fs.writeFile(app.getPath('userData') + "/data/settings.json", JSON.stringify(data), (err1) => {
+
+                    checkDataFile()
+
+                })
+            } else {
+
+                fs.readFile(app.getPath('userData') + "/data/settings.json", (err1, data) => {
+
+                    let result = JSON.parse(data.toString("utf-8"))
+
+                    let setting = result['settings']
+
+                    lang = setting['lang'];
+                    autoUpdate = setting['autoupdate'];
+
+                    if (!autoUpdate) {
+
+                        checkDataFile()
+
+                    } else {
+
+                        autoUpdater.checkForUpdatesAndNotify();
+
+                    }
+                })
+
+            }
+        });
 
     })
 
-    if(!build) checkDataFile();
 
 }
 
 app.whenReady().then(() => {
+    process.setMaxListeners(0)
     createLoader()
 
     app.on('activate', function () {
         if (BrowserWindow.getAllWindows().length === 0) createWindow()
     })
-
 
 })
 app.on('window-all-closed', function () {
@@ -186,8 +252,6 @@ app.on('window-all-closed', function () {
 })
 
 ipcMain.on('getAllJobs', async (ipc)=>{
-
-    console.log('receive getAllJobs');
 
     mainWindows.webContents.send('getAllJobsResponse', jobData);
 
@@ -203,11 +267,7 @@ ipcMain.on('getUID', (ipc)=>{
 
 ipcMain.on('getDataFrom', async (ipc, path)=>{
 
-    console.log('execute getDataFrom function');
-
     await getDataFrom(path, (data) => {
-
-        console.log('return of getDataFrom function');
 
         mainWindows.webContents.send('getDataFromResponse', data);
 
@@ -217,15 +277,11 @@ ipcMain.on('getDataFrom', async (ipc, path)=>{
 
 ipcMain.on('getAllItems', async (ipc)=>{
 
-    console.log('receive getAllItem');
-
     mainWindows.webContents.send('getAllItemsResponse', materialsData);
 
 })
 
 ipcMain.on("getLang", async (ipc, type, elem = null, key = -1)=>{
-
-    console.log('execute getLang function');
 
     switch (type) {
 
@@ -244,8 +300,6 @@ ipcMain.on("getLang", async (ipc, type, elem = null, key = -1)=>{
 
             mainWindows.webContents.send('getLangResponse', type, job);
 
-            console.trace(elem);
-
             break;
         }
         case "rarity":{
@@ -260,8 +314,6 @@ ipcMain.on("getLang", async (ipc, type, elem = null, key = -1)=>{
 
             mainWindows.send('getLangResponse', type, rarity, key);
 
-            console.trace(rarity)
-
             break;
         }
         case "item":{
@@ -270,12 +322,12 @@ ipcMain.on("getLang", async (ipc, type, elem = null, key = -1)=>{
                 id: elem.id,
                 jobId: elem.jobId,
                 image: elem.image,
-                related: elem.related
+                related: elem.related,
+                cat: elem.cat
             };
 
-            console.trace(langMaterials);
+            material.name = langMaterials["materials"][0][elem.name.toLowerCase()];
 
-            material.name = langMaterials["materials"][0][elem.name.toLowerCase()][0];
 
             if(material.name === undefined){
                 material.name = `lang: ${lang} ${elem.name.toLowerCase()}`;
@@ -283,12 +335,9 @@ ipcMain.on("getLang", async (ipc, type, elem = null, key = -1)=>{
 
             mainWindows.webContents.send('getLangResponse', type, material, key);
 
-            console.trace(material);
-
             break;
         }
         case "ui":{
-            console.trace(langUI["default"][0]);
 
             mainWindows.webContents.send('getLangResponse', type, langUI["default"][0], key);
         }
@@ -299,9 +348,7 @@ ipcMain.on("getLang", async (ipc, type, elem = null, key = -1)=>{
 
 ipcMain.on('getSavedTab', async (ipc)=>{
 
-    console.log("getSavedTab");
-
-    fs.access(process.cwd()+"/data/save/tabs.json", async (err) => {
+    fs.access(app.getPath('userData')+"/data/save/tabs.json", async (err) => {
 
         if(err !== null){
 
@@ -313,18 +360,15 @@ ipcMain.on('getSavedTab', async (ipc)=>{
                 }
             }
 
-            await mkdirp(process.cwd()+"/data/save/");
-            fs.writeFile(process.cwd()+"/data/save/tabs.json", JSON.stringify(data), (err1)=>{
-
-                console.log("writeFile");
-                console.error(err1);
+            await mkdirp(app.getPath('userData')+"/data/save/");
+            fs.writeFile(app.getPath('userData')+"/data/save/tabs.json", JSON.stringify(data), (err1)=>{
 
                 mainWindows.webContents.send('getSavedTabResponse', data, false);
 
             })
         } else {
 
-            fs.readFile(process.cwd()+"/data/save/tabs.json", (err1, data) => {
+            fs.readFile(app.getPath('userData')+"/data/save/tabs.json", (err1, data) => {
 
                 mainWindows.webContents.send('getSavedTabResponse', JSON.parse(data.toString("utf-8")), true);
 
@@ -340,9 +384,7 @@ ipcMain.on('getSavedTab', async (ipc)=>{
 
 ipcMain.on('deleteTab', (ipc, data)=>{
 
-    console.log("deleteTab");
-
-    fs.writeFile(process.cwd()+"/data/save/tabs.json", "", ()=>{
+    fs.writeFile(app.getPath('userData')+"/data/save/tabs.json", "", ()=>{
         mainWindows.webContents.send('deleteTabResponse');
     })
 
@@ -350,14 +392,70 @@ ipcMain.on('deleteTab', (ipc, data)=>{
 
 ipcMain.on('saveTab', (ipc, data)=>{
 
-    console.log("saveTab");
-
-    fs.writeFile(process.cwd()+"/data/save/tabs.json", JSON.stringify(data), ()=>{
+    fs.writeFile(app.getPath('userData')+"/data/save/tabs.json", JSON.stringify(data), ()=>{
         mainWindows.webContents.send('saveTabResponse');
     })
 
 })
 
+ipcMain.once('closeApp', (ipc)=>{
+
+    app.quit();
+
+})
+
+ipcMain.on('minApp', (ipc)=>{
+
+    mainWindows.minimize();
+
+})
+
+ipcMain.on('maxSize', (ipc)=>{
+
+    mainWindows.maximize();
+
+})
+
+ipcMain.on('minSize', (ipc)=>{
+
+    mainWindows.unmaximize();
+
+})
+
+ipcMain.once('restartApp', (ipc)=>{
+
+    app.relaunch();
+    app.exit();
+
+})
+
+ipcMain.on('getLanguage', (ipc)=>{
+
+    checkLang((langs)=>{
+
+        mainWindows.webContents.send('getLanguageResponse', {'chosen': lang, 'langs': langs});
+
+    })
+
+})
+
+ipcMain.on('getAutoUpdate', (ipc)=>{
+
+    mainWindows.webContents.send('getAutoUpdateResponse', autoUpdate);
+
+});
+
+ipcMain.on('setSettings', (ipc, setting)=>{
+
+    fs.writeFile(app.getPath('userData')+'/data/settings.json', JSON.stringify(setting), ()=>{
+
+        mainWindows.webContents.send('setSettingsResponse');
+
+
+
+    })
+
+})
 
 // Function for the auto-updater
 ipcMain.on('installUpdate', (ipc)=>{

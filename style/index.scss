@@ -5,23 +5,172 @@ body{
   grid-template-columns: [first]30vw [second] 70vw;
   background-color: base.$background;
   overflow-x: hidden;
+  overflow-y: hidden;
+
+  a{
+    color: #70a3be;
+    text-decoration: none;
+  }
 }
+
+#backContainerParameter{
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  z-index: 999;
+
+  #containerParameter{
+
+    background-color: base.$backgroundItemsList;
+    width: 20vw;
+
+    border-radius: 5px;
+
+
+    h3{
+      text-align: center;
+      padding: 0 0 10px;
+      border-bottom: solid 1px;
+    }
+
+    header{
+      background-color: base.$backgroundJob;
+      padding: 10px 10px 0 10px;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .listParameters{
+      .red{
+        color: base.$deleteColorBack;
+        font-size: 14px;
+        text-align: center;
+        padding: 4px;
+        margin-bottom: 15px;
+        border: solid 1px base.$deleteColorBack;
+      }
+
+      padding: 10px;
+
+    }
+
+  }
+
+}
+#backContainerAbout{
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  z-index: 999;
+
+  #containerAbout{
+
+    background-color: base.$backgroundItemsList;
+    width: 30vw;
+
+    border-radius: 5px;
+
+
+    h3{
+      text-align: center;
+      padding: 0 0 10px;
+      border-bottom: solid 1px;
+    }
+
+    header{
+      background-color: base.$backgroundJob;
+      padding: 10px 10px 0 10px;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .about{
+
+      padding: 10px;
+
+    }
+
+  }
+
+}
+
+#frame{
+
+  -webkit-app-region: drag;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  background-color: base.$B_Background;
+  width: 100%;
+  grid-column: 1/ second 2;
+  position: fixed;
+  z-index: 99999;
+  border-bottom: solid 2px base.$B_Border;
+  color: base.$B_Text;
+  -webkit-user-select: none;
+  #title{
+    padding: 0 8px;
+    flex: 1;
+  }
+  .frameButton{
+    -webkit-app-region: no-drag;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0.05;
+    width: 100%;
+    height: 25px;
+    &:hover{
+      background-color: lighten(#0E191C, 10%);
+      cursor: pointer;
+    }
+  }
+  #frameCloseContainer{
+    -webkit-app-region: no-drag;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0.05;
+    width: 100%;
+    height: 25px;
+    &:hover{
+      background-color: darken(base.$deleteColorBack, 20%);
+      cursor: pointer;
+    }
+  }
+}
+
 .sortable-drag{
 
   display: none;
 
 }
 nav{
+  -webkit-app-region: no-drag;
   grid-column: first;
+  margin-top: 25px;
   width: 100%;
   height: 100vh;
-  background-color: goldenrod;
   display: grid;
   grid-template-columns: [first]40% [bar] 0 [elem2]60%;
   transition: all .3s;
   overflow-x: hidden;
   position: sticky;
-  top: 0;
+  top: 25px;
   #mainMenuBarContainer{
     #mainMenuBar{
 
@@ -146,8 +295,8 @@ nav{
     }
     grid-column: elem2;
     width: 96%;
-    height: 100%;
     overflow-y: auto;
+    height: calc(100% - 25px);
 
     background-color: base.$backgroundItemsList;
     overflow-x: hidden;
@@ -208,9 +357,39 @@ nav{
     }
 
   }
+  #bottomBar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+
+    margin-bottom: 10px;
+    bottom: 0;
+    width: 12vw;
+  }
+  .roundButton{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px white;
+    border-radius: 32px;
+    padding: 6px;
+    width: 32px;
+    height: 32px;
+
+    &:hover{
+      cursor: pointer;
+    }
+
+  }
 }
 #containerCalc{
+  margin-top: calc(25px + 2px);
+  -webkit-app-region: no-drag;
   grid-column: second;
+  height: 100vh;
+  overflow-y: hidden;
 
   #tabManagerBar{
 
@@ -278,7 +457,56 @@ nav{
   }
 
   #itemListContainer{
-    padding: 8px 20px 8px 8px;
+    padding: 0 20px 8px 8px;
+    margin-top: 8px;
+    overflow-y: auto;
+    height: calc(100% - 72px);
+    box-sizing: content-box;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: lighten(base.$backgroundItemsList, 4%);
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: lighten(base.$backgroundItemsList, 12%);
+      border-radius: 5px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: lighten(base.$backgroundItemsList, 16%);
+    }
+
+    .tooltipContainer{
+
+      position: relative;
+      .tooltip {
+        visibility: hidden;
+        width: 120px;
+        bottom: 70%;
+        left: 2.5%;
+        background-color: rgba(0,0,0,.75);
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px 0;
+
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 99;
+      }
+
+      &:hover .tooltip {
+        visibility: visible;
+      }
+
+    }
   }
 
   input::-webkit-outer-spin-button,
@@ -304,7 +532,6 @@ nav{
     align-items: stretch;
     margin-bottom: 15px;
     flex-direction: column;
-    overflow-y: hidden;
 
     .horizontalItemCount{
       display: flex;
@@ -331,7 +558,6 @@ nav{
       display: flex;
       align-items: center;
       background-color: base.$backgroundItemBlock;
-      overflow-y: hidden;
       .FirstItem{
         input{
 

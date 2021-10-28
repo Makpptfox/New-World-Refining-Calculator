@@ -1,6 +1,6 @@
 {
   "name": "new-world-refining-calculator",
-  "version": "1.0.6",
+  "version": "0.0.9",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -13,7 +13,7 @@
   "build": {
     "appId": "fr.new-world-refining-calculator.ward",
     "directories": {
-      "buildResources": "resources"
+      "buildResources": "build"
     },
     "extraFiles": [
       "data",
