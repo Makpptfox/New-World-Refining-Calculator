@@ -6,6 +6,25 @@
     <title>New World</title>
     <!-- Ne pas toucher -->
 
+    <!--<test> FOR TEST PURPOSE ONLY
+        <name>test_item</name>
+        <id>TEST_item</id>
+        <jobId>0</jobId>
+        <image>iron_ingot.png</image>
+        <related>
+            <rel0>
+                <id>SM_irnin</id>
+                <number>3</number>
+                <details>true</details>
+            </rel0>
+            <rel1>
+                <id>SM_stlin</id>
+                <number>3</number>
+                <details>true</details>
+            </rel1>
+        </related>
+    </test>-->
+
     <materials>
         <!-- Refining materials -->
         <obsidian_flux>
@@ -126,24 +145,6 @@
 
 
         <!-- Ingots -->
-        <test>
-            <name>test_item</name>
-            <id>TEST_item</id>
-            <jobId>0</jobId>
-            <image>iron_ingot.png</image>
-            <related>
-                <rel0>
-                    <id>SM_irnin</id>
-                    <number>3</number>
-                    <details>true</details>
-                </rel0>
-                <rel1>
-                    <id>SM_stlin</id>
-                    <number>3</number>
-                    <details>true</details>
-                </rel1>
-            </related>
-        </test>
         <iron_ingot>
             <name>iron_ingot</name>
             <id>SM_irnin</id>
