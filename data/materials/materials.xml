@@ -1211,6 +1211,43 @@
     et je ne prends même pas en compte les matériaux pour l'arcana que j'ai listé à part indépendamment... Bref, fun !-->
         
     <!-- Stonecutting -->
+      <!-- Stones -->
+        <stone>
+            <name>stone</name>
+            <id>ST_stone</id>
+            <image>stone.png</image>
+            <related>
+
+            </related>
+        </stone>
+
+        <lodestone>
+            <name>lodestone</name>
+            <id>ST_ldstn</id>
+            <image>lodestone.png</image>
+            <related>
+
+            </related>
+        </lodestone>
+        
+        <loamy_lodestone>
+            <name>loamy_lodestone</name>
+            <id>ST_lmlds</id>
+            <image>loamy_lodestone.png</image>
+            <related>
+
+            </related>
+        </loamy_lodestone>
+        
+        <putrid_lodestone>
+            <name>putrid_lodestone</name>
+            <id>ST_ptlds</id>
+            <image>putrid_lodestone.png</image>
+            <related>
+
+            </related>
+        </putrid_lodestone>
+        
       <!-- Cut Stones -->
         <stone_block>
             <name>stone_block</name>
