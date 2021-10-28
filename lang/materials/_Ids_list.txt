@@ -1,7 +1,7 @@
 Refining Materials
         obsidian_flux       = RM_obdfx
         obsidian_sandpaper  = RM_obdsp
-        aged_tanning        = RM_agdtn
+        aged_tannin         = RM_agdtn
         wireweave           = RM_wrwve
 
 

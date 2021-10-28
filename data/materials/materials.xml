@@ -793,6 +793,7 @@
                 <rel0>
                     <id>AR_airwp</id>
                     <number>4</number>
+                    <details>true</details>
                 </rel0>
             </related>
         </air_essence>
@@ -805,6 +806,7 @@
                 <rel0>
                     <id>AR_airec</id>
                     <number>3</number>
+                    <details>true</details>
                 </rel0>
             </related>
         </air_quintessence>
@@ -839,6 +841,7 @@
                 <rel0>
                     <id>AR_solwp</id>
                     <number>4</number>
+                    <details>true</details>
                 </rel0>
             </related>
         </soul_essence>
@@ -851,6 +854,7 @@
                 <rel0>
                     <id>AR_solec</id>
                     <number>3</number>
+                    <details>true</details>
                 </rel0>
             </related>
         </soul_quintessence>
@@ -885,6 +889,7 @@
                 <rel0>
                     <id>AR_lifwp</id>
                     <number>4</number>
+                    <details>true</details>
                 </rel0>
             </related>
         </life_essence>
@@ -897,6 +902,7 @@
                 <rel0>
                     <id>AR_lifec</id>
                     <number>3</number>
+                    <details>true</details>
                 </rel0>
             </related>
         </life_quintessence>
@@ -931,6 +937,7 @@
                 <rel0>
                     <id>AR_firwp</id>
                     <number>4</number>
+                    <details>true</details>
                 </rel0>
             </related>
         </fire_essence>
@@ -943,6 +950,7 @@
                 <rel0>
                     <id>AR_firec</id>
                     <number>3</number>
+                    <details>true</details>
                 </rel0>
             </related>
         </fire_quintessence>
@@ -977,6 +985,7 @@
                 <rel0>
                     <id>AR_dthwp</id>
                     <number>4</number>
+                    <details>true</details>
                 </rel0>
             </related>
         </death_essence>
@@ -989,6 +998,7 @@
                 <rel0>
                     <id>AR_dthec</id>
                     <number>3</number>
+                    <details>true</details>
                 </rel0>
             </related>
         </death_quintessence>
@@ -1023,6 +1033,7 @@
                 <rel0>
                     <id>AR_ertwp</id>
                     <number>4</number>
+                    <details>true</details>
                 </rel0>
             </related>
         </earth_essence>
@@ -1035,6 +1046,7 @@
                 <rel0>
                     <id>AR_ertec</id>
                     <number>3</number>
+                    <details>true</details>
                 </rel0>
             </related>
         </earth_quintessence>
@@ -1069,6 +1081,7 @@
                 <rel0>
                     <id>AR_wtrwp</id>
                     <number>4</number>
+                    <details>true</details>
                 </rel0>
             </related>
         </water_essence>
@@ -1081,6 +1094,7 @@
                 <rel0>
                     <id>AR_wtrec</id>
                     <number>3</number>
+                    <details>true</details>
                 </rel0>
             </related>
         </water_quintessence>
@@ -1189,10 +1203,10 @@
                     <id>ST_ldstn</id>
                     <number>2</number>
                 </rel1>
-                <rel0>
+                <rel2>
                     <id>ST_lmlds</id>
                     <number>1</number>
-                </rel0>
+                </rel2>
             </related>
         </obsidian_voidstone>
 
@@ -1916,7 +1930,7 @@
 
         <flawed_amber>
             <name>flawed_amber</name>
-            <id>U_C_onyx</id>
+            <id>U_C_amber</id>
             <image>flawed_amber.png</image>
             <!--<cat>ST_fus_rk0</cat>-->
             <related>
@@ -2950,7 +2964,7 @@
 
         <cut_flawed_amber>
             <name>cut_flawed_amber</name>
-            <id>C_C_onyx</id>
+            <id>C_C_amber</id>
             <jobId>4</jobId>
             <image>cut_flawed_amber.png</image>
             <cat>ST_cut_rk0</cat>
@@ -3219,7 +3233,7 @@
 
         <cut_amber>
             <name>cut_amber</name>
-            <id>C_U_onyx</id>
+            <id>C_U_amber</id>
             <jobId>4</jobId>
             <image>cut_amber.png</image>
             <cat>ST_cut_rk1</cat>
@@ -3245,7 +3259,7 @@
             <cat>ST_cut_rk1</cat>
             <related>
                 <rel0>
-                    <id>U_U_amber</id>
+                    <id>U_U_malachite</id>
                     <number>1</number>
                     <details>true</details>
                 </rel0>
@@ -3502,7 +3516,7 @@
 
         <cut_brilliant_amber>
             <name>cut_brilliant_amber</name>
-            <id>C_R_onyx</id>
+            <id>C_R_amber</id>
             <jobId>4</jobId>
             <image>cut_brilliant_amber.png</image>
             <cat>ST_cut_rk2</cat>
@@ -3528,7 +3542,7 @@
             <cat>ST_cut_rk2</cat>
             <related>
                 <rel0>
-                    <id>U_R_amber</id>
+                    <id>U_R_malachite</id>
                     <number>1</number>
                     <details>true</details>
                 </rel0>
@@ -3656,7 +3670,7 @@
                     <details>true</details>
                 </rel0>
                 <rel1>
-                    <id>AR_lifeq</id>
+                    <id>AR_lifqe</id>
                     <number>3</number>
                     <details>true</details>
                 </rel1>
@@ -3676,7 +3690,7 @@
                     <details>true</details>
                 </rel0>
                 <rel1>
-                    <id>AR_wtreq</id>
+                    <id>AR_wtrqe</id>
                     <number>3</number>
                     <details>true</details>
                 </rel1>
@@ -3696,7 +3710,7 @@
                     <details>true</details>
                 </rel0>
                 <rel1>
-                    <id>AR_dtheq</id>
+                    <id>AR_dthqe</id>
                     <number>3</number>
                     <details>true</details>
                 </rel1>
@@ -3716,7 +3730,7 @@
                     <details>true</details>
                 </rel0>
                 <rel1>
-                    <id>AR_fireq</id>
+                    <id>AR_firqe</id>
                     <number>3</number>
                     <details>true</details>
                 </rel1>
@@ -3736,7 +3750,7 @@
                     <details>true</details>
                 </rel0>
                 <rel1>
-                    <id>AR_lifeq</id>
+                    <id>AR_lifqe</id>
                     <number>3</number>
                     <details>true</details>
                 </rel1>
@@ -3756,7 +3770,7 @@
                     <details>true</details>
                 </rel0>
                 <rel1>
-                    <id>AR_aireq</id>
+                    <id>AR_airqe</id>
                     <number>3</number>
                     <details>true</details>
                 </rel1>
@@ -3776,7 +3790,7 @@
                     <details>true</details>
                 </rel0>
                 <rel1>
-                    <id>AR_soleq</id>
+                    <id>AR_solqe</id>
                     <number>3</number>
                     <details>true</details>
                 </rel1>
@@ -3785,7 +3799,7 @@
 
         <cut_pristine_amber>
             <name>cut_pristine_amber</name>
-            <id>C_E_onyx</id>
+            <id>C_E_amber</id>
             <jobId>4</jobId>
             <image>cut_pristine_amber.png</image>
             <cat>ST_cut_rk3</cat>
@@ -3796,7 +3810,7 @@
                     <details>true</details>
                 </rel0>
                 <rel1>
-                    <id>AR_erteq</id>
+                    <id>AR_ertqe</id>
                     <number>3</number>
                     <details>true</details>
                 </rel1>
@@ -3811,12 +3825,12 @@
             <cat>ST_cut_rk3</cat>
             <related>
                 <rel0>
-                    <id>U_E_amber</id>
+                    <id>U_E_malachite</id>
                     <number>1</number>
                     <details>true</details>
                 </rel0>
                 <rel1>
-                    <id>AR_soleq</id>
+                    <id>AR_solqe</id>
                     <number>3</number>
                     <details>true</details>
                 </rel1>
@@ -3836,7 +3850,7 @@
                     <details>true</details>
                 </rel0>
                 <rel1>
-                    <id>AR_aireq</id>
+                    <id>AR_airqe</id>
                     <number>3</number>
                     <details>true</details>
                 </rel1>
@@ -3856,7 +3870,7 @@
                     <details>true</details>
                 </rel0>
                 <rel1>
-                    <id>AR_fireq</id>
+                    <id>AR_firqe</id>
                     <number>3</number>
                     <details>true</details>
                 </rel1>
@@ -3876,7 +3890,7 @@
                     <details>true</details>
                 </rel0>
                 <rel1>
-                    <id>AR_soleq</id>
+                    <id>AR_solqe</id>
                     <number>3</number>
                     <details>true</details>
                 </rel1>
@@ -3896,7 +3910,7 @@
                     <details>true</details>
                 </rel0>
                 <rel1>
-                    <id>AR_dtheq</id>
+                    <id>AR_dthqe</id>
                     <number>3</number>
                     <details>true</details>
                 </rel1>
@@ -3916,7 +3930,7 @@
                     <details>true</details>
                 </rel0>
                 <rel1>
-                    <id>AR_erteq</id>
+                    <id>AR_ertqe</id>
                     <number>3</number>
                     <details>true</details>
                 </rel1>
