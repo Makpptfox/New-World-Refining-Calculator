@@ -162,6 +162,11 @@ function createWindow(){
     mainWindows.webContents.on('will-navigate', handleRedirect)
     mainWindows.webContents.on('new-window', handleRedirect)
 
+    mainWindows.once('ready-to-show', ()=>{
+
+        mainWindows.center();
+    })
+
 }
 function createLoader(){
     updaterWindows = new BrowserWindow({
@@ -198,7 +203,7 @@ function createLoader(){
                     "settings":
                         {
                             "lang": "en-EN",
-                            "autoupdate": false
+                            "autoupdate": true
                         }
                 }
 
