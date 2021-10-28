@@ -6,145 +6,6 @@
     <title>New World</title>
     <!-- Ne pas toucher -->
 
-    <!-- mats list & id
-    Refining Materials
-            obsidian_flux       = RM_obdfx
-            obsidian_sandpaper  = RM_obdsp
-            aged_tanning        = RM_agdtn
-            wireweave           = RM_wrwve
-
-
-    Smelting
-        Charcoal
-            charcoal            = SM_chrcl
-
-        Ores
-            iron_ore            = SM_irnor
-            silver_ore          = SM_silor
-            starmetal_ore       = SM_stmor
-            orichalcum_ore      = SM_orcor
-            gold_ore            = SM_godor
-            platinum_ore        = SM_pltor
-            tolvium             = SM_tlvim
-            cinnabar            = SM_cnabr
-
-        Ingots
-            iron_ingot          = SM_irnin
-            steel_ingot         = SM_stlin
-            starmetal_ingot     = SM_stmin
-            orichalcum_ingot    = SM_orcin
-            silver_ingot        = SM_silin
-            gold_ingot          = SM_godin
-            platinum_ingot      = SM_pltin
-            asmodeum            = SM_asmod
-            voidbent_ingot      = NYI
-
-
-    Woodworking
-        Woods
-            green_wood          = WW_grnwd
-            aged_wood           = WW_agdwd
-            wyrdwood            = WW_wrdwd
-            ironwood            = WW_irnwd
-            wildwood            = WW_wldwd
-            barbvine            = WW_brbvn
-
-        Planks
-            timber              = WW_tmber
-            lumber              = WW_lmber
-            wyrdwood_planks     = WW_wrdpk
-            ironwood_planks     = WW_irnpk
-            glittering_ebony    = WW_glteb
-
-
-    Leatherworking
-        Hides
-            rawhide             = LW_rawhd
-            thick_hide          = LW_thchd
-            iron_hide           = LW_irnhd
-            smolderhide         = LW_smlhd
-            scarhide            = LW_scrhd
-
-        Leathers
-            coarse_leather      = LW_crslt
-            rugged_leather      = LW_rgdlt
-            layered_leather     = LW_laylt
-            infused_leather     = LW_inflt
-            runic_leather       = LW_runlt
-
-
-    Weaving
-        Fibers
-            fibers              = WV_basfb
-            silk_threads        = WV_slkfb
-            wirefiber           = WV_wrefb
-
-        Cloths
-            linen               = WV_lincl
-            sateen              = WV_satcl
-            silk                = WV_slkcl
-            infused_silk        = WV_infcl
-            phoenixweave        = WV_phxcl
-            scalecloth          = WV_scacl
-            blisterweave        = WV_blicl
-            
-            
-    Stonecutting
-        Stones
-            stone              = ST_stone
-            lodestone          = ST_ldstn
-            loamy_lodestone    = ST_lmlds
-            putrid_lodestone   = ST_ptlds
-        
-        Blocks    
-            stone_block        = ST_stnbl
-            stone_brick        = ST_stnbr
-            lodestone_brick    = ST_ldsbr
-            obsidian_voidstone = ST_obdvs
-            runestone          = ST_rnstn
-            
-            
-    Arcana (Juste pour être capable d'afficher les essences pour le stonecutting)
-        Elements
-            air_mote            = AR_airmt
-            air_wisp            = AR_airwp
-            air_essence         = AR_airec
-            air_quintessence    = AR_airqe
-            -
-            soul_mote           = AR_solmt
-            soul_wisp           = AR_solwp
-            soul_essence        = AR_solec
-            soul_quintessence   = AR_solqe
-            -
-            life_mote           = AR_lifmt
-            life_wisp           = AR_lifwp
-            life_essence        = AR_lifec
-            life_quintessence   = AR_lifqe
-            -
-            fire_mote           = AR_firmt
-            fire_wisp           = AR_firwp
-            fire_essence        = AR_firec
-            fire_quintessence   = AR_firqe
-            -
-            death_mote          = AR_dthmt
-            death_wisp          = AR_dthwp
-            death_essence       = AR_dthec
-            death_quintessence  = AR_dthqe
-            -
-            earth_mote          = AR_ertmt
-            earth_wisp          = AR_ertwp
-            earth_essence       = AR_ertec
-            earth_quintessence  = AR_ertqe
-            -
-            water_mote          = AR_wtrmt
-            water_wisp          = AR_wtrwp
-            water_essence       = AR_wtrec
-            water_quintessence  = AR_wtrqe
-            
-            
-
-    -->
-
     <materials>
         <!-- Refining materials -->
         <obsidian_flux>
@@ -1247,7 +1108,7 @@
 
             </related>
         </putrid_lodestone>
-        
+
       <!-- Cut Stones -->
         <stone_block>
             <name>stone_block</name>
@@ -1337,7 +1198,630 @@
                 </rel2>
             </related>
         </runestone>
+
+      <!-- Keys Comps -->
+        <corrupted_rune>
+            <name>corrupted_rune</name>
+            <id>ST_crrun</id>
+            <image>corrupted_rune.png</image>
+            <related>
+
+            </related>
+        </corrupted_rune>
+
+        <molten_rune>
+            <name>molten_rune</name>
+            <id>ST_mtrun</id>
+            <image>molten_rune.png</image>
+            <related>
+
+            </related>
+        </molten_rune>
+
+        <blight_seeds>
+            <name>blight_seeds</name>
+            <id>ST_bltsd</id>
+            <image>blight_seeds.png</image>
+            <related>
+
+            </related>
+        </blight_seeds>
+
+        <glowing_spore>
+            <name>glowing_spore</name>
+            <id>ST_glwsp</id>
+            <image>glowing_spore.png</image>
+            <related>
+
+            </related>
+        </glowing_spore>
+
+        <earth_totem>
+            <name>earth_totem</name>
+            <id>ST_erttt</id>
+            <image>earth_totem.png</image>
+            <related>
+
+            </related>
+        </earth_totem>
+
+        <firefox>
+            <name>firefox</name>
+            <id>ST_opera</id>
+            <image>firefox.png</image>
+            <related>
+
+            </related>
+        </firefox>
+
+        <fancy_shell>
+            <name>fancy_shell</name>
+            <id>ST_fcshl</id>
+            <image>fancy_shell.png</image>
+            <related>
+
+            </related>
+        </fancy_shell>
+
+        <glowing_swamp_moss>
+            <name>glowing_swamp_moss</name>
+            <id>ST_gsmos</id>
+            <image>glowing_swamp_moss.png</image>
+            <related>
+
+            </related>
+        </glowing_swamp_moss>
+
+      <!-- Keys Chisels -->
+        <iron_chisel>
+            <name>iron_chisel</name>
+            <id>ST_ircsl</id>
+            <image>iron_chisel.png</image>
+            <related>
+
+            </related>
+        </iron_chisel>
+
+        <steel_chisel>
+            <name>steel_chisel</name>
+            <id>ST_stcsl</id>
+            <image>steel_chisel.png</image>
+            <related>
+
+            </related>
+        </steel_chisel>
+
+        <starmetal_chisel>
+            <name>starmetal_chisel</name>
+            <id>ST_smcsl</id>
+            <image>starmetal_chisel.png</image>
+            <related>
+
+            </related>
+        </starmetal_chisel>
+
+        <orichalcum_chisel>
+            <name>orichalcum_chisel</name>
+            <id>ST_orcsl</id>
+            <image>orichalcum_chisel.png</image>
+            <related>
+
+            </related>
+        </orichalcum_chisel>
+
+        <asmodeum_chisel>
+            <name>asmodeum_chisel</name>
+            <id>ST_ascsl</id>
+            <image>asmodeum_chisel.png</image>
+            <related>
+
+            </related>
+        </asmodeum_chisel>
         
+      <!-- Keys (C'est le nom de la catégorie en jeu, mais à ne pas confondre avec les ORBS !!! -->
+        <eternal_heart>
+            <name>eternal_heart</name>
+            <id>ST_etnht</id>
+            <jobId>4</jobId>
+            <image>eternal_heart.png</image>
+            <related>
+                <rel0>
+                    <id>AR_dthmt</id>
+                    <number>50</number>
+                </rel0>
+                <rel1>
+                    <id>AR_lifmt</id>
+                    <number>50</number>
+                </rel1>
+                <rel2>
+                    <id>AR_solmt</id>
+                    <number>50</number>
+                </rel2>
+            </related>
+        </eternal_heart>
+
+        <elemental_heart>
+            <name>elemental_heart</name>
+            <id>ST_elmht</id>
+            <jobId>4</jobId>
+            <image>elemental_heart.png</image>
+            <related>
+                <rel0>
+                    <id>AR_wtrmt</id>
+                    <number>50</number>
+                </rel0>
+                <rel1>
+                    <id>AR_ertmt</id>
+                    <number>50</number>
+                </rel1>
+                <rel2>
+                    <id>AR_firmt</id>
+                    <number>50</number>
+                </rel2>
+                <rel3>
+                    <id>AR_airmt</id>
+                    <number>50</number>
+                </rel3>
+            </related>
+        </elemental_heart>
+
+        <energy_core>
+            <name>energy_core</name>
+            <id>ST_engcr</id>
+            <jobId>4</jobId>
+            <image>energy_core.png</image>
+            <related>
+                <rel0>
+                    <id>ST_etnht</id>
+                    <number>1</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>ST_elmht</id>
+                    <number>1</number>
+                    <details>true</details>
+                </rel1>
+            </related>
+        </energy_core>
+
+        <genesis_core>
+            <name>genesis_core</name>
+            <id>ST_gencr</id>
+            <jobId>4</jobId>
+            <image>genesis_core.png</image>
+            <related>
+                <rel0>
+                    <id>ST_etnht</id>
+                    <number>3</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>ST_elmht</id>
+                    <number>3</number>
+                    <details>true</details>
+                </rel1>
+                <rel2>
+                    <id>ST_crrun</id>
+                    <number>3</number>
+                </rel2>
+                <rel3>
+                    <id>ST_mtrun</id>
+                    <number>3</number>
+                </rel3>
+            </related>
+        </genesis_core>
+
+        <undying_heart>
+            <name>undying_heart</name>
+            <id>ST_undht</id>
+            <jobId>4</jobId>
+            <image>undying_heart.png</image>
+            <related>
+                <rel0>
+                    <id>AR_dthqe</id>
+                    <number>10</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>AR_lifqe</id>
+                    <number>10</number>
+                    <details>true</details>
+                </rel1>
+                <rel2>
+                    <id>AR_solqe</id>
+                    <number>10</number>
+                    <details>true</details>
+                </rel2>
+                <rel3>
+                    <id>ST_bltsd</id>
+                    <number>10</number>
+                </rel3>
+            </related>
+        </undying_heart>
+
+        <lazarus_core>
+            <name>lazarus_core</name>
+            <id>ST_lazcr</id>
+            <jobId>4</jobId>
+            <image>lazarus_core.png</image>
+            <related>
+                <rel0>
+                    <id>ST_elmht</id>
+                    <number>1</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>ST_undht</id>
+                    <number>1</number>
+                    <details>true</details>
+                </rel1>
+                <rel2>
+                    <id>ST_glwsp</id>
+                    <number>3</number>
+                </rel2>
+                <rel3>
+                    <id>ST_erttt</id>
+                    <number>3</number>
+                </rel3>
+            </related>
+        </lazarus_core>
+        
+        <!-- Corrupted Refinement -->
+        <corrupted_sliver>
+            <name>corrupted_sliver</name>
+            <id>ST_corsv</id>
+            <image>corrupted_sliver.png</image>
+            <related>
+
+            </related>
+        </corrupted_sliver>
+
+        <corrupted_fragment>
+            <name>corrupted_fragment</name>
+            <id>ST_corfm</id>
+            <jobId>4</jobId>
+            <image>corrupted_fragment.png</image>
+            <related>
+                <rel0>
+                    <id>ST_corsv</id>
+                    <number>5</number>
+                </rel0>
+            </related>
+        </corrupted_fragment>
+
+        <corrupted_shard>
+            <name>corrupted_fragment</name>
+            <id>ST_corsd</id>
+            <jobId>4</jobId>
+            <image>corrupted_shard.png</image>
+            <related>
+                <rel0>
+                    <id>ST_corfm</id>
+                    <number>4</number>
+                    <details>true</details>
+                </rel0>
+            </related>
+        </corrupted_shard>
+
+        <corrupted_crystal>
+            <name>corrupted_crystal</name>
+            <id>ST_corct</id>
+            <jobId>4</jobId>
+            <image>corrupted_crystal.png</image>
+            <related>
+                <rel0>
+                    <id>ST_corsd</id>
+                    <number>3</number>
+                    <details>true</details>
+                </rel0>
+            </related>
+        </corrupted_crystal>
+
+        <corrupted_lodestone>
+            <name>corrupted_lodestone</name>
+            <id>ST_corlt</id>
+            <jobId>4</jobId>
+            <image>corrupted_lodestone.png</image>
+            <related>
+                <rel0>
+                    <id>ST_corct</id>
+                    <number>2</number>
+                    <details>true</details>
+                </rel0>
+            </related>
+        </corrupted_lodestone>
+
+      <!-- Tuning Orbs -->
+        <tuning_orb_amrine>
+            <name>tuning_orb_amrine</name>
+            <id>ORB_amrn</id>
+            <jobId>4</jobId>
+            <image>tuning_orb_amrine.png</image>
+            <related>
+                <rel0>
+                    <id>ST_corsv</id>
+                    <number>10</number>
+                </rel0>
+                <rel1>
+                    <id>ST_ircsl</id>
+                    <number>1</number>
+                </rel1>
+                <rel2>
+                    <id>ST_stnbl</id>
+                    <number>50</number>
+                    <details>true</details>
+                </rel2>
+                <rel3>
+                    <id>ST_etnht</id>
+                    <number>1</number>
+                    <details>true</details>
+                </rel3>
+            </related>
+        </tuning_orb_amrine>
+
+        <tuning_orb_starstone>
+            <name>tuning_orb_starstone</name>
+            <id>ORB_strs</id>
+            <jobId>4</jobId>
+            <image>tuning_orb_starstone.png</image>
+            <related>
+                <rel0>
+                    <id>ST_corfm</id>
+                    <number>10</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>ST_stcsl</id>
+                    <number>1</number>
+                </rel1>
+                <rel2>
+                    <id>ST_stnbr</id>
+                    <number>50</number>
+                    <details>true</details>
+                </rel2>
+                <rel3>
+                    <id>ST_elmht</id>
+                    <number>1</number>
+                    <details>true</details>
+                </rel3>
+            </related>
+        </tuning_orb_starstone>
+
+        <tuning_orb_monoecious>
+            <name>tuning_orb_monoecious</name>
+            <id>ORB_mnoe</id>
+            <jobId>4</jobId>
+            <image>tuning_orb_monoecious.png</image>
+            <related>
+                <rel0>
+                    <id>ST_corsd</id>
+                    <number>5</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>ST_smcsl</id>
+                    <number>1</number>
+                </rel1>
+                <rel2>
+                    <id>ST_ldsbr</id>
+                    <number>50</number>
+                    <details>true</details>
+                </rel2>
+                <rel3>
+                    <id>ST_engcr</id>
+                    <number>1</number>
+                    <details>true</details>
+                </rel3>
+                <rel4>
+                    <id>ST_opera</id>
+                    <number>5</number>
+                </rel4>
+            </related>
+        </tuning_orb_monoecious>
+
+        <tuning_orb_siren>
+            <name>tuning_orb_siren</name>
+            <id>ORB_sirn</id>
+            <jobId>4</jobId>
+            <image>tuning_orb_siren.png</image>
+            <related>
+                <rel0>
+                    <id>ST_corsd</id>
+                    <number>5</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>ST_smcsl</id>
+                    <number>1</number>
+                </rel1>
+                <rel2>
+                    <id>ST_ldsbr</id>
+                    <number>50</number>
+                    <details>true</details>
+                </rel2>
+                <rel3>
+                    <id>ST_engcr</id>
+                    <number>1</number>
+                    <details>true</details>
+                </rel3>
+                <rel4>
+                    <id>ST_fcshl</id>
+                    <number>5</number>
+                </rel4>
+            </related>
+        </tuning_orb_siren>
+
+        <tuning_orb_protector>
+            <name>tuning_orb_protector</name>
+            <id>ORB_prot</id>
+            <jobId>4</jobId>
+            <image>tuning_orb_protector.png</image>
+            <related>
+                <rel0>
+                    <id>ST_corsd</id>
+                    <number>5</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>ST_smcsl</id>
+                    <number>1</number>
+                </rel1>
+                <rel2>
+                    <id>ST_ldsbr</id>
+                    <number>50</number>
+                    <details>true</details>
+                </rel2>
+                <rel3>
+                    <id>ST_engcr</id>
+                    <number>1</number>
+                    <details>true</details>
+                </rel3>
+                <rel4>
+                    <id>ST_gsmos</id>
+                    <number>5</number>
+                </rel4>
+            </related>
+        </tuning_orb_protector>
+
+        <tuning_orb_depths>
+            <name>tuning_orb_depths</name>
+            <id>ORB_dpth</id>
+            <jobId>4</jobId>
+            <image>tuning_orb_depths.png</image>
+            <related>
+                <rel0>
+                    <id>ST_corsd</id>
+                    <number>10</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>ST_smcsl</id>
+                    <number>1</number>
+                </rel1>
+                <rel2>
+                    <id>ST_ldsbr</id>
+                    <number>50</number>
+                    <details>true</details>
+                </rel2>
+                <rel3>
+                    <id>ST_engcr</id>
+                    <number>1</number>
+                    <details>true</details>
+                </rel3>
+            </related>
+        </tuning_orb_depths>
+
+        <tuning_orb_eridanus>
+            <name>tuning_orb_eridanus</name>
+            <id>ORB_erdn</id>
+            <jobId>4</jobId>
+            <image>tuning_orb_eridanus.png</image>
+            <related>
+                <rel0>
+                    <id>ST_corsd</id>
+                    <number>15</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>ST_smcsl</id>
+                    <number>1</number>
+                </rel1>
+                <rel2>
+                    <id>ST_ldsbr</id>
+                    <number>50</number>
+                    <details>true</details>
+                </rel2>
+                <rel3>
+                    <id>ST_engcr</id>
+                    <number>1</number>
+                    <details>true</details>
+                </rel3>
+            </related>
+        </tuning_orb_eridanus>
+
+        <tuning_orb_dynasty>
+            <name>tuning_orb_dynasty</name>
+            <id>ORB_dyna</id>
+            <jobId>4</jobId>
+            <image>tuning_orb_dynasty.png</image>
+            <related>
+                <rel0>
+                    <id>ST_corct</id>
+                    <number>10</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>ST_orcsl</id>
+                    <number>1</number>
+                </rel1>
+                <rel2>
+                    <id>ST_vdstn</id>
+                    <number>10</number>
+                    <details>true</details>
+                </rel2>
+                <rel3>
+                    <id>ST_engcr</id>
+                    <number>1</number>
+                    <details>true</details>
+                </rel3>
+            </related>
+        </tuning_orb_dynasty>
+
+        <tuning_orb_genesis>
+            <name>tuning_orb_genesis</name>
+            <id>ORB_gene</id>
+            <jobId>4</jobId>
+            <image>tuning_orb_genesis.png</image>
+            <related>
+                <rel0>
+                    <id>ST_corlt</id>
+                    <number>10</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>ST_ascsl</id>
+                    <number>1</number>
+                </rel1>
+                <rel2>
+                    <id>ST_rnstn</id>
+                    <number>5</number>
+                    <details>true</details>
+                </rel2>
+                <rel3>
+                    <id>ST_gencr</id>
+                    <number>1</number>
+                    <details>true</details>
+                </rel3>
+            </related>
+        </tuning_orb_genesis>
+
+        <tuning_orb_lazarus>
+            <name>tuning_orb_lazarus</name>
+            <id>ORB_laza</id>
+            <jobId>4</jobId>
+            <image>tuning_orb_lazarus.png</image>
+            <related>
+                <rel0>
+                    <id>ST_corlt</id>
+                    <number>20</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>ST_ascsl</id>
+                    <number>1</number>
+                </rel1>
+                <rel2>
+                    <id>ST_rnstn</id>
+                    <number>10</number>
+                    <details>true</details>
+                </rel2>
+                <rel3>
+                    <id>ST_lazcr</id>
+                    <number>1</number>
+                    <details>true</details>
+                </rel3>
+            </related>
+        </tuning_orb_lazarus>
         
 
       <!-- COMMON GEMS (Garde en tête qu'on peut pas FUSE les gemmes communes, c'est juste pour le listing des mats pour les UNCOMMON)-->

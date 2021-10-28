@@ -1,0 +1,186 @@
+Refining Materials
+        obsidian_flux       = RM_obdfx
+        obsidian_sandpaper  = RM_obdsp
+        aged_tanning        = RM_agdtn
+        wireweave           = RM_wrwve
+
+
+
+Smelting
+    Charcoal
+        charcoal            = SM_chrcl
+
+    Ores
+        iron_ore            = SM_irnor
+        silver_ore          = SM_silor
+        starmetal_ore       = SM_stmor
+        orichalcum_ore      = SM_orcor
+        gold_ore            = SM_godor
+        platinum_ore        = SM_pltor
+        tolvium             = SM_tlvim
+        cinnabar            = SM_cnabr
+
+    Ingots
+        iron_ingot          = SM_irnin
+        steel_ingot         = SM_stlin
+        starmetal_ingot     = SM_stmin
+        orichalcum_ingot    = SM_orcin
+        silver_ingot        = SM_silin
+        gold_ingot          = SM_godin
+        platinum_ingot      = SM_pltin
+        asmodeum            = SM_asmod
+        voidbent_ingot      = NYI
+
+
+
+Woodworking
+    Woods
+        green_wood          = WW_grnwd
+        aged_wood           = WW_agdwd
+        wyrdwood            = WW_wrdwd
+        ironwood            = WW_irnwd
+        wildwood            = WW_wldwd
+        barbvine            = WW_brbvn
+
+    Planks
+        timber              = WW_tmber
+        lumber              = WW_lmber
+        wyrdwood_planks     = WW_wrdpk
+        ironwood_planks     = WW_irnpk
+        glittering_ebony    = WW_glteb
+
+
+
+Leatherworking
+    Hides
+        rawhide             = LW_rawhd
+        thick_hide          = LW_thchd
+        iron_hide           = LW_irnhd
+        smolderhide         = LW_smlhd
+        scarhide            = LW_scrhd
+
+    Leathers
+        coarse_leather      = LW_crslt
+        rugged_leather      = LW_rgdlt
+        layered_leather     = LW_laylt
+        infused_leather     = LW_inflt
+        runic_leather       = LW_runlt
+
+
+
+Weaving
+    Fibers
+        fibers              = WV_basfb
+        silk_threads        = WV_slkfb
+        wirefiber           = WV_wrefb
+
+    Cloths
+        linen               = WV_lincl
+        sateen              = WV_satcl
+        silk                = WV_slkcl
+        infused_silk        = WV_infcl
+        phoenixweave        = WV_phxcl
+        scalecloth          = WV_scacl
+        blisterweave        = WV_blicl
+        
+        
+
+Stonecutting (Pas listé les gemmes)
+    Stones
+        stone               = ST_stone
+        lodestone           = ST_ldstn
+        loamy_lodestone     = ST_lmlds
+        putrid_lodestone    = ST_ptlds
+    
+    Blocks    
+        stone_block         = ST_stnbl
+        stone_brick         = ST_stnbr
+        lodestone_brick     = ST_ldsbr
+        obsidian_voidstone  = ST_obdvs
+        runestone           = ST_rnstn
+
+    Keys Comps
+        corrupted_rune      = ST_crrun
+        molten_rune         = ST_mtrun
+        blight_seeds        = ST_bltsd
+        glowing_spore       = ST_glwsp
+        earth_totem         = ST_erttt
+        firefox             = ST_opera
+        fancy_shell         = ST_fcshl
+        glowing_swamp_moss  = ST_gsmos
+
+    Key Chisels
+        iron_chisel         = ST_ircsl
+        steel_chisel        = ST_stcsl
+        starmetal_chisel    = ST_smcsl
+        orichalcum_chisel   = ST_orcsl
+        asmodeum_chisel     = ST_ascsl
+
+    Keys
+        eternal_heart       = ST_etnht
+        elemental_heart     = ST_elmht
+        energy_core         = ST_engcr
+        genesis_core        = ST_gencr
+        undying_heart       = ST_undht
+        lazarus_core        = ST_lazcr
+        
+    Corrupted Refinement
+        corrupted_sliver    = ST_corsv
+        corrupted_fragment  = ST_corfm
+        corrupted_shard     = ST_corsd
+        corrupted_crystal   = ST_corct
+        corrupted_lodestone = ST_corlt
+
+    Orbs
+        tuning_orb_amrine   = ORB_amrn
+        tuning_orb_starstone= ORB_strs
+        tuning_orb_monoecious=ORB_mnoe
+        tuning_orb_siren    = ORB_sirn
+        tuning_orb_protector= ORB_prot
+        tuning_orb_depths   = ORB_dpth
+        tuning_orb_eridanus = ORB_erdn
+        tuning_orb_dynasty  = ORB_dyna
+        tuning_orb_genesis  = ORB_gene
+        tuning_orb_lazarus  = ORB_laza
+        
+        
+
+Arcana (Juste pour être capable d'afficher les essences pour le stonecutting)
+    Elements
+        air_mote            = AR_airmt
+        air_wisp            = AR_airwp
+        air_essence         = AR_airec
+        air_quintessence    = AR_airqe
+        -
+        soul_mote           = AR_solmt
+        soul_wisp           = AR_solwp
+        soul_essence        = AR_solec
+        soul_quintessence   = AR_solqe
+        -
+        life_mote           = AR_lifmt
+        life_wisp           = AR_lifwp
+        life_essence        = AR_lifec
+        life_quintessence   = AR_lifqe
+        -
+        fire_mote           = AR_firmt
+        fire_wisp           = AR_firwp
+        fire_essence        = AR_firec
+        fire_quintessence   = AR_firqe
+        -
+        death_mote          = AR_dthmt
+        death_wisp          = AR_dthwp
+        death_essence       = AR_dthec
+        death_quintessence  = AR_dthqe
+        -
+        earth_mote          = AR_ertmt
+        earth_wisp          = AR_ertwp
+        earth_essence       = AR_ertec
+        earth_quintessence  = AR_ertqe
+        -
+        water_mote          = AR_wtrmt
+        water_wisp          = AR_wtrwp
+        water_essence       = AR_wtrec
+        water_quintessence  = AR_wtrqe
+
+
+x

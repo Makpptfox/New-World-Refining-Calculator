@@ -12,7 +12,12 @@
         <removeTab>Remove tab</removeTab>
         <uncut>Fuse gems</uncut>
         <cut>Cut gems</cut>
-
+        <parameterTitle>Settings</parameterTitle>
+        <parameterLang>Language: </parameterLang>
+        <ParameterAutoUpdate>Auto-update on start-up: </ParameterAutoUpdate>
+        <parameterWarning>Each change will AUTOMATICALLY restart the application!</parameterWarning>
+        <aboutTitle>About</aboutTitle>
+        
     </default>
 
 </lang>

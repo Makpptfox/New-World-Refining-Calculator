@@ -137,7 +137,51 @@
         <lodestone_brick>Lodestone Brick</lodestone_brick>
         <obsidian_voidstone>Obsidian Voidstone</obsidian_voidstone>
         <runestone>Runestone</runestone>
+
+        <!-- Corrupted Refinement -->
+        <corrupted_sliver>Corrupted Sliver</corrupted_sliver>
+        <corrupted_fragment>Corrupted Fragment</corrupted_fragment>
+        <corrupted_shard>Corrupted Shard</corrupted_shard>
+        <corrupted_crystal>Corrupted Crystal</corrupted_crystal>
+        <corrupted_lodestone>Corrupted Lodestone</corrupted_lodestone>
+
+        <!-- Keys Comps (Basically, Drops) -->
+        <corrupted_rune>Corrupted Rune</corrupted_rune>
+        <molten_rune>Molten Rune</molten_rune>
+        <blight_seeds>Blight Seeds</blight_seeds>
+        <glowing_spore>Glowing Spore</glowing_spore>
+        <earth_totem>Earth Totem</earth_totem>
+        <firefox>Firefox</firefox>
+        <fancy_shell>Fancy Shell</fancy_shell>
+        <glowing_swamp_moss>Glowing Swamp Moss</glowing_swamp_moss>
+
+        <!-- Keys Chisels (The faction thingy for the Orbs) -->
+        <iron_chisel>Iron Chisel</iron_chisel>
+        <steel_chisel>Steel Chisel</steel_chisel>
+        <starmetal_chisel>Starmetal Chisel</starmetal_chisel>
+        <orichalcum_chisel>Orichalcum Chisel</orichalcum_chisel>
+        <asmodeum_chisel>Asmodeum Chisel</asmodeum_chisel>
         
+        <!-- Keys (Don't ask me, it's the category in game) -->
+        <eternal_heart>Eternal Heart</eternal_heart>
+        <elemental_heart>Elemental Heart</elemental_heart>
+        <energy_core>Energy Core</energy_core>
+        <undying_heart>Undying Heart</undying_heart>
+        <genesis_core>Genesis Core</genesis_core>
+        <lazarus_core>Lazarus Core</lazarus_core>     
+        
+        <!-- Tuning Orbs -->
+        <tuning_orb_amrine>Amrine Tuning Orb</tuning_orb_amrine>
+        <tuning_orb_starstone>Starstone Tuning Orb</tuning_orb_starstone>
+        <tuning_orb_monoecious>Monoecious Tuning Orb</tuning_orb_monoecious>
+        <tuning_orb_siren>Siren Tuning Orb</tuning_orb_siren>
+        <tuning_orb_protector>Protector's Tuning Orb</tuning_orb_protector>
+        <tuning_orb_depths>Depths Tuning Orb</tuning_orb_depths>
+        <tuning_orb_eridanus>Eridanus Tuning Orb</tuning_orb_eridanus>
+        <tuning_orb_dynasty>Dynasty Tuning Orb</tuning_orb_dynasty>
+        <tuning_orb_genesis>Genesis Tuning Orb</tuning_orb_genesis>
+        <tuning_orb_lazarus>Lazarus Tuning Orb</tuning_orb_lazarus>
+
         <!-- Uncut Gems (It should be listed as it is in the game's crafting list, incentive on SHOULD) -->
         <flawed_onyx>Flawed Ony</flawed_onyx>
         <flawed_aquamarine>Flawed Aquamarine</flawed_aquamarine>
