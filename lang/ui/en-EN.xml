@@ -10,6 +10,8 @@
         <defaultTab>Default</defaultTab>
         <addTab>+ New tab</addTab>
         <removeTab>Remove tab</removeTab>
+        <uncut>Fuse gems</uncut>
+        <cut>Cut gems</cut>
 
     </default>
 

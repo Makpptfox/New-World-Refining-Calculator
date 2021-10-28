@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<lang> <!-- les balises doivent avoir le même nom que le nom de l'item -->
+<lang>
 
     <materials>
         <!-- Refining Materials -->
-        <!-- Seulement si le compo est spécifiquement demandé, sinon le ratio est toujours libre et 1:1 donc inutile de l'ajouter -->
+        <!-- Listed here are ONLY the refining materials that are specifically needed as it is, not listed when the player have choice in the quality of the RM they uses -->
         <obsidian_flux>Obsidian Flux</obsidian_flux>
         <obsidian_sandpaper>Obsidian Sandpaper</obsidian_sandpaper>
         <aged_tanning>Aged Tannin</aged_tanning>
         <wireweave>Wireweave</wireweave>
 
+        
+        
         <!-- Smelting -->
         <!-- Charcoal -->
         <charcoal>Charcoal</charcoal>
@@ -34,8 +36,10 @@
         <platinum_ingot>Platinum Ingot</platinum_ingot>
         <asmodeum>Asmodeum</asmodeum>
         <!-- <voidbent_ingot>Voidbent Ingot</voidbent_ingot>
-        ^réfléchir à un moyen de l'intégrer différemment vu les compos requis -->
+        ^TODO, the actual listing system won't support this dumbass -->
 
+        
+        
         <!-- Woodworking -->
         <!-- Woods -->
         <green_wood>Green Wood</green_wood>
@@ -52,6 +56,8 @@
         <ironwood_planks>Ironwood PLanks</ironwood_planks>
         <glittering_ebony>Glittering Ebony</glittering_ebony>
 
+        
+        
         <!-- Leatherworking -->
         <!-- Hides -->
         <rawhide>Rawhide</rawhide>
@@ -67,6 +73,8 @@
         <infused_leather>Infused Leather</infused_leather>
         <runic_leather>Runic Leather</runic_leather>
 
+        
+        
         <!-- Weaving -->
         <!-- Fibers -->
         <fibers>Fibers</fibers>
@@ -82,6 +90,169 @@
         <scalecloth>Scalecloth</scalecloth>
         <blisterweave>Blisterwweave</blisterweave>
 
+
+        <!-- Arcana -->
+        <!-- Elements -->
+        <air_mote>Air Mote</air_mote>
+        <air_wisp>Air Wisp</air_wisp>
+        <air_essence>Air Essence</air_essence>
+        <air_quintessence>Air Quintessence</air_quintessence>
+        <soul_mote>Soul Mote</soul_mote>
+        <soul_wisp>Soul Wisp</soul_wisp>
+        <soul_essence>Soul Essence</soul_essence>
+        <soul_quintessence>Soul Quintessence</soul_quintessence>
+        <life_mote>Life Mote</life_mote>
+        <life_wisp>Life Wisp</life_wisp>
+        <life_essence>Life Essence</life_essence>
+        <life_quintessence>Life Quintessence</life_quintessence>
+        <fire_mote>Fire Mote</fire_mote>
+        <fire_wisp>Fire Wisp</fire_wisp>
+        <fire_essence>Fire Essence</fire_essence>
+        <fire_quintessence>Fire Quintessence</fire_quintessence>
+        <death_mote>Death Mote</death_mote>
+        <death_wisp>Death Wisp</death_wisp>
+        <death_essence>Death Essence</death_essence>
+        <death_quintessence>Death Quintessence</death_quintessence>
+        <earth_mote>Earth Mote</earth_mote>
+        <earth_wisp>Earth Wisp</earth_wisp>
+        <earth_essence>Earth Essence</earth_essence>
+        <earth_quintessence>Earth Quintessence</earth_quintessence>
+        <water_mote>Water Mote</water_mote>
+        <water_wisp>Water Wisp</water_wisp>
+        <water_essence>Water Essence</water_essence>
+        <water_quintessence>Water Quintessence</water_quintessence>
+
+
+
+        <!-- Stonecutting (Oh boy) -->
+        <!-- Stones -->
+        <stone>Stone</stone>
+        <lodestone>Lodestone</lodestone>
+        <loamy_lodestone>Loamy Lodestone</loamy_lodestone>
+        <putrid_lodestone>Putrid Lodestone</putrid_lodestone>
+        
+        <!-- Blocks -->
+        <stone_block>Stone Block</stone_block>
+        <stone_brick>Stone Brick</stone_brick>
+        <lodestone_brick>Lodestone Brick</lodestone_brick>
+        <obsidian_voidstone>Obsidian Voidstone</obsidian_voidstone>
+        <runestone>Runestone</runestone>
+        
+        <!-- Uncut Gems (It should be listed as it is in the game's crafting list, incentive on SHOULD) -->
+        <flawed_onyx>Flawed Ony</flawed_onyx>
+        <flawed_aquamarine>Flawed Aquamarine</flawed_aquamarine>
+        <flawed_sapphire>Flawed Sapphire</flawed_sapphire>
+        <flawed_ruby>Flawed Ruby</flawed_ruby>
+        <flawed_diamond>Flawed Diamond</flawed_diamond>
+        <flawed_topaz>Flawed Topaz</flawed_topaz>
+        <flawed_amethyst>Flawed Amethyst</flawed_amethyst>
+        <flawed_amber>Flawed Amber</flawed_amber>
+        <flawed_malachite>Flawed Malachite</flawed_malachite>
+        <flawed_jasper>Flawed Jasper</flawed_jasper>
+        <flawed_carnelian>Flawed Carnelian</flawed_carnelian>
+        <flawed_opal>Flawed Opal</flawed_opal>
+        <flawed_moonstone>Flawed Moonstone</flawed_moonstone>
+        <flawed_emerald>Flawed Emerald</flawed_emerald>
+        <onyx>Onyx</onyx>
+        <aquamarine>Aquamarine</aquamarine>
+        <sapphire>Sapphire</sapphire>
+        <ruby>Ruby</ruby>
+        <diamond>Diamond</diamond>
+        <topaz>Topaz</topaz>
+        <amethyst>Amethyst</amethyst>
+        <amber>Amber</amber>
+        <malachite>Malachite</malachite>
+        <jasper>Jasper</jasper>
+        <carnelian>Carnelian</carnelian>
+        <opal>Opal</opal>
+        <moonstone>Moonstone</moonstone>
+        <emerald>Emerald</emerald>
+        <brilliant_onyx>Brilliant Onyx</brilliant_onyx>
+        <brilliant_aquamarine>Brilliant Aquamarine</brilliant_aquamarine>
+        <brilliant_sapphire>Brilliant Sapphire</brilliant_sapphire>
+        <brilliant_ruby>Brilliant Ruby</brilliant_ruby>
+        <brilliant_diamond>Brilliant Diamond</brilliant_diamond>
+        <brilliant_topaz>Brilliant Topaz</brilliant_topaz>
+        <brilliant_amethyst>Brilliant Amethyst</brilliant_amethyst>
+        <brilliant_amber>Brilliant Amber</brilliant_amber>
+        <brilliant_malachite>Brilliant Malachite</brilliant_malachite>
+        <brilliant_jasper>Brilliant Jasper</brilliant_jasper>
+        <brilliant_carnelian>Brilliant Carnelian</brilliant_carnelian>
+        <brilliant_opal>Brilliant Opal</brilliant_opal>
+        <brilliant_moonstone>Brilliant Moonstone</brilliant_moonstone>
+        <brilliant_emerald>Brilliant Emerald</brilliant_emerald>
+        <pristine_onyx>Pristine Onyx</pristine_onyx>
+        <pristine_aquamarine>Pristine Aquamarine</pristine_aquamarine>
+        <pristine_sapphire>Pristine Sapphire</pristine_sapphire>
+        <pristine_ruby>Pristine Ruby</pristine_ruby>
+        <pristine_diamond>Pristine Diamond</pristine_diamond>
+        <pristine_topaz>Pristine Topaz</pristine_topaz>
+        <pristine_amethyst>Pristine Amethyst</pristine_amethyst>
+        <pristine_amber>Pristine Amber</pristine_amber>
+        <pristine_malachite>Pristine Malachite</pristine_malachite>
+        <pristine_jasper>Pristine Jasper</pristine_jasper>
+        <pristine_carnelian>Pristine Carnelian</pristine_carnelian>
+        <pristine_opal>Pristine Opal</pristine_opal>
+        <pristine_moonstone>Pristine Moonstone</pristine_moonstone>
+        <pristine_emerald>Pristine Emerald</pristine_emerald>
+
+        <!-- Cut Gems -->
+        <cut_flawed_onyx>Cut Flawed Ony</cut_flawed_onyx>
+        <cut_flawed_aquamarine>Cut Flawed Aquamarine</cut_flawed_aquamarine>
+        <cut_flawed_sapphire>Cut Flawed Sapphire</cut_flawed_sapphire>
+        <cut_flawed_ruby>Cut Flawed Ruby</cut_flawed_ruby>
+        <cut_flawed_diamond>Cut Flawed Diamond</cut_flawed_diamond>
+        <cut_flawed_topaz>Cut Flawed Topaz</cut_flawed_topaz>
+        <cut_flawed_amethyst>Cut Flawed Amethyst</cut_flawed_amethyst>
+        <cut_flawed_amber>Cut Flawed Amber</cut_flawed_amber>
+        <cut_flawed_malachite>Cut Flawed Malachite</cut_flawed_malachite>
+        <cut_flawed_jasper>Cut Flawed Jasper</cut_flawed_jasper>
+        <cut_flawed_carnelian>Cut Flawed Carnelian</cut_flawed_carnelian>
+        <cut_flawed_opal>Cut Flawed Opal</cut_flawed_opal>
+        <cut_flawed_moonstone>Cut Flawed Moonstone</cut_flawed_moonstone>
+        <cut_flawed_emerald>Cut Flawed Emerald</cut_flawed_emerald>
+        <cut_onyx>Cut Onyx</cut_onyx>
+        <cut_aquamarine>Cut Aquamarine</cut_aquamarine>
+        <cut_sapphire>Cut Sapphire</cut_sapphire>
+        <cut_ruby>Cut Ruby</cut_ruby>
+        <cut_diamond>Cut Diamond</cut_diamond>
+        <cut_topaz>Cut Topaz</cut_topaz>
+        <cut_amethyst>Cut Amethyst</cut_amethyst>
+        <cut_amber>Cut Amber</cut_amber>
+        <cut_malachite>Cut Malachite</cut_malachite>
+        <cut_jasper>Cut Jasper</cut_jasper>
+        <cut_carnelian>Cut Carnelian</cut_carnelian>
+        <cut_opal>Cut Opal</cut_opal>
+        <cut_moonstone>Cut Moonstone</cut_moonstone>
+        <cut_emerald>Cut Emerald</cut_emerald>
+        <cut_brilliant_onyx>Cut Brilliant Onyx</cut_brilliant_onyx>
+        <cut_brilliant_aquamarine>Cut Brilliant Aquamarine</cut_brilliant_aquamarine>
+        <cut_brilliant_sapphire>Cut Brilliant Sapphire</cut_brilliant_sapphire>
+        <cut_brilliant_ruby>Cut Brilliant Ruby</cut_brilliant_ruby>
+        <cut_brilliant_diamond>Cut Brilliant Diamond</cut_brilliant_diamond>
+        <cut_brilliant_topaz>Cut Brilliant Topaz</cut_brilliant_topaz>
+        <cut_brilliant_amethyst>Cut Brilliant Amethyst</cut_brilliant_amethyst>
+        <cut_brilliant_amber>Cut Brilliant Amber</cut_brilliant_amber>
+        <cut_brilliant_malachite>Cut Brilliant Malachite</cut_brilliant_malachite>
+        <cut_brilliant_jasper>Cut Brilliant Jasper</cut_brilliant_jasper>
+        <cut_brilliant_carnelian>Cut Brilliant Carnelian</cut_brilliant_carnelian>
+        <cut_brilliant_opal>Cut Brilliant Opal</cut_brilliant_opal>
+        <cut_brilliant_moonstone>Cut Brilliant Moonstone</cut_brilliant_moonstone>
+        <cut_brilliant_emerald>Cut Brilliant Emerald</cut_brilliant_emerald>
+        <cut_pristine_onyx>Cut Pristine Onyx</cut_pristine_onyx>
+        <cut_pristine_aquamarine>Cut Pristine Aquamarine</cut_pristine_aquamarine>
+        <cut_pristine_sapphire>Cut Pristine Sapphire</cut_pristine_sapphire>
+        <cut_pristine_ruby>Cut Pristine Ruby</cut_pristine_ruby>
+        <cut_pristine_diamond>Cut Pristine Diamond</cut_pristine_diamond>
+        <cut_pristine_topaz>Cut Pristine Topaz</cut_pristine_topaz>
+        <cut_pristine_amethyst>Cut Pristine Amethyst</cut_pristine_amethyst>
+        <cut_pristine_amber>Cut Pristine Amber</cut_pristine_amber>
+        <cut_pristine_malachite>Cut Pristine Malachite</cut_pristine_malachite>
+        <cut_pristine_jasper>Cut Pristine Jasper</cut_pristine_jasper>
+        <cut_pristine_carnelian>Cut Pristine Carnelian</cut_pristine_carnelian>
+        <cut_pristine_opal>Cut Pristine Opal</cut_pristine_opal>
+        <cut_pristine_moonstone>Cut Pristine Moonstone</cut_pristine_moonstone>
+        <cut_pristine_emerald>Cut Pristine Emerald</cut_pristine_emerald>
     </materials>
 
 </lang>
