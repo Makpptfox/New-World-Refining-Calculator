@@ -62,12 +62,14 @@ function loadJobs(){
 
                         })}).then(()=>{
 
+                            let color = null
+
                             if(elem.cats !== ""){
 
                                 for(const catKey in elem.cats){
 
                                     addCat(catKey, elem.cats[catKey]);
-                                    console.log(catKey);
+                                    color = elem.cats[catKey].color;
 
                                 }
 
@@ -77,7 +79,7 @@ function loadJobs(){
 
                             mainMenuBar.appendChild(titleBar);
 
-                            loadItemJobs(RElem.id);
+                            loadItemJobs(RElem.id, color);
 
                         })
 
@@ -97,7 +99,7 @@ function loadJobs(){
     })
 }
 // Function used to show items of a job when the user click on a job in the list
-function loadItemJobs(jobId){
+function loadItemJobs(jobId, catColor = null){
     let mainMenuBar = document.getElementById("itemListBar");
 
     actualJob = jobId;
@@ -112,51 +114,60 @@ function loadItemJobs(jobId){
 
             if(jobId.toString() === material.jobId){
                 try {
-                    await window.api.sendAsync('getLang', "item", material);
+                    const uid = window.api.generateNewUid();
+
+                    await window.api.sendAsync('getLang', "item", material, uid);
 
                     await new Promise((resolve, reject) => {
-                        window.api.receiveOnce("getLangResponse", (type, RElem) => {
-                            if (type === "item" && material.id === RElem.id) {
+                        window.api.receive("getLangResponse", (type, RElem, key) => {
+                            if (type === "item" && material.id === RElem.id && key === uid) {
 
-                                let template = document.getElementById('templateMenuJobItem');
+                                if (RElem['cat'] === "") {
 
-                                let clone = template.content.cloneNode(true);
+                                    let template = document.getElementById('templateMenuJobItem');
 
-                                let title = clone.querySelector("p.titleItem");
-                                let img = clone.querySelector("img.resourceIcon");
+                                    let clone = template.content.cloneNode(true);
 
-                                let button = clone.querySelector("div.buttonAddItem");
+                                    let title = clone.querySelector("p.titleItem");
+                                    let img = clone.querySelector("img.resourceIcon");
 
-
-                                window.api.sendAsync('getLang', "ui");
-
-                                new Promise((resolve1, reject) => {window.api.receiveOnce('getLangResponse', (type, data)=>{
-
-                                    if(type === "ui") {
-
-                                        button.innerText = data["addItem"][0]
-
-                                        resolve1();
-
-                                    }
-
-                                })}).then(()=> {
-
-                                    button.addEventListener("click", () => {
-
-                                        addItem(RElem);
-
-                                    });
-
-                                    img.src = window.api.cwd + "/data/image/materials/" + RElem.image
-                                    title.innerText = RElem.name;
-
-                                    mainMenuBar.appendChild(clone);
+                                    let button = clone.querySelector("div.buttonAddItem");
 
 
-                                    resolve();
-                                })
+                                    window.api.sendAsync('getLang', "ui");
 
+                                    new Promise((resolve1, reject) => {
+                                        window.api.receiveOnce('getLangResponse', (type, data) => {
+
+                                            if (type === "ui") {
+
+                                                button.innerText = data["addItem"][0]
+
+                                                resolve1();
+
+                                            }
+
+                                        })
+                                    }).then(() => {
+
+                                        button.addEventListener("click", () => {
+
+                                            RElem.cat = catColor;
+
+                                            addItem(RElem);
+
+                                        });
+
+                                        img.src = window.api.cwd + "/data/image/materials/" + RElem.image
+                                        title.innerText = RElem.name;
+
+                                        mainMenuBar.appendChild(clone);
+
+
+                                        resolve();
+                                    })
+
+                                }
                             }
                         })
                     })
@@ -175,7 +186,7 @@ function loadItemJobs(jobId){
 
 }
 
-function _loadCatItem(idCat){
+function _loadCatItem(idCat, catColor, name){
     let mainMenuBar = document.getElementById("itemListBar");
 
     mainMenuBar.innerText = "";
@@ -191,8 +202,10 @@ function _loadCatItem(idCat){
     new Promise((resolve, reject) => {window.api.receiveOnce('getLangResponse', (type, data)=>{
 
         if(type === "ui") {
+            console.log(data["titleItemRarity"][0]);
 
-            text.innerText = data["titleItemBar"][0] + " " + actualName
+            text.innerHTML = data["titleItemBar"][0] + " " + actualName + `<br/><br/>${data["titleItemRarity"][0]} <span style='color: ${catColor}'>${name}</span>`
+            console.log("1");
 
             resolve();
 
@@ -201,13 +214,13 @@ function _loadCatItem(idCat){
     })}).then(()=>{
 
         mainMenuBar.appendChild(titleBar);
-        loadCatItem(actualJob, idCat);
+        loadCatItem(actualJob, idCat, catColor);
 
 
     })
 
 }
-function loadCatItem(jobId, idCat){
+function loadCatItem(jobId, idCat, catColor){
     let mainMenuBar = document.getElementById("itemListBar");
 
     window.api.sendAsync('getAllItems');
@@ -226,7 +239,6 @@ function loadCatItem(jobId, idCat){
                         await new Promise((resolve, reject) => {
                             window.api.receiveOnce("getLangResponse", (type, RElem) => {
 
-                                console.trace(RElem);
 
                                 if (type === "item" && material.id === RElem.id) {
 
@@ -258,6 +270,7 @@ function loadCatItem(jobId, idCat){
 
                                         button.addEventListener("click", () => {
 
+                                            RElem.cat = catColor[0];
                                             addItem(RElem);
 
                                         });

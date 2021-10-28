@@ -1,4 +1,5 @@
 
+// The fun is there
 // Function to get all items of the xml data file
 function loadAvailableItems(){
 
@@ -12,10 +13,12 @@ function loadAvailableItems(){
 
         for await (let material of materials) {
 
-            await window.api.sendAsync('getLang', "item", material, 99);
+            let uid = window.api.generateNewUid();
+
+            await window.api.sendAsync('getLang', "item", material, uid);
 
             window.api.receive("getLangResponse", (type, RElem, key) => {
-                if (type === "item" && material.id === RElem.id && key === 99) {
+                if (type === "item" && material.id === RElem.id && key === uid) {
                     let itemDataList = {};
 
                     itemDataList[RElem.id] = RElem;
@@ -30,9 +33,11 @@ function loadAvailableItems(){
 }
 
 // Function to add item to the calculator
-function addItem(elem, baseValue = 1, callback = ()=>{console.log("addItemEnd")}, save = true) {
+function addItem(elem, baseValue = 1, callback = ()=>{}, save = true, opened = false) {
 
     let personal = elem;
+
+    let openedDiv;
 
     let related;
 
@@ -185,13 +190,13 @@ function addItem(elem, baseValue = 1, callback = ()=>{console.log("addItemEnd")}
                                     cloneRelated.querySelector('img.showBar').src = window.api.cwd+"/data/image/ui/down-arrow_white.png"
                                     cloneRelated.querySelector('div.relatedItem').style.cursor = "pointer";
 
-                                    cloneRelated.querySelector('div.relatedItem').addEventListener('click', (e)=>{
-
-                                    })
-
-                                    addSubItem(originCounter.parentElement, child, inputRelated.value, inputRelated, inputRelated);
+                                    addSubItem(originCounter.parentElement, child, inputRelated.value, inputRelated, inputRelated, null, originID.id, opened);
 
                                 }
+
+                                let tooltip = cloneRelated.querySelector('p.tooltipText');
+
+                                tooltip.innerText = child.name;
                                 originCounter.appendChild(cloneRelated);
 
                                 let childData = {
@@ -240,8 +245,13 @@ function addItem(elem, baseValue = 1, callback = ()=>{console.log("addItemEnd")}
                 document.getElementById(uid).parentElement.parentElement.parentElement.remove();
                 addedItem[uid] = null;
 
+                saveData();
+
             })
 
+            let tooltip = cloneOrigin.querySelector('p.tooltipText');
+
+            tooltip.innerText = elem.name;
             containerParent.appendChild(cloneOrigin);
 
             addedItem[originID.id] = {
@@ -249,7 +259,9 @@ function addItem(elem, baseValue = 1, callback = ()=>{console.log("addItemEnd")}
                 parent: originID.id,
                 elem: elem,
                 value: baseValue,
-                children: childs
+                children: childs,
+                opened: opened,
+                openedDiv: openedDiv
 
             };
 
@@ -257,7 +269,7 @@ function addItem(elem, baseValue = 1, callback = ()=>{console.log("addItemEnd")}
         })
     }).then(()=>{
 
-        let data ={
+        let data = {
             children: childs
         }
 
@@ -274,7 +286,8 @@ function addItem(elem, baseValue = 1, callback = ()=>{console.log("addItemEnd")}
 }
 
 // Function to add sub-bar to item when complex data is detected
-async function addSubItem(div, elem, number, inputEvent, self, event = null){
+async function addSubItem(div, elem, number, inputEvent, self, event = null, originId = -1, opened = false){
+
 
     let templateDetailsRelatedItem = document.getElementById('templateDetailsRelatedItem');
 
@@ -282,6 +295,10 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null){
 
     let icon = clone.querySelector('img.iconItemDetail');
     let input = clone.querySelector('input.inputItemDetail');
+
+    let tooltip = clone.querySelector('p.tooltipText');
+
+    tooltip.innerText = elem.name;
 
     icon.src = window.api.cwd+'/data/image/materials/'+elem.image;
 
@@ -350,27 +367,57 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null){
     let uid = window.api.generateNewUid();
 
     clone.querySelector('div.detailsRelatedItemContainer').id = uid;
-    div.parentElement.appendChild(clone);
 
+    div.parentElement.appendChild(clone);
 
     needToBeAdded.forEach(need=>{
 
         if(event !== null){
-            addSubItem(need.div, need.child, need.number, need.inputEvent, need.self, need.event);
+            addSubItem(need.div, need.child, need.number, need.inputEvent, need.self, need.event, originId, opened);
         } else {
-            addSubItem(need.div, need.child, need.number, need.inputEvent, need.self, need.event);
+            if(opened.id === elem.id){
+                addSubItem(need.div, need.child, need.number, need.inputEvent, need.self, need.event, originId, true);
+            } else {
+                addSubItem(need.div, need.child, need.number, need.inputEvent, need.self, need.event, originId, false);
+            }
         }
 
 
     })
 
-
     document.addEventListener('onItemAdded', (e)=>{
 
-        document.getElementById(uid).style.display = "none";
-
         if(event === null) {
+
+
             inputEvent.parentElement.querySelector('img.imgRelatedItem').addEventListener('click', () => {
+
+
+                if(originId !== -1){
+
+                    if(addedItem[originId].openedDiv === null || addedItem[originId].openedDiv === undefined){
+
+                        addedItem[originId].openedDiv = inputEvent;
+                        addedItem[originId].opened = elem;
+
+                    } else {
+
+                        let counter = addedItem[originId].openedDiv;
+                        addedItem[originId].opened = elem;
+
+                        if(counter.parentElement.querySelector('img.imgRelatedItem') && counter !== inputEvent) {
+                            counter.parentElement.querySelector('img.imgRelatedItem').dispatchEvent(new CustomEvent("closeSub"));
+                            addedItem[originId].openedDiv = inputEvent;
+                        } else if(counter === inputEvent){
+
+
+                        }
+
+
+
+                    }
+
+                }
 
                 if(document.getElementById(uid).style.display === "none") {
                     document.getElementById(uid).style.display = "flex";
@@ -380,7 +427,17 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null){
                     inputEvent.parentElement.querySelector('img.showBar').style.transform = 'rotate(0)';
                 }
 
+                saveData();
+
                 document.getElementById(uid).dispatchEvent(new CustomEvent('showCat'));
+
+            })
+            inputEvent.parentElement.querySelector('img.imgRelatedItem').addEventListener('closeSub', ()=>{
+
+                document.getElementById(uid).style.display = "none";
+                inputEvent.parentElement.querySelector('img.showBar').style.transform = 'rotate(0)';
+                document.getElementById(uid).dispatchEvent(new CustomEvent('closeSub'));
+
 
             })
         } else {
@@ -388,6 +445,7 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null){
             let directParent = inputEvent.parentElement.parentElement.parentElement;
 
             directParent.addEventListener('showCat', ()=>{
+
                 if(document.getElementById(uid).style.display === "none") {
                     document.getElementById(uid).style.display = "flex";
                 } else {
@@ -398,10 +456,67 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null){
 
             })
 
+
+            directParent.addEventListener('closeSub', ()=>{
+                document.getElementById(uid).style.display = "none";
+                document.getElementById(uid).dispatchEvent(new CustomEvent('closeSub'));
+            })
+
         }
 
     }, { once: true })
 
+    const observer = new MutationObserver((mutations, obs) => {
+
+        let div = document.getElementById(uid);
+        if (div) {
+            if(event === null){
+                if(opened === false){
+
+                    let arrow = inputEvent.parentElement.querySelector('img.showBar');
+
+                    if(arrow){
+                        arrow.style.transform = 'rotate(0deg)';
+                        div.style.display = "none";
+                    }
+
+                } else {
+
+
+                    if(opened.id === elem.id){
+
+
+                        let arrow = inputEvent.parentElement.querySelector('img.showBar');
+
+                        addedItem[originId].openedDiv = inputEvent;
+
+                        if(arrow) {
+                            arrow.style.transform = 'rotate(180deg)';
+                            div.style.display = "flex";
+                        }
+                    }
+                }
+            } else {
+                if(opened) {
+
+                    document.getElementById(uid).style.display = "flex";
+                } else {
+                    document.getElementById(uid).style.display = "none";
+                }
+            }
+
+            obs.disconnect();
+        }
+
+    });
+
+    observer.observe(document, {
+        childList: true,
+        subtree: true
+    });
+    icon.addEventListener('loadend', function(){
+
+    });
 
 }
 
@@ -421,6 +536,9 @@ function addRelatedToChild(elem, relatedElement, number, index, div, clone, need
     let arrow = related.querySelector('img.arrow');
     let icon = related.querySelector('img.imgRelatedItemChild');
     let input = related.querySelector('input.inputRelatedItemChild');
+    let tooltip = related.querySelector('p.tooltipText');
+
+    tooltip.innerText = child.name;
 
     input.value = number*rel[0]['number'][0];
 

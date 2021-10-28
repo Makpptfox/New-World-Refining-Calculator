@@ -4,9 +4,13 @@ let lang = "";
 
 function getLang(){
 
-    lang = window.api.getLang;
+    window.api.sendAsync("getLanguage")
 
-    console.info(`Lang chosen: ${lang}`);
+    window.api.receiveOnce('getLanguageResponse', (lang)=>{
+
+        this.lang = lang.chosen;
+    })
+
 
 }
 
@@ -17,8 +21,6 @@ function translateAllTag(){
     for(const tag of tags){
 
         if(tag.hasAttribute('data-lang')){
-
-            console.info(tag.dataset['lang']);
 
             window.api.sendAsync('getLang', 'ui', 'null', tag.dataset['lang']);
 

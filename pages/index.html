@@ -11,6 +11,25 @@
 </head>
 <body>
 
+<div id="frame">
+
+    <p id="title">NWRC - Version: 1.0.8</p>
+
+    <div id="frameMinimizeContainer" class="frameButton">
+        <img id="frameMinimize" alt="minimize" width="16px" height="16px"/>
+    </div>
+
+    <div id="frameSizeContainer" class="frameButton">
+        <img id="frameSize" alt="size" width="16px" height="16px"/>
+    </div>
+
+    <div id="frameCloseContainer">
+        <img id="frameClose" alt="close" width="16px" height="16px"/>
+    </div>
+
+
+</div>
+
 <nav>
     <div id="mainMenuBarContainer">
         <div id="leftBar">
@@ -24,7 +43,22 @@
 
                 <div id="catsContainer">
 
-                    <p>test</p>
+
+                </div>
+
+            </div>
+
+            <div id="bottomBar">
+
+                <div id="paramContainer" class="roundButton" onclick="openSettings();">
+
+                    <img id="paramIcon" width="28px">
+
+                </div>
+
+                <div id="aboutContainer" class="roundButton" onclick="openAbout()">
+
+                    <img id="aboutIcon" width="32px">
 
                 </div>
 
@@ -34,11 +68,6 @@
     <div id="itemListBar">
 
     </div>
-    <!-- #TODO >> close menu bar
-    <div id="closeMenuBarJob">
-        <img onclick="closeMenu()" id="closeMenuIcon" src="../resources/arrow.png" alt="left arrow">
-    </div>
-    -->
 </nav>
 
 <div id="containerCalc">
@@ -72,6 +101,59 @@
     </div>
 
     <div id="itemListContainer">
+
+    </div>
+
+</div>
+
+<div id="backContainerParameter">
+
+    <div id="containerParameter">
+
+        <header>
+
+            <h3 data-lang="parameterTitle"></h3>
+
+        </header>
+
+        <div class="listParameters">
+
+            <p class="red" data-lang="parameterWarning"></p>
+
+            <label for="langSelector" data-lang="parameterLang"></label>
+            <select id="langSelector">
+
+            </select><br/><br/>
+            <label for="autoCheck" data-lang="parameterAutoUpdate"></label>
+            <input type="checkbox" id="autoCheck"/>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="backContainerAbout">
+
+    <div id="containerAbout">
+
+        <header>
+
+            <h3 data-lang="aboutTitle"></h3>
+
+        </header>
+
+        <div class="about">
+
+            <p>Developped by <a href="https://github.com/Ward727a" title="Github">Ward</a> & <a href="https://github.com/Makpptfox" title="Github">Mâk</a>.<br/><br/>
+
+                For any issues or suggestions, you are welcome on the <a href="https://github.com/Makpptfox/New-World-Refining-Calculator" title="Github">project's Github</a>.<br/><br/>
+
+                "New World" and Items icons are the property of Amazon.com, Inc. or its affiliates. All rights reserved.<br/><br/>
+
+                All the others UI icons are from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a>.</div>
+            </p>
+
+        </div>
 
     </div>
 
@@ -134,7 +216,12 @@
             <div class="itemCount">
                 <div class="FirstItem">
 
-                    <img class="imgFirstItem" width="100" height="100" alt="imgFirstItem"/>
+                    <div class="tooltipContainer">
+                        <img class="imgFirstItem" width="100" height="100" alt="imgFirstItem"/>
+                        <div class="tooltip">
+                            <p class="tooltipText"></p>
+                        </div>
+                    </div>
 
                     <p class="numberItem"></p>
 
@@ -154,13 +241,17 @@
 
         <img src="" alt=">>>" style="transform: rotate(180deg)" class="arrow">
         <div class="relatedItemContainer">
-            <div class="img">
+            <div class="img tooltipContainer">
                 <img class="imgRelatedItem" width="100" height="100" alt="imgRelatedItem"/>
                 <img src="" class="showBar" width="32" height="32" alt="imgRelatedItem"/>
+                <div class="tooltip">
+                    <p class="tooltipText"></p>
+                </div>
             </div>
             <p class="numberItem"></p>
 
             <input class="inputRelatedItem" type="number" min="0"  onkeydown="if(event.key==='.'){event.preventDefault();}">
+
         </div>
 
     </div>
@@ -168,11 +259,16 @@
 
 <template id="templateDetailsRelatedItem">
 
-    <div class="detailsRelatedItemContainer">
+    <div class="detailsRelatedItemContainer" style="display: none">
 
         <div class="detailsRelatedItem">
             <div class="firstRelated">
-                <img class="iconItemDetail" width="100" height="100" alt="iconItemDetail"/>
+                <div class="tooltipContainer">
+                    <img class="iconItemDetail" width="100" height="100" alt="iconItemDetail"/>
+                    <div class="tooltip">
+                        <p class="tooltipText"></p>
+                    </div>
+                </div>
 
                 <p class="numberItem"></p>
 
@@ -191,7 +287,12 @@
     <div class="relatedItemChild">
 
         <div class="relatedItemContainerChild">
-            <img class="imgRelatedItemChild" width="100" height="100" alt="imgRelatedItemChild"/>
+            <div class="tooltipContainer">
+                <img class="imgRelatedItemChild" width="100" height="100" alt="imgRelatedItemChild"/>
+                <div class="tooltip">
+                    <p class="tooltipText"></p>
+                </div>
+            </div>
             <p class="numberItem"></p>
 
             <input class="inputRelatedItemChild" disabled type="number" min="0"  onkeydown="if(event.key==='.'){event.preventDefault();}">
@@ -199,7 +300,6 @@
 
     </div>
 </template>
-
 
 <template id="templateCat">
 
@@ -225,13 +325,22 @@
 </template>
 
 <script src="../node_modules/sortablejs/Sortable.js"></script>
-<script src="../script/general.js"></script>
 <script src="../script/index/dragSystem.js"></script>
+
+<script src="../script/general.js"></script>
+
 <script src="../script/calculator/jobs-manager.js"></script>
 <script src="../script/calculator/cats-manager.js"></script>
 <script src="../script/calculator/items-manager.js"></script>
 <script src="../script/calculator/tabs-manager.js"></script>
 <script src="../script/calculator/lang-manager.js"></script>
+<script src="../script/calculator/parameter-manager.js"></script>
+<script src="../script/calculator/window-manager.js"></script>
+
+<script>
+    checkA();
+    checkIMG();
+</script>
 
 </body>
 </html>

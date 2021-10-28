@@ -129,21 +129,7 @@ function addNewTab(){
 
         let init = false;
 
-        let clone = tabTemplate.content.cloneNode(true);
-
-        let input = clone.querySelector('input.name');
-        let text = clone.querySelector('p.name');
-
-        clone.querySelector('div.tab')
-
-
-        input.addEventListener('input', (e) => {
-
-            text.innerText = input.value;
-
-        })
-
-        document.addEventListener('click', async (e) => {
+        let confirm = async function(e){
 
             if (e.relatedTarget !== input && input.value !== "" && (tabData[input.value] === undefined || tabData[input.value]['deleted'] !== undefined)) {
 
@@ -167,11 +153,10 @@ function addNewTab(){
                 abortSignal.abort();
                 abortSignal = new AbortController();
 
+                changeTab(text.innerText);
+
 
             } else if (input.dataset.firstClick === "true" && e.relatedTarget !== input && (input.value === "" || tabData[input.value] !== undefined)) {
-
-
-                console.log(inputActual)
                 tabManagerDiv.removeChild(inputActual);
                 inputActual = null;
                 abortSignal.abort();
@@ -180,8 +165,30 @@ function addNewTab(){
             } else {
                 input.dataset.firstClick = "true";
             }
+        }
 
-        }, {signal: abortSignal.signal});
+        let clone = tabTemplate.content.cloneNode(true);
+
+        let input = clone.querySelector('input.name');
+        let text = clone.querySelector('p.name');
+
+        clone.querySelector('div.tab')
+
+
+        input.addEventListener('input', (e) => {
+
+            text.innerText = input.value;
+
+        })
+
+        document.addEventListener('keypress', async (e)=>{
+            if(e.key === "Enter"){
+
+                confirm(e);
+
+            }
+        }, {signal: abortSignal.signal})
+        document.addEventListener('click', confirm, {signal: abortSignal.signal});
 
         inputActual = input.parentElement;
 
@@ -241,7 +248,7 @@ function changeTab(tabName, callback = ()=>{}, noLoad = false){
 
                 for (const addedItemElement in addedItem) {
 
-                    tabData[actualTab]['data'].push(addedItem[addedItemElement]);
+                    if(addedItemElement[addedItemElement] !== null) tabData[actualTab]['data'].push(addedItem[addedItemElement]);
 
                 }
 
@@ -274,12 +281,15 @@ async function loadItem(data, callback = ()=>{}){
 
     for(const item in data){
 
-        await new Promise(resolve => {
-            addItem(data[item]['elem'], data[item]['value'], () => {
-                console.log(addedItem);
-                resolve();
-            }, false);
-        });
+        if(data[item] !== null) {
+            if (data[item]['opened'] === undefined) data[item].opened = false;
+
+            await new Promise(resolve => {
+                addItem(data[item]['elem'], data[item]['value'], () => {
+                    resolve();
+                }, false, data[item]['opened']);
+            });
+        }
 
     }
 
@@ -289,11 +299,11 @@ async function loadItem(data, callback = ()=>{}){
 
 // Function to save all data
 async function saveData(){
+
     tabData[actualTab]['data'] = [];
 
     for (const addedItemElement in addedItem) {
-
-        tabData[actualTab]['data'].push(addedItem[addedItemElement]);
+        if(addedItem[addedItemElement] !== null) tabData[actualTab]['data'].push(addedItem[addedItemElement]);
 
     }
     await window.api.sendAsync("deleteTab");

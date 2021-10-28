@@ -3,54 +3,75 @@ const {
     ipcRenderer
 } = require("electron");
 
+const child_process = require('child_process');
+
 
 const { v4: uuidv4 } = require('uuid');
 
-// Expose protected methods that allow the renderer process to use
-// the ipcRenderer without exposing the entire object
-
-let validChannelsSend = ['getAllJobs', 'getDataFrom', 'getLang', 'getAllItems', "getUID", "installUpdate", "openApp", "getSavedTab", "saveTab", "deleteTab"];
+let validChannelsSend = ['getAllJobs', 'getDataFrom', 'getLang', 'getAllItems', "getUID", "installUpdate", "openApp",
+    "getSavedTab", "saveTab", "deleteTab", "GetVersion", "GetUpdate", "StartTest", "closeApp", "minApp", "minSize", "maxSize", "restartApp",
+    "getLanguage", 'getAutoUpdate', "setSettings"];
 let validChannelsReceive = ["update_error", "update_available", "update_downloaded", "no_update",
     'getAllJobsResponse', 'getDataFromResponse', "getLangResponse", "getAllItemsResponse", "returnUID",
-    "getSavedTabResponse", "deleteTabResponse"];
+    "getSavedTabResponse", "deleteTabResponse", "StopTest", "maxSizeResponse", "minSizeResponse",
+    "getLanguageResponse", "setAutoUpdate", 'getAutoUpdateResponse', "setSettingsResponse"];
 
 let uuid = uuidv4();
 
 contextBridge.exposeInMainWorld(
     "api", {
         sendSync: (channel, data) => {
-            // whitelist channels
             if (validChannelsSend.includes(channel)) {
                 return ipcRenderer.sendSync(channel, data);
             }
         },
         sendAsync: (channel, ...args)=>{
-            // whitelist channels
             if(validChannelsSend.includes(channel)){
                 ipcRenderer.send(channel,...args);
-                //console.log("Send Async request: "+channel+" args: "+args);
+                // This is a stupid comment
             }
         },
         receive: (channel, func) => {
             if (validChannelsReceive.includes(channel)) {
-                // Deliberately strip event as it includes `sender`
                 ipcRenderer.on(channel, (event, ...args) => func(...args));
             }
         },
         receiveOnce: (channel, func) => {
 
             if (validChannelsReceive.includes(channel)) {
-                // Deliberately strip event as it includes `sender`
                 ipcRenderer.once(channel, (event, ...args) => func(...args));
             }
+        },
+        remove: (channel, func)=>{
+
+            if(validChannelsReceive.includes(channel)){
+
+                ipcRenderer.removeListener(channel, func);
+
+            }
+
+        },
+        openExternal: (url)=>{
+            require("electron").shell.openExternal(url);
         },
         cwd: process.cwd(),
         generateNewUid: ()=>{
             return genNewUID();
         },
         uid: uuid,
+        testApp: ()=>{
 
-        getLang: "en-EN"
+            api.sendAsync('GetVersion');
+            api.sendAsync('GetUpdate');
+            api.sendAsync('StartTest');
+
+            api.receiveOnce('stopTest', (success)=>{
+
+                return success;
+
+            })
+
+        }
     }
 
 );
