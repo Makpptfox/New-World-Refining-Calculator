@@ -1351,7 +1351,6 @@
                 <rel0>
                     <id>U_C_onyx</id>
                     <number>3</number>
-                    <details>true</details>
                 </rel0>
                 <rel1>
                     <id>AR_lifwp</id>
@@ -1370,7 +1369,6 @@
                 <rel0>
                     <id>U_C_aquamarine</id>
                     <number>3</number>
-                    <details>true</details>
                 </rel0>
                 <rel1>
                     <id>AR_wtrwp</id>
@@ -1389,7 +1387,6 @@
                 <rel0>
                     <id>U_C_sapphire</id>
                     <number>3</number>
-                    <details>true</details>
                 </rel0>
                 <rel1>
                     <id>AR_dthwp</id>
@@ -1408,7 +1405,6 @@
                 <rel0>
                     <id>U_C_ruby</id>
                     <number>3</number>
-                    <details>true</details>
                 </rel0>
                 <rel1>
                     <id>AR_firwp</id>
@@ -1427,7 +1423,6 @@
                 <rel0>
                     <id>U_C_diamond</id>
                     <number>3</number>
-                    <details>true</details>
                 </rel0>
                 <rel1>
                     <id>AR_lifwp</id>
@@ -1446,7 +1441,6 @@
                 <rel0>
                     <id>U_C_topaz</id>
                     <number>3</number>
-                    <details>true</details>
                 </rel0>
                 <rel1>
                     <id>AR_airwp</id>
@@ -1465,7 +1459,6 @@
                 <rel0>
                     <id>U_C_amethyst</id>
                     <number>3</number>
-                    <details>true</details>
                 </rel0>
                 <rel1>
                     <id>AR_solwp</id>
@@ -1484,7 +1477,6 @@
                 <rel0>
                     <id>U_C_amber</id>
                     <number>3</number>
-                    <details>true</details>
                 </rel0>
                 <rel1>
                     <id>AR_ertwp</id>
@@ -1503,7 +1495,6 @@
                 <rel0>
                     <id>U_C_malachite</id>
                     <number>3</number>
-                    <details>true</details>
                 </rel0>
                 <rel1>
                     <id>AR_solwp</id>
@@ -1522,7 +1513,6 @@
                 <rel0>
                     <id>U_C_jasper</id>
                     <number>3</number>
-                    <details>true</details>
                 </rel0>
                 <rel1>
                     <id>AR_airwp</id>
@@ -1541,7 +1531,6 @@
                 <rel0>
                     <id>U_C_carnelian</id>
                     <number>3</number>
-                    <details>true</details>
                 </rel0>
                 <rel1>
                     <id>AR_firwp</id>
@@ -1560,7 +1549,6 @@
                 <rel0>
                     <id>U_C_opal</id>
                     <number>3</number>
-                    <details>true</details>
                 </rel0>
                 <rel1>
                     <id>AR_solwp</id>
@@ -1579,7 +1567,6 @@
                 <rel0>
                     <id>U_C_moonstone</id>
                     <number>3</number>
-                    <details>true</details>
                 </rel0>
                 <rel1>
                     <id>AR_dthwp</id>
@@ -1598,7 +1585,6 @@
                 <rel0>
                     <id>U_C_emerald</id>
                     <number>3</number>
-                    <details>true</details>
                 </rel0>
                 <rel1>
                     <id>AR_ertwp</id>
