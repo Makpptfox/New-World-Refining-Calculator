@@ -32,28 +32,62 @@
             <cats>
 
                 <uncut>
-                    <sub0>
-                        <color>#71FF70</color>
-                        <name>common</name>
-                        <id>ncutcom</id>
-                    </sub0>
+                    <!-- On garde la construction pour la science, mais les fusions pour créer des gemmes communes ça n'existe pas. DND-->
+                    <!--<sub0>
+                        <color>#D8D8D8</color>
+                        <name>Common</name>
+                        <id>ST_fus_rk0</id>
+                    </sub0>-->
                     <sub1>
-                        <color>#60C1FF</color>
-                        <name>rare</name>
-                        <id>ncutrar</id>
+                        <color>#26FF5A</color>
+                        <name>Uncommon</name>
+                        <id>ST_fus_rk1</id>
                     </sub1>
+                    <sub2>
+                        <color>#1CFFFF</color>
+                        <name>Rare</name>
+                        <id>ST_fus_rk2</id>
+                    </sub2>
+                    <sub3>
+                        <color>#FF55FF</color>
+                        <name>Epic</name>
+                        <id>ST_fus_rk3</id>
+                    </sub3>
+                    <!-- Un jour peut être, NYI -->
+                    <!--<sub4>
+                        <color>#FF9F1C</color>
+                        <name>Legendary</name>
+                        <id>ST_fus_rk4</id>
+                    </sub4>-->
                 </uncut>
+                
                 <cut>
                     <sub0>
-                        <color>#71FF70</color>
-                        <name>common</name>
-                        <id>cutcom</id>
+                        <color>#D8D8D8</color>
+                        <name>Common</name>
+                        <id>ST_cut_rk0</id>
                     </sub0>
                     <sub1>
-                        <color>#60C1FF</color>
-                        <name>rare</name>
-                        <id>cutrar</id>
+                        <color>#26FF5A</color>
+                        <name>Uncommon</name>
+                        <id>ST_cut_rk1</id>
                     </sub1>
+                    <sub2>
+                        <color>#1CFFFF</color>
+                        <name>Rare</name>
+                        <id>ST_cut_rk2</id>
+                    </sub2>
+                    <sub3>
+                        <color>#FF55FF</color>
+                        <name>Epic</name>
+                        <id>ST_cut_rk3</id>
+                    </sub3>
+                    <!-- Un jour peut être, NYI -->
+                    <!--<sub4>
+                        <color>#FF9F1C</color>
+                        <name>Legendary</name>
+                        <id>ST_cut_rk4</id>
+                    </sub4>-->
                 </cut>
 
             </cats>

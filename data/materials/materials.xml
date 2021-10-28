@@ -8,85 +8,125 @@
 
     <!-- mats list & id
     Refining Materials
-            obsidian_flux       = obdfx
-            obsidian_sandpaper  = obdsp
-            aged_tanning        = agdtn
-            wireweave           = wrwve
+            obsidian_flux       = RM_obdfx
+            obsidian_sandpaper  = RM_obdsp
+            aged_tanning        = RM_agdtn
+            wireweave           = RM_wrwve
 
 
     Smelting
         Charcoal
-            charcoal            = chrcl
+            charcoal            = SM_chrcl
 
         Ores
-            iron_ore            = irnor
-            silver_ore          = silor
-            starmetal_ore       = stmor
-            orichalcum_ore      = orcor
-            gold_ore            = godor
-            platinum_ore        = pltor
-            tolvium             = tlvim
-            cinnabar            = cnabr
+            iron_ore            = SM_irnor
+            silver_ore          = SM_silor
+            starmetal_ore       = SM_stmor
+            orichalcum_ore      = SM_orcor
+            gold_ore            = SM_godor
+            platinum_ore        = SM_pltor
+            tolvium             = SM_tlvim
+            cinnabar            = SM_cnabr
 
         Ingots
-            iron_ingot          = irnin
-            steel_ingot         = stlin
-            starmetal_ingot     = stmin
-            orichalcum_ingot    = orcin
-            silver_ingot        = silin
-            gold_ingot          = godin
-            platinum_ingot      = pltin
-            asmodeum            = asmod
+            iron_ingot          = SM_irnin
+            steel_ingot         = SM_stlin
+            starmetal_ingot     = SM_stmin
+            orichalcum_ingot    = SM_orcin
+            silver_ingot        = SM_silin
+            gold_ingot          = SM_godin
+            platinum_ingot      = SM_pltin
+            asmodeum            = SM_asmod
             voidbent_ingot      = NYI
 
 
     Woodworking
         Woods
-            green_wood          = grnwd
-            aged_wood           = agdwd
-            wyrdwood            = wrdwd
-            ironwood            = irnwd
-            wildwood            = wldwd
-            barbvine            = brbvn
+            green_wood          = WW_grnwd
+            aged_wood           = WW_agdwd
+            wyrdwood            = WW_wrdwd
+            ironwood            = WW_irnwd
+            wildwood            = WW_wldwd
+            barbvine            = WW_brbvn
 
         Planks
-            timber              = tmber
-            lumber              = lmber
-            wyrdwood_planks     = wrdpk
-            ironwood_planks     = irnpk
-            glittering_ebony    = glteb
+            timber              = WW_tmber
+            lumber              = WW_lmber
+            wyrdwood_planks     = WW_wrdpk
+            ironwood_planks     = WW_irnpk
+            glittering_ebony    = WW_glteb
 
 
     Leatherworking
         Hides
-            rawhide             = rawhd
-            thick_hide          = thchd
-            iron_hide           = irnhd
-            smolderhide         = smlhd
-            scarhide            = scrhd
+            rawhide             = LW_rawhd
+            thick_hide          = LW_thchd
+            iron_hide           = LW_irnhd
+            smolderhide         = LW_smlhd
+            scarhide            = LW_scrhd
 
         Leathers
-            coarse_leather      = crslt
-            rugged_leather      = rgdlt
-            layered_leather     = laylt
-            infused_leather     = inflt
-            runic_leather       = runlt
+            coarse_leather      = LW_crslt
+            rugged_leather      = LW_rgdlt
+            layered_leather     = LW_laylt
+            infused_leather     = LW_inflt
+            runic_leather       = LW_runlt
 
 
     Weaving
         Fibers
-            fibers              = basfb
-            silk_threads        = slkfb
-            wirefiber           = wrefb
+            fibers              = WV_basfb
+            silk_threads        = WV_slkfb
+            wirefiber           = WV_wrefb
 
         Cloths
-            linen               = lincl
-            sateen              = satcl
-            silk                = slkcl
-            infused_silk        = infcl
-            phoenixweave        = phxcl
-            scalecloth          = scacl
-            blisterweave        = blicl
+            linen               = WV_lincl
+            sateen              = WV_satcl
+            silk                = WV_slkcl
+            infused_silk        = WV_infcl
+            phoenixweave        = WV_phxcl
+            scalecloth          = WV_scacl
+            blisterweave        = WV_blicl
+            
+            
+    Arcana (Juste pour être capable d'afficher les essences pour le stonecutting)
+        Elements
+            air_mote            = AR_airmt
+            air_wisp            = AR_airwp
+            air_essence         = AR_airec
+            air_quintessence    = AR_airqe
+            -
+            soul_mote           = AR_solmt
+            soul_wisp           = AR_solwp
+            soul_essence        = AR_solec
+            soul_quintessence   = AR_solqe
+            -
+            life_mote           = AR_lifmt
+            life_wisp           = AR_lifwp
+            life_essence        = AR_lifec
+            life_quintessence   = AR_lifqe
+            -
+            fire_mote           = AR_firmt
+            fire_wisp           = AR_firwp
+            fire_essence        = AR_firec
+            fire_quintessence   = AR_firqe
+            -
+            death_mote          = AR_dthmt
+            death_wisp          = AR_dthwp
+            death_essence       = AR_dthec
+            death_quintessence  = AR_dthqe
+            -
+            earth_mote          = AR_ertmt
+            earth_wisp          = AR_ertwp
+            earth_essence       = AR_ertec
+            earth_quintessence  = AR_ertqe
+            -
+            water_mote          = AR_wtrmt
+            water_wisp          = AR_wtrwp
+            water_essence       = AR_wtrec
+            water_quintessence  = AR_wtrqe
+            
+            
 
     -->
 
@@ -94,7 +134,7 @@
         <!-- Refining materials -->
         <obsidian_flux>
             <name>obsidian_flux</name>
-            <id>obdfx</id>
+            <id>RM_obdfx</id>
             
             <image>obsidian_flux.png</image>
             <related>
@@ -104,7 +144,7 @@
 
         <obsidian_sandpaper>
             <name>obsidian_sandpaper</name>
-            <id>obdsp</id>
+            <id>RM_obdsp</id>
             
             <image>obsidian_sandpaper.png</image>
             <related>
@@ -114,7 +154,7 @@
 
         <aged_tannin>
             <name>aged_tannin</name>
-            <id>agdtn</id>
+            <id>RM_agdtn</id>
             
             <image>aged_tannin.png</image>
             <related>
@@ -124,7 +164,7 @@
 
         <wireweave>
             <name>wireweave</name>
-            <id>wrwve</id>
+            <id>RM_wrwve</id>
             
             <image>wireweave.png</image>
             <related>
@@ -140,12 +180,11 @@
         <!-- Charcoal -->
         <charcoal>
             <name>charcoal</name>
-            <id>chrcl</id>
-            <jobId>0</jobId>
+            <id>SM_chrcl</id>
             <image>charcoal.png</image>
             <related>
                 <rel0>
-                    <id>grnwd</id>
+                    <id>WW_grnwd</id>
                     <number>2</number>
                 </rel0>
             </related>
@@ -156,7 +195,7 @@
         <!-- Ores -->
         <iron_ore>
             <name>iron_ore</name>
-            <id>irnor</id>
+            <id>SM_irnor</id>
             <image>iron_ore.png</image>
             <related>
 
@@ -165,7 +204,7 @@
 
         <silver_ore>
             <name>silver_ore</name>
-            <id>silor</id>
+            <id>SM_silor</id>
             <image>silver_ore.png</image>
             <related>
 
@@ -174,7 +213,7 @@
 
         <starmetal_ore>
             <name>starmetal_ore</name>
-            <id>stmor</id>
+            <id>SM_stmor</id>
             <image>starmetal_ore.png</image>
             <related>
 
@@ -183,7 +222,7 @@
 
         <orichalcum_ore>
             <name>orichalcum_ore</name>
-            <id>orcor</id>
+            <id>SM_orcor</id>
             <image>orichalcum_ore.png</image>
             <related>
 
@@ -192,7 +231,7 @@
 
         <gold_ore>
             <name>gold_ore</name>
-            <id>godor</id>
+            <id>SM_godor</id>
             <image>gold_ore.png</image>
             <related>
 
@@ -201,7 +240,7 @@
 
         <platinum_ore>
             <name>platinum_ore</name>
-            <id>pltor</id>
+            <id>SM_pltor</id>
             <image>platinum_ore.png</image>
             <related>
 
@@ -213,12 +252,12 @@
         <!-- Ingots -->
         <iron_ingot>
             <name>iron_ingot</name>
-            <id>irnin</id>
+            <id>SM_irnin</id>
             <jobId>0</jobId>
             <image>iron_ingot.png</image>
             <related>
                 <rel0>
-                    <id>irnor</id>
+                    <id>SM_irnor</id>
                     <number>4</number>
                 </rel0>
             </related>
@@ -226,17 +265,17 @@
 
         <steel_ingot>
             <name>steel_ingot</name>
-            <id>stlin</id>
+            <id>SM_stlin</id>
             <jobId>0</jobId>
             <image>steel_ingot.png</image>
             <related>
                 <rel0>
-                    <id>irnin</id>
+                    <id>SM_irnin</id>
                     <number>3</number>
                     <details>true</details>
                 </rel0>
                 <rel1>
-                    <id>chrcl</id>
+                    <id>SM_chrcl</id>
                     <number>2</number>
                 </rel1>
             </related>
@@ -244,21 +283,21 @@
 
         <starmetal_ingot>
             <name>starmetal_ingot</name>
-            <id>stmin</id>
+            <id>SM_stmin</id>
             <jobId>0</jobId>
             <image>starmetal_ingot.png</image>
             <related>
                 <rel0>
-                    <id>stmor</id>
+                    <id>SM_stmor</id>
                     <number>6</number>
                 </rel0>
                 <rel1>
-                    <id>stlin</id>
+                    <id>SM_stlin</id>
                     <number>2</number>
                     <details>true</details>
                 </rel1>
                 <rel2>
-                    <id>chrcl</id>
+                    <id>SM_chrcl</id>
                     <number>2</number>
                 </rel2>
             </related>
@@ -266,21 +305,21 @@
 
         <orichalcum_ingot>
             <name>orichalcum_ingot</name>
-            <id>orcin</id>
+            <id>SM_orcin</id>
             <jobId>0</jobId>
             <image>orichalcum_ingot.png</image>
             <related>
                 <rel0>
-                    <id>orcor</id>
+                    <id>SM_orcor</id>
                     <number>8</number>
                 </rel0>
                 <rel1>
-                    <id>stmin</id>
+                    <id>SM_stmin</id>
                     <number>2</number>
                     <details>true</details>
                 </rel1>
                 <rel2>
-                    <id>chrcl</id>
+                    <id>SM_chrcl</id>
                     <number>2</number>
                 </rel2>
             </related>
@@ -288,12 +327,12 @@
 
         <silver_ingot>
             <name>silver_ingot</name>
-            <id>silin</id>
+            <id>SM_silin</id>
             <jobId>0</jobId>
             <image>silver_ingot.png</image>
             <related>
                 <rel0>
-                    <id>silor</id>
+                    <id>SM_silor</id>
                     <number>4</number>
                 </rel0>
             </related>
@@ -301,16 +340,16 @@
 
         <gold_ingot>
             <name>gold_ingot</name>
-            <id>godin</id>
+            <id>SM_godin</id>
             <jobId>0</jobId>
             <image>gold_ingot.png</image>
             <related>
                 <rel0>
-                    <id>godor</id>
+                    <id>SM_godor</id>
                     <number>5</number>
                 </rel0>
                 <rel1>
-                    <id>silin</id>
+                    <id>SM_silin</id>
                     <number>2</number>
                     <details>true</details>
                 </rel1>
@@ -319,16 +358,16 @@
 
         <platinum_ingot>
             <name>platinum_ingot</name>
-            <id>pltin</id>
+            <id>SM_pltin</id>
             <jobId>0</jobId>
             <image>platinum_ingot.png</image>
             <related>
                 <rel0>
-                    <id>pltor</id>
+                    <id>SM_pltor</id>
                     <number>6</number>
                 </rel0>
                 <rel1>
-                    <id>godin</id>
+                    <id>SM_godin</id>
                     <number>2</number>
                     <details>true</details>
                 </rel1>
@@ -337,29 +376,29 @@
 
         <asmodeum>
             <name>asmodeum</name>
-            <id>asmod</id>
+            <id>SM_asmod</id>
             <jobId>0</jobId>
             <image>asmodeum.png</image>
             <related>
                 <rel0>
-                    <id>orcin</id>
+                    <id>SM_orcin</id>
                     <number>5</number>
                     <details>true</details>
                 </rel0>
                 <rel1>
-                    <id>tlvim</id>
+                    <id>SM_tlvim</id>
                     <number>1</number>
                 </rel1>
                 <rel2>
-                    <id>cnabr</id>
+                    <id>SM_cnabr</id>
                     <number>1</number>
                 </rel2>
                 <rel3>
-                    <id>obdfx</id>
+                    <id>RM_obdfx</id>
                     <number>1</number>
                 </rel3>
                 <rel4>
-                    <id>chrcl</id>
+                    <id>SM_chrcl</id>
                     <number>2</number>
                 </rel4>
             </related>
@@ -373,7 +412,7 @@
         <!-- Woods -->
         <green_wood>
             <name>green_wood</name>
-            <id>grnwd</id>
+            <id>WW_grnwd</id>
             
             <image>green_wood.png</image>
             <related>
@@ -383,7 +422,7 @@
 
         <aged_wood>
             <name>aged_wood</name>
-            <id>agdwd</id>
+            <id>WW_agdwd</id>
             
             <image>aged_wood.png</image>
             <related>
@@ -393,7 +432,7 @@
 
         <wyrdwood>
             <name>wyrdwood</name>
-            <id>wrdwd</id>
+            <id>WW_wrdwd</id>
             
             <image>wyrdwood.png</image>
             <related>
@@ -403,7 +442,7 @@
 
         <ironwood>
             <name>ironwood</name>
-            <id>irnwd</id>
+            <id>WW_irnwd</id>
             
             <image>ironwood.png</image>
             <related>
@@ -413,7 +452,7 @@
 
         <wildwood>
             <name>wildwood</name>
-            <id>wldwd</id>
+            <id>WW_wldwd</id>
             
             <image>wildwood.png</image>
             <related>
@@ -423,7 +462,7 @@
 
         <barbvine>
             <name>barbvine</name>
-            <id>brbvn</id>
+            <id>WW_brbvn</id>
            
             <image>barbvine.png</image>
             <related>
@@ -436,12 +475,12 @@
         <!-- Planks -->
         <timber>
             <name>timber</name>
-            <id>tmber</id>
+            <id>WW_tmber</id>
             <jobId>1</jobId>
             <image>timber.png</image>
             <related>
                 <rel0>
-                    <id>grnwd</id>
+                    <id>WW_grnwd</id>
                     <number>4</number>
                 </rel0>
             </related>
@@ -449,16 +488,16 @@
 
         <lumber>
             <name>lumber</name>
-            <id>lmber</id>
+            <id>WW_lmber</id>
             <jobId>1</jobId>
             <image>lumber.png</image>
             <related>
                 <rel0>
-                    <id>agdwd</id>
+                    <id>WW_agdwd</id>
                     <number>4</number>
                 </rel0>
                 <rel1>
-                    <id>tmber</id>
+                    <id>WW_tmber</id>
                     <number>2</number>
                     <details>true</details>
                 </rel1>
@@ -467,16 +506,16 @@
 
         <wyrdwood_planks>
             <name>wyrdwood_planks</name>
-            <id>wrdpk</id>
+            <id>WW_wrdpk</id>
             <jobId>1</jobId>
             <image>wyrdwood_planks.png</image>
             <related>
                 <rel0>
-                    <id>wrdwd</id>
+                    <id>WW_wrdwd</id>
                     <number>6</number>
                 </rel0>
                 <rel1>
-                    <id>lmber</id>
+                    <id>WW_lmber</id>
                     <number>2</number>
                     <details>true</details>
                 </rel1>
@@ -485,16 +524,16 @@
 
         <ironwood_planks>
             <name>ironwood_planks</name>
-            <id>irnpk</id>
+            <id>WW_irnpk</id>
             <jobId>1</jobId>
             <image>ironwood_planks.png</image>
             <related>
                 <rel0>
-                    <id>irnwd</id>
+                    <id>WW_irnwd</id>
                     <number>8</number>
                 </rel0>
                 <rel1>
-                    <id>wrdpk</id>
+                    <id>WW_wrdpk</id>
                     <number>2</number>
                     <details>true</details>
                 </rel1>
@@ -503,25 +542,25 @@
 
         <glittering_ebony>
             <name>glittering_ebony</name>
-            <id>glteb</id>
+            <id>WW_glteb</id>
             <jobId>1</jobId>
             <image>glittering_ebony.png</image>
             <related>
                 <rel0>
-                    <id>irnpk</id>
+                    <id>WW_irnpk</id>
                     <number>5</number>
                     <details>true</details>
                 </rel0>
                 <rel1>
-                    <id>wldwd</id>
+                    <id>WW_wldwd</id>
                     <number>2</number>
                 </rel1>
                 <rel2>
-                    <id>brbvn</id>
+                    <id>WW_brbvn</id>
                     <number>1</number>
                 </rel2>
                 <rel3>
-                    <id>obdsp</id>
+                    <id>RM_obdsp</id>
                     <number>1</number>
                 </rel3>
             </related>
@@ -535,7 +574,7 @@
         <!-- Hides -->
         <rawhide>
             <name>rawhide</name>
-            <id>rawhd</id>
+            <id>LW_rawhd</id>
             
             <image>rawhide.png</image>
             <related>
@@ -545,7 +584,7 @@
 
         <thick_hide>
             <name>thick_hide</name>
-            <id>thchd</id>
+            <id>LW_thchd</id>
            
             <image>thick_hide.png</image>
             <related>
@@ -555,7 +594,7 @@
 
         <iron_hide>
             <name>iron_hide</name>
-            <id>irnhd</id>
+            <id>LW_irnhd</id>
             
             <image>iron_hide.png</image>
             <related>
@@ -565,7 +604,7 @@
 
         <smolderhide>
             <name>smolderhide</name>
-            <id>smlhd</id>
+            <id>LW_smlhd</id>
             
             <image>smolderhide.png</image>
             <related>
@@ -575,7 +614,7 @@
 
         <scarhide>
             <name>scarhide</name>
-            <id>scrhd</id>
+            <id>LW_scrhd</id>
            
             <image>scarhide.png</image>
             <related>
@@ -588,12 +627,12 @@
         <!-- Leathers -->
         <coarse_leather>
             <name>coarse_leather</name>
-            <id>crslt</id>
+            <id>LW_crslt</id>
             <jobId>2</jobId>
             <image>coarse_leather.png</image>
             <related>
                 <rel0>
-                    <id>rawhd</id>
+                    <id>LW_rawhd</id>
                     <number>4</number>
                 </rel0>
             </related>
@@ -601,12 +640,12 @@
 
         <rugged_leather>
             <name>rugged_leather</name>
-            <id>rgdlt</id>
+            <id>LW_rgdlt</id>
             <jobId>2</jobId>
             <image>rugged_leather.png</image>
             <related>
                 <rel0>
-                    <id>crslt</id>
+                    <id>LW_crslt</id>
                     <number>4</number>
                     <details>true</details>
                 </rel0>
@@ -615,16 +654,16 @@
 
         <layered_leather>
             <name>layered_leather</name>
-            <id>laylt</id>
+            <id>LW_laylt</id>
             <jobId>2</jobId>
             <image>layered_leather.png</image>
             <related>
                 <rel0>
-                    <id>thchd</id>
+                    <id>LW_thchd</id>
                     <number>6</number>
                 </rel0>
                 <rel1>
-                    <id>rgdlt</id>
+                    <id>LW_rgdlt</id>
                     <number>2</number>
                     <details>true</details>
                 </rel1>
@@ -633,16 +672,16 @@
 
         <infused_leather>
             <name>infused_leather</name>
-            <id>inflt</id>
+            <id>LW_inflt</id>
             <jobId>2</jobId>
             <image>infused_leather.png</image>
             <related>
                 <rel0>
-                    <id>irnhd</id>
+                    <id>LW_irnhd</id>
                     <number>8</number>
                 </rel0>
                 <rel1>
-                    <id>laylt</id>
+                    <id>LW_laylt</id>
                     <number>2</number>
                     <details>true</details>
                 </rel1>
@@ -651,25 +690,25 @@
 
         <runic_leather>
             <name>runic_leather</name>
-            <id>runlt</id>
+            <id>LW_runlt</id>
             <jobId>2</jobId>
             <image>runic_leather.png</image>
             <related>
                 <rel0>
-                    <id>inflt</id>
+                    <id>LW_inflt</id>
                     <number>5</number>
                     <details>true</details>
                 </rel0>
                 <rel1>
-                    <id>smlhd</id>
+                    <id>LW_smlhd</id>
                     <number>1</number>
                 </rel1>
                 <rel2>
-                    <id>scrhd</id>
+                    <id>LW_scrhd</id>
                     <number>1</number>
                 </rel2>
                 <rel3>
-                    <id>agdtn</id>
+                    <id>RM_agdtn</id>
                     <number>1</number>
                 </rel3>
             </related>
@@ -683,7 +722,7 @@
         <!-- Fibers -->
         <fibers>
             <name>fibers</name>
-            <id>basfb</id>
+            <id>WV_basfb</id>
             
             <image>fibers.png</image>
             <related>
@@ -693,7 +732,7 @@
 
         <silk_threads>
             <name>silk_threads</name>
-            <id>slkfb</id>
+            <id>WV_slkfb</id>
             
             <image>silk_threads.png</image>
             <related>
@@ -703,7 +742,7 @@
 
         <wirefiber>
             <name>wirefiber</name>
-            <id>wrefb</id>
+            <id>WV_wrefb</id>
             
             <image>wirefiber.png</image>
             <related>
@@ -713,7 +752,7 @@
 
         <scalecloth>
             <name>scalecloth</name>
-            <id>scacl</id>
+            <id>WV_scacl</id>
             
             <image>scalecloth.png</image>
             <related>
@@ -723,7 +762,7 @@
 
         <blisterweave>
             <name>blisterweave</name>
-            <id>blicl</id>
+            <id>WV_blicl</id>
             
             <image>blisterweave.png</image>
             <related>
@@ -736,12 +775,12 @@
         <!-- Cloths -->
         <linen>
             <name>linen</name>
-            <id>lincl</id>
+            <id>WV_lincl</id>
             <jobId>3</jobId>
             <image>linen.png</image>
             <related>
                 <rel0>
-                    <id>basfb</id>
+                    <id>WV_basfb</id>
                     <number>4</number>
                 </rel0>
             </related>
@@ -749,12 +788,12 @@
 
         <sateen>
             <name>sateen</name>
-            <id>satcl</id>
+            <id>WV_satcl</id>
             <jobId>3</jobId>
             <image>sateen.png</image>
             <related>
                 <rel0>
-                    <id>lincl</id>
+                    <id>WV_lincl</id>
                     <number>4</number>
                     <details>true</details>
                 </rel0>
@@ -763,16 +802,16 @@
 
         <silk>
             <name>silk</name>
-            <id>slkcl</id>
+            <id>WV_slkcl</id>
             <jobId>3</jobId>
             <image>silk.png</image>
             <related>
                 <rel0>
-                    <id>slkfb</id>
+                    <id>WV_slkfb</id>
                     <number>6</number>
                 </rel0>
                 <rel1>
-                    <id>satcl</id>
+                    <id>WV_satcl</id>
                     <number>2</number>
                     <details>true</details>
                 </rel1>
@@ -781,16 +820,16 @@
 
         <infused_silk>
             <name>infused_silk</name>
-            <id>infcl</id>
+            <id>WV_infcl</id>
             <jobId>3</jobId>
             <image>infused_silk.png</image>
             <related>
                 <rel0>
-                    <id>wrefb</id>
+                    <id>WV_wrefb</id>
                     <number>8</number>
                 </rel0>
                 <rel1>
-                    <id>slkcl</id>
+                    <id>WV_slkcl</id>
                     <number>2</number>
                     <details>true</details>
                 </rel1>
@@ -799,58 +838,775 @@
 
         <phoenixweave>
             <name>phoenixweave</name>
-            <id>phxcl</id>
+            <id>WV_phxcl</id>
             <jobId>3</jobId>
             <image>phoenixweave.png</image>
             <related>
                 <rel0>
-                    <id>infcl</id>
+                    <id>WV_infcl</id>
                     <number>5</number>
                     <details>true</details>
                 </rel0>
-                <rel0>
-                    <id>scacl</id>
+                <rel1>
+                    <id>WV_scacl</id>
                     <number>1</number>
-                </rel0>
-                <rel0>
-                    <id>blicl</id>
+                </rel1>
+                <rel2>
+                    <id>WV_blicl</id>
                     <number>1</number>
-                </rel0>
-                <rel0>
-                    <id>wrwve</id>
+                </rel2>
+                <rel3>
+                    <id>RM_wrwve</id>
                     <number>1</number>
-                </rel0>
+                </rel3>
             </related>
         </phoenixweave>
 
-<!--        TEST ITEM CAN BE DELETED IN PACKAGED SOFTWARE -->
 
-        <testItem>
-            <name>phoenixweave</name>
-            <id>test</id>
-            <jobId>4</jobId>
-            <image>phoenixweave.png</image>
-            <cat>ncutrar</cat>
+
+
+
+    <!-- Arcana -->
+        <!-- Elements -->
+        <!-- Air -->
+        <air_mote>
+            <name>air_mote</name>
+            <id>AR_airmt</id>
+            <image>air_mote.png</image>
+            <related>
+                
+            </related>
+        </air_mote>
+
+        <air_wisp>
+            <name>air_wisp</name>
+            <id>AR_airwp</id>
+            <image>air_wisp.png</image>
             <related>
                 <rel0>
-                    <id>infcl</id>
+                    <id>AR_airmt</id>
                     <number>5</number>
-                    <details>true</details>
-                </rel0>
-                <rel0>
-                    <id>scacl</id>
-                    <number>1</number>
-                </rel0>
-                <rel0>
-                    <id>blicl</id>
-                    <number>1</number>
-                </rel0>
-                <rel0>
-                    <id>wrwve</id>
-                    <number>1</number>
                 </rel0>
             </related>
-        </testItem>
+        </air_wisp>
+
+        <air_essence>
+            <name>air_essence</name>
+            <id>AR_airec</id>
+            <image>air_essence.png</image>
+            <related>
+                <rel0>
+                    <id>AR_airwp</id>
+                    <number>4</number>
+                </rel0>
+            </related>
+        </air_essence>
+
+        <air_quintessence>
+            <name>air_quintessence</name>
+            <id>AR_airqe</id>
+            <image>air_quintessence.png</image>
+            <related>
+                <rel0>
+                    <id>AR_airec</id>
+                    <number>3</number>
+                </rel0>
+            </related>
+        </air_quintessence>
+        
+        <!-- Soul -->
+        <soul_mote>
+            <name>soul_mote</name>
+            <id>AR_solmt</id>
+            <image>soul_mote.png</image>
+            <related>
+
+            </related>
+        </soul_mote>
+
+        <soul_wisp>
+            <name>soul_wisp</name>
+            <id>AR_solwp</id>
+            <image>soul_wisp.png</image>
+            <related>
+                <rel0>
+                    <id>AR_solmt</id>
+                    <number>5</number>
+                </rel0>
+            </related>
+        </soul_wisp>
+
+        <soul_essence>
+            <name>soul_essence</name>
+            <id>AR_solec</id>
+            <image>soul_essence.png</image>
+            <related>
+                <rel0>
+                    <id>AR_solwp</id>
+                    <number>4</number>
+                </rel0>
+            </related>
+        </soul_essence>
+
+        <soul_quintessence>
+            <name>soul_quintessence</name>
+            <id>AR_solqe</id>
+            <image>soul_quintessence.png</image>
+            <related>
+                <rel0>
+                    <id>AR_solec</id>
+                    <number>3</number>
+                </rel0>
+            </related>
+        </soul_quintessence>
+
+        <!-- Life -->
+        <life_mote>
+            <name>life_mote</name>
+            <id>AR_lifmt</id>
+            <image>life_mote.png</image>
+            <related>
+
+            </related>
+        </life_mote>
+
+        <life_wisp>
+            <name>life_wisp</name>
+            <id>AR_lifwp</id>
+            <image>life_wisp.png</image>
+            <related>
+                <rel0>
+                    <id>AR_lifmt</id>
+                    <number>5</number>
+                </rel0>
+            </related>
+        </life_wisp>
+
+        <life_essence>
+            <name>life_essence</name>
+            <id>AR_lifec</id>
+            <image>life_essence.png</image>
+            <related>
+                <rel0>
+                    <id>AR_lifwp</id>
+                    <number>4</number>
+                </rel0>
+            </related>
+        </life_essence>
+
+        <life_quintessence>
+            <name>life_quintessence</name>
+            <id>AR_lifqe</id>
+            <image>life_quintessence.png</image>
+            <related>
+                <rel0>
+                    <id>AR_lifec</id>
+                    <number>3</number>
+                </rel0>
+            </related>
+        </life_quintessence>
+
+        <!-- Fire -->
+        <fire_mote>
+            <name>fire_mote</name>
+            <id>AR_firmt</id>
+            <image>fire_mote.png</image>
+            <related>
+
+            </related>
+        </fire_mote>
+
+        <fire_wisp>
+            <name>fire_wisp</name>
+            <id>AR_firwp</id>
+            <image>fire_wisp.png</image>
+            <related>
+                <rel0>
+                    <id>AR_firmt</id>
+                    <number>5</number>
+                </rel0>
+            </related>
+        </fire_wisp>
+
+        <fire_essence>
+            <name>fire_essence</name>
+            <id>AR_firec</id>
+            <image>fire_essence.png</image>
+            <related>
+                <rel0>
+                    <id>AR_firwp</id>
+                    <number>4</number>
+                </rel0>
+            </related>
+        </fire_essence>
+
+        <fire_quintessence>
+            <name>fire_quintessence</name>
+            <id>AR_firqe</id>
+            <image>fire_quintessence.png</image>
+            <related>
+                <rel0>
+                    <id>AR_firec</id>
+                    <number>3</number>
+                </rel0>
+            </related>
+        </fire_quintessence>
+
+        <!-- Death -->
+        <death_mote>
+            <name>death_mote</name>
+            <id>AR_dthmt</id>
+            <image>death_mote.png</image>
+            <related>
+
+            </related>
+        </death_mote>
+
+        <death_wisp>
+            <name>death_wisp</name>
+            <id>AR_dthwp</id>
+            <image>death_wisp.png</image>
+            <related>
+                <rel0>
+                    <id>AR_dthmt</id>
+                    <number>5</number>
+                </rel0>
+            </related>
+        </death_wisp>
+
+        <death_essence>
+            <name>death_essence</name>
+            <id>AR_dthec</id>
+            <image>death_essence.png</image>
+            <related>
+                <rel0>
+                    <id>AR_dthwp</id>
+                    <number>4</number>
+                </rel0>
+            </related>
+        </death_essence>
+
+        <death_quintessence>
+            <name>death_quintessence</name>
+            <id>AR_dthqe</id>
+            <image>death_quintessence.png</image>
+            <related>
+                <rel0>
+                    <id>AR_dthec</id>
+                    <number>3</number>
+                </rel0>
+            </related>
+        </death_quintessence>
+
+        <!-- Earth -->
+        <earth_mote>
+            <name>earth_mote</name>
+            <id>AR_ertmt</id>
+            <image>earth_mote.png</image>
+            <related>
+
+            </related>
+        </earth_mote>
+
+        <earth_wisp>
+            <name>earth_wisp</name>
+            <id>AR_ertwp</id>
+            <image>earth_wisp.png</image>
+            <related>
+                <rel0>
+                    <id>AR_ertmt</id>
+                    <number>5</number>
+                </rel0>
+            </related>
+        </earth_wisp>
+
+        <earth_essence>
+            <name>earth_essence</name>
+            <id>AR_ertec</id>
+            <image>earth_essence.png</image>
+            <related>
+                <rel0>
+                    <id>AR_ertwp</id>
+                    <number>4</number>
+                </rel0>
+            </related>
+        </earth_essence>
+
+        <earth_quintessence>
+            <name>earth_quintessence</name>
+            <id>AR_ertqe</id>
+            <image>earth_quintessence.png</image>
+            <related>
+                <rel0>
+                    <id>AR_ertec</id>
+                    <number>3</number>
+                </rel0>
+            </related>
+        </earth_quintessence>
+
+        <!-- Water -->
+        <water_mote>
+            <name>water_mote</name>
+            <id>AR_wtrmt</id>
+            <image>water_mote.png</image>
+            <related>
+
+            </related>
+        </water_mote>
+
+        <water_wisp>
+            <name>water_wisp</name>
+            <id>AR_wtrwp</id>
+            <image>water_wisp.png</image>
+            <related>
+                <rel0>
+                    <id>AR_wtrmt</id>
+                    <number>5</number>
+                </rel0>
+            </related>
+        </water_wisp>
+
+        <water_essence>
+            <name>water_essence</name>
+            <id>AR_wtrec</id>
+            <image>water_essence.png</image>
+            <related>
+                <rel0>
+                    <id>AR_wtrwp</id>
+                    <number>4</number>
+                </rel0>
+            </related>
+        </water_essence>
+
+        <water_quintessence>
+            <name>water_quintessence</name>
+            <id>AR_wtrqe</id>
+            <image>water_quintessence.png</image>
+            <related>
+                <rel0>
+                    <id>AR_wtrec</id>
+                    <number>3</number>
+                </rel0>
+            </related>
+        </water_quintessence>
+
+
+    <!-- Le stonecutting est une sacrée bête, donc je le sépare ici pour pouvoir avoir un peu de visibilité fus=fused=uncut / cut=cut (duh) 
+    On ne garde pas la table de définition comme pour les mats normaux, le xml va faire la taille de la bible sinon... Sans déconner, on parle d'une centaine d'entry juste pour le stonecutting
+    et je ne prends même pas en compte les matériaux pour l'arcana que j'ai listé à part indépendamment... Bref, fun !-->
+        
+    <!-- Stonecutting -->
+
+      <!-- COMMON GEMS (Garde en tête qu'on peut pas FUSE les gemmes communes, c'est juste pour le listing des mats pour les UNCOMMON)-->
+        <flawed_onyx>
+            <name>flawed_onyx</name>
+            <id>U_C_onyx</id>
+            <image>flawed_onyx.png</image>
+            <!--<cat>ST_fus_rk0</cat>-->
+            <related>
+
+            </related>
+        </flawed_onyx>
+
+        <flawed_aquamarine>
+            <name>flawed_aquamarine</name>
+            <id>U_C_aquamarine</id>
+            <image>flawed_aquamarine.png</image>
+            <!--<cat>ST_fus_rk0</cat>-->
+            <related>
+
+            </related>
+        </flawed_aquamarine>
+
+        <flawed_sapphire>
+            <name>flawed_sapphire</name>
+            <id>U_C_sapphire</id>
+            <image>flawed_sapphire.png</image>
+            <!--<cat>ST_fus_rk0</cat>-->
+            <related>
+
+            </related>
+        </flawed_sapphire>
+
+        <flawed_ruby>
+            <name>flawed_ruby</name>
+            <id>U_C_ruby</id>
+            <image>flawed_ruby.png</image>
+            <!--<cat>ST_fus_rk0</cat>-->
+            <related>
+
+            </related>
+        </flawed_ruby>
+
+        <flawed_diamond>
+            <name>flawed_diamond</name>
+            <id>U_C_diamond</id>
+            <image>flawed_diamond.png</image>
+            <!--<cat>ST_fus_rk0</cat>-->
+            <related>
+
+            </related>
+        </flawed_diamond>
+
+        <flawed_topaz>
+            <name>flawed_topaz</name>
+            <id>U_C_topaz</id>
+            <image>flawed_topaz.png</image>
+            <!--<cat>ST_fus_rk0</cat>-->
+            <related>
+
+            </related>
+        </flawed_topaz>
+
+        <flawed_amethyst>
+            <name>flawed_amethyst</name>
+            <id>U_C_amethyst</id>
+            <image>flawed_amethyst.png</image>
+            <!--<cat>ST_fus_rk0</cat>-->
+            <related>
+
+            </related>
+        </flawed_amethyst>
+
+        <flawed_amber>
+            <name>flawed_amber</name>
+            <id>U_C_onyx</id>
+            <image>flawed_amber.png</image>
+            <!--<cat>ST_fus_rk0</cat>-->
+            <related>
+
+            </related>
+        </flawed_amber>
+
+        <flawed_malachite>
+            <name>flawed_malachite</name>
+            <id>U_C_malachite</id>
+            <image>flawed_malachite.png</image>
+            <!--<cat>ST_fus_rk0</cat>-->
+            <related>
+
+            </related>
+        </flawed_malachite>
+
+        <flawed_jasper>
+            <name>flawed_jasper</name>
+            <id>U_C_jasper</id>
+            <image>flawed_jasper.png</image>
+            <!--<cat>ST_fus_rk0</cat>-->
+            <related>
+
+            </related>
+        </flawed_jasper>
+
+        <flawed_carnelian>
+            <name>flawed_carnelian</name>
+            <id>U_C_carnelian</id>
+            <image>flawed_carnelian.png</image>
+            <!--<cat>ST_fus_rk0</cat>-->
+            <related>
+
+            </related>
+        </flawed_carnelian>
+
+        <flawed_opal>
+            <name>flawed_opal</name>
+            <id>U_C_opal</id>
+            <image>flawed_opal.png</image>
+            <!--<cat>ST_fus_rk0</cat>-->
+            <related>
+
+            </related>
+        </flawed_opal>
+
+        <flawed_moonstone>
+            <name>flawed_moonstone</name>
+            <id>U_C_moonstone</id>
+            <image>flawed_moonstone.png</image>
+            <!--<cat>ST_fus_rk0</cat>-->
+            <related>
+
+            </related>
+        </flawed_moonstone>
+
+        <flawed_emerald>
+            <name>flawed_emerald</name>
+            <id>U_C_emerald</id>
+            <image>flawed_emerald.png</image>
+            <!--<cat>ST_fus_rk0</cat>-->
+            <related>
+
+            </related>
+        </flawed_emerald>
+            
+            
+            
+      <!-- FUSED UNCOMMON GEMS -->
+        <onyx>
+            <name>onyx</name>
+            <id>U_U_onyx</id>
+            <jobId>4</jobId>
+            <image>onyx.png</image>
+            <cat>ST_fus_rk1</cat>
+            <related>
+                <rel0>
+                    <id>U_C_onyx</id>
+                    <number>3</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>AR_lifwp</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </onyx>
+
+        <aquamarine>
+            <name>aquamarine</name>
+            <id>U_U_aquamarine</id>
+            <jobId>4</jobId>
+            <image>aquamarine.png</image>
+            <cat>ST_fus_rk1</cat>
+            <related>
+                <rel0>
+                    <id>U_C_aquamarine</id>
+                    <number>3</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>AR_wtrwp</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </aquamarine>
+
+        <sapphire>
+            <name>sapphire</name>
+            <id>U_U_sapphire</id>
+            <jobId>4</jobId>
+            <image>sapphire.png</image>
+            <cat>ST_fus_rk1</cat>
+            <related>
+                <rel0>
+                    <id>U_C_sapphire</id>
+                    <number>3</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>AR_dthwp</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </sapphire>
+
+        <ruby>
+            <name>ruby</name>
+            <id>U_U_ruby</id>
+            <jobId>4</jobId>
+            <image>ruby.png</image>
+            <cat>ST_fus_rk1</cat>
+            <related>
+                <rel0>
+                    <id>U_C_ruby</id>
+                    <number>3</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>AR_firwp</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </ruby>
+
+        <diamond>
+            <name>diamond</name>
+            <id>U_U_diamond</id>
+            <jobId>4</jobId>
+            <image>diamond.png</image>
+            <cat>ST_fus_rk1</cat>
+            <related>
+                <rel0>
+                    <id>U_C_diamond</id>
+                    <number>3</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>AR_lifwp</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </diamond>
+
+        <topaz>
+            <name>topaz</name>
+            <id>U_U_topaz</id>
+            <jobId>4</jobId>
+            <image>topaz.png</image>
+            <cat>ST_fus_rk1</cat>
+            <related>
+                <rel0>
+                    <id>U_C_topaz</id>
+                    <number>3</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>AR_airwp</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </topaz>
+
+        <amethyst>
+            <name>amethyst</name>
+            <id>U_U_amethyst</id>
+            <jobId>4</jobId>
+            <image>amethyst.png</image>
+            <cat>ST_fus_rk1</cat>
+            <related>
+                <rel0>
+                    <id>U_C_amethyst</id>
+                    <number>3</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>AR_solwp</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </amethyst>
+
+        <amber>
+            <name>amber</name>
+            <id>U_U_amber</id>
+            <jobId>4</jobId>
+            <image>amber.png</image>
+            <cat>ST_fus_rk1</cat>
+            <related>
+                <rel0>
+                    <id>U_C_amber</id>
+                    <number>3</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>AR_ertwp</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </amber>
+
+        <malachite>
+            <name>malachite</name>
+            <id>U_U_malachite</id>
+            <jobId>4</jobId>
+            <image>malachite.png</image>
+            <cat>ST_fus_rk1</cat>
+            <related>
+                <rel0>
+                    <id>U_C_malachite</id>
+                    <number>3</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>AR_solwp</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </malachite>
+
+        <jasper>
+            <name>jasper</name>
+            <id>U_U_jasper</id>
+            <jobId>4</jobId>
+            <image>name.png</image>
+            <cat>ST_fus_rk1</cat>
+            <related>
+                <rel0>
+                    <id>U_C_jasper</id>
+                    <number>3</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>AR_airwp</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </jasper>
+
+        <carnelian>
+            <name>carnelian</name>
+            <id>U_U_carnelian</id>
+            <jobId>4</jobId>
+            <image>carnelian.png</image>
+            <cat>ST_fus_rk1</cat>
+            <related>
+                <rel0>
+                    <id>U_C_carnelian</id>
+                    <number>3</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>AR_firwp</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </carnelian>
+
+        <opal>
+            <name>opal</name>
+            <id>U_U_opal</id>
+            <jobId>4</jobId>
+            <image>opal.png</image>
+            <cat>ST_fus_rk1</cat>
+            <related>
+                <rel0>
+                    <id>U_C_opal</id>
+                    <number>3</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>AR_solwp</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </opal>
+
+        <moonstone>
+            <name>moonstone</name>
+            <id>U_U_moonstone</id>
+            <jobId>4</jobId>
+            <image>moonstone.png</image>
+            <cat>ST_fus_rk1</cat>
+            <related>
+                <rel0>
+                    <id>U_C_moonstone</id>
+                    <number>3</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>AR_dthwp</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </moonstone>
+
+        <emerald>
+            <name>emerald</name>
+            <id>U_U_emerald</id>
+            <jobId>4</jobId>
+            <image>emerald.png</image>
+            <cat>ST_fus_rk1</cat>
+            <related>
+                <rel0>
+                    <id>U_C_emerald</id>
+                    <number>3</number>
+                    <details>true</details>
+                </rel0>
+                <rel1>
+                    <id>AR_ertwp</id>
+                    <number>1</number>
+                </rel1>
+            </related>
+        </emerald>
+        
 
     </materials>
 
