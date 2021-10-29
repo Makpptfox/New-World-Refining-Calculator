@@ -128,8 +128,8 @@
         <!-- Stones -->
         <stone>Pierre</stone>
         <lodestone>Magnétite</lodestone>
-        <loamy_lodestone>Pierre glaiseuse</loamy_lodestone>
-        <putrid_lodestone>Pierre méphitique</putrid_lodestone>
+        <loamy_lodestone>Magnétite glaiseuse</loamy_lodestone>
+        <putrid_lodestone>Magnétite méphitique</putrid_lodestone>
 
         <!-- Blocks -->
         <stone_block>Bloc de pierre</stone_block>
