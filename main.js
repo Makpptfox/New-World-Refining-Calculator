@@ -26,7 +26,7 @@ let langUI;
 let updaterWindows;
 let mainWindows;
 
-let autoUpdate = false;
+let autoUpdate = true;
 
 autoUpdater.on('error', (err)=>{
     updaterWindows.webContents.send('update_error', err);
@@ -455,7 +455,19 @@ ipcMain.on('getLanguage', (ipc)=>{
 
     checkLang((langs)=>{
 
-        mainWindows.webContents.send('getLanguageResponse', {'chosen': lang, 'langs': langs});
+        let langsList = [];
+
+        for(const langElem of langs){
+
+            let data = {
+                string: langUI["default"][0][langElem][0],
+                id: langElem
+            }
+
+            langsList.push(data)
+
+        }
+        mainWindows.webContents.send('getLanguageResponse', {'chosen': lang, 'langs': langsList});
 
     })
 

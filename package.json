@@ -1,7 +1,8 @@
 {
-  "name": "new-world-refining-calculator",
-  "version": "0.1.0",
-  "description": "",
+  "name": "new_world_refining_calculator",
+  "productName": "NWRC",
+  "version": "1.0.1",
+  "description": "Launch New Word Refining Calculator",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -22,8 +23,8 @@
     "publish": "github"
   },
   "keywords": [],
-  "author": "Ward727",
-  "license": "ISC",
+  "author": "Ward727 & Mâk",
+  "license": "GPL-3.0-only",
   "devDependencies": {
     "electron": "^15.2.0",
     "electron-builder": "^22.13.1"

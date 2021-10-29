@@ -24,10 +24,10 @@ function setLangOption(){
 
             let option = document.createElement('option');
 
-            option.value = elem;
-            option.innerText = elem;
+            option.value = elem.id;
+            option.innerText = elem.string;
 
-            if(elem === language){
+            if(elem.id === language){
 
                 option.selected = true;
 

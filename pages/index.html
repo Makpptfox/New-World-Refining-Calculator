@@ -13,7 +13,7 @@
 
 <div id="frame">
 
-    <p id="title">NWRC - Version: 1.0.0</p>
+    <p id="title">NWRC - Version: 1.0.1</p>
 
     <div id="frameMinimizeContainer" class="frameButton">
         <img id="frameMinimize" alt="minimize" width="16px" height="16px"/>
@@ -230,7 +230,7 @@
 
                     <p class="numberItem"></p>
 
-                    <input class="inputNumberItem" type="number" min="0" onkeydown="if(event.key==='.'){event.preventDefault();}">
+                    <input class="inputNumberItem" type="number" min="0" onkeydown="if(event.key==='.' || event.key===',' || event.key==='-'){event.preventDefault();}">
 
                 </div>
             </div>
@@ -255,7 +255,7 @@
             </div>
             <p class="numberItem"></p>
 
-            <input class="inputRelatedItem" type="number" min="0"  onkeydown="if(event.key==='.'){event.preventDefault();}">
+            <input class="inputRelatedItem" type="number" min="0"  onkeydown="if(event.key==='.' || event.key===',' || event.key==='-'){event.preventDefault();}">
 
         </div>
 
@@ -300,7 +300,7 @@
             </div>
             <p class="numberItem"></p>
 
-            <input class="inputRelatedItemChild" disabled type="number" min="0"  onkeydown="if(event.key==='.'){event.preventDefault();}">
+            <input class="inputRelatedItemChild" disabled type="number" min="0"  onkeydown="if(event.key==='.' || event.key===',' || event.key==='-'){event.preventDefault();}">
         </div>
 
     </div>
