@@ -4,9 +4,20 @@
 
     <default>
 
-        <removeall>Tout supprimer</removeall>
-        <titleItemBar>Items pour</titleItemBar>
+        <titleItemBar>Objet pour</titleItemBar>
+        <titleItemRarity>Rareté : </titleItemRarity>
         <addItem>Ajouter</addItem>
+        <defaultTab>Défaut</defaultTab>
+        <addTab>+ Onglet</addTab>
+        <removeTab>Suppr Onglet</removeTab>
+        <uncut>Fusion de gemme</uncut>
+        <cut>Taillage de pierre</cut>
+        <parameterTitle>Options</parameterTitle>
+        <parameterLang>Langage : </parameterLang>
+        <parameterAutoUpdate>Mise à jour auto : </parameterAutoUpdate>
+        <parameterResetSave>Réinitialiser la sauvegarde !</parameterResetSave>
+        <parameterWarning>Chaque changement relance l'application !</parameterWarning>
+        <aboutTitle>À propos</aboutTitle>
 
     </default>
 

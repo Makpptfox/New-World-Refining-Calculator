@@ -177,13 +177,13 @@
         <tuning_orb_siren>Siren Tuning Orb</tuning_orb_siren>
         <tuning_orb_protector>Protector's Tuning Orb</tuning_orb_protector>
         <tuning_orb_depths>Depths Tuning Orb</tuning_orb_depths>
-        <tuning_orb_eridanus>Eridanus Tuning Orb</tuning_orb_eridanus>
+        <tuning_orb_eridanus>Eridanus Tuning Orb</tuning_orb_eridanus> <!-- Is it even obtainable? -->
         <tuning_orb_dynasty>Dynasty Tuning Orb</tuning_orb_dynasty>
         <tuning_orb_genesis>Genesis Tuning Orb</tuning_orb_genesis>
         <tuning_orb_lazarus>Lazarus Tuning Orb</tuning_orb_lazarus>
 
         <!-- Uncut Gems (It should be listed as it is in the game's crafting list, incentive on SHOULD) -->
-        <flawed_onyx>Flawed Ony</flawed_onyx>
+        <flawed_onyx>Flawed Onyx</flawed_onyx>
         <flawed_aquamarine>Flawed Aquamarine</flawed_aquamarine>
         <flawed_sapphire>Flawed Sapphire</flawed_sapphire>
         <flawed_ruby>Flawed Ruby</flawed_ruby>
@@ -241,7 +241,7 @@
         <pristine_emerald>Pristine Emerald</pristine_emerald>
 
         <!-- Cut Gems -->
-        <cut_flawed_onyx>Cut Flawed Ony</cut_flawed_onyx>
+        <cut_flawed_onyx>Cut Flawed Onyx</cut_flawed_onyx>
         <cut_flawed_aquamarine>Cut Flawed Aquamarine</cut_flawed_aquamarine>
         <cut_flawed_sapphire>Cut Flawed Sapphire</cut_flawed_sapphire>
         <cut_flawed_ruby>Cut Flawed Ruby</cut_flawed_ruby>

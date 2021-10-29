@@ -2,12 +2,301 @@
 
 <lang>
 
-
     <materials>
+        <!-- Refining Materials -->
+        <!-- Listed here are ONLY the refining materials that are specifically needed as it is, not listed when the player have choice in the quality of the RM they uses -->
+        <obsidian_flux>Flux d'obsidienne</obsidian_flux>
+        <obsidian_sandpaper>Papier de verre en obsidienne</obsidian_sandpaper>
+        <aged_tannin>Tannin mâture</aged_tannin>
+        <wireweave>Triplure en tissefer</wireweave>
 
-        <iron_ore>Minerais de fer</iron_ore>        <!-- les balises doivent avoir le même nom que le nom de l'item -->
-        <iron_ingot>L'ingot de fer</iron_ingot>
 
+
+        <!-- Smelting -->
+        <!-- Charcoal -->
+        <charcoal>Charbon de bois</charcoal>
+
+        <!-- Ores -->
+        <iron_ore>Minerai de fer</iron_ore>
+        <silver_ore>Minerai d'argent</silver_ore>
+        <starmetal_ore>Minerai de métal stellaire</starmetal_ore>
+        <orichalcum_ore>Minerai d'orichalque</orichalcum_ore>
+        <gold_ore>Minerai d'or</gold_ore>
+        <platinum_ore>Minerai de platine</platinum_ore>
+        <tolvium>Tolvium</tolvium>
+        <cinnabar>Cinabre</cinnabar>
+
+        <!-- Ingots -->
+        <iron_ingot>Lingot de fer</iron_ingot>
+        <steel_ingot>Lingot d'acier</steel_ingot>
+        <starmetal_ingot>Lingot de métal stellaire</starmetal_ingot>
+        <orichalcum_ingot>Lingot d'orichalque</orichalcum_ingot>
+        <silver_ingot>Lingot d'argent</silver_ingot>
+        <gold_ingot>Lingot d'or</gold_ingot>
+        <platinum_ingot>Lingot de platine</platinum_ingot>
+        <asmodeum>Asmodéum</asmodeum>
+        <!-- <voidbent_ingot>Voidbent Ingot</voidbent_ingot>
+        ^TODO, the actual listing system won't support this dumbass -->
+
+
+
+        <!-- Woodworking -->
+        <!-- Woods -->
+        <green_wood>Bois vert</green_wood>
+        <aged_wood>Bois ancien</aged_wood>
+        <wyrdwood>Bois d'aléa</wyrdwood>
+        <ironwood>Bois de fer</ironwood>
+        <wildwood>Bois sauvage</wildwood>
+        <barbvine>Piquevigne</barbvine>
+
+        <!-- Planks -->
+        <timber>Bois d'œuvre</timber>
+        <lumber>Bois débité</lumber>
+        <wyrdwood_planks>Planche de bois d'aléa</wyrdwood_planks>
+        <ironwood_planks>Planche de bois de fer</ironwood_planks>
+        <glittering_ebony>Ébène étincelante</glittering_ebony>
+
+
+
+        <!-- Leatherworking -->
+        <!-- Hides -->
+        <rawhide>Peau brute</rawhide>
+        <thick_hide>Peau épaisse</thick_hide>
+        <iron_hide>Peau de fer</iron_hide>
+        <smolderhide>Brûlepeau</smolderhide>
+        <scarhide>Marquepeau</scarhide>
+
+        <!-- Leathers -->
+        <coarse_leather>Cuir brut</coarse_leather>
+        <rugged_leather>Cuir corroyé</rugged_leather>
+        <layered_leather>Cuir épais</layered_leather>
+        <infused_leather>Cuir imprégné</infused_leather>
+        <runic_leather>Cuir runique</runic_leather>
+
+
+
+        <!-- Weaving -->
+        <!-- Fibers -->
+        <fibers>Fibres</fibers>
+        <silk_threads>Fils de soie</silk_threads>
+        <wirefiber>Souchet</wirefiber>
+
+        <!-- Cloths -->
+        <linen>Lin</linen>
+        <sateen>Satin</sateen>
+        <silk>Soie</silk>
+        <infused_silk>Soie imprégnée</infused_silk>
+        <phoenixweave>Velour de phœnix</phoenixweave>
+        <scalecloth>Tissécaille</scalecloth>
+        <blisterweave>Cloquetrame</blisterweave>
+
+
+        <!-- Arcana -->
+        <!-- Elements -->
+        <air_mote>Grain de l'air</air_mote>
+        <air_wisp>Volute de l'air</air_wisp>
+        <air_essence>Essence de l'air</air_essence>
+        <air_quintessence>Quintessence de l'air</air_quintessence>
+        <soul_mote>Grain de l'âme</soul_mote>
+        <soul_wisp>Volute de l'âme</soul_wisp>
+        <soul_essence>Essence de l'âme</soul_essence>
+        <soul_quintessence>Quintessence de l'âme</soul_quintessence>
+        <life_mote>Grain de la vie</life_mote>
+        <life_wisp>Volute de la vie</life_wisp>
+        <life_essence>Essence de la vie</life_essence>
+        <life_quintessence>Quintessence de la vie</life_quintessence>
+        <fire_mote>Grain du feu</fire_mote>
+        <fire_wisp>Volute du feu</fire_wisp>
+        <fire_essence>Essence du feu</fire_essence>
+        <fire_quintessence>Quintessence du feu</fire_quintessence>
+        <death_mote>Grain de la mort</death_mote>
+        <death_wisp>Volute de la mort</death_wisp>
+        <death_essence>Essence de la mort</death_essence>
+        <death_quintessence>Quintessence de la mort</death_quintessence>
+        <earth_mote>Grain de la terre</earth_mote>
+        <earth_wisp>Volute de la terre</earth_wisp>
+        <earth_essence>Essence de la terre</earth_essence>
+        <earth_quintessence>Quintessence de la terre</earth_quintessence>
+        <water_mote>Grain de l'eau</water_mote>
+        <water_wisp>Volute de l'eau</water_wisp>
+        <water_essence>Essence de l'eau</water_essence>
+        <water_quintessence>Quintessence de l'eau</water_quintessence>
+
+
+
+        <!-- Stonecutting (Oh boy) -->
+        <!-- Stones -->
+        <stone>Pierre</stone>
+        <lodestone>Magnétite</lodestone>
+        <loamy_lodestone>Pierre glaiseuse</loamy_lodestone>
+        <putrid_lodestone>Pierre méphitique</putrid_lodestone>
+
+        <!-- Blocks -->
+        <stone_block>Bloc de pierre</stone_block>
+        <stone_brick>Pierre taillée</stone_brick>
+        <lodestone_brick>Magnétite taillée</lodestone_brick>
+        <obsidian_voidstone>Obsidienne du néant</obsidian_voidstone>
+        <runestone>Pierre runique</runestone>
+
+        <!-- Corrupted Refinement -->
+        <corrupted_sliver>Écharde altérée</corrupted_sliver>
+        <corrupted_fragment>Fragment altéré</corrupted_fragment>
+        <corrupted_shard>Éclat altéré</corrupted_shard>
+        <corrupted_crystal>Cristal altéré</corrupted_crystal>
+        <corrupted_lodestone>Magnétite altérée</corrupted_lodestone>
+
+        <!-- Keys Comps (Basically, Drops) -->
+        <corrupted_rune>Rune altérée</corrupted_rune>
+        <molten_rune>Rune en fusion</molten_rune>
+        <blight_seeds>Graines de dépérissement</blight_seeds>
+        <glowing_spore>Spore brillante</glowing_spore>
+        <earth_totem>Totem de terre</earth_totem>
+        <firefox>Renard-de-feu</firefox>
+        <fancy_shell>Coquillage raffiné</fancy_shell>
+        <glowing_swamp_moss>Mousse de marais luisante</glowing_swamp_moss>
+
+        <!-- Keys Chisels (The faction thingy for the Orbs) -->
+        <iron_chisel>Ciseau en fer</iron_chisel>
+        <steel_chisel>Ciseau en acier</steel_chisel>
+        <starmetal_chisel>Ciseau en métal stellaire</starmetal_chisel>
+        <orichalcum_chisel>Ciseau en orichalque</orichalcum_chisel>
+        <asmodeum_chisel>Ciseau en asmodéum</asmodeum_chisel>
+
+        <!-- Keys (Don't ask me, it's the category in game) -->
+        <eternal_heart>Noyau éternel</eternal_heart>
+        <elemental_heart>Noyau élémentaire</elemental_heart>
+        <energy_core>Noyau d'énergie</energy_core>
+        <undying_heart>Noyau immortel</undying_heart>
+        <genesis_core>Noyau de la Genèse</genesis_core>
+        <lazarus_core>Noyau de Lazarus</lazarus_core>
+
+        <!-- Tuning Orbs -->
+        <tuning_orb_amrine>Orbe d'accord d'amrine</tuning_orb_amrine>
+        <tuning_orb_starstone>Orbe d'accord de pierre d'étoile</tuning_orb_starstone>
+        <tuning_orb_monoecious>Orbe d'accord monoïque</tuning_orb_monoecious>
+        <tuning_orb_siren>Orbe d'accord de la sirène</tuning_orb_siren>
+        <tuning_orb_protector>Orbe d'accord de la protectrice</tuning_orb_protector>
+        <tuning_orb_depths>Orbe d'accord des Profondeurs</tuning_orb_depths>
+        <tuning_orb_eridanus>Orbe d'accord d'Éridan</tuning_orb_eridanus> <!-- Is it even obtainable? -->
+        <tuning_orb_dynasty>Orbe d'accord de la dynastie</tuning_orb_dynasty>
+        <tuning_orb_genesis>Orbe d'accord de la Genèse</tuning_orb_genesis>
+        <tuning_orb_lazarus>Orbe d'accord de Lazarus</tuning_orb_lazarus>
+
+        <!-- Uncut Gems (It should be listed as it is in the game's crafting list, incentive on SHOULD) -->
+        <flawed_onyx>Onyx impur</flawed_onyx>
+        <flawed_aquamarine>Aigue-marine impure</flawed_aquamarine>
+        <flawed_sapphire>Saphir impur</flawed_sapphire>
+        <flawed_ruby>Rubis impur</flawed_ruby>
+        <flawed_diamond>Diamant impur</flawed_diamond>
+        <flawed_topaz>Topaze impure</flawed_topaz>
+        <flawed_amethyst>Améthyste impure</flawed_amethyst>
+        <flawed_amber>Ambre impur</flawed_amber>
+        <flawed_malachite>Malachite impure</flawed_malachite>
+        <flawed_jasper>Jaspe impur</flawed_jasper>
+        <flawed_carnelian>Cornaline impure</flawed_carnelian>
+        <flawed_opal>Opale impure</flawed_opal>
+        <flawed_moonstone>Pierre de lune impure</flawed_moonstone>
+        <flawed_emerald>Émeraude impure</flawed_emerald>
+        <onyx>Onyx</onyx>
+        <aquamarine>Aigue-marine</aquamarine>
+        <sapphire>Saphir</sapphire>
+        <ruby>Rubis</ruby>
+        <diamond>Diamant</diamond>
+        <topaz>Topaze</topaz>
+        <amethyst>Améthyste</amethyst>
+        <amber>Ambre</amber>
+        <malachite>Malachite</malachite>
+        <jasper>Jaspe</jasper>
+        <carnelian>Cornaline</carnelian>
+        <opal>Opale</opal>
+        <moonstone>Pierre de lune</moonstone>
+        <emerald>Émeraude</emerald>  
+        <brilliant_onyx>Onyx éclatant</brilliant_onyx>
+        <brilliant_aquamarine>Aigue-marine éclatante</brilliant_aquamarine>
+        <brilliant_sapphire>Saphir éclatant</brilliant_sapphire>
+        <brilliant_ruby>Rubis éclatant</brilliant_ruby>
+        <brilliant_diamond>Diamant éclatant</brilliant_diamond>
+        <brilliant_topaz>Topaze éclatante</brilliant_topaz>
+        <brilliant_amethyst>Améthyste éclatante</brilliant_amethyst>
+        <brilliant_amber>Ambre éclatante</brilliant_amber>
+        <brilliant_malachite>Malachite éclatante</brilliant_malachite>
+        <brilliant_jasper>Jaspe éclatant</brilliant_jasper>
+        <brilliant_carnelian>Cornaline éclatante</brilliant_carnelian>
+        <brilliant_opal>Opale éclatante</brilliant_opal>
+        <brilliant_moonstone>Pierre de lune éclatante</brilliant_moonstone>
+        <brilliant_emerald>Émeraude éclatante</brilliant_emerald>
+        <pristine_onyx>Onyx immaculé</pristine_onyx>
+        <pristine_aquamarine>Aigue-marine immaculée</pristine_aquamarine>
+        <pristine_sapphire>Saphir immaculé</pristine_sapphire>
+        <pristine_ruby>Rubis immaculé</pristine_ruby>
+        <pristine_diamond>Diamant immaculé</pristine_diamond>
+        <pristine_topaz>Topaze immaculée</pristine_topaz>
+        <pristine_amethyst>Améthyste immaculée</pristine_amethyst>
+        <pristine_amber>Ambre immaculé</pristine_amber>
+        <pristine_malachite>Malachite immaculée</pristine_malachite>
+        <pristine_jasper>Jaspe immaculé</pristine_jasper>
+        <pristine_carnelian>Cornaline immaculée</pristine_carnelian>
+        <pristine_opal>Opale immaculée</pristine_opal>
+        <pristine_moonstone>Pierre de lune immaculée</pristine_moonstone>
+        <pristine_emerald>Émeraude éclatante</pristine_emerald>
+
+        <!-- Cut Gems -->
+        <cut_flawed_onyx>Onyx impur taillé</cut_flawed_onyx>
+        <cut_flawed_aquamarine>Aigue-marine impure taillée</cut_flawed_aquamarine>
+        <cut_flawed_sapphire>Saphir impur taillé</cut_flawed_sapphire>
+        <cut_flawed_ruby>Rubis impur taillé</cut_flawed_ruby>
+        <cut_flawed_diamond>Diamant impur taillé</cut_flawed_diamond>
+        <cut_flawed_topaz>Topaze impure taillée</cut_flawed_topaz>
+        <cut_flawed_amethyst>Améthyste impure taillée</cut_flawed_amethyst>
+        <cut_flawed_amber>Ambre impur taillé</cut_flawed_amber>
+        <cut_flawed_malachite>Malachite impure taillée</cut_flawed_malachite>
+        <cut_flawed_jasper>Jaspe impur taillé</cut_flawed_jasper>
+        <cut_flawed_carnelian>Cornaline impure taillée</cut_flawed_carnelian>
+        <cut_flawed_opal>Opale impure taillée</cut_flawed_opal>
+        <cut_flawed_moonstone>Pierre de lune impure taillée</cut_flawed_moonstone>
+        <cut_flawed_emerald>Émeraude impure taillée</cut_flawed_emerald>
+        <cut_onyx>Onyx taillé</cut_onyx>
+        <cut_aquamarine>Aigue-marine taillée</cut_aquamarine>
+        <cut_sapphire>Saphir taillé</cut_sapphire>
+        <cut_ruby>Rubis taillé</cut_ruby>
+        <cut_diamond>Diamant taillé</cut_diamond>
+        <cut_topaz>Topaze taillée</cut_topaz>
+        <cut_amethyst>Améthyste taillée</cut_amethyst>
+        <cut_amber>Ambre taillé</cut_amber>
+        <cut_malachite>Malachite taillée</cut_malachite>
+        <cut_jasper>Jaspe taillé</cut_jasper>
+        <cut_carnelian>Cornaline taillée</cut_carnelian>
+        <cut_opal>Opale taillée</cut_opal>
+        <cut_moonstone>Pierre de lune taillée</cut_moonstone>
+        <cut_emerald>Émeraude taillée</cut_emerald>
+        <cut_brilliant_onyx>Onyx éclatant taillé</cut_brilliant_onyx>
+        <cut_brilliant_aquamarine>Aigue-marine éclatante taillée</cut_brilliant_aquamarine>
+        <cut_brilliant_sapphire>Saphir éclatant taillé</cut_brilliant_sapphire>
+        <cut_brilliant_ruby>Rubis éclatant taillé</cut_brilliant_ruby>
+        <cut_brilliant_diamond>Diamant éclatant taillé</cut_brilliant_diamond>
+        <cut_brilliant_topaz>Topaze éclatante taillée</cut_brilliant_topaz>
+        <cut_brilliant_amethyst>Améthyste éclatante taillée</cut_brilliant_amethyst>
+        <cut_brilliant_amber>Ambre éclatant taillé</cut_brilliant_amber>
+        <cut_brilliant_malachite>Malachite éclatante taillée</cut_brilliant_malachite>
+        <cut_brilliant_jasper>Jaspe éclatant taillé</cut_brilliant_jasper>
+        <cut_brilliant_carnelian>Cornaline éclatante taillée</cut_brilliant_carnelian>
+        <cut_brilliant_opal>Opale éclatante taillée</cut_brilliant_opal>
+        <cut_brilliant_moonstone>Pierre de lune éclatante taillée</cut_brilliant_moonstone>
+        <cut_brilliant_emerald>Émeraude éclatante taillée</cut_brilliant_emerald>
+        <cut_pristine_onyx>Onyx immaculé taillé</cut_pristine_onyx>
+        <cut_pristine_aquamarine>Aigue-marine immaculée taillée</cut_pristine_aquamarine>
+        <cut_pristine_sapphire>Saphir immaculé taillé</cut_pristine_sapphire>
+        <cut_pristine_ruby>Rubis immaculé taillé</cut_pristine_ruby>
+        <cut_pristine_diamond>Diamant immaculé taillé</cut_pristine_diamond>
+        <cut_pristine_topaz>Topaze immaculée taillée </cut_pristine_topaz>
+        <cut_pristine_amethyst>Améthyste immaculée taillée</cut_pristine_amethyst>
+        <cut_pristine_amber>Ambre immaculé taillé</cut_pristine_amber>
+        <cut_pristine_malachite>Malachite immaculée taillée</cut_pristine_malachite>
+        <cut_pristine_jasper>Jaspe immaculé taillé</cut_pristine_jasper>
+        <cut_pristine_carnelian>Cornaline immaculée taillée</cut_pristine_carnelian>
+        <cut_pristine_opal>Opale immaculée taillée</cut_pristine_opal>
+        <cut_pristine_moonstone>Pierre de lune immaculée taillée</cut_pristine_moonstone>
+        <cut_pristine_emerald>Émeraude immaculée taillée</cut_pristine_emerald>
     </materials>
 
 </lang>

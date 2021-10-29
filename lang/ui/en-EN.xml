@@ -4,7 +4,6 @@
 
     <default>
 
-        <removeall>Remove All</removeall>
         <titleItemBar>Items for</titleItemBar>
         <titleItemRarity>Rarity: </titleItemRarity>
         <addItem>Add</addItem>

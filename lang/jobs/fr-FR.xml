@@ -4,9 +4,20 @@
 
     <jobs>
 
-        <smithing>Forgeron</smithing>
-        <stonecutter>test</stonecutter>
+        <smelting>Fonderie</smelting>
+        <woodworking>Menuiserie</woodworking>
+        <leatherworking>Tannerie</leatherworking>
+        <weaving>Tissage</weaving>
+        <stonecutting>Taille de pierre</stonecutting>
 
     </jobs>
+
+    <rarity>
+        <common>Commun</common>
+        <uncommon>Insolite</uncommon>
+        <rare>Rare</rare>
+        <epic>Épique</epic>
+        <legendary>Légendaire</legendary>
+    </rarity>
 
 </lang>
