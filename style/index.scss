@@ -56,6 +56,18 @@ body{
         margin-bottom: 15px;
         border: solid 1px base.$deleteColorBack;
       }
+      #resetSave{
+        color: base.$deleteColorBack;
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+        padding: 5px;
+        border: solid 1px base.$deleteColorBack;
+        margin-top: 35px;
+        background-color: base.$B_Background;
+        cursor: pointer;
+
+      }
 
       padding: 10px;
 
@@ -383,6 +395,15 @@ nav{
     }
 
   }
+  .clickRound{
+    animation: clickRound ease-in-out .3s backwards;
+  }
+}
+
+.deleteAnim{
+
+  animation: deleteAnim ease .15s forwards;
+
 }
 #containerCalc{
   margin-top: calc(25px + 2px);
@@ -399,34 +420,6 @@ nav{
 
   }
 
-    #addNewTab{
-
-      border-radius: 5px;
-      min-width: 0;
-      width: 8%;
-      padding: 0;
-      height: 35px;
-      margin-left: 10px;
-
-    }
-    #removeTab{
-      border-radius: 5px;
-      min-width: 0;
-      width: 8%;
-      padding: 0;
-      height: 31px;
-      margin-left: 5px;
-      background-color: rgba(21,43,48,1);
-      border: solid 2px darken(base.$deleteColorBack, 5%);
-      color: darken(base.$deleteColorBack, 5%);
-
-      &:active{
-
-        border: solid 2px darken(base.$deleteColorBack, 30%);
-        color: darken(base.$deleteColorBack, 30%);
-      }
-    }
-
     background-color: #2D4C53;
     height: 45px;
     display: flex;
@@ -441,13 +434,39 @@ nav{
       justify-content: center;
       align-items: center;
       border-top-right-radius: 8px;
-      min-width: 8%;
+      min-width: 10%;
       padding: 0 8px;
       color: white;
       cursor: pointer;
       margin-right: 4px;
       background-color: rgba(21,43,48,1);
 
+    }
+
+    #addNewTab{
+      justify-self: right!important;
+      border-radius: 5px;
+      min-width: 8%;
+      padding: 0;
+      height: 35px;
+      margin-left: 10px;
+    }
+    #removeTab{
+      justify-self: right!important;
+      border-radius: 5px;
+      min-width: 8%;
+      padding: 0;
+      height: 31px;
+      margin-left: 5px;
+      background-color: rgba(21,43,48,1);
+      border: solid 2px darken(base.$deleteColorBack, 5%);
+      color: darken(base.$deleteColorBack, 5%);
+
+      &:active{
+
+        border: solid 2px darken(base.$deleteColorBack, 30%);
+        color: darken(base.$deleteColorBack, 30%);
+      }
     }
     .chosen{
 
@@ -484,9 +503,10 @@ nav{
     }
 
     .tooltipContainer{
-
       position: relative;
+      z-index: 99;
       .tooltip {
+        pointer-events: none;
         visibility: hidden;
         width: 120px;
         bottom: 70%;
@@ -536,6 +556,9 @@ nav{
     .horizontalItemCount{
       display: flex;
       z-index: 2;
+      .tooltip {
+        bottom: 55% !important;
+      }
     }
     .dragZone{
       background-color: base.$dragColorBack;
@@ -583,6 +606,7 @@ nav{
           top: 70%;
           left: 80%;
           display: none;
+          transition: all .5s;
 
         }
         text-align: center;
@@ -610,7 +634,6 @@ nav{
       margin-top: 15px;
       margin-left: 18.5%;
       text-align: center;
-      transition: all 2s;
 
       .detailsRelatedItem{
         position: relative;
@@ -662,4 +685,36 @@ nav{
 
   }
 
+}
+
+@keyframes clickRound {
+
+  0%{
+    width: 32px;
+    height: 32px;
+  }
+  60%{
+    width: 28px;
+    height: 28px;
+  }
+  100%{
+    width: 32px;
+    height: 32px;
+  }
+
+}
+
+@keyframes deleteAnim {
+  0%{
+
+    transform: translate(0%, 0);
+    opacity: 100;
+
+  }
+  100%{
+
+    transform: translate(-200%, 0);
+    opacity: 0;
+
+  }
 }

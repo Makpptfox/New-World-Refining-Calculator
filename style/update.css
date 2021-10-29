@@ -1,9 +1,11 @@
 #container {
   display: grid;
   height: 100vh;
-  grid-template-rows: [first] 25% [line2] 15% [line3] 35% [end] 25%;
+  grid-template-rows: [first] 15% [line2] 50% [line3] 35% [end] 15%;
   justify-items: center;
-  background-color: #36324b;
+  background-color: black;
+  color: white;
+  overflow-y: hidden;
 }
 
 #menuDownload {

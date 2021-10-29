@@ -210,7 +210,7 @@ function createLoader(){
                 await mkdirp(app.getPath('userData') + "/data/");
                 fs.writeFile(app.getPath('userData') + "/data/settings.json", JSON.stringify(data), (err1) => {
 
-                    checkDataFile()
+                    autoUpdater.checkForUpdatesAndNotify();
 
                 })
             } else {
@@ -401,6 +401,23 @@ ipcMain.on('saveTab', (ipc, data)=>{
         mainWindows.webContents.send('saveTabResponse');
     })
 
+})
+
+ipcMain.on('clearTab', async (ipc)=>{
+
+    let data = {
+        "default":{
+            "data": []
+        }
+    }
+
+    await mkdirp(app.getPath('userData')+"/data/save/");
+    fs.writeFile(app.getPath('userData')+"/data/save/tabs.json", JSON.stringify(data), (err1)=>{
+
+        app.relaunch();
+        app.exit();
+
+    })
 })
 
 ipcMain.once('closeApp', (ipc)=>{

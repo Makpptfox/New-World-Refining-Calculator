@@ -64,6 +64,7 @@ function setLangOption(){
         function closeModal() {
             opened = false;
             document.getElementById("backContainerParameter").style.display = "none"
+            document.getElementById("paramContainer").className = "roundButton";
         }
 
     })
@@ -115,22 +116,35 @@ function initAbout(){
     function closeModal() {
         about = false;
         document.getElementById("backContainerAbout").style.display = "none"
+        document.getElementById("aboutContainer").className = "roundButton";
     }
+
+}
+function initResetSave(){
+
+    let resetSaveButton = document.getElementById('resetSave');
+
+    resetSaveButton.addEventListener('click', ()=>{
+
+        window.api.sendSync('clearTab');
+
+    })
 
 }
 
 function openSettings(){
-
+    document.getElementById("paramContainer").className = "roundButton clickRound";
     document.getElementById('backContainerParameter').style.display='flex';
 
 }
 
 function openAbout(){
-
+    document.getElementById("aboutContainer").className = "roundButton clickRound";
     document.getElementById('backContainerAbout').style.display = 'flex';
 
 }
 
+initResetSave();
 initAutoUpdate();
 initAbout();
 

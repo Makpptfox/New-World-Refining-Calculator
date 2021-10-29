@@ -6,7 +6,8 @@
     <title>New World</title>
     <!-- Ne pas toucher -->
 
-    <!--<test> FOR TEST PURPOSE ONLY
+    <!--
+    <test> FOR TEST PURPOSE ONLY
         <name>test_item</name>
         <id>TEST_item</id>
         <jobId>0</jobId>
@@ -23,7 +24,8 @@
                 <details>true</details>
             </rel1>
         </related>
-    </test>-->
+    </test>
+    -->
 
     <materials>
         <!-- Refining materials -->

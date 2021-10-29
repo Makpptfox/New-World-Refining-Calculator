@@ -122,7 +122,6 @@ function addNewTab(){
 
         if (inputActual !== null) {
 
-
             tabManagerDiv.removeChild(inputActual);
 
         }
@@ -131,7 +130,17 @@ function addNewTab(){
 
         let confirm = async function(e){
 
-            if (e.relatedTarget !== input && input.value !== "" && (tabData[input.value] === undefined || tabData[input.value]['deleted'] !== undefined)) {
+            let size = 0;
+
+            for(const elem in tabData){
+
+                if(tabData[elem]['deleted'] === undefined){
+                    size++;
+                }
+
+            }
+
+            if (e.relatedTarget !== input && input.value !== "" && (tabData[input.value] === undefined || tabData[input.value]['deleted'] !== undefined) && size < 6) {
 
 
                 input.style.display = "none";
@@ -156,9 +165,10 @@ function addNewTab(){
                 changeTab(text.innerText);
 
 
-            } else if (input.dataset.firstClick === "true" && e.relatedTarget !== input && (input.value === "" || tabData[input.value] !== undefined)) {
+            } else if (input.dataset.firstClick === "true" && (e.relatedTarget !== input || (input.value === "" || tabData[input.value] !== undefined))) {
                 tabManagerDiv.removeChild(inputActual);
                 inputActual = null;
+
                 abortSignal.abort();
                 abortSignal = new AbortController();
 
@@ -257,18 +267,36 @@ function changeTab(tabName, callback = ()=>{}, noLoad = false){
                 let actualTabDiv = document.getElementById(tabData[actualTab].div);
                 let tabDiv = document.getElementById(tabData[tabName].div);
 
-                actualTabDiv.className = actualTabDiv.className.replace(' chosen', '');
+                try {
+                    actualTabDiv.className = actualTabDiv.className.replace(' chosen', '');
 
-                tabDiv.className = actualTabDiv.className + " chosen";
+                    tabDiv.className = actualTabDiv.className + " chosen";
 
-                actualTab = tabName;
+                    actualTab = tabName;
 
-                await window.api.sendAsync('saveTab', JSON.parse(JSON.stringify(tabData)));
+                    await window.api.sendAsync('saveTab', JSON.parse(JSON.stringify(tabData)));
 
-                callback();
+                    callback();
 
-                if(!noLoad) loadItem(tabData[tabName]['data']);
+                    if (!noLoad) loadItem(tabData[tabName]['data']);
+                } catch (e) {
 
+                    tabManagerDiv.childNodes.forEach(elem=>{
+
+                        if(elem.tagName === "DIV"){
+                            if(elem.id === ""){
+
+                                tabManagerDiv.removeChild(elem);
+                                tabData[tabName].deleted = "true";
+
+                                saveData();
+
+                            }
+                        }
+
+                    })
+
+                }
             }
         });
     }

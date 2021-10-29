@@ -18,3 +18,11 @@ function openApp(){
     window.api.sendAsync('openApp');
 
 }
+
+function initUpdate(){
+    let logo = document.getElementById("logo");
+
+    logo.src = window.api.cwd+"/data/image/ui/NWRC.png";
+}
+
+initUpdate();

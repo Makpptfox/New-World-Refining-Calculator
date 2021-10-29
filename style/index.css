@@ -60,6 +60,17 @@ body a {
   margin-bottom: 15px;
   border: solid 1px #FE5F55;
 }
+#backContainerParameter #containerParameter .listParameters #resetSave {
+  color: #FE5F55;
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+  padding: 5px;
+  border: solid 1px #FE5F55;
+  margin-top: 35px;
+  background-color: #0E191C;
+  cursor: pointer;
+}
 
 #backContainerAbout {
   position: fixed;
@@ -335,6 +346,13 @@ nav .roundButton {
 nav .roundButton:hover {
   cursor: pointer;
 }
+nav .clickRound {
+  animation: clickRound ease-in-out 0.3s backwards;
+}
+
+.deleteAnim {
+  animation: deleteAnim ease 0.15s forwards;
+}
 
 #containerCalc {
   margin-top: calc(25px + 2px);
@@ -354,18 +372,31 @@ nav .roundButton:hover {
 #containerCalc #tabManagerBar::-webkit-scrollbar {
   display: none;
 }
+#containerCalc #tabManagerBar .tab {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 8px;
+  min-width: 10%;
+  padding: 0 8px;
+  color: white;
+  cursor: pointer;
+  margin-right: 4px;
+  background-color: #152b30;
+}
 #containerCalc #tabManagerBar #addNewTab {
+  justify-self: right !important;
   border-radius: 5px;
-  min-width: 0;
-  width: 8%;
+  min-width: 8%;
   padding: 0;
   height: 35px;
   margin-left: 10px;
 }
 #containerCalc #tabManagerBar #removeTab {
+  justify-self: right !important;
   border-radius: 5px;
-  min-width: 0;
-  width: 8%;
+  min-width: 8%;
   padding: 0;
   height: 31px;
   margin-left: 5px;
@@ -376,19 +407,6 @@ nav .roundButton:hover {
 #containerCalc #tabManagerBar #removeTab:active {
   border: solid 2px #b90c01;
   color: #b90c01;
-}
-#containerCalc #tabManagerBar .tab {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top-right-radius: 8px;
-  min-width: 8%;
-  padding: 0 8px;
-  color: white;
-  cursor: pointer;
-  margin-right: 4px;
-  background-color: #152b30;
 }
 #containerCalc #tabManagerBar .chosen {
   background: linear-gradient(0deg, #0d1b1e 0%, #0d1b1e 10%, #152b30 25%) !important;
@@ -418,8 +436,10 @@ nav .roundButton:hover {
 }
 #containerCalc #itemListContainer .tooltipContainer {
   position: relative;
+  z-index: 99;
 }
 #containerCalc #itemListContainer .tooltipContainer .tooltip {
+  pointer-events: none;
   visibility: hidden;
   width: 120px;
   bottom: 70%;
@@ -460,6 +480,9 @@ nav .roundButton:hover {
 #containerCalc .containerItemCount .horizontalItemCount {
   display: flex;
   z-index: 2;
+}
+#containerCalc .containerItemCount .horizontalItemCount .tooltip {
+  bottom: 55% !important;
 }
 #containerCalc .containerItemCount .dragZone {
   background-color: #FEC555;
@@ -507,6 +530,7 @@ nav .roundButton:hover {
   top: 70%;
   left: 80%;
   display: none;
+  transition: all 0.5s;
 }
 #containerCalc .containerItemCount .itemCount .relatedItem input {
   width: 120px;
@@ -522,7 +546,6 @@ nav .roundButton:hover {
   margin-top: 15px;
   margin-left: 18.5%;
   text-align: center;
-  transition: all 2s;
 }
 #containerCalc .containerItemCount .detailsRelatedItemContainer .detailsRelatedItem {
   position: relative;
@@ -556,6 +579,30 @@ nav .roundButton:hover {
 @keyframes closeRelatedItemChild {
   100% {
     position: relative;
+  }
+}
+@keyframes clickRound {
+  0% {
+    width: 32px;
+    height: 32px;
+  }
+  60% {
+    width: 28px;
+    height: 28px;
+  }
+  100% {
+    width: 32px;
+    height: 32px;
+  }
+}
+@keyframes deleteAnim {
+  0% {
+    transform: translate(0%, 0);
+    opacity: 100;
+  }
+  100% {
+    transform: translate(-200%, 0);
+    opacity: 0;
   }
 }
 

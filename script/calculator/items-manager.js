@@ -238,14 +238,17 @@ function addItem(elem, baseValue = 1, callback = ()=>{}, save = true, opened = f
 
             deleteButton.addEventListener("click", (e)=>{
 
+
                 let button = e.currentTarget;
-
                 let uid = button.dataset['origin'];
+                document.getElementById(uid).parentElement.parentElement.parentElement.classList.add("deleteAnim");
 
-                document.getElementById(uid).parentElement.parentElement.parentElement.remove();
-                addedItem[uid] = null;
+                document.getElementById(uid).parentElement.parentElement.parentElement.addEventListener("animationend", ()=>{
+                    document.getElementById(uid).parentElement.parentElement.parentElement.remove();
+                    addedItem[uid] = null;
 
-                saveData();
+                    saveData();
+                })
 
             })
 
@@ -422,9 +425,11 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null, ori
                 if(document.getElementById(uid).style.display === "none") {
                     document.getElementById(uid).style.display = "flex";
                     inputEvent.parentElement.querySelector('img.showBar').style.transform = 'rotate(180deg)';
+                    inputEvent.parentElement.querySelector('img.showBar').style.opacity = '40%';
                 } else {
                     document.getElementById(uid).style.display = "none";
                     inputEvent.parentElement.querySelector('img.showBar').style.transform = 'rotate(0)';
+                    inputEvent.parentElement.querySelector('img.showBar').style.opacity = '100%';
                 }
 
                 saveData();
@@ -436,6 +441,7 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null, ori
 
                 document.getElementById(uid).style.display = "none";
                 inputEvent.parentElement.querySelector('img.showBar').style.transform = 'rotate(0)';
+                inputEvent.parentElement.querySelector('img.showBar').style.opacity = '100%';
                 document.getElementById(uid).dispatchEvent(new CustomEvent('closeSub'));
 
 
@@ -477,6 +483,7 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null, ori
 
                     if(arrow){
                         arrow.style.transform = 'rotate(0deg)';
+                        arrow.style.opacity = '100%';
                         div.style.display = "none";
                     }
 
@@ -492,6 +499,7 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null, ori
 
                         if(arrow) {
                             arrow.style.transform = 'rotate(180deg)';
+                            arrow.style.opacity = '40%';
                             div.style.display = "flex";
                         }
                     }

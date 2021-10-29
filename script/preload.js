@@ -10,7 +10,7 @@ const { v4: uuidv4 } = require('uuid');
 
 let validChannelsSend = ['getAllJobs', 'getDataFrom', 'getLang', 'getAllItems', "getUID", "installUpdate", "openApp",
     "getSavedTab", "saveTab", "deleteTab", "GetVersion", "GetUpdate", "StartTest", "closeApp", "minApp", "minSize", "maxSize", "restartApp",
-    "getLanguage", 'getAutoUpdate', "setSettings"];
+    "getLanguage", 'getAutoUpdate', "setSettings", "clearTab"];
 let validChannelsReceive = ["update_error", "update_available", "update_downloaded", "no_update",
     'getAllJobsResponse', 'getDataFromResponse', "getLangResponse", "getAllItemsResponse", "returnUID",
     "getSavedTabResponse", "deleteTabResponse", "StopTest", "maxSizeResponse", "minSizeResponse",
