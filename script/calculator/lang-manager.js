@@ -4,9 +4,9 @@ let lang = "";
 
 function getLang(){
 
-    window.api.sendAsync("getLanguage")
+    window["api"].sendAsync("getLanguage")
 
-    window.api.receiveOnce('getLanguageResponse', (lang)=>{
+    window["api"].receiveOnce('getLanguageResponse', (lang)=>{
 
         this.lang = lang.chosen;
     })
@@ -22,9 +22,9 @@ function translateAllTag(){
 
         if(tag.hasAttribute('data-lang')){
 
-            window.api.sendAsync('getLang', 'ui', 'null', tag.dataset['lang']);
+            window["api"].sendAsync('getLang', 'ui', 'null', tag.dataset['lang']);
 
-            window.api.receive('getLangResponse', (type, data, key)=>{
+            window["api"].receive('getLangResponse', (type, data, key)=>{
 
                 if(key === tag.dataset['lang']){
 

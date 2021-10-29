@@ -8,11 +8,12 @@ let setting = {
 let opened = false;
 let about = false;
 
+// Set base lang option for the selector
 function setLangOption(){
 
-    window.api.sendAsync("getLanguage");
+    window["api"].sendAsync("getLanguage");
 
-    window.api.receiveOnce('getLanguageResponse', (lang)=>{
+    window["api"].receiveOnce('getLanguageResponse', (lang)=>{
 
         let language = lang.chosen;
         let langs = lang.langs;
@@ -38,24 +39,27 @@ function setLangOption(){
 
         setting.settings.lang = language;
 
-        selector.addEventListener('change', (e)=>{
+        selector.addEventListener('change', ()=>{
 
             setting.settings.lang = selector.value;
 
-            window.api.sendAsync('setSettings', setting);
+            window["api"].sendAsync('setSettings', setting);
 
-            window.api.receiveOnce('setSettingsResponse', ()=>{
+            window["api"].receiveOnce('setSettingsResponse', ()=>{
 
-                window.api.sendAsync('restartApp');
+                window["api"].sendAsync('restartApp');
 
             })
 
         })
         document.addEventListener("click",(event)=>{
+                // noinspection JSUnresolvedFunction
                 if (!event.target.closest("#containerParameter") && opened) {
                     closeModal()
-                } else if (!opened && !event.target.closest("#containerParameter")){
-                    opened = true;
+                } else { // noinspection JSUnresolvedFunction
+                    if (!opened && !event.target.closest("#containerParameter")){
+                                        opened = true;
+                                    }
                 }
             },
             false
@@ -73,25 +77,26 @@ function setLangOption(){
 
 }
 
+// Init each of the window
 function initAutoUpdate(){
 
-    window.api.sendAsync('getAutoUpdate');
+    window["api"].sendAsync('getAutoUpdate');
 
-    window.api.receiveOnce('getAutoUpdateResponse', (state)=>{
+    window["api"].receiveOnce('getAutoUpdateResponse', (state)=>{
 
         let checkbox = document.getElementById('autoCheck');
 
         checkbox.checked = state;
         setting.settings.autoupdate = state;
 
-        checkbox.addEventListener('change', (e)=>{
+        checkbox.addEventListener('change', ()=>{
 
             setting.settings.autoupdate = checkbox.checked;
-            window.api.sendAsync('setSettings', setting);
+            window["api"].sendAsync('setSettings', setting);
 
-            window.api.receiveOnce('setSettingsResponse', ()=>{
+            window["api"].receiveOnce('setSettingsResponse', ()=>{
 
-                window.api.sendAsync('restartApp');
+                window["api"].sendAsync('restartApp');
 
             })
 
@@ -104,9 +109,12 @@ function initAbout(){
 
 
     document.addEventListener("click",(event)=>{
+            // noinspection JSUnresolvedFunction
             if (!event.target.closest("#containerAbout") && about) {
                 closeModal()
-            } else if (!opened && !event.target.closest("#containerAbout")){
+            } else
+                // noinspection JSUnresolvedFunction
+                if (!opened && !event.target.closest("#containerAbout")){
                 about = true;
             }
         },
@@ -126,7 +134,7 @@ function initResetSave(){
 
     resetSaveButton.addEventListener('click', ()=>{
 
-        window.api.sendSync('clearTab');
+        window["api"].sendSync('clearTab');
 
     })
 

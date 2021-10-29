@@ -1,8 +1,8 @@
 
-const windowClose = window.api.cwd+"/data/image/ui/closeFrame.png";
-const windowMin = window.api.cwd+"/data/image/ui/minFrame.png";
-const windowExtend = window.api.cwd+"/data/image/ui/extendFrame.png";
-const windowSmall = window.api.cwd+"/data/image/ui/smallFrame.png";
+const windowClose = window["api"].cwd+"/data/image/ui/closeFrame.png";
+const windowMin = window["api"].cwd+"/data/image/ui/minFrame.png";
+const windowExtend = window["api"].cwd+"/data/image/ui/extendFrame.png";
+const windowSmall = window["api"].cwd+"/data/image/ui/smallFrame.png";
 
 function initIcon(){
 
@@ -28,13 +28,13 @@ function initIcon(){
 
     close.parentElement.addEventListener('click', ()=>{
 
-        window.api.sendAsync('closeApp');
+        window["api"].sendAsync('closeApp');
 
     })
 
     min.parentElement.addEventListener('click', ()=>{
 
-        window.api.sendAsync('minApp');
+        window["api"].sendAsync('minApp');
 
     });
 
@@ -43,7 +43,7 @@ function initIcon(){
         if (sizeFlipFlop){
 
             size.src = windowExtend;
-            window.api.sendAsync('maxSize');
+            window["api"].sendAsync('maxSize');
 
             sizeFlipFlop = false;
 
@@ -58,7 +58,7 @@ function initIcon(){
 
         } else {
             size.src = windowSmall;
-            window.api.sendAsync('minSize');
+            window["api"].sendAsync('minSize');
 
             sizeFlipFlop = true;
 
@@ -74,13 +74,13 @@ function initIcon(){
 
     })
 
-    window.api.receive("maxSizeResponse", ()=>{
+    window["api"].receive("maxSizeResponse", ()=>{
 
         size.src = windowExtend;
 
         sizeFlipFlop = false;
     })
-    window.api.receive('minSizeResponse', ()=>{
+    window["api"].receive('minSizeResponse', ()=>{
 
             size.src = windowSmall;
 

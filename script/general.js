@@ -1,7 +1,5 @@
 let addedItem = {};
 
-let abortEvent = new AbortController();
-
 let alreadyAvailable;
 
 const inputEventCustom = new InputEvent('editData');
@@ -18,7 +16,7 @@ Object.size = function(obj) {
 };
 
 try {
-    if (window.api.testApp()) {
+    if (window["api"].testApp()) {
 
         console.log("Success");
 
@@ -33,7 +31,7 @@ function checkA() {
 
         aTags[i].addEventListener('click', (e) => {
             e.preventDefault();
-            window.api.openExternal(e.target.href);
+            window["api"].openExternal(e.target.href);
         })
     }
 }
@@ -41,6 +39,6 @@ function checkIMG(){
     let questionMark = document.getElementById("aboutIcon");
     let param = document.getElementById("paramIcon");
 
-    questionMark.src = window.api.cwd+"/data/image/ui/question_white.png";
-    param.src = window.api.cwd+"/data/image/ui/settings_white.png";
+    questionMark.src = window["api"].cwd+"/data/image/ui/question_white.png";
+    param.src = window["api"].cwd+"/data/image/ui/settings_white.png";
 }

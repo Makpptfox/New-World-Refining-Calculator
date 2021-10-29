@@ -5,21 +5,21 @@ let actualName;
 // Function to get all jobs and load them in the menu bar
 function loadJobs(){
 
-    window.api.sendAsync('getAllJobs');
+    window["api"].sendAsync('getAllJobs');
 
-    window.api.receiveOnce('getAllJobsResponse', (data)=>{
+    window["api"].receiveOnce('getAllJobsResponse', (data)=>{
 
-        window.api.sendAsync('getDataFrom', data['jobs']);
+        window["api"].sendAsync('getDataFrom', data['jobs']);
 
     })
 
-    window.api.receiveOnce('getDataFromResponse', (data)=>{
+    window["api"].receiveOnce('getDataFromResponse', (data)=>{
 
         data["jobs"].forEach(elem=>{
 
-            window.api.sendAsync('getLang', "jobs", elem);
+            window["api"].sendAsync('getLang', "jobs", elem);
 
-            window.api.receive("getLangResponse", (type, RElem)=>{
+            window["api"].receive("getLangResponse", (type, RElem)=>{
                 if(type === "jobs" && elem.id === RElem.id){
 
                     actualName = RElem.name;
@@ -48,9 +48,9 @@ function loadJobs(){
 
                         const text = titleBar.querySelector("p.jobTitle");
 
-                        window.api.sendAsync('getLang', "ui");
+                        window["api"].sendAsync('getLang', "ui");
 
-                        new Promise((resolve, reject) => {window.api.receiveOnce('getLangResponse', (type, data)=>{
+                        new Promise((resolve) => {window["api"].receiveOnce('getLangResponse', (type, data)=>{
 
                             if(type === "ui") {
 
@@ -64,18 +64,18 @@ function loadJobs(){
 
                             let color = null
 
-                            if(elem.cats !== ""){
+                                if(elem.cats !== ""){
 
-                                for(const catKey in elem.cats){
+                                        for (const catKey in elem.cats) {
 
-                                    addCat(catKey, elem.cats[catKey]);
-                                    color = elem.cats[catKey].color;
+                                                addCat(catKey, elem.cats[catKey]);
+                                                color = elem.cats[catKey].color;
+
+                                        }
+
+                                    showMainCat();
 
                                 }
-
-                                showMainCat();
-
-                            }
 
                             mainMenuBar.appendChild(titleBar);
 
@@ -98,15 +98,16 @@ function loadJobs(){
 
     })
 }
+
 // Function used to show items of a job when the user click on a job in the list
 function loadItemJobs(jobId, catColor = null){
     let mainMenuBar = document.getElementById("itemListBar");
 
     actualJob = jobId;
 
-    window.api.sendAsync('getAllItems');
+    window["api"].sendAsync('getAllItems');
 
-    window.api.receiveOnce('getAllItemsResponse', async (data)=>{
+    window["api"].receiveOnce('getAllItemsResponse', async (data)=>{
 
         let materials = data['materials']
 
@@ -114,12 +115,12 @@ function loadItemJobs(jobId, catColor = null){
 
             if(jobId.toString() === material.jobId){
                 try {
-                    const uid = window.api.generateNewUid();
+                    const uid = window["api"].generateNewUid();
 
-                    await window.api.sendAsync('getLang', "item", material, uid);
+                    await window["api"].sendAsync('getLang', "item", material, uid);
 
-                    await new Promise((resolve, reject) => {
-                        window.api.receive("getLangResponse", (type, RElem, key) => {
+                    await new Promise((resolve) => {
+                        window["api"].receive("getLangResponse", (type, RElem, key) => {
                             if (type === "item" && material.id === RElem.id && key === uid) {
 
                                 if (RElem['cat'] === "") {
@@ -134,10 +135,10 @@ function loadItemJobs(jobId, catColor = null){
                                     let button = clone.querySelector("div.buttonAddItem");
 
 
-                                    window.api.sendAsync('getLang', "ui");
+                                    window["api"].sendAsync('getLang', "ui");
 
-                                    new Promise((resolve1, reject) => {
-                                        window.api.receiveOnce('getLangResponse', (type, data) => {
+                                    new Promise((resolve1) => {
+                                        window["api"].receiveOnce('getLangResponse', (type, data) => {
 
                                             if (type === "ui") {
 
@@ -158,7 +159,7 @@ function loadItemJobs(jobId, catColor = null){
 
                                         });
 
-                                        img.src = window.api.cwd + "/data/image/materials/" + RElem.image
+                                        img.src = window["api"].cwd + "/data/image/materials/" + RElem.image
                                         title.innerText = RElem.name;
 
                                         mainMenuBar.appendChild(clone);
@@ -197,15 +198,13 @@ function _loadCatItem(idCat, catColor, name){
 
     const text = titleBar.querySelector("p.jobTitle");
 
-    window.api.sendAsync('getLang', "ui");
+    window["api"].sendAsync('getLang', "ui");
 
-    new Promise((resolve, reject) => {window.api.receiveOnce('getLangResponse', (type, data)=>{
+    new Promise((resolve) => {window["api"].receiveOnce('getLangResponse', (type, data)=>{
 
         if(type === "ui") {
-            console.log(data["titleItemRarity"][0]);
 
             text.innerHTML = data["titleItemBar"][0] + " " + actualName + `<br/><br/>${data["titleItemRarity"][0]} <span style='color: ${catColor}'>${name}</span>`
-            console.log("1");
 
             resolve();
 
@@ -220,12 +219,14 @@ function _loadCatItem(idCat, catColor, name){
     })
 
 }
+
+// Function used to show items of a specific job categories
 function loadCatItem(jobId, idCat, catColor){
     let mainMenuBar = document.getElementById("itemListBar");
 
-    window.api.sendAsync('getAllItems');
+    window["api"].sendAsync('getAllItems');
 
-    window.api.receiveOnce('getAllItemsResponse', async (data)=>{
+    window["api"].receiveOnce('getAllItemsResponse', async (data)=>{
 
         let materials = data['materials']
 
@@ -234,10 +235,10 @@ function loadCatItem(jobId, idCat, catColor){
             if(material['cat'] !== undefined) {
                 if (jobId.toString() === material.jobId && idCat.toString() === material.cat) {
                     try {
-                        await window.api.sendAsync('getLang', "item", material);
+                        await window["api"].sendAsync('getLang', "item", material);
 
-                        await new Promise((resolve, reject) => {
-                            window.api.receiveOnce("getLangResponse", (type, RElem) => {
+                        await new Promise((resolve) => {
+                            window["api"].receiveOnce("getLangResponse", (type, RElem) => {
 
 
                                 if (type === "item" && material.id === RElem.id) {
@@ -252,10 +253,10 @@ function loadCatItem(jobId, idCat, catColor){
                                     let button = clone.querySelector("div.buttonAddItem");
 
 
-                                    window.api.sendAsync('getLang', "ui");
+                                    window["api"].sendAsync('getLang', "ui");
 
-                                    new Promise((resolve1, reject) => {
-                                        window.api.receiveOnce('getLangResponse', (type, data) => {
+                                    new Promise((resolve1) => {
+                                        window["api"].receiveOnce('getLangResponse', (type, data) => {
 
                                             if (type === "ui") {
 
@@ -275,7 +276,7 @@ function loadCatItem(jobId, idCat, catColor){
 
                                         });
 
-                                        img.src = window.api.cwd + "/data/image/materials/" + RElem.image
+                                        img.src = window["api"].cwd + "/data/image/materials/" + RElem.image
                                         title.innerText = RElem.name;
 
                                         mainMenuBar.appendChild(clone);

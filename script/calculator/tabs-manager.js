@@ -20,8 +20,8 @@ let init = false;
 // Function to loadData from save file
 function loadData(callback){
 
-    window.api.sendAsync('getSavedTab');
-    window.api.receiveOnce('getSavedTabResponse', (data, exist)=>{
+    window["api"].sendAsync('getSavedTab');
+    window["api"].receiveOnce('getSavedTabResponse', (data, exist)=>{
 
         if(exist){
 
@@ -50,9 +50,9 @@ function initTabManager(){
 
     tabTemplate = document.getElementById('templateTab');
 
-    window.api.sendAsync('getSavedTab');
+    window["api"].sendAsync('getSavedTab');
 
-    window.api.receiveOnce('getSavedTabResponse', (data, exist)=>{
+    window["api"].receiveOnce('getSavedTabResponse', (data, exist)=>{
 
         if(exist){
 
@@ -118,15 +118,13 @@ function initTabManager(){
 // Function to add new tab to the calculator
 function addNewTab(){
     if(init) {
-        let uid = window.api.generateNewUid();
+        let uid = window["api"].generateNewUid();
 
         if (inputActual !== null) {
 
             tabManagerDiv.removeChild(inputActual);
 
         }
-
-        let init = false;
 
         let confirm = async function(e){
 
@@ -153,7 +151,7 @@ function addNewTab(){
                     div: uid
                 };
 
-                await window.api.sendAsync('saveTab', JSON.parse(JSON.stringify(tabData)));
+                await window["api"].sendAsync('saveTab', JSON.parse(JSON.stringify(tabData)));
 
                 text.parentElement.addEventListener('click', () => changeTab(text.innerText));
 
@@ -185,7 +183,7 @@ function addNewTab(){
         clone.querySelector('div.tab')
 
 
-        input.addEventListener('input', (e) => {
+        input.addEventListener('input', () => {
 
             text.innerText = input.value;
 
@@ -194,7 +192,7 @@ function addNewTab(){
         document.addEventListener('keypress', async (e)=>{
             if(e.key === "Enter"){
 
-                confirm(e);
+                await confirm(e);
 
             }
         }, {signal: abortSignal.signal})
@@ -250,7 +248,7 @@ function removeTab(){
 function changeTab(tabName, callback = ()=>{}, noLoad = false){
     if(init) {
 
-        loadData(async (data)=>{
+        loadData(async ()=>{
 
             if (tabData[tabName] !== undefined && tabName !== actualTab) {
 
@@ -274,11 +272,11 @@ function changeTab(tabName, callback = ()=>{}, noLoad = false){
 
                     actualTab = tabName;
 
-                    await window.api.sendAsync('saveTab', JSON.parse(JSON.stringify(tabData)));
+                    await window["api"].sendAsync('saveTab', JSON.parse(JSON.stringify(tabData)));
 
                     callback();
 
-                    if (!noLoad) loadItem(tabData[tabName]['data']);
+                    if (!noLoad) await loadItem(tabData[tabName]['data']);
                 } catch (e) {
 
                     tabManagerDiv.childNodes.forEach(elem=>{
@@ -334,10 +332,10 @@ async function saveData(){
         if(addedItem[addedItemElement] !== null) tabData[actualTab]['data'].push(addedItem[addedItemElement]);
 
     }
-    await window.api.sendAsync("deleteTab");
+    await window["api"].sendAsync("deleteTab");
 
-    window.api.receiveOnce('deleteTabResponse', ()=>{
-        window.api.sendAsync('saveTab', JSON.parse(JSON.stringify(tabData)));
+    window["api"].receiveOnce('deleteTabResponse', ()=>{
+        window["api"].sendAsync('saveTab', JSON.parse(JSON.stringify(tabData)));
     })
 }
 
