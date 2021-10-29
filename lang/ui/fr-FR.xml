@@ -4,14 +4,16 @@
 
     <default>
 
+        <en-EN>English</en-EN>
+        <fr-FR>Français</fr-FR>
         <titleItemBar>Objet pour</titleItemBar>
         <titleItemRarity>Rareté : </titleItemRarity>
         <addItem>Ajouter</addItem>
         <defaultTab>Défaut</defaultTab>
         <addTab>+ Onglet</addTab>
         <removeTab>Suppr Onglet</removeTab>
-        <uncut>Fusion de gemme</uncut>
-        <cut>Taillage de pierre</cut>
+        <uncut>Fusion</uncut>
+        <cut>Taillage</cut>
         <parameterTitle>Options</parameterTitle>
         <parameterLang>Langage : </parameterLang>
         <parameterAutoUpdate>Mise à jour auto : </parameterAutoUpdate>

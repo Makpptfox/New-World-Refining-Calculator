@@ -4,6 +4,8 @@
 
     <default>
 
+        <en-EN>English</en-EN>
+        <fr-FR>Français</fr-FR>
         <titleItemBar>Items for</titleItemBar>
         <titleItemRarity>Rarity: </titleItemRarity>
         <addItem>Add</addItem>
