@@ -1,7 +1,9 @@
 const mainCat = document.getElementById('cats');
-let list = mainCat.querySelector('div#catsContainer');
+
 const catTemplate = document.getElementById('templateCat');
 const subTemplate = document.getElementById('templateSubCat');
+
+let list = mainCat.querySelector('div#catsContainer');
 
 let oldCat = null;
 
@@ -79,34 +81,41 @@ function _newSubCat(name, color, id){
 
 }
 
+// Add new cat on the left bar menu
 function addCat(catName, elems){
 
-    const keyCat = window.api.generateNewUid();
+    const keyCat = window["api"].generateNewUid();
 
-    window.api.sendAsync('getLang', "ui", keyCat);
+    // Send request to get the translated element
+    window["api"].sendAsync('getLang', "ui", keyCat);
 
-    window.api.receiveOnce('getLangResponse', (type, data, key)=>{
+    // Receive response
+    window["api"].receiveOnce('getLangResponse', (type, data, key)=>{
 
         if(type !== "ui" && key !== keyCat) return;
 
+        // Create new cat
         let cat= _newCat(data[catName][0]);
 
         let subCatList = cat.querySelector('div.subCatList');
 
+        // check for all of his child elements
         for (const elem in elems[0]){
 
             const item = elems[0][elem][0];
 
-            const uid = window.api.generateNewUid();
+            const uid = window["api"].generateNewUid();
 
-            window.api.sendAsync('getLang', "rarity", item, uid);
+            window["api"].sendAsync('getLang', "rarity", item, uid);
 
-            window.api.receive('getLangResponse', (type, rarity, key)=>{
+            window["api"].receive('getLangResponse', (type, rarity, key)=>{
 
                 if(type === "rarity" && key === uid){
 
+                    // Create the child
                     const subCat = _newSubCat(rarity, item['color'], item['id']);
 
+                    // Add the child to the cat
                     _addToCat(subCat, subCatList);
 
                 }

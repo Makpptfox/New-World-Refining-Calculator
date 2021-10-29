@@ -1,5 +1,5 @@
 
-window.api.receive('update_downloaded', ()=>{
+window["api"].receive('update_downloaded', ()=>{
 
     let updaterWindow = document.getElementById('menuDownload');
 
@@ -9,20 +9,20 @@ window.api.receive('update_downloaded', ()=>{
 
 function InstallUpdate(){
 
-    window.api.sendAsync('installUpdate');
+    window["api"].sendAsync('installUpdate');
 
 }
 
 function openApp(){
 
-    window.api.sendAsync('openApp');
+    window["api"].sendAsync('openApp');
 
 }
 
 function initUpdate(){
     let logo = document.getElementById("logo");
 
-    logo.src = window.api.cwd+"/data/image/ui/NWRC.png";
+    logo.src = window["api"].cwd+"/data/image/ui/NWRC.png";
 }
 
 initUpdate();

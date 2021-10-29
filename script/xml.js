@@ -68,7 +68,7 @@ function getDataFiles(type, callback) {
 
                         let pathOfXML = path.join(process.cwd(), "data", "jobs", file);
 
-                        promises.push(new Promise(function (resolve, reject) {
+                        promises.push(new Promise(function (resolve) {
 
                             checkIfXMLValid(pathOfXML, (valid) => {
 
@@ -112,7 +112,7 @@ function getDataFiles(type, callback) {
 
                         let pathOfXML = path.join(process.cwd(), "data", "materials", file);
 
-                        promises.push(new Promise(function (resolve, reject) {
+                        promises.push(new Promise(function (resolve) {
 
                             checkIfXMLValid(pathOfXML, (valid) => {
 

@@ -5,20 +5,30 @@ function loadAvailableItems(){
 
     alreadyAvailable = true;
 
-    window.api.sendAsync('getAllItems');
+    // Send request to get the items
+    window["api"].sendAsync('getAllItems');
 
-    window.api.receiveOnce('getAllItemsResponse', async (data)=> {
+    // Get the request
+    window["api"].receiveOnce('getAllItemsResponse', async (data)=> {
 
         let materials = data['materials'];
 
+        // Loop on all items
         for await (let material of materials) {
 
-            let uid = window.api.generateNewUid();
+            let uid = window["api"].generateNewUid();
 
-            await window.api.sendAsync('getLang', "item", material, uid);
+            // Send request to get the translated name
+            await window["api"].sendAsync('getLang', "item", material, uid);
 
-            window.api.receive("getLangResponse", (type, RElem, key) => {
+            // Receive the response
+            window["api"].receive("getLangResponse", (type, RElem, key) => {
+
+                // Check if the response type is same, if the material id is the same and if the key is same
                 if (type === "item" && material.id === RElem.id && key === uid) {
+
+                    // Add the item the the availableItem array
+
                     let itemDataList = {};
 
                     itemDataList[RElem.id] = RElem;
@@ -41,6 +51,7 @@ function addItem(elem, baseValue = 1, callback = ()=>{}, save = true, opened = f
 
     let related;
 
+    // Check if the item have an related
     if(personal.related['rel0'] !== undefined){
 
         related = personal.related;
@@ -63,23 +74,31 @@ function addItem(elem, baseValue = 1, callback = ()=>{}, save = true, opened = f
 
     let dragZone = cloneOrigin.querySelector('img.dragZone');
 
-    dragZone.src = window.api.cwd+"/data/image/ui/drag.png";
+    dragZone.src = window["api"].cwd+"/data/image/ui/drag.png";
 
     originNumber.value = baseValue;
-    originImage.src = window.api.cwd+"/data/image/materials/" + personal.image;
+    originImage.src = window["api"].cwd+"/data/image/materials/" + personal.image;
 
+    // Check when the input of the first item change
     originNumber.addEventListener("input", (e) => {
 
+        // Save the value of the change
         saveData();
 
-        let related = addedItem[e.target.parentElement.id]['children'];
-        addedItem[e.target.parentElement.id]['value'] = e.target.value;
+        let related = addedItem[e.target["parentElement"].id]['children'];
+
+        //Update the value in the addedItem array
+        addedItem[e.target["parentElement"].id]['value'] = e.target.value;
 
         let value = e.target.value;
+
+        // If the item have related...
         if (Object.size(related) !== 0) {
 
+            // ...Loop in all of his related...
             for (let child of related) {
 
+                // ...And update the value
                 let childElem = document.getElementById(child['uid']);
                 let childInput = childElem.querySelector("input.inputRelatedItem");
 
@@ -96,17 +115,23 @@ function addItem(elem, baseValue = 1, callback = ()=>{}, save = true, opened = f
 
     let childs = [];
 
-    window.api.sendAsync('getUID');
+    // TODO: Replace the getUID request by the "generateNewUid" function
+    // Send request to get an UID
+    window["api"].sendAsync('getUID');
 
-    new Promise((resolve, reject) => {
-        window.api.receiveOnce('returnUID', async (uid) => {
+    // Create a promises
+    new Promise((resolve) => {
+        // Get the response of the UID Request
+        window["api"].receiveOnce('returnUID', async (uid) => {
 
             originID.id = uid;
 
+            //If the item have an related
             if (Object.size(related) !== 0) {
 
                 let index = 0;
 
+                // Loop in all its relatives and create each of them
                 for (let rel in related) {
 
                     let child = related[rel][0];
@@ -127,16 +152,16 @@ function addItem(elem, baseValue = 1, callback = ()=>{}, save = true, opened = f
 
                         let arrow = cloneRelated.querySelector("img.arrow");
 
-                        arrow.src = window.api.cwd+"/data/image/ui/plus_white.png";
+                        arrow.src = window["api"].cwd+"/data/image/ui/plus_white.png";
 
 
                         numberRelated.value = baseValue*number;
-                        imageRelated.src = window.api.cwd+"/data/image/materials/" + child.image;
+                        imageRelated.src = window["api"].cwd+"/data/image/materials/" + child.image;
 
-                        window.api.sendAsync('getUID');
+                        window["api"].sendAsync('getUID');
 
-                        await new Promise((resolve1, reject1) => {
-                            window.api.receiveOnce('returnUID', (uid) => {
+                        await new Promise((resolve1) => {
+                            window["api"].receiveOnce('returnUID', (uid) => {
 
                                 cloneRelated.querySelector('div.relatedItem').id = uid;
 
@@ -175,7 +200,7 @@ function addItem(elem, baseValue = 1, callback = ()=>{}, save = true, opened = f
                                 })
 
                                 if(index === 0){
-                                    arrow.src = window.api.cwd+"/data/image/ui/equals_white.png";
+                                    arrow.src = window["api"].cwd+"/data/image/ui/equals_white.png";
 
                                     cloneRelated.querySelector('img.arrow').style.width= "32px";
                                     cloneRelated.querySelector('img.arrow').style.height= "32px";
@@ -187,7 +212,7 @@ function addItem(elem, baseValue = 1, callback = ()=>{}, save = true, opened = f
                                 if(complex){
 
                                     cloneRelated.querySelector('img.showBar').style.display = "inherit";
-                                    cloneRelated.querySelector('img.showBar').src = window.api.cwd+"/data/image/ui/down-arrow_white.png"
+                                    cloneRelated.querySelector('img.showBar').src = window["api"].cwd+"/data/image/ui/down-arrow_white.png"
                                     cloneRelated.querySelector('div.relatedItem').style.cursor = "pointer";
 
                                     addSubItem(originCounter.parentElement, child, inputRelated.value, inputRelated, inputRelated, null, originID.id, opened);
@@ -229,13 +254,14 @@ function addItem(elem, baseValue = 1, callback = ()=>{}, save = true, opened = f
             deleteButton.dataset.origin = originID.id;
 
             deleteIcon.alt = "delete";
-            deleteIcon.src = window.api.cwd+"/data/image/ui/delete.png"
+            deleteIcon.src = window["api"].cwd+"/data/image/ui/delete.png"
             deleteIcon.width = 24;
 
             deleteButton.appendChild(deleteIcon);
 
             originCounter.parentElement.appendChild(deleteButton);
 
+            // Check if the delete button is pressed...
             deleteButton.addEventListener("click", (e)=>{
 
 
@@ -243,7 +269,9 @@ function addItem(elem, baseValue = 1, callback = ()=>{}, save = true, opened = f
                 let uid = button.dataset['origin'];
                 document.getElementById(uid).parentElement.parentElement.parentElement.classList.add("deleteAnim");
 
+                //...Wait the end of his CSS Animation...
                 document.getElementById(uid).parentElement.parentElement.parentElement.addEventListener("animationend", ()=>{
+                    // ...and delete the item
                     document.getElementById(uid).parentElement.parentElement.parentElement.remove();
                     addedItem[uid] = null;
 
@@ -254,9 +282,11 @@ function addItem(elem, baseValue = 1, callback = ()=>{}, save = true, opened = f
 
             let tooltip = cloneOrigin.querySelector('p.tooltipText');
 
+            // Set the item's tooltip
             tooltip.innerText = elem.name;
             containerParent.appendChild(cloneOrigin);
 
+            // Create a new var in the array and add all needed data
             addedItem[originID.id] = {
 
                 parent: originID.id,
@@ -276,12 +306,15 @@ function addItem(elem, baseValue = 1, callback = ()=>{}, save = true, opened = f
             children: childs
         }
 
+        // Execute the callback
         callback();
 
         const onItemAdded = new CustomEvent('onItemAdded', {'detail': data});
 
+        // Dispatch event to the "AddSubItem" function
         document.dispatchEvent(onItemAdded);
 
+        // If specified, save the new data.
         if(save) saveData();
 
     })
@@ -303,7 +336,7 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null, ori
 
     tooltip.innerText = elem.name;
 
-    icon.src = window.api.cwd+'/data/image/materials/'+elem.image;
+    icon.src = window["api"].cwd+'/data/image/materials/'+elem.image;
 
     input.value = number;
 
@@ -312,11 +345,13 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null, ori
     let inputRel = [];
     let needToBeAdded = []
 
+    // Loop in all of his related and add the relate on the side
     for (const relatedElement in elem.related) {
         addRelatedToChild(elem, relatedElement, number, index, div, clone, needToBeAdded, inputRel);
         index++;
     }
 
+    // Check for all edit in his input parent (the parent input is the input that defines the first item of the subline)
     inputEvent.addEventListener('input', (e)=>{
 
         input.value = e.target.value;
@@ -333,7 +368,8 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null, ori
 
     })
 
-    inputEvent.addEventListener('editData', (e)=>{
+    // Check for all edit in his input parent (the parent input is the input that defines the first item of the subline)
+    inputEvent.addEventListener('editData', ()=>{
 
         input.value = self.value;
 
@@ -349,7 +385,8 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null, ori
     }, false)
 
     if(event !== null){
-        inputEvent.addEventListener(event.type, (e)=>{
+        // Check for all edit in his input parent (the parent input is the input that defines the first item of the subline)
+        inputEvent.addEventListener(event.type, ()=>{
 
             input.value = self.value;
 
@@ -367,12 +404,13 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null, ori
     }
 
 
-    let uid = window.api.generateNewUid();
+    let uid = window["api"].generateNewUid();
 
     clone.querySelector('div.detailsRelatedItemContainer').id = uid;
 
     div.parentElement.appendChild(clone);
 
+    // If the element of the subline requires another subline, add it
     needToBeAdded.forEach(need=>{
 
         if(event !== null){
@@ -388,10 +426,11 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null, ori
 
     })
 
-    document.addEventListener('onItemAdded', (e)=>{
+    // Wait for the "onItemAdded" event (see "AddItem()")
+    document.addEventListener('onItemAdded', ()=>{
 
+        // If firstParent subItem, set event listener for open/close element
         if(event === null) {
-
 
             inputEvent.parentElement.querySelector('img.imgRelatedItem').addEventListener('click', () => {
 
@@ -411,13 +450,7 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null, ori
                         if(counter.parentElement.querySelector('img.imgRelatedItem') && counter !== inputEvent) {
                             counter.parentElement.querySelector('img.imgRelatedItem').dispatchEvent(new CustomEvent("closeSub"));
                             addedItem[originId].openedDiv = inputEvent;
-                        } else if(counter === inputEvent){
-
-
                         }
-
-
-
                     }
 
                 }
@@ -461,8 +494,6 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null, ori
                 document.getElementById(uid).dispatchEvent(new CustomEvent('showCat'));
 
             })
-
-
             directParent.addEventListener('closeSub', ()=>{
                 document.getElementById(uid).style.display = "none";
                 document.getElementById(uid).dispatchEvent(new CustomEvent('closeSub'));
@@ -522,9 +553,6 @@ async function addSubItem(div, elem, number, inputEvent, self, event = null, ori
         childList: true,
         subtree: true
     });
-    icon.addEventListener('loadend', function(){
-
-    });
 
 }
 
@@ -559,10 +587,10 @@ function addRelatedToChild(elem, relatedElement, number, index, div, clone, need
 
     }
 
-    icon.src = window.api.cwd+'/data/image/materials/'+child['image'];
+    icon.src = window["api"].cwd+'/data/image/materials/'+child['image'];
 
-    arrow.src = window.api.cwd+'/data/image/ui/plus_white.png';
-    if(index === 0) arrow.src = window.api.cwd+'/data/image/ui/equals_white.png';
+    arrow.src = window["api"].cwd+'/data/image/ui/plus_white.png';
+    if(index === 0) arrow.src = window["api"].cwd+'/data/image/ui/equals_white.png';
 
     if(rel[0]['details'] !== undefined) {
         if (rel[0]['details'][0] === "true") {
