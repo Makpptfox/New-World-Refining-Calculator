@@ -18,6 +18,8 @@
         <parameterLang>Language: </parameterLang>
         <parameterAutoUpdate>Auto-update on start-up: </parameterAutoUpdate>
         <parameterResetSave>Reset save file!</parameterResetSave>
+        <parameterResizeLock>Unlock resize locking (WILL create UI issues): </parameterResizeLock>
+
         <parameterWarning>Each change will AUTOMATICALLY restart the application!</parameterWarning>
         <aboutTitle>About</aboutTitle>
         

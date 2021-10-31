@@ -1,7 +1,13 @@
 let setting = {
     settings:{
         lang: "",
-        autoupdate: ""
+        autoupdate: "",
+        maximize: "",
+        canResize: "",
+        size: {
+            width: 0,
+            height : 0
+        }
     }
 }
 
@@ -139,6 +145,47 @@ function initResetSave(){
     })
 
 }
+function initResize(){
+
+    window["api"].sendAsync('getResize');
+
+    window["api"].receiveOnce('getResizeResponse', (state)=>{
+
+        let checkbox = document.getElementById('canResize');
+
+        checkbox.checked = state.canResize;
+        setting.settings.canResize = state.canResize;
+
+        setting.settings.size.height = state.height;
+        setting.settings.size.width = state.width;
+
+        checkbox.addEventListener('change', ()=>{
+
+            setting.settings.canResize = checkbox.checked;
+            window["api"].sendAsync('setSettings', setting);
+
+            window["api"].receiveOnce('setSettingsResponse', ()=>{
+
+                window["api"].sendAsync('restartApp');
+
+            })
+
+        })
+
+    })
+
+
+}
+function initMaximize(){
+
+    window["api"].sendAsync('getMax');
+
+    window["api"].receiveOnce('getMaxResponse', (state)=>{
+
+        setting.settings.maximize = state;
+
+    })
+}
 
 function openSettings(){
     document.getElementById("paramContainer").className = "roundButton clickRound";
@@ -153,7 +200,10 @@ function openAbout(){
 }
 
 initResetSave();
+
 initAutoUpdate();
+initResize();
+
 initAbout();
 
 setLangOption();

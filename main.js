@@ -18,6 +18,13 @@ let jobData;
 let materialsData;
 
 let lang = "en-EN";
+let autoUpdate = true;
+let canResize = false;
+
+let windowWidth = 1600;
+let windowHeight = 800;
+
+let windowMax = false;
 
 let langJob;
 let langMaterials;
@@ -26,7 +33,6 @@ let langUI;
 let updaterWindows;
 let mainWindows;
 
-let autoUpdate = true;
 
 autoUpdater.on('error', (err)=>{
     updaterWindows.webContents.send('update_error', err);
@@ -112,7 +118,7 @@ async function checkDataFile(){
                     resolve();
                 })
             }).then(()=>{
-                createWindow();
+                createWindow(windowWidth, windowHeight);
                 updaterWindows.destroy();
             })
         )
@@ -123,20 +129,40 @@ async function checkDataFile(){
 
 }
 
-function createWindow(){
-    mainWindows = new BrowserWindow({
-        minWidth: 1600,
-        minHeight: 800,
-        autoHideMenuBar: true,
-        webPreferences:{
-            nodeIntegration: false, // is default value after Electron v5
-            contextIsolation: true, // protect against prototype pollution
-            enableRemoteModule: false, // turn off remote
-            preload: path.join(__dirname, "/script/preload.js"), // use a preload script
-            nativeWindowOpen: true
-        },
-        titleBarStyle: 'hidden'
-    })
+function createWindow(width = 1600, height = 800){
+
+
+    if(!canResize){
+        mainWindows = new BrowserWindow({
+            autoHideMenuBar: true,
+            minWidth: 1600,
+            minHeight: 800,
+            width: width,
+            height: height,
+            webPreferences:{
+                nodeIntegration: false, // is default value after Electron v5
+                contextIsolation: true, // protect against prototype pollution
+                enableRemoteModule: false, // turn off remote
+                preload: path.join(__dirname, "/script/preload.js"), // use a preload script
+                nativeWindowOpen: true
+            },
+            titleBarStyle: 'hidden'
+        })
+    } else {
+        mainWindows = new BrowserWindow({
+            autoHideMenuBar: true,
+            width: width,
+            height: height,
+            webPreferences:{
+                nodeIntegration: false, // is default value after Electron v5
+                contextIsolation: true, // protect against prototype pollution
+                enableRemoteModule: false, // turn off remote
+                preload: path.join(__dirname, "/script/preload.js"), // use a preload script
+                nativeWindowOpen: true
+            },
+            titleBarStyle: 'hidden'
+        })
+    }
 
     mainWindows.loadFile('pages/index.html');
 
@@ -162,9 +188,54 @@ function createWindow(){
     mainWindows.webContents.on('will-navigate', handleRedirect)
     mainWindows.webContents.on('new-window', handleRedirect)
 
+    mainWindows.once("close", async (e)=>{
+
+        e.preventDefault();
+        let tmpWidth = mainWindows.getSize()[0],
+            tmpHeight = mainWindows.getSize()[1];
+        if(await mainWindows.isMaximized()) {
+            tmpWidth = windowWidth;
+            tmpHeight = windowHeight;
+        }
+
+        console.log(tmpWidth)
+        console.log(tmpHeight)
+
+        let tmpMax = mainWindows.isMaximized();
+
+        let setting = {
+            "settings":
+                {
+                    "lang": lang,
+                    "autoupdate": autoUpdate,
+                    "maximize": tmpMax,
+                    "canResize": canResize,
+                    "size": {
+                        "width": tmpWidth,
+                        "height": tmpHeight
+                    }
+                }
+        }
+
+        await fs.writeFile(app.getPath('userData')+'/data/settings.json', JSON.stringify(setting), ()=>{
+
+            console.info("Set setting: done!");
+
+            mainWindows.close();
+
+        })
+
+    })
+
     mainWindows.once('ready-to-show', ()=>{
 
-        mainWindows.center();
+        if(windowMax){
+            mainWindows.maximize();
+            mainWindows.webContents.send('maxSizeResponse');
+        } else {
+            mainWindows.center();
+        }
+
     })
 
 }
@@ -203,7 +274,13 @@ function createLoader(){
                     "settings":
                         {
                             "lang": "en-EN",
-                            "autoupdate": true
+                            "autoupdate": true,
+                            "maximize": false,
+                            "canResize": false,
+                            "size": {
+                                "width": 1600,
+                                "height": 800
+                            }
                         }
                 }
 
@@ -215,7 +292,7 @@ function createLoader(){
                 })
             } else {
 
-                fs.readFile(app.getPath('userData') + "/data/settings.json", (err1, data) => {
+                fs.readFile(app.getPath('userData') + "/data/settings.json", async (err1, data) => {
 
                     let result = JSON.parse(data.toString("utf-8"))
 
@@ -224,13 +301,43 @@ function createLoader(){
                     lang = setting['lang'];
                     autoUpdate = setting['autoupdate'];
 
+                    if(setting['maximize'] === undefined) { //Change variable for each new version of settings.json
+                        let data = {
+                            "settings":
+                                {
+                                    "lang": lang,
+                                    "autoupdate": autoUpdate,
+                                    "maximize": false,
+                                    "canResize": false,
+                                    "size": {
+                                        "width": 1600,
+                                        "height": 800
+                                    }
+                                }
+                        }
+
+                        await mkdirp(app.getPath('userData') + "/data/");
+                        await fs.writeFile(app.getPath('userData') + "/data/settings.json", JSON.stringify(data), (err1) => {
+
+                            app.relaunch();
+                            app.exit();
+
+                        })
+                    }
+
+
+                    canResize = setting['canResize'];
+                    windowWidth = setting['size']['width'];
+                    windowHeight = setting['size']['height'];
+                    windowMax = setting['maximize']
+
                     if (!autoUpdate) {
 
-                        checkDataFile()
+                        await checkDataFile()
 
                     } else {
 
-                        autoUpdater.checkForUpdatesAndNotify();
+                        await autoUpdater.checkForUpdatesAndNotify();
 
                     }
                 })
@@ -422,7 +529,7 @@ ipcMain.on('clearTab', async (ipc)=>{
 
 ipcMain.once('closeApp', (ipc)=>{
 
-    app.quit();
+    mainWindows.close();
 
 })
 
@@ -479,13 +586,21 @@ ipcMain.on('getAutoUpdate', (ipc)=>{
 
 });
 
-ipcMain.on('setSettings', (ipc, setting)=>{
+ipcMain.on('getResize', (ipc)=>{
+
+    mainWindows.webContents.send('getResizeResponse', {canResize: canResize, width: windowWidth, height: windowHeight});
+
+})
+
+ipcMain.on('getMax', (ipc)=>{
+    mainWindows.webContents.send('getMaxResponse', windowMax);
+})
+
+ipcMain.on('setSettings', (ipc, setting) =>{
 
     fs.writeFile(app.getPath('userData')+'/data/settings.json', JSON.stringify(setting), ()=>{
 
         mainWindows.webContents.send('setSettingsResponse');
-
-
 
     })
 

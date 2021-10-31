@@ -18,6 +18,8 @@
         <parameterLang>Langage : </parameterLang>
         <parameterAutoUpdate>Mise à jour auto : </parameterAutoUpdate>
         <parameterResetSave>Réinitialiser la sauvegarde !</parameterResetSave>
+        <parameterResizeLock>Retirer le blocage de redimension (provoquera des soucis d'IU) : </parameterResizeLock>
+
         <parameterWarning>Chaque changement relance l'application !</parameterWarning>
         <aboutTitle>À propos</aboutTitle>
 

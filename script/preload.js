@@ -12,7 +12,7 @@ const {
  */
 let validChannelsSend = ['getAllJobs', 'getDataFrom', 'getLang', 'getAllItems', "getUID", "installUpdate", "openApp",
     "getSavedTab", "saveTab", "deleteTab", "GetVersion", "GetUpdate", "StartTest", "closeApp", "minApp", "minSize", "maxSize", "restartApp",
-    "getLanguage", 'getAutoUpdate', "setSettings", "clearTab"];
+    "getLanguage", 'getAutoUpdate', "setSettings", "clearTab", "getResize", "getMax"];
 
 /**
  * An array that contains ALL the valid receive channels (security purposes)
@@ -23,7 +23,7 @@ let validChannelsSend = ['getAllJobs', 'getDataFrom', 'getLang', 'getAllItems', 
 let validChannelsReceive = ["update_error", "update_available", "update_downloaded", "no_update",
     'getAllJobsResponse', 'getDataFromResponse', "getLangResponse", "getAllItemsResponse", "returnUID",
     "getSavedTabResponse", "deleteTabResponse", "StopTest", "maxSizeResponse", "minSizeResponse",
-    "getLanguageResponse", "setAutoUpdate", 'getAutoUpdateResponse', "setSettingsResponse"];
+    "getLanguageResponse", "setAutoUpdate", 'getAutoUpdateResponse', "setSettingsResponse", "getResizeResponse", "getMaxResponse"];
 
 let uuid = uuidv4();
 
